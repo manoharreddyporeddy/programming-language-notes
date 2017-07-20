@@ -6,59 +6,59 @@ my nodejs notes
 Source: https://www.tutorialspoint.com/nodejs/index.htm
 ............
 Node.js® is a
-	JavaScript runtime
-		built on Chrome's V8 JavaScript engine
-		
-	Node.js uses an
-		event-driven,
-		non-blocking I/O model
-			that makes it lightweight and efficient.
-	
-	Node.js' package ecosystem, npm,
-		is the largest ecosystem of open source libraries in the world.
+    JavaScript runtime
+        built on Chrome's V8 JavaScript engine
+        
+    Node.js uses an
+        event-driven,
+        non-blocking I/O model
+            that makes it lightweight and efficient.
+    
+    Node.js' package ecosystem, npm,
+        is the largest ecosystem of open source libraries in the world.
 ............
 Node.js is a single-threaded application
-	can support concurrency via the concept of event and callbacks
-	
-	Every API of Node.js is asynchronous and being single-threaded
-		use asynchronous function calls
-			to maintain concurrency
-	
-	Node uses observer pattern.
+    can support concurrency via the concept of event and callbacks
+    
+    Every API of Node.js is asynchronous and being single-threaded
+        use asynchronous function calls
+            to maintain concurrency
+    
+    Node uses observer pattern.
 
-	Node thread keeps an event loop
-		task completed -> fire corresponding event -> signals the event-listener function to execute
+    Node thread keeps an event loop
+        task completed -> fire corresponding event -> signals the event-listener function to execute
 
 Event-Driven Programming
-	
-	Node.js uses events heavily
-		one of the reasons why Node.js is pretty fast compared to other similar technologies.
+    
+    Node.js uses events heavily
+        one of the reasons why Node.js is pretty fast compared to other similar technologies.
 
-	Node
-		starts its server
-			initiates its variables
-			declares functions and
-			waits for the event to occur
+    Node
+        starts its server
+            initiates its variables
+            declares functions and
+            waits for the event to occur
 
-	In an event-driven application
-		a main loop
-			listens for events, and
-			when one of those events is detected
-				triggers a callback function
+    In an event-driven application
+        a main loop
+            listens for events, and
+            when one of those events is detected
+                triggers a callback function
 
 Although events look quite similar to callbacks
-	difference
-		callback functions are called when an asynchronous function returns its result
-		event handling works on the observer pattern
-		
-		Observers
-			functions that listen to events
-			Whenever an event gets fired -> its listener function starts executing
+    difference
+        callback functions are called when an asynchronous function returns its result
+        event handling works on the observer pattern
+        
+        Observers
+            functions that listen to events
+            Whenever an event gets fired -> its listener function starts executing
 
-		Node.js has
-			multiple in-built events
-				available through events module's EventEmitter class
-				which are used to bind events and event-listeners
+        Node.js has
+            multiple in-built events
+                available through events module's EventEmitter class
+                which are used to bind events and event-listeners
 
 ............
 npm install uuid
@@ -71,21 +71,21 @@ npm uninstall uuid
 npm search express
 
 npm init
-	This utility will walk you through creating a package.json file.
-	It only covers the most common items, and tries to guess sane defaults.
+    This utility will walk you through creating a package.json file.
+    It only covers the most common items, and tries to guess sane defaults.
 
-	See 'npm help json' for definitive documentation on these fields
-	and exactly what they do.
+    See 'npm help json' for definitive documentation on these fields
+    and exactly what they do.
 
-	Use 'npm install <pkg> --save' afterwards to install a package and
-	save it as a dependency in the package.json file.
+    Use 'npm install <pkg> --save' afterwards to install a package and
+    save it as a dependency in the package.json file.
 
-	Press ^C at any time to quit.
-	name: (webmaster)
+    Press ^C at any time to quit.
+    name: (webmaster)
 npm adduser
-	Username: mcmohd
-	Password:
-	Email: (this IS public) mcmohd@gmail.com
+    Username: mcmohd
+    Password:
+    Email: (this IS public) mcmohd@gmail.com
 npm publish
 ............
 var events = require('events');
@@ -96,8 +96,8 @@ eventEmitter.emit('eventName');
 var events = require('events');
 var eventEmitter = new events.EventEmitter();
 var connectHandler = function connected() {
-	console.log('connection succesful.');
-	eventEmitter.emit('data_received');
+    console.log('connection succesful.');
+    eventEmitter.emit('data_received');
 }
 eventEmitter.on('connection', connectHandler); 
 eventEmitter.on('data_received', function(){
@@ -106,11 +106,11 @@ eventEmitter.on('data_received', function(){
 eventEmitter.emit('connection');
 ............
 In Node Application
-	any asynchronous function
-		accepts a callback as the last parameter
-		
-		a callback function accepts
-			an error as the first parameter
+    any asynchronous function
+        accepts a callback as the last parameter
+        
+        a callback function accepts
+            an error as the first parameter
 ............
 var fs = require("fs");
 
@@ -124,87 +124,87 @@ fs.readFile('input.txt', function (err, data) {
 console.log("Program Ended");
 ............
 Many objects in a Node emit events
-	for example
-	a net.Server emits an event each time a peer connects to it
-	an fs.readStream emits an event when the file is opened
-	
-		All objects which emit events
-			are the instances of events.EventEmitter
+    for example
+    a net.Server emits an event each time a peer connects to it
+    an fs.readStream emits an event when the file is opened
+    
+        All objects which emit events
+            are the instances of events.EventEmitter
 ............
 When an EventEmitter instance faces any error -> it emits an 'error' event
 When a new listener is added -> 'newListener' event is fired
 when a listener is removed -> 'removeListener' event is fired.
 
 EventEmitter
-	provides multiple properties like
-		on property		used to bind a function with the event
-		emit property	used to fire an event
-			chainable: o = o.addListener().removeListener();
-			listener array
-			event may/maynot have listeners
+    provides multiple properties like
+        on property        used to bind a function with the event
+        emit property    used to fire an event
+            chainable: o = o.addListener().removeListener();
+            listener array
+            event may/maynot have listeners
 Methods
-	addListener(event, listener) - adds one more listener - could be same event&listener
-	on(event, listener) - adds one more listener - could be same event&listener
-	once(event, listener) - adds one more listener - removed after 1 event fired
-	removeListener(event, listener) - removes one instance of listener
-	removeAllListeners([event]) - Removes all listeners, or those of the specified event - not a good idea to remove listeners that were added elsewhere in the code, especially when it's on an emitter that you didn't create (e.g. sockets or file streams)
-	setMaxListeners(n) - By default, EventEmitters will print a warning if more than 10 listeners are added for a particular event. This is a useful default which helps finding memory leaks. Obviously not all Emitters should be limited to 10. This function allows that to be increased. Set to zero for unlimited.
-	listeners(event) - Returns an array of listeners for the specified event.
-	emit(event, [arg1], [arg2], [...]) - Execute each of the listeners in order with the supplied arguments. Returns true if the event had listeners, false otherwise.
+    addListener(event, listener) - adds one more listener - could be same event&listener
+    on(event, listener) - adds one more listener - could be same event&listener
+    once(event, listener) - adds one more listener - removed after 1 event fired
+    removeListener(event, listener) - removes one instance of listener
+    removeAllListeners([event]) - Removes all listeners, or those of the specified event - not a good idea to remove listeners that were added elsewhere in the code, especially when it's on an emitter that you didn't create (e.g. sockets or file streams)
+    setMaxListeners(n) - By default, EventEmitters will print a warning if more than 10 listeners are added for a particular event. This is a useful default which helps finding memory leaks. Obviously not all Emitters should be limited to 10. This function allows that to be increased. Set to zero for unlimited.
+    listeners(event) - Returns an array of listeners for the specified event.
+    emit(event, [arg1], [arg2], [...]) - Execute each of the listeners in order with the supplied arguments. Returns true if the event had listeners, false otherwise.
 
 Class Methods
-	listenerCount(emitter, event) - Returns the number of listeners for a given event.
+    listenerCount(emitter, event) - Returns the number of listeners for a given event.
 
 Events
-	newListener
-		event − String: the event name
-		listener − Function: the event handler function
-		This event is emitted any time a listener is added.
-			When this event is triggered, the listener may not yet have been added to the array of listeners for the event.
-	removeListener
-		event − String The event name
-		listener − Function The event handler function
-		This event is emitted any time someone removes a listener.
-			When this event is triggered, the listener may not yet have been removed from the array of listeners for the event.
+    newListener
+        event − String: the event name
+        listener − Function: the event handler function
+        This event is emitted any time a listener is added.
+            When this event is triggered, the listener may not yet have been added to the array of listeners for the event.
+    removeListener
+        event − String The event name
+        listener − Function The event handler function
+        This event is emitted any time someone removes a listener.
+            When this event is triggered, the listener may not yet have been removed from the array of listeners for the event.
 ............
-	var listner1 = function listner1() {	console.log('listner1 executed.');	}
-	var listner2 = function listner2() {	console.log('listner2 executed.');	}
-	
-	var eventEmitter = new require('events').EventEmitter();
-	
-	eventEmitter.addListener('connection', listner1);
-	eventEmitter.on('connection', listner2);
-	var eventListenersCount = require('events').EventEmitter.listenerCount(eventEmitter,'connection');	console.log(eventListenersCount + " Listner(s) listening to connection event");
+    var listner1 = function listner1() {    console.log('listner1 executed.');    }
+    var listner2 = function listner2() {    console.log('listner2 executed.');    }
+    
+    var eventEmitter = new require('events').EventEmitter();
+    
+    eventEmitter.addListener('connection', listner1);
+    eventEmitter.on('connection', listner2);
+    var eventListenersCount = require('events').EventEmitter.listenerCount(eventEmitter,'connection');    console.log(eventListenersCount + " Listner(s) listening to connection event");
 
-	eventEmitter.emit('connection');
+    eventEmitter.emit('connection');
 
-	eventEmitter.removeListener('connection', listner1);		console.log("Listner1 will not listen now.");
-	eventEmitter.emit('connection');
-	eventListenersCount = require('events').EventEmitter.listenerCount(eventEmitter,'connection');		console.log(eventListenersCount + " Listner(s) listening to connection event");
-	
+    eventEmitter.removeListener('connection', listner1);        console.log("Listner1 will not listen now.");
+    eventEmitter.emit('connection');
+    eventListenersCount = require('events').EventEmitter.listenerCount(eventEmitter,'connection');        console.log(eventListenersCount + " Listner(s) listening to connection event");
+    
 Output.
-	2 Listner(s) listening to connection event
-	listner1 executed.
-	listner2 executed.
-	
-	Listner1 will not listen now.
-	listner2 executed.
-	1 Listner(s) listening to connection event
+    2 Listner(s) listening to connection event
+    listner1 executed.
+    listner2 executed.
+    
+    Listner1 will not listen now.
+    listner2 executed.
+    1 Listner(s) listening to connection event
 ............
 Buffer class is a global class that can be accessed in an application without importing the buffer module.
 Pure JavaScript is Unicode friendly, but it is not so for binary data.
-	While dealing with TCP streams or the file system, it's necessary to handle octet streams.
-	
-	Buffer class which provides instances to store raw data similar to an array of integers
-		but corresponds to a raw memory allocation outside the V8 heap.
+    While dealing with TCP streams or the file system, it's necessary to handle octet streams.
+    
+    Buffer class which provides instances to store raw data similar to an array of integers
+        but corresponds to a raw memory allocation outside the V8 heap.
 
 ............
 
 // create a Buffer
-var buf = new Buffer(10);						// uninitiated Buffer of 10 octets
-var buf = new Buffer([10, 20, 30, 40, 50]);		// from a given array
-var buf = new Buffer("Simply Easy Learning", "utf-8");	//  from a given string and optionally encoding type
-	// "utf8" is the default encoding, other encodings are "ascii", "utf8", "utf16le", "ucs2", "base64" or "hex"
+var buf = new Buffer(10);                        // uninitiated Buffer of 10 octets
+var buf = new Buffer([10, 20, 30, 40, 50]);        // from a given array
+var buf = new Buffer("Simply Easy Learning", "utf-8");    //  from a given string and optionally encoding type
+    // "utf8" is the default encoding, other encodings are "ascii", "utf8", "utf16le", "ucs2", "base64" or "hex"
 ............
 buf.write(string[, offset][, length][, encoding])
 ..
@@ -212,7 +212,7 @@ buf = new Buffer(256);
 len = buf.write("Simply Easy Learning");
 console.log("Octets written : "+  len);
 
-	Octets written : 20
+    Octets written : 20
 ............
 buf.toString([encoding][, start][, end])
 ..
@@ -226,10 +226,10 @@ console.log( buf.toString('ascii',0,5));   // outputs: abcde
 console.log( buf.toString('utf8',0,5));    // outputs: abcde
 console.log( buf.toString(undefined,0,5)); // encoding defaults to 'utf8', outputs abcde
 
-	abcdefghijklmnopqrstuvwxyz
-	abcde
-	abcde
-	abcde
+    abcdefghijklmnopqrstuvwxyz
+    abcde
+    abcde
+    abcde
 ............
 buf.toJSON()
 ..
@@ -237,7 +237,7 @@ var buf = new Buffer('Simply Easy Learning');
 var json = buf.toJSON(buf);
 console.log(json);
 
-	[ 83, 105, 109, 112, 108, 121, 32, 69, 97, 115, 121, 32, 76, 101, 97, 114, 110, 105, 110, 103 ]
+    [ 83, 105, 109, 112, 108, 121, 32, 69, 97, 115, 121, 32, 76, 101, 97, 114, 110, 105, 110, 103 ]
 ............
 Buffer.concat(list[, totalLength])
 ..
@@ -246,7 +246,7 @@ var buffer2 = new Buffer('Simply Easy Learning');
 var buffer3 = Buffer.concat([buffer1,buffer2]);
 console.log("buffer3 content: " + buffer3.toString());
 
-	buffer3 content: TutorialsPoint Simply Easy Learning
+    buffer3 content: TutorialsPoint Simply Easy Learning
 ............
 buf.compare(otherBuffer);
 ..
@@ -262,7 +262,7 @@ if(result < 0) {
    console.log(buffer1 +" comes after " + buffer2);
 }
 
-	ABC comes before ABCD
+    ABC comes before ABCD
 ............
 buf.copy(targetBuffer[, targetStart][, sourceStart][, sourceEnd])
 ..
@@ -273,7 +273,7 @@ buffer1.copy(buffer2);
 
 console.log("buffer2 content: " + buffer2.toString());
 
-	buffer2 content: ABC
+    buffer2 content: ABC
 ............
 buf.slice([start][, end])
 ..
@@ -289,9 +289,9 @@ console.log("buffer3 content: " + buffer3.toString());
 var buffer4 = buffer1.slice(-5,-4);
 console.log("buffer4 content: " + buffer4.toString());
 
-	buffer2 content: Tutorials
-	buffer3 content: Point
-	buffer4 content: P
+    buffer2 content: Tutorials
+    buffer3 content: Point
+    buffer4 content: P
 ............
 buf.length;
 ..
@@ -299,7 +299,7 @@ var buffer = new Buffer('TutorialsPoint');
 
 //length of the buffer
 console.log("buffer length: " + buffer.length);
-	buffer length: 14
+    buffer length: 14
 ............
 Class Methods
 ..
@@ -311,22 +311,22 @@ Buffer.compare(buf1, buf2)
 ............
 Streams?
 ..
-	Streams are objects that let you
-		read data from a source or
-		write data to a destination
-			in continuous fashion
+    Streams are objects that let you
+        read data from a source or
+        write data to a destination
+            in continuous fashion
 
-	In Node.js, there are four types of streams −
-		Readable − Stream which is used for read operation.
-		Writable − Stream which is used for write operation.
-		Duplex   − Stream which can be used for both read and write operation.
-		Transform − A type of duplex stream where the output is computed based on input.
+    In Node.js, there are four types of streams −
+        Readable − Stream which is used for read operation.
+        Writable − Stream which is used for write operation.
+        Duplex   − Stream which can be used for both read and write operation.
+        Transform − A type of duplex stream where the output is computed based on input.
 
-	commonly used events
-		data − This event is fired when there is data is available to read.
-		end − This event is fired when there is no more data to read.
-		error − This event is fired when there is any error receiving or writing data.
-		finish − This event is fired when all the data has been flushed to underlying system.
+    commonly used events
+        data − This event is fired when there is data is available to read.
+        end − This event is fired when there is no more data to read.
+        error − This event is fired when there is any error receiving or writing data.
+        finish − This event is fired when all the data has been flushed to underlying system.
 
 ............
 Reading from a Stream
@@ -350,9 +350,9 @@ readerStream.on('error', function(err){
 
 console.log("Program Ended");
 
-		Program Ended
-		Tutorials Point is giving self learning content
-		to teach the world in simple and easy way!!!!!
+        Program Ended
+        Tutorials Point is giving self learning content
+        to teach the world in simple and easy way!!!!!
 ............
 Writing to a Stream
 ..
@@ -379,8 +379,8 @@ writerStream.on('error', function(err){
 
 console.log("Program Ended");
 
-		Program Ended
-		Write completed.
+        Program Ended
+        Write completed.
 ............
 Piping the Streams
 - a mechanism where we provide the output of one stream as the input to another stream
@@ -395,7 +395,7 @@ readerStream.pipe(writerStream);
 
 console.log("Program Ended");
 
-		Program Ended
+        Program Ended
 ............
 Chaining the Streams
 - a mechanism to connect the output of one stream to another stream and create a chain of multiple stream operations
@@ -404,23 +404,23 @@ var fs = require("fs");
 var zlib = require('zlib');
 
 fs.createReadStream('input.txt')
-   .pipe(zlib.createGzip())		// Compress the file input.txt to input.txt.gz
+   .pipe(zlib.createGzip())        // Compress the file input.txt to input.txt.gz
    .pipe(fs.createWriteStream('input.txt.gz'));
   
 console.log("File Compressed.");
 
-	File Compressed.
+    File Compressed.
 ..
 var fs = require("fs");
 var zlib = require('zlib');
 
 fs.createReadStream('input.txt.gz')
-   .pipe(zlib.createGunzip())		// Decompress the file input.txt.gz to input.txt
+   .pipe(zlib.createGunzip())        // Decompress the file input.txt.gz to input.txt
    .pipe(fs.createWriteStream('input.txt'));
   
 console.log("File Decompressed.");
 
-	File Decompressed.
+    File Decompressed.
 ............
 Node.js - File System
 ..
@@ -441,12 +441,12 @@ console.log("Synchronous read: " + data.toString());
 console.log("Program Ended");
 
 
-	Synchronous read: Tutorials Point is giving self learning content
-	to teach the world in simple and easy way!!!!!
+    Synchronous read: Tutorials Point is giving self learning content
+    to teach the world in simple and easy way!!!!!
 
-	Program Ended
-	Asynchronous read: Tutorials Point is giving self learning content
-	to teach the world in simple and easy way!!!!!
+    Program Ended
+    Asynchronous read: Tutorials Point is giving self learning content
+    to teach the world in simple and easy way!!!!!
 ............
 fs.open(path, flags[, mode], callback)
 ..
@@ -461,54 +461,54 @@ fs.open('input.txt', 'r+', function(err, fd) {
   console.log("File opened successfully!");     
 });
 
-	Going to open file!
-	File opened successfully!
+    Going to open file!
+    File opened successfully!
 ............
 Get File Information
 ..
 fs.stat(path, callback)
-	stats.isFile()	Returns true if file type of a simple file.
-	stats.isDirectory()	Returns true if file type of a directory.
-	stats.isBlockDevice()	Returns true if file type of a block device.
-	stats.isCharacterDevice()	Returns true if file type of a character device.
-	stats.isSymbolicLink()	Returns true if file type of a symbolic link.
-	stats.isFIFO()	Returns true if file type of a FIFO.
-	stats.isSocket()	Returns true if file type of asocket.
+    stats.isFile()    Returns true if file type of a simple file.
+    stats.isDirectory()    Returns true if file type of a directory.
+    stats.isBlockDevice()    Returns true if file type of a block device.
+    stats.isCharacterDevice()    Returns true if file type of a character device.
+    stats.isSymbolicLink()    Returns true if file type of a symbolic link.
+    stats.isFIFO()    Returns true if file type of a FIFO.
+    stats.isSocket()    Returns true if file type of asocket.
 ..
-	var fs = require("fs");
+    var fs = require("fs");
 
-	console.log("Going to get file info!");
-	fs.stat('input.txt', function (err, stats) {
-	   if (err) {
-		   return console.error(err);
-	   }
-	   console.log(stats);
-	   console.log("Got file info successfully!");
-	   
-	   // Check file type
-	   console.log("isFile ? " + stats.isFile());
-	   console.log("isDirectory ? " + stats.isDirectory());    
-	});
+    console.log("Going to get file info!");
+    fs.stat('input.txt', function (err, stats) {
+       if (err) {
+           return console.error(err);
+       }
+       console.log(stats);
+       console.log("Got file info successfully!");
+       
+       // Check file type
+       console.log("isFile ? " + stats.isFile());
+       console.log("isDirectory ? " + stats.isDirectory());    
+    });
 
-				Going to get file info!
-				{ 
-				   dev: 1792,
-				   mode: 33188,
-				   nlink: 1,
-				   uid: 48,
-				   gid: 48,
-				   rdev: 0,
-				   blksize: 4096,
-				   ino: 4318127,
-				   size: 97,
-				   blocks: 8,
-				   atime: Sun Mar 22 2015 13:40:00 GMT-0500 (CDT),
-				   mtime: Sun Mar 22 2015 13:40:57 GMT-0500 (CDT),
-				   ctime: Sun Mar 22 2015 13:40:57 GMT-0500 (CDT) 
-				}
-				Got file info successfully!
-				isFile ? true
-				isDirectory ? false
+                Going to get file info!
+                { 
+                   dev: 1792,
+                   mode: 33188,
+                   nlink: 1,
+                   uid: 48,
+                   gid: 48,
+                   rdev: 0,
+                   blksize: 4096,
+                   ino: 4318127,
+                   size: 97,
+                   blocks: 8,
+                   atime: Sun Mar 22 2015 13:40:00 GMT-0500 (CDT),
+                   mtime: Sun Mar 22 2015 13:40:57 GMT-0500 (CDT),
+                   ctime: Sun Mar 22 2015 13:40:57 GMT-0500 (CDT) 
+                }
+                Got file info successfully!
+                isFile ? true
+                isDirectory ? false
 ............
 Writing a File
 fs.writeFile(filename, data[, options], callback)
@@ -531,10 +531,10 @@ fs.writeFile('input.txt', 'Simply Easy Learning!',  function(err) {
    });
 });
 
-		Going to write into existing file
-		Data written successfully!
-		Let's read newly written data
-		Asynchronous read: Simply Easy Learning!
+        Going to write into existing file
+        Data written successfully!
+        Let's read newly written data
+        Asynchronous read: Simply Easy Learning!
 ............
 Reading a File
 fs.read(fd, buffer, offset, length, position, callback)
@@ -562,12 +562,12 @@ fs.open('input.txt', 'r+', function(err, fd) {
    });
 });
 
-		Going to open an existing file
-		File opened successfully!
-		Going to read the file
-		97 bytes read
-		Tutorials Point is giving self learning content
-		to teach the world in simple and easy way!!!!!
+        Going to open an existing file
+        File opened successfully!
+        Going to read the file
+        97 bytes read
+        Tutorials Point is giving self learning content
+        to teach the world in simple and easy way!!!!!
 ............
 Closing a File
 fs.close(fd, callback)
@@ -603,13 +603,13 @@ fs.open('input.txt', 'r+', function(err, fd) {
    });
 });
 
-		Going to open an existing file
-		File opened successfully!
-		Going to read the file
-		Tutorials Point is giving self learning content
-		to teach the world in simple and easy way!!!!!
+        Going to open an existing file
+        File opened successfully!
+        Going to read the file
+        Tutorials Point is giving self learning content
+        to teach the world in simple and easy way!!!!!
 
-		File closed successfully.
+        File closed successfully.
 ............
 Truncate a File
 fs.ftruncate(fd, len, callback)
@@ -654,13 +654,13 @@ fs.open('input.txt', 'r+', function(err, fd) {
    });
 });
 
-		Going to open an existing file
-		File opened successfully!
-		Going to truncate the file after 10 bytes
-		File truncated successfully.
-		Going to read the same file
-		Tutorials 
-		File closed successfully.
+        Going to open an existing file
+        File opened successfully!
+        Going to truncate the file after 10 bytes
+        File truncated successfully.
+        Going to read the same file
+        Tutorials 
+        File closed successfully.
 ............
 Delete a File
 fs.unlink(path, callback)
@@ -675,8 +675,8 @@ fs.unlink('input.txt', function(err) {
    console.log("File deleted successfully!");
 });
 
-		Going to delete an existing file
-		File deleted successfully!
+        Going to delete an existing file
+        File deleted successfully!
 ............
 Create a Directory
 fs.mkdir(path[, mode], callback)
@@ -691,8 +691,8 @@ fs.mkdir('/tmp/test',function(err){
    console.log("Directory created successfully!");
 });
 
-		Going to create directory /tmp/test
-		Directory created successfully!
+        Going to create directory /tmp/test
+        Directory created successfully!
 ............
 Read a Directory
 fs.readdir(path, callback)
@@ -709,13 +709,13 @@ fs.readdir("/tmp/",function(err, files){
    });
 });
 
-		Going to read directory /tmp
-		ccmzx99o.out
-		ccyCSbkF.out
-		employee.ser
-		hsperfdata_apache
-		test
-		test.txt
+        Going to read directory /tmp
+        ccmzx99o.out
+        ccyCSbkF.out
+        employee.ser
+        hsperfdata_apache
+        test
+        test.txt
 ............
 Remove a Directory
 fs.rmdir(path, callback)
@@ -739,30 +739,30 @@ fs.rmdir("/tmp/test",function(err){
    });
 });
 
-		Going to read directory /tmp
-		ccmzx99o.out
-		ccyCSbkF.out
-		employee.ser
-		hsperfdata_apache
-		test.txt
+        Going to read directory /tmp
+        ccmzx99o.out
+        ccyCSbkF.out
+        employee.ser
+        hsperfdata_apache
+        test.txt
 ............
 Node.js - Global Objects
 ..
-	Available in all modules.
-		no need to include these objects in our application, rather we can use them directly
-	These objects are
-		modules,
-		functions,
-		strings and
-		object itself		
+    Available in all modules.
+        no need to include these objects in our application, rather we can use them directly
+    These objects are
+        modules,
+        functions,
+        strings and
+        object itself        
 ............
 // Let's try to print the value of __filename
 console.log( __filename );
-		/web/com/1427091028_21099/main.js
+        /web/com/1427091028_21099/main.js
 ............
 // Let's try to print the value of __dirname
 console.log( __dirname );
-		/web/com/1427091028_21099
+        /web/com/1427091028_21099
 ............
 setTimeout(cb, ms) - run callback cb after at least ms milliseconds
 ..
@@ -773,7 +773,7 @@ function printHello(){
 // Now call above function after 2 seconds
 setTimeout(printHello, 2000);
 
-		Hello, World!
+        Hello, World!
 ............
 clearTimeout(t)
 ..
@@ -787,7 +787,7 @@ var t = setTimeout(printHello, 2000);
 // Now clear the timer
 clearTimeout(t);
 
-		<< no output is printed >>
+        << no output is printed >>
 ............
 setInterval(cb, ms) - to run callback cb repeatedly after at least ms milliseconds
 ..
@@ -797,17 +797,17 @@ function printHello(){
 // Now call above function after 2 seconds
 setInterval(printHello, 2000);
 
-	Hello, World!
-	Hello, World!
-	Hello, World!
+    Hello, World!
+    Hello, World!
+    Hello, World!
 
 ............
 Process Events
 events
-	exit
-	beforeExit
-	uncaughtException
-	Signal Events - Emitted when the processes receives a signal such as SIGINT, SIGHUP, etc.
+    exit
+    beforeExit
+    uncaughtException
+    Signal Events - Emitted when the processes receives a signal such as SIGINT, SIGHUP, etc.
 ..
 process.on('exit', function(code) {
    // Following code will never execute.
@@ -819,40 +819,40 @@ process.on('exit', function(code) {
 });
 console.log("Program Ended");
 
-		Program Ended
-		About to exit with code: 0
+        Program Ended
+        About to exit with code: 0
 ............
 Exit Code's names
-	Uncaught Fatal Exception
-	Unused
-	Internal JavaScript Parse Error
-	Internal JavaScript Evaluation Failure
-	Fatal Error
-	Non-function Internal Exception Handler
-	Internal Exception Handler Run-Time Failure
-	Unused
-	Invalid Argument
-	Internal JavaScript Run-Time Failure
-	Invalid Debug Argument
-	Signal Exits
+    Uncaught Fatal Exception
+    Unused
+    Internal JavaScript Parse Error
+    Internal JavaScript Evaluation Failure
+    Fatal Error
+    Non-function Internal Exception Handler
+    Internal Exception Handler Run-Time Failure
+    Unused
+    Invalid Argument
+    Internal JavaScript Run-Time Failure
+    Invalid Debug Argument
+    Signal Exits
 
 Process Properties
-	stdout
-	stderr
-	stdin
-	argv
-	execPath
-	execArgv
-	env
-	exitCode
-	version
-	versions
-	config
-	pid
-	title
-	arch
-	platform
-	mainModule
+    stdout
+    stderr
+    stdin
+    argv
+    execPath
+    execArgv
+    env
+    exitCode
+    version
+    versions
+    config
+    pid
+    title
+    arch
+    platform
+    mainModule
 
 // Printing to console
 process.stdout.write("Hello World!" + "\n");
@@ -868,38 +868,38 @@ console.log(process.execPath);
 // Platform Information 
 console.log(process.platform);
 
-			Hello World!
-			0: node
-			1: /web/com/1427106219_25089/main.js
-			/usr/bin/node
-			linux
+            Hello World!
+            0: node
+            1: /web/com/1427106219_25089/main.js
+            /usr/bin/node
+            linux
 
 
-		abort()
-		chdir(directory)
-		cwd()
-		exit([code])
-		getgid()
-		setgid(id)
-		getuid()
-		setuid(id)
-		getgroups()
-		setgroups(groups)
-		initgroups(user, extra_group)
-		kill(pid[, signal])
-		memoryUsage()
-		nextTick(callback)
-		umask([mask])
-		uptime()
-		hrtime()
+        abort()
+        chdir(directory)
+        cwd()
+        exit([code])
+        getgid()
+        setgid(id)
+        getuid()
+        setuid(id)
+        getgroups()
+        setgroups(groups)
+        initgroups(user, extra_group)
+        kill(pid[, signal])
+        memoryUsage()
+        nextTick(callback)
+        umask([mask])
+        uptime()
+        hrtime()
 
 console.log('Current directory: ' + process.cwd());
 console.log('Current version: ' + process.version);
 console.log(process.memoryUsage());
 
-			Current directory: /web/com/1427106219_25089
-			Current version: v0.10.33
-			{ rss: 11505664, heapTotal: 4083456, heapUsed: 2157704 }
+            Current directory: /web/com/1427106219_25089
+            Current version: v0.10.33
+            { rss: 11505664, heapTotal: 4083456, heapUsed: 2157704 }
 ............
 Node.js - Console
 ..
@@ -909,10 +909,10 @@ console.info([data][, ...])
 console.error([data][, ...])
 console.warn([data][, ...])
 
-console.dir(obj[, options])		// a hierarchical listing with disclosure triangles that let you see the contents of child objects
+console.dir(obj[, options])        // a hierarchical listing with disclosure triangles that let you see the contents of child objects
 
-console.time(label)		// Mark a time.
-console.timeEnd(label)	// Finish timer, record output.
+console.time(label)        // Mark a time.
+console.timeEnd(label)    // Finish timer, record output.
 
 console.trace(message[, ...])
 
@@ -928,56 +928,56 @@ for (var i=0; i<10; i++) {
 console.timeEnd('Getting data');
 console.info("Program Ended")
 console.trace('message')
-console.assert(counter === 10, 'counter is not 10');		// true  => no error
-console.assert(counter === 11, 'counter is not 11');		// false => error
-		Program Started
-		Counter: 10
-		Doing some processing here...
-		Doing some processing here...
-		Doing some processing here...
-		Doing some processing here...
-		Doing some processing here...
-		Doing some processing here...
-		Doing some processing here...
-		Doing some processing here...
-		Doing some processing here...
-		Doing some processing here...
-		Getting data: 1ms
-		Program Ended
-		Trace: message
-			at Object. (/web/com/1500469682_99130/main.js:14:9)
-			at Module._compile (module.js:456:26)
-			at Object.Module._extensions..js (module.js:474:10)
-			at Module.load (module.js:356:32)
-			at Function.Module._load (module.js:312:12)
-			at Function.Module.runMain (module.js:497:10)
-			at startup (node.js:119:16)
-			at node.js:929:3
-		AssertionError: counter is not 11
-			at Console.assert (console.js:102:23)
-			at Object. (/web/com/1500469682_99130/main.js:14:9)
-			at Module._compile (module.js:456:26)
-			at Object.Module._extensions..js (module.js:474:10)
-			at Module.load (module.js:356:32)
-			at Function.Module._load (module.js:312:12)
-			at Function.Module.runMain (module.js:497:10)
-			at startup (node.js:119:16)
-			at node.js:929:3
+console.assert(counter === 10, 'counter is not 10');        // true  => no error
+console.assert(counter === 11, 'counter is not 11');        // false => error
+        Program Started
+        Counter: 10
+        Doing some processing here...
+        Doing some processing here...
+        Doing some processing here...
+        Doing some processing here...
+        Doing some processing here...
+        Doing some processing here...
+        Doing some processing here...
+        Doing some processing here...
+        Doing some processing here...
+        Doing some processing here...
+        Getting data: 1ms
+        Program Ended
+        Trace: message
+            at Object. (/web/com/1500469682_99130/main.js:14:9)
+            at Module._compile (module.js:456:26)
+            at Object.Module._extensions..js (module.js:474:10)
+            at Module.load (module.js:356:32)
+            at Function.Module._load (module.js:312:12)
+            at Function.Module.runMain (module.js:497:10)
+            at startup (node.js:119:16)
+            at node.js:929:3
+        AssertionError: counter is not 11
+            at Console.assert (console.js:102:23)
+            at Object. (/web/com/1500469682_99130/main.js:14:9)
+            at Module._compile (module.js:456:26)
+            at Object.Module._extensions..js (module.js:474:10)
+            at Module.load (module.js:356:32)
+            at Function.Module._load (module.js:312:12)
+            at Function.Module.runMain (module.js:497:10)
+            at startup (node.js:119:16)
+            at node.js:929:3
 ............
 Node.js - Utility Modules
-1	OS Module
+1    OS Module
 Provides basic operating-system related utility functions.
 
-2	Path Module
+2    Path Module
 Provides utilities for handling and transforming file paths.
 
-3	Net Module
+3    Net Module
 Provides both servers and clients as streams. Acts as a network wrapper.
 
-4	DNS Module
+4    DNS Module
 Provides functions to do actual DNS lookup as well as to use underlying operating system name resolution functionalities.
 
-5	Domain Module
+5    Domain Module
 Provides ways to handle multiple different I/O operations as a single group
 
 
@@ -1037,14 +1037,14 @@ http.createServer( function (request, response) {
          // HTTP Status: 404 : NOT FOUND
          // Content Type: text/plain
          response.writeHead(404, {'Content-Type': 'text/html'});
-      }else {	
-         //Page found	  
+      }else {    
+         //Page found      
          // HTTP Status: 200 : OK
          // Content Type: text/plain
-         response.writeHead(200, {'Content-Type': 'text/html'});	
+         response.writeHead(200, {'Content-Type': 'text/html'});    
          
          // Write the content of the file to response body
-         response.write(data.toString());		
+         response.write(data.toString());        
       }
       // Send the response body 
       response.end();
@@ -1099,19 +1099,19 @@ req.end();
 node main.js
 
 Output on console
-	<html>
-	   <head>
-		  <title>Sample Page</title>
-	   </head>
-	   
-	   <body>
-		  Hello World!
-	   </body>
-	</html>
+    <html>
+       <head>
+          <title>Sample Page</title>
+       </head>
+       
+       <body>
+          Hello World!
+       </body>
+    </html>
 
 output on server
-	Server running at http://127.0.0.1:8081/
-	Request for /index.htm received.
+    Server running at http://127.0.0.1:8081/
+    Request for /index.htm received.
 ............
 Node.js - Express Framework
 
@@ -1300,12 +1300,12 @@ main.html
 
 
 Open http://127.0.0.1:8081/index.htm
-	enter first_name
-	enter last_name
-		click submit
+    enter first_name
+    enter last_name
+        click submit
 
 Browser will show:
-	{"first_name":"John","last_name":"Paul"}
+    {"first_name":"John","last_name":"Paul"}
 ......
 HTML FORM : POST Method
 ..
@@ -1315,7 +1315,7 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({ extended: false })	// Create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })    // Create application/x-www-form-urlencoded parser
 
 app.use(express.static('public'));
 
@@ -1356,19 +1356,19 @@ main.htm
 </html>
 ..
 Open http://127.0.0.1:8081/index.htm
-	enter first_name
-	enter last_name
-		click submit
+    enter first_name
+    enter last_name
+        click submit
 
 Browser will show:
-	{"first_name":"John","last_name":"Paul"}
+    {"first_name":"John","last_name":"Paul"}
 ......
 File Upload
 ..
 There are three possibilities for enctype:
-	x-www-urlencoded
-	multipart/form-data		(spec points to RFC2388) - for upload of files
-	text-plain.				This is "not reliably interpretable by computer", so it should never be used in production, and we will not look further into it.
+    x-www-urlencoded
+    multipart/form-data        (spec points to RFC2388) - for upload of files
+    text-plain.                This is "not reliably interpretable by computer", so it should never be used in production, and we will not look further into it.
 ..
 main.js
 
@@ -1439,11 +1439,11 @@ main.htm
 
 
 output:
-	Select a file to upload: 
+    Select a file to upload: 
 
-	[Choose File] No file chosen		// this is input of 'file' type
+    [Choose File] No file chosen        // this is input of 'file' type
 
-	[Upload File]						// this is input of 'submit' type
+    [Upload File]                        // this is input of 'submit' type
 ......
 Cookies Management
 ..
@@ -1461,308 +1461,308 @@ app.listen(8081)
 Node.js - RESTful API
 ..
 REST stands for REpresentational State Transfer.
-	REST
-	REST based architecture
-		is "web-standards based architecture" and
+    REST
+    REST based architecture
+        is "web-standards based architecture" and
 
-	Every component is a resource
-	Uses HTTP Protocol (http://) for resourceaccess, by a common interface
+    Every component is a resource
+    Uses HTTP Protocol (http://) for resourceaccess, by a common interface
 
 
-	Resource is identified by URIs/ global IDs (Uniform Resource Identifier a service)
-	
-		which provides
-			Resource representation such as:
-				text,
-				XML,
-				JSON	(most popular one)
+    Resource is identified by URIs/ global IDs (Uniform Resource Identifier a service)
+    
+        which provides
+            Resource representation such as:
+                text,
+                XML,
+                JSON    (most popular one)
 
-			and
-			set of HTTP Methods		
-				Resource access is common through four HTTP standard methods:
-					POST	- creates a new resource, or updates a existing resource
-					PUT 	- creates a new resource
-					GET 	- provides a read only access to a resource
-					DELETE	- removes a resource
+            and
+            set of HTTP Methods        
+                Resource access is common through four HTTP standard methods:
+                    POST    - creates a new resource, or updates a existing resource
+                    PUT     - creates a new resource
+                    GET     - provides a read only access to a resource
+                    DELETE    - removes a resource
 
 
 
 
 REST Server
-	provides access to resources
+    provides access to resources
 
 REST client
-	accesses and
-	modifies
-		the resources
-			using HTTP protocol (http://)
+    accesses and
+    modifies
+        the resources
+            using HTTP protocol (http://)
 ........
 RESTful Web Services
 ..
 Web services
-	based on REST Architecture
+    based on REST Architecture
 
 A web service is
-	a collection of
-		open protocols and
-		standards
-			used for
-				exchanging data
-				between
-					applications or systems
-	
-	Software applications
-		written in various programming languages and
-		running on various platforms
-			can use web services
-				to exchange data over computer networks
-					like the Internet
-					in a manner
-						similar to inter-process communication on a single computer.
-						
-		This interoperability
-			(e.g., communication between Java and Python, or
-					Windows and Linux applications)
-				is due to the use of open standards.	
+    a collection of
+        open protocols and
+        standards
+            used for
+                exchanging data
+                between
+                    applications or systems
+    
+    Software applications
+        written in various programming languages and
+        running on various platforms
+            can use web services
+                to exchange data over computer networks
+                    like the Internet
+                    in a manner
+                        similar to inter-process communication on a single computer.
+                        
+        This interoperability
+            (e.g., communication between Java and Python, or
+                    Windows and Linux applications)
+                is due to the use of open standards.    
 ......
 Creating RESTful for A Library
 ..
 users.json
 
-	{
-	   "user1" : {
-		  "name" : "mahesh",
-		  "password" : "password1",
-		  "profession" : "teacher",
-		  "id": 1
-	   },
-	   "user2" : {
-		  "name" : "suresh",
-		  "password" : "password2",
-		  "profession" : "librarian",
-		  "id": 2
-	   },
-	   "user3" : {
-		  "name" : "ramesh",
-		  "password" : "password3",
-		  "profession" : "clerk",
-		  "id": 3
-	   }
-	}
+    {
+       "user1" : {
+          "name" : "mahesh",
+          "password" : "password1",
+          "profession" : "teacher",
+          "id": 1
+       },
+       "user2" : {
+          "name" : "suresh",
+          "password" : "password2",
+          "profession" : "librarian",
+          "id": 2
+       },
+       "user3" : {
+          "name" : "ramesh",
+          "password" : "password3",
+          "profession" : "clerk",
+          "id": 3
+       }
+    }
 ......
 RESTful APIs.
 
-S. N.	URI			HTTP Method		POST body		Result
-1		listUsers	GET				empty			Show list of all the users.
-2		addUser		POST			JSON String		Add details of new user.
-4		:id			GET				empty			Show details of a user.
-3		deleteUser	DELETE			JSON String		Delete an existing user.
+S. N.    URI            HTTP Method        POST body        Result
+1        listUsers    GET                empty            Show list of all the users.
+2        addUser        POST            JSON String        Add details of new user.
+4        :id            GET                empty            Show details of a user.
+3        deleteUser    DELETE            JSON String        Delete an existing user.
 ......
 listUsers.js
 
-	var express = require('express');
-	var app = express();
-	var fs = require("fs");
+    var express = require('express');
+    var app = express();
+    var fs = require("fs");
 
-	app.get('/listUsers', function (req, res) {
-	   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
-		   console.log( data );
-		   res.end( data );
-	   });
-	})
+    app.get('/listUsers', function (req, res) {
+       fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+           console.log( data );
+           res.end( data );
+       });
+    })
 
-	var server = app.listen(8081, function () {
-	  var host = server.address().address
-	  var port = server.address().port
+    var server = app.listen(8081, function () {
+      var host = server.address().address
+      var port = server.address().port
 
-	  console.log("Example app listening at http://%s:%s", host, port)
-	})
-	
+      console.log("Example app listening at http://%s:%s", host, port)
+    })
+    
 Open: http://127.0.0.1:8081/listUsers
 Output:
-	{
-	   "user1" : {
-		  "name" : "mahesh",
-		  "password" : "password1",
-		  "profession" : "teacher",
-		  "id": 1
-	   },
-	   "user2" : {
-		  "name" : "suresh",
-		  "password" : "password2",
-		  "profession" : "librarian",
-		  "id": 2
-	   },
-	   "user3" : {
-		  "name" : "ramesh",
-		  "password" : "password3",
-		  "profession" : "clerk",
-		  "id": 3
-	   }
-	}
+    {
+       "user1" : {
+          "name" : "mahesh",
+          "password" : "password1",
+          "profession" : "teacher",
+          "id": 1
+       },
+       "user2" : {
+          "name" : "suresh",
+          "password" : "password2",
+          "profession" : "librarian",
+          "id": 2
+       },
+       "user3" : {
+          "name" : "ramesh",
+          "password" : "password3",
+          "profession" : "clerk",
+          "id": 3
+       }
+    }
 ......
 addUser.js
 
-	var express = require('express');
-	var app = express();
-	var fs = require("fs");
+    var express = require('express');
+    var app = express();
+    var fs = require("fs");
 
-	var user = {
-	   "user4" : {
-		  "name" : "mohit",
-		  "password" : "password4",
-		  "profession" : "teacher",
-		  "id": 4
-	   }
-	}
+    var user = {
+       "user4" : {
+          "name" : "mohit",
+          "password" : "password4",
+          "profession" : "teacher",
+          "id": 4
+       }
+    }
 
-	app.post('/addUser', function (req, res) {
-	   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {	// read
-		   data = JSON.parse( data );
-		   
-		   data["user4"] = user["user4"];	// add temporarily
-		   
-		   console.log( data );
-		   res.end( JSON.stringify(data));	// send
-	   });
-	})
+    app.post('/addUser', function (req, res) {
+       fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {    // read
+           data = JSON.parse( data );
+           
+           data["user4"] = user["user4"];    // add temporarily
+           
+           console.log( data );
+           res.end( JSON.stringify(data));    // send
+       });
+    })
 
-	var server = app.listen(8081, function () {
-	  var host = server.address().address
-	  var port = server.address().port
-	  
-	  console.log("Example app listening at http://%s:%s", host, port)
-	})
+    var server = app.listen(8081, function () {
+      var host = server.address().address
+      var port = server.address().port
+      
+      console.log("Example app listening at http://%s:%s", host, port)
+    })
 ..
 Open: http://127.0.0.1:8081/addUser
 Output:
-	{
-		"user1":{"name":"mahesh","password":"password1","profession":"teacher","id":1},
-		"user2":{"name":"suresh","password":"password2","profession":"librarian","id":2},
-		"user3":{"name":"ramesh","password":"password3","profession":"clerk","id":3},
-		"user4":{"name":"mohit","password":"password4","profession":"teacher","id":4}
-	}
+    {
+        "user1":{"name":"mahesh","password":"password1","profession":"teacher","id":1},
+        "user2":{"name":"suresh","password":"password2","profession":"librarian","id":2},
+        "user3":{"name":"ramesh","password":"password3","profession":"clerk","id":3},
+        "user4":{"name":"mohit","password":"password4","profession":"teacher","id":4}
+    }
 ......
 using user ID, show user details
 :id
 ..
-	var express = require('express');
-	var app = express();
-	var fs = require("fs");
+    var express = require('express');
+    var app = express();
+    var fs = require("fs");
 
-	app.get('/:id', function (req, res) {
-	   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) { // read
-	  
-		  var users = JSON.parse( data );
-		  var user = users["user" + req.params.id] 	// extract using user id passed as param
-		  
-		  console.log( user );
-		  res.end( JSON.stringify(user));	// send
-	   });
-	})
+    app.get('/:id', function (req, res) {
+       fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) { // read
+      
+          var users = JSON.parse( data );
+          var user = users["user" + req.params.id]     // extract using user id passed as param
+          
+          console.log( user );
+          res.end( JSON.stringify(user));    // send
+       });
+    })
 
-	var server = app.listen(8081, function () {
-	   var host = server.address().address
-	   var port = server.address().port
-	   
-	   console.log("Example app listening at http://%s:%s", host, port)
-	})
-	
-Open:	http://127.0.0.1:8081/2
-Output:	{"name":"suresh","password":"password2","profession":"librarian","id":2}
+    var server = app.listen(8081, function () {
+       var host = server.address().address
+       var port = server.address().port
+       
+       console.log("Example app listening at http://%s:%s", host, port)
+    })
+    
+Open:    http://127.0.0.1:8081/2
+Output:    {"name":"suresh","password":"password2","profession":"librarian","id":2}
 ......
 deleteUser
 ..
-	var express = require('express');
-	var app = express();
-	var fs = require("fs");
+    var express = require('express');
+    var app = express();
+    var fs = require("fs");
 
-	var id = 2;
+    var id = 2;
 
-	app.delete('/deleteUser', function (req, res) {
+    app.delete('/deleteUser', function (req, res) {
 
-	   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {	// read
-		   data = JSON.parse( data );
-		   
-		   delete data["user" + 2];		// delete temporarily
-		   
-		   console.log( data );
-		   res.end( JSON.stringify(data));	// send
-	   });
-	})
+       fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {    // read
+           data = JSON.parse( data );
+           
+           delete data["user" + 2];        // delete temporarily
+           
+           console.log( data );
+           res.end( JSON.stringify(data));    // send
+       });
+    })
 
-	var server = app.listen(8081, function () {
-	  var host = server.address().address
-	  var port = server.address().port
-	  
-	  console.log("Example app listening at http://%s:%s", host, port)
-	})
-	
-Open:	http://127.0.0.1:8081/deleteUser
-Output:	{	"user1":	{"name":"mahesh","password":"password1","profession":"teacher","id":1},
-			"user3":	{"name":"ramesh","password":"password3","profession":"clerk","id":3}
-		}
+    var server = app.listen(8081, function () {
+      var host = server.address().address
+      var port = server.address().port
+      
+      console.log("Example app listening at http://%s:%s", host, port)
+    })
+    
+Open:    http://127.0.0.1:8081/deleteUser
+Output:    {    "user1":    {"name":"mahesh","password":"password1","profession":"teacher","id":1},
+            "user3":    {"name":"ramesh","password":"password3","profession":"clerk","id":3}
+        }
 ........
 Node.js - Scaling Application
 ..
 Node.js runs in a single-thread mode,
-	but it uses an event-driven paradigm to handle concurrency.
-	
+    but it uses an event-driven paradigm to handle concurrency.
+    
 facilitates
-	creation of child processes
-		to leverage parallel processing
-		on multi-core CPU based systems
+    creation of child processes
+        to leverage parallel processing
+        on multi-core CPU based systems
 
 Child processes always have
-	three streams
-		child.stdin,
-		child.stdout, and
-		child.stderr
-			which may be
-				shared with the
-					stdio streams
-					of the parent process.
+    three streams
+        child.stdin,
+        child.stdout, and
+        child.stderr
+            which may be
+                shared with the
+                    stdio streams
+                    of the parent process.
 
 Node provides
-	child_process module
-		it has three major ways
-			to create a child process
-			
-				child_process.exec	method	- runs a command in a shell/console and buffers the output.
-				child_process.spawn	method	- launches a new process with a given command.
-				child_process.fork	method	- special case of the spawn() to create child processes.
+    child_process module
+        it has three major ways
+            to create a child process
+            
+                child_process.exec    method    - runs a command in a shell/console and buffers the output.
+                child_process.spawn    method    - launches a new process with a given command.
+                child_process.fork    method    - special case of the spawn() to create child processes.
 ..
 child_process.exec(command[, options], callback)
 parameters used −
-	command (String)	The command to run, with space-separated arguments
-	options (Object)	may comprise one or more of the following options
-							cwd (String)		Current working directory of the child process
-							env (Object)		Environment key-value pairs
-							encoding (String)	(Default: 'utf8')
-							shell (String)		Shell to execute the command with
-													Default:
-														'/bin/sh' on UNIX,
-														'cmd.exe' on Windows,
-													The shell should understand the
-														-c switch on UNIX or
-														/s /c on Windows.
-															On Windows, command line parsing should be compatible with cmd.exe.
-							timeout (Number)		(Default: 0)
-							maxBuffer (Number)		(Default: 200*1024)
-							killSignal (String)		(Default: 'SIGTERM')
-							uid (Number)			Sets the user  identity of the process.
-							gid (Number)			Sets the group identity of the process.
-							
-	callback			The function gets three arguments
-								error, stdout, and stderr
-									which are called with the output
-										when the process terminates.
+    command (String)    The command to run, with space-separated arguments
+    options (Object)    may comprise one or more of the following options
+                            cwd (String)        Current working directory of the child process
+                            env (Object)        Environment key-value pairs
+                            encoding (String)    (Default: 'utf8')
+                            shell (String)        Shell to execute the command with
+                                                    Default:
+                                                        '/bin/sh' on UNIX,
+                                                        'cmd.exe' on Windows,
+                                                    The shell should understand the
+                                                        -c switch on UNIX or
+                                                        /s /c on Windows.
+                                                            On Windows, command line parsing should be compatible with cmd.exe.
+                            timeout (Number)        (Default: 0)
+                            maxBuffer (Number)        (Default: 200*1024)
+                            killSignal (String)        (Default: 'SIGTERM')
+                            uid (Number)            Sets the user  identity of the process.
+                            gid (Number)            Sets the group identity of the process.
+                            
+    callback            The function gets three arguments
+                                error, stdout, and stderr
+                                    which are called with the output
+                                        when the process terminates.
 
 
-	returns a buffer with a max size
+    returns a buffer with a max size
 
-	waits for the process to end and
-		tries to return all the buffered data at once.
+    waits for the process to end and
+        tries to return all the buffered data at once.
 
 ..
 support.js
@@ -1778,16 +1778,16 @@ const child_process = require('child_process');
 for(var i=0; i<3; i++) {
 
    var workerProcess =
-	   child_process.exec('node support.js ' + i, function (error, stdout, stderr) {      
-		  if (error) {
-			 console.log(error.stack);
-			 console.log('Error code: '+error.code);
-			 console.log('Signal received: '+error.signal);
-		  }
+       child_process.exec('node support.js ' + i, function (error, stdout, stderr) {      
+          if (error) {
+             console.log(error.stack);
+             console.log('Error code: '+error.code);
+             console.log('Signal received: '+error.signal);
+          }
 
-		  console.log('stdout: ' + stdout);
-		  console.log('stderr: ' + stderr);
-	   });
+          console.log('stdout: ' + stdout);
+          console.log('stderr: ' + stderr);
+       });
 
    workerProcess.on('exit', function (code) {
       console.log('Child process exited with exit code ' + code);
@@ -1799,174 +1799,174 @@ for(var i=0; i<3; i++) {
 node master.js
 
 Output:
-	Child process exited with exit code 0
-	stdout: Child Process 1 executed.
+    Child process exited with exit code 0
+    stdout: Child Process 1 executed.
 
-	stderr:
-	Child process exited with exit code 0
-	stdout: Child Process 0 executed.
-	
-	stderr:
-	Child process exited with exit code 0
-	stdout: Child Process 2 executed.
+    stderr:
+    Child process exited with exit code 0
+    stdout: Child Process 0 executed.
+    
+    stderr:
+    Child process exited with exit code 0
+    stdout: Child Process 2 executed.
 ..
 ..
 
 ......
 child_process.spawn(command[, args][, options])
 
-	launches a new process
-		with a given command.
+    launches a new process
+        with a given command.
 
 Parameters
-	command (String)	The command to run
-	args (Array)		List of string arguments
-	options (Object)	may comprise one or more of the following options −
-							cwd (String)		Current working directory of the child process.
-							env (Object)		Environment key-value pairs.
-							stdio (Array)		String Child's stdio configuration.
-							customFds (Array)	Deprecated File descriptors for the child to use for stdio.
-							detached (Boolean)	The child will be a process group leader.
-							uid (Number)		Sets the user identity of the process.
-							gid (Number)		Sets the group identity of the process.
+    command (String)    The command to run
+    args (Array)        List of string arguments
+    options (Object)    may comprise one or more of the following options −
+                            cwd (String)        Current working directory of the child process.
+                            env (Object)        Environment key-value pairs.
+                            stdio (Array)        String Child's stdio configuration.
+                            customFds (Array)    Deprecated File descriptors for the child to use for stdio.
+                            detached (Boolean)    The child will be a process group leader.
+                            uid (Number)        Sets the user identity of the process.
+                            gid (Number)        Sets the group identity of the process.
 
-	returns streams (stdout & stderr)
-	
-	it should be used when the process returns a volume amount of data.
-		spawn() starts receiving the response as soon as the process starts executing.
+    returns streams (stdout & stderr)
+    
+    it should be used when the process returns a volume amount of data.
+        spawn() starts receiving the response as soon as the process starts executing.
 
 
 
 support.js
 
-	console.log("Child Process " + process.argv[2] + " executed." );
+    console.log("Child Process " + process.argv[2] + " executed." );
 
 master.js
 
-	const fs = require('fs');
-	const child_process = require('child_process');
-	 
-	for(var i = 0; i<3; i++) {
-	   var workerProcess = child_process.spawn('node', ['support.js', i]);
+    const fs = require('fs');
+    const child_process = require('child_process');
+     
+    for(var i = 0; i<3; i++) {
+       var workerProcess = child_process.spawn('node', ['support.js', i]);
 
-	   workerProcess.stdout.on('data', function (data) {
-		  console.log('stdout: ' + data);
-	   });
+       workerProcess.stdout.on('data', function (data) {
+          console.log('stdout: ' + data);
+       });
 
-	   workerProcess.stderr.on('data', function (data) {
-		  console.log('stderr: ' + data);
-	   });
+       workerProcess.stderr.on('data', function (data) {
+          console.log('stderr: ' + data);
+       });
 
-	   workerProcess.on('close', function (code) {
-		  console.log('child process exited with code ' + code);
-	   });
-	}
+       workerProcess.on('close', function (code) {
+          console.log('child process exited with code ' + code);
+       });
+    }
 
 node master.js
 Output:
-	stdout: Child Process 0 executed.
+    stdout: Child Process 0 executed.
 
-	child process exited with code 0
-	stdout: Child Process 1 executed.
+    child process exited with code 0
+    stdout: Child Process 1 executed.
 
-	stdout: Child Process 2 executed.
+    stdout: Child Process 2 executed.
 
-	child process exited with code 0
-	child process exited with code 0
+    child process exited with code 0
+    child process exited with code 0
 ......
 child_process.fork(modulePath[, args][, options])
-	a special case of spawn() to create Node processes.
+    a special case of spawn() to create Node processes.
 
 Parameters
-	modulePath (String)		The module to run in the child.
-	args (Array)			List of string arguments
-	options (Object)		may comprise one or more of the following options −
-								cwd (String)		Current working directory of the child process.
-								env (Object)		Environment key-value pairs.
-								execPath (String)	Executable used to create the child process.
-								execArgv (Array)	List of string arguments passed to the executable (Default: process.execArgv).
-								silent (Boolean)	If true, stdin, stdout, and stderr of the child will be piped to the parent,
-													otherwise they will be inherited from the parent,
-														see the "pipe" and "inherit" options for spawn()'s stdio for more details
-														(default is false)
-								uid (Number)		Sets the user identity of the process.
-								gid (Number)		Sets the group identity of the process.
+    modulePath (String)        The module to run in the child.
+    args (Array)            List of string arguments
+    options (Object)        may comprise one or more of the following options −
+                                cwd (String)        Current working directory of the child process.
+                                env (Object)        Environment key-value pairs.
+                                execPath (String)    Executable used to create the child process.
+                                execArgv (Array)    List of string arguments passed to the executable (Default: process.execArgv).
+                                silent (Boolean)    If true, stdin, stdout, and stderr of the child will be piped to the parent,
+                                                    otherwise they will be inherited from the parent,
+                                                        see the "pipe" and "inherit" options for spawn()'s stdio for more details
+                                                        (default is false)
+                                uid (Number)        Sets the user identity of the process.
+                                gid (Number)        Sets the group identity of the process.
 
 The fork method returns
-	an object with a built-in communication channel
-		in addition to having
-			all the methods in a normal ChildProcess instance
+    an object with a built-in communication channel
+        in addition to having
+            all the methods in a normal ChildProcess instance
 
 
 support.js
-	console.log("Child Process " + process.argv[2] + " executed." );
+    console.log("Child Process " + process.argv[2] + " executed." );
 
 master.js
-	const fs = require('fs');
-	const child_process = require('child_process');
-	 
-	for(var i=0; i<3; i++) {
-	   var worker_process =
-				child_process.fork("support.js", [i]);
+    const fs = require('fs');
+    const child_process = require('child_process');
+     
+    for(var i=0; i<3; i++) {
+       var worker_process =
+                child_process.fork("support.js", [i]);
 
-	   worker_process.on('close', function (code) {
-		  console.log('child process exited with code ' + code);
-	   });
-	}
+       worker_process.on('close', function (code) {
+          console.log('child process exited with code ' + code);
+       });
+    }
 
 node master.js
 
 Output:
-	Child Process 0 executed.
-	Child Process 1 executed.
-	Child Process 2 executed.
-	child process exited with code 0
-	child process exited with code 0
-	child process exited with code 0
+    Child Process 0 executed.
+    Child Process 1 executed.
+    Child Process 2 executed.
+    child process exited with code 0
+    child process exited with code 0
+    child process exited with code 0
 ......
 Node.js - Packaging
 JXcore
-	http://jxcore.com/downloads/
+    http://jxcore.com/downloads/
 
 install - Cenots running on 64-bit machine
-	wget https://s3.amazonaws.com/nodejx/jx_rh64.zip
-	unzip jx_rh64.zip
-	cp jx_rh64/jx /usr/bin
-	export PATH=$PATH:/usr/bin
+    wget https://s3.amazonaws.com/nodejx/jx_rh64.zip
+    unzip jx_rh64.zip
+    cp jx_rh64/jx /usr/bin
+    export PATH=$PATH:/usr/bin
 
-verify	
-	jx --version
-		v0.10.32
-			
-input (example):			
-		node_modules\
-		images\
-		scripts\
-		style\
-		index.htm
-		index.js
+verify    
+    jx --version
+        v0.10.32
+            
+input (example):            
+        node_modules\
+        images\
+        scripts\
+        style\
+        index.htm
+        index.js
 
 command:
-	jx package index.js index
-		where
-			index.js	is the entry file for your Node.js project
-			index		is package name
+    jx package index.js index
+        where
+            index.js    is the entry file for your Node.js project
+            index        is package name
 
 output:
-	index.jxp	- an intermediate file which contains the complete project detail needed to compile the project.
-	index.jx	- binary file having the complete package that is ready to be shipped to your client or to your production environment.
+    index.jxp    - an intermediate file which contains the complete project detail needed to compile the project.
+    index.jx    - binary file having the complete package that is ready to be shipped to your client or to your production environment.
 
 launch
-	jx index.jx command_line_arguments
-		is similar to
-	node index.js command_line_arguments
+    jx index.jx command_line_arguments
+        is similar to
+    node index.js command_line_arguments
 
 
 ..
 ......
 TODO:
-	Node.js - Utility Modules
-	https://www.tutorialspoint.com/nodejs/images/nodejs_concepts.jpg
+    Node.js - Utility Modules
+    https://www.tutorialspoint.com/nodejs/images/nodejs_concepts.jpg
 ......
 ............
 ..
