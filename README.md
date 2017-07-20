@@ -1,6 +1,10 @@
 # my-nodejs-notes
 my nodejs notes
 
+
+To read this page better
+click this: https://raw.githubusercontent.com/manoharreddyporeddy/my-nodejs-notes/master/README.md
+
 <pre>
 ............
 Source: https://www.tutorialspoint.com/nodejs/index.htm
