@@ -7,6 +7,12 @@ Install nodejs
    2. click "Download for Windows (x64)   -  v6.11.2 LTS"
    3. Follow with Next > Next > .. > Finish
 
+Verify nodejs installation
+   1. CMD
+   2. node --version
+                    v6.11.2 (output will be similar to this)
+---------------
+
 To read this page better
 click this: https://raw.githubusercontent.com/manoharreddyporeddy/my-nodejs-notes/master/README.md
 
