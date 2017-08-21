@@ -3,14 +3,18 @@ my nodejs notes
 
 
 Install nodejs
+<pre>
    1. Goto: https://nodejs.org
    2. click "Download for Windows (x64)   -  v6.11.2 LTS"
    3. Follow with Next > Next > .. > Finish
+</pre>
 
 Verify nodejs installation
+<pre>
    1. CMD
    2. node --version
                     v6.11.2 (output will be similar to this)
+</pre>
 ---------------
 
 To read this page better
