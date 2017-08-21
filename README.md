@@ -2,6 +2,11 @@
 my nodejs notes
 
 
+Install nodejs
+   1. Goto: https://nodejs.org
+   2. click "Download for Windows (x64)   -  v6.11.2 LTS"
+   3. Follow with Next > Next > .. > Finish
+
 To read this page better
 click this: https://raw.githubusercontent.com/manoharreddyporeddy/my-nodejs-notes/master/README.md
 
