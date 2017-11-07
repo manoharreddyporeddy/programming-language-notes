@@ -1,3 +1,5 @@
+//
+// Author: github.com/manoharreddyporeddy
 // for aws, azure, nodejs - performance timers
 //  time & timeEnd
 
