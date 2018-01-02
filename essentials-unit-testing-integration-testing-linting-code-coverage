@@ -1,0 +1,6 @@
+
+For testing, linting, doing code coverage, I use:
+
+1. mocha & chai for unit testing & integration testing
+2. eslint for linting (finding errors) the code
+3. use nyc (istanbul) for code coverage
