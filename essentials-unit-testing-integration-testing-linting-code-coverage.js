@@ -4,7 +4,12 @@
 // 1. mocha & chai for unit testing & integration testing
 // 2. eslint for linting (finding errors) the code
 // 3. use nyc (istanbul) for code coverage
-
+//
+// Assuming you have below structure
+//   yourproj/test/testrunner.js
+//   yourproj/test/test-cases.js
+//   yourproj/src/index.js
+//
 // The package.json can have below: lines to have test, lint&test, and other things done.
 
   "scripts": {
