@@ -8,12 +8,13 @@ for (let i = 1; i < 5; i++){
 }
 
 
-const locks assignment
-doesnot make immutable
+// const
+//    locks assignment
+//    does not make immutable
 
 
-...
-	spreads both array and object elements, can be used in wrapper [] and {}
+// ...    the spread operator
+//	spreads both array and object elements, can be used in wrapper [] and {}
 	function (...a) {
 		console.log(a);
 	}
