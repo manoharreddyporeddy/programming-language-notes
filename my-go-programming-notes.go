@@ -1,3 +1,4 @@
+/*
 # my golang notes
 
 To read this page better click this: https://raw.githubusercontent.com/manoharreddyporeddy/my-golang-notes/master/README.md
@@ -33,7 +34,7 @@ Exercise: Equivalent Binary Trees: https://tour.golang.org/concurrency/7
 Exercise: Equivalent Binary Trees: https://tour.golang.org/concurrency/8
 Exercise: Web Crawler: https://tour.golang.org/concurrency/9
 
-<pre>
+*/
 
 1. Using the tour
 // ---------------------------------------
@@ -1411,7 +1412,8 @@ Default Selection
                         }
                     }
                 }
-</pre>
+
+/*
 More:
 Where to Go from here... https://tour.golang.org/concurrency/10
 Go documentation: http://golang.org/doc/
@@ -1423,3 +1425,4 @@ To get started writing web applications 1. http://vimeo.com/53221558 2. http://g
 Please free to register & comment.
 
 If you like improvements anywhere, leave a comment. Thank you.
+*/
