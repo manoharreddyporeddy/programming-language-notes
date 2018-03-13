@@ -9,8 +9,7 @@ WHERE     FIELD1='VALUE1'
       AND FIELD3>'VALUE3'
 
 SELECT
-      DISTINCT
-            FIELD1
+     FIELD1, LENGTH (FIELD1)
 FROM
       TABLE1
 
@@ -19,3 +18,8 @@ SELECT
 FROM
       TABLE1
 
+SELECT
+      DISTINCT
+            FIELD1
+FROM
+      TABLE1
