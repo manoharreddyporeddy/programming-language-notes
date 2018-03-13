@@ -14,6 +14,11 @@ FROM
       TABLE1
 
 SELECT
+      COUNT (1)
+FROM
+      TABLE1
+
+SELECT
       COUNT (FIELD1)
 FROM
       TABLE1
