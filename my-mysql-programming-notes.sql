@@ -23,3 +23,9 @@ SELECT
             FIELD1
 FROM
       TABLE1
+
+SELECT
+      COUNT (DISTINCT FIELD1)
+FROM
+      TABLE1
+
