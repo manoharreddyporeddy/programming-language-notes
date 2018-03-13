@@ -8,3 +8,9 @@ WHERE     FIELD1='VALUE1'
       AND FIELD2=123
       AND FIELD3>'VALUE3'
 
+SELECT
+      DISTINCT
+            FIELD1
+FROM
+      TABLE1
+
