@@ -14,3 +14,8 @@ SELECT
 FROM
       TABLE1
 
+SELECT
+      COUNT (FIELD1)
+FROM
+      TABLE1
+
