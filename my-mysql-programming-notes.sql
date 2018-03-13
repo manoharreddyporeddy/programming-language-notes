@@ -1,3 +1,19 @@
+Sources
+
+https://dev.mysql.com/doc/refman/5.7/en/user-variables.html
+https://dev.mysql.com/doc/refman/5.7/en/user-variables.html
+https://dev.mysql.com/doc/refman/5.7/en/union.html
+https://dev.mysql.com/doc/refman/5.7/en/temporary-table-problems.html
+https://dev.mysql.com/doc/refman/5.7/en/set-variable.html
+https://dev.mysql.com/doc/refman/5.7/en/select.html
+https://dev.mysql.com/doc/refman/5.7/en/loop.html
+https://dev.mysql.com/doc/refman/5.7/en/create-table.html
+https://dev.mysql.com/doc/refman/5.7/en/call.html
+https://dev.mysql.com/doc/refman/5.7/en/
+https://dev.mysql.com/doc/refman/5.6/en/flow-control-statements.html
+https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-stored-procedures.html
+
+
 
 
 SELECT
