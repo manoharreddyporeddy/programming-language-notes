@@ -67,6 +67,10 @@ FrameLayout
     makes TextView scroll
     some attributes: layout_width="match_parent" & layout_height="wrap_content"
   
-
+JAVA CODE:
+    MainActivity.java
+    \app\src\main\java\com\example\android\sunshine\MainActivity.java
+    This is main code file.
+    
 
 */
