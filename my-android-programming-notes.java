@@ -17,11 +17,11 @@
 /*
 // ================================================
 MANIFEST FILE
-    \app\src\main\AndroidManifest.xml
-    This is manifest file
-manifest
-- application (this is the application, it has icon, theme, label/applciation name like Watsapp that display on top of app)
--- activity (This is the our GUI, we can have our controls in this, like Button, Text box, etc.)
+  \app\src\main\AndroidManifest.xml
+  This is manifest file, has below:
+    uses-permission tells that permission android app requires to run, like INTERNET, to connect to a URL to get data from it
+    application (this is the application, it has icon, theme, label/applciation name like Watsapp that display on top of app)
+      activity (This is the our GUI, we can have our controls in this, like Button, Text box, etc.)
 
 RESOURCE FOLDER:
   \app\src\main\res
@@ -31,7 +31,13 @@ RESOURCE FOLDER:
 RES - VALUES
   \app\src\main\res\values
   It can have below xmls 
-    strings.xml - this has string resources, like your application name that is dispayed on top, like WatsApp
+    strings.xml
+    - this has string resources
+    - it has constants that you can use in the applciation
+    -   application name that is dispayed on top, like WatsApp
+    -   messages like greetings_messsage as "Hello there, welcome!"
+    -   various enumerations of your app, like a gender can take 2 or more values like male as Male, female as Female
+    -   others
     colors.xml
     dimens.xml
     styles.xml
