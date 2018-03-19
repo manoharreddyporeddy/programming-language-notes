@@ -28,6 +28,14 @@ RESOURCE FOLDER:
   This is the resource folder, it has other folders
   Like layout folder, menu folder, values folder, etc.
 
+RES - VALUES
+  \app\src\main\res\values
+  It can have below xmls 
+    strings.xml - this has string resources, like your application name that is dispayed on top, like WatsApp
+    colors.xml
+    dimens.xml
+    styles.xml
+
 RES - LAYOUTS
   res\layout
     This has xmls that are layouts
