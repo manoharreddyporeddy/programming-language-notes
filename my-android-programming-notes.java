@@ -48,14 +48,25 @@ RES - LAYOUTS
   res\layout\activity_main.xml
     This is a layout file. (tough it says activity)
   There are many layouts like FrameLayout, which is simple a simple one, it occupies the whole area of activity(?)
-  it generally is given layout_width & layout_height as "match_parent"
 
   Each Layout can contain other controls like TextView
+  To make TextView to scroll, embed it in ScrollView
 
-CONTROLS
-  TextView - this is to view text that you have like a status of something happening or done, to notify user
-    generally has layout_width & layout_height as "wrap_content"
-    and other attributes like padding say as "16dp" & textSize say as "20sp"
+FrameLayout
+  this has other controls in it
+  a parent of all other controls
+  some attributes: generally has layout_width & layout_height  as "match_parent"
   
+  TextView
+    this is to view text that you have like display a status of app, to notify user, something that is happening, done OR error
+    some attributes: generally has layout_width & layout_height  as "wrap_content"
+    other attributes: like padding say as "16dp" & textSize say as "20sp"
+    id attribute: say as  id="@+id/tv_weather_data"  @+id say is it auto generated id, tv_weather_data is the name of it to use in code
+
+  ScrollView
+    makes TextView scroll
+    some attributes: layout_width="match_parent" & layout_height="wrap_content"
+  
+
 
 */
