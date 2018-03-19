@@ -68,9 +68,13 @@ FrameLayout
     some attributes: layout_width="match_parent" & layout_height="wrap_content"
   
 JAVA CODE:
-    MainActivity.java
-    \app\src\main\java\com\example\android\sunshine\MainActivity.java
-    This is main code file.
-    
+  Folder has  com\example   if you website is   example.com
+    like: \app\src\main\java\com\example\
+  we can have subfolders, like if I am doing an application called "sunshine", in "android"
+    like: \app\src\main\java\com\example\android\sunshine\
+  MainActivity.java
+    is main code file, given by default as MainActivity.java  
+    Default programming lanuage of android is JAVA, so the file name as .java
+      like: \app\src\main\java\com\example\android\sunshine\MainActivity.java
 
 */
