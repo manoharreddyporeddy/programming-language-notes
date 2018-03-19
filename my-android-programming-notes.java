@@ -13,10 +13,20 @@
 // Activity
 //    Simple GUI/ graphical interface similar to Watsapp, etc.
 //    
-// \app\src\main\AndroidManifest.xml
-// This is manifest file
+
 /*
+// ================================================
+MANIFEST FILE
+    \app\src\main\AndroidManifest.xml
+    This is manifest file
 manifest
 - application (this is the application, it has icon, theme, label/applciation name like Watsapp that display on top of app)
 -- activity (This is the our GUI, we can have our controls in this, like Button, Text box, etc.)
+
+RESOURCE FOLDER:
+    \app\src\main\res
+    This is the resource folder, it has other folders.
+    Like layout folder, menu folder, values folder, etc.
+
+
 */
