@@ -1,7 +1,8 @@
 /*
 
-NOTE: these are not 100%, though they may be. :-)
-
+NOTE: These may not be 100%, though they may be. :-)
+NOTE: These all have a start (^) and end ($), which you can remove
+NOTE: These all have one / at the being, and another / at the end, that you can remove. That's a way to write in JavaScript
 
 /^\d{4}$/
   4 digits
@@ -30,7 +31,9 @@ NOTE: these are not 100%, though they may be. :-)
 /^[a-zA-Z]\d[a-zA-Z] \d[a-zA-Z]\d$/
   an alphabet, then a digit, then another alphabet, then a space, then a digit, then an alphabet, then another digit
 
-^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$
+/^AD\d{3}$/
+
+/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/
   look ahead to have a number
   look ahead to have a char
   must have only alpha numeric
