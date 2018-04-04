@@ -38,8 +38,8 @@ NOTE: These all have one / at the being, and another / at the end, that you can 
   4 or 6 digits
 
 /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/
-  look ahead to have a number
-  look ahead to have a char
-  must have only alpha numeric
+  look ahead to have atleast a digit
+  look ahead to have atleast a alphabet
+  also must have only alpha numeric only
 
 */
