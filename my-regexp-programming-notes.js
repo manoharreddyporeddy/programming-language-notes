@@ -32,6 +32,10 @@ NOTE: These all have one / at the being, and another / at the end, that you can 
   an alphabet, then a digit, then another alphabet, then a space, then a digit, then an alphabet, then another digit
 
 /^AD\d{3}$/
+  The string AD then 3 digits
+
+/^(\d{4}|\d{6})$/
+  4 or 6 digits
 
 /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/
   look ahead to have a number
