@@ -1,8 +1,45 @@
 /*
 
-NOTE: These may not be 100%, though they may be. :-)
-NOTE: These all have a start (^) and end ($), which you can remove
-NOTE: These all have one / at the being, and another / at the end, that you can remove. That's a way to write in JavaScript
+------------------------------------------------------
+NOTE: These may not be 100%, though they may be :-)
+------------------------------------------------------
+NOTE: Below Regular expressions all have a start (^) and end ($), which you can remove.
+NOTE: Below Regular expressions all have one / at the begin, and another / at the end, that you can remove. That's a way to write in JavaScript.
+------------------------------------------------------
+
+------------------------------------------------------
+SOME TEST DATA FOR REGULAR EXPRESSIONS:
+------------------------------------------------------
+ab
+123
+1234
+1234 1234
+1234 AB
+12345
+12345-234
+123456
+1234567
+12345678
+123456789
+1234567890
+12345678901
+123456789012
+A1A 1A1
+AAA9 9AA
+AAAA 1AA
+AB 1234
+AB12
+AB2 1AB
+ABC1234
+ABCDE12
+KY1-1111
+KY1-2345
+ZABC12340
+
+
+------------------------------------------------------
+REGULAR EXPRESSIONS:
+------------------------------------------------------
 
 /^\d{4}$/
   4 digits
@@ -41,5 +78,6 @@ NOTE: These all have one / at the being, and another / at the end, that you can 
   look ahead to have atleast a digit
   look ahead to have atleast a alphabet
   also must have only alpha numeric only
+------------------------------------------------------
 
 */
