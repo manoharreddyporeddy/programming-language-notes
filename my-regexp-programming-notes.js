@@ -1,13 +1,20 @@
 /*
 
 /^\d{4}$/
-  4 numbers
+  4 digits
   
 /^\d{11}$/
-  11 numbers
+  11 digits
 
 /^\d{1,20}$/
-  1 to 20 numbers
+  1 to 20 digits
+  
+/^\d{3} \d{2}$/
+  3 digits, a space, then a 2 more digits
+
+/^\d{3}-\d{4}$/
+  3 digits, a hypen, then a 2 more digits
+
 
 
 ^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$
