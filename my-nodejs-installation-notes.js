@@ -3,7 +3,9 @@
 NODEJS
     SERVER
         Install nodejs server
-            Install a LTS version like 8.10.0 LTS
+            Install a
+            LTS version like
+            8.11.1 LTS
                 https://nodejs.org/en/
 
     INSTALL NPM MODULES - GLOBAL (globally with -g parameter)
@@ -14,7 +16,14 @@ NODEJS
             npm install mocha -g
 ============================
 IDE & tools - (to write code, and tools to test code, and others that will help write better code)
-    VS - Microsoft Visual Studio (VS) Community edition
+
+> > Postman for windows 	: https://www.getpostman.com
+> > SoapUI Open Source  	: https://www.soapui.org/downloads/soapui.html
+> > Git for windows 		: https://git-scm.com/download/win
+> > Notepad ++      		: https://notepad-plus-plus.org
+
+
+> > VS - Microsoft Visual Studio (VS) Community edition
         https://www.visualstudio.com/vs/community/
             NOTE: select to include Nodejs while installing.
 
@@ -27,12 +36,14 @@ IDE & tools - (to write code, and tools to test code, and others that will help 
             To:
                     C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Web\External
 
-    VS Extensions:
+> > VS Extensions:
         1. Install npm tools for VS Task Runner (to run test, link, etc. from within visualstudio)
             https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner
         2. Install FormatdocumentonSave tool so that VS formats your code after everytime you save.
             https://marketplace.visualstudio.com/items?itemName=mynkow.FormatdocumentonSave
         Restart visualstudio
+
+
 ============================
 
 CREATE NODEJS PROJECT
