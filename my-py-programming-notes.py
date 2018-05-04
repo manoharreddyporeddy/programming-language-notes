@@ -1,2 +1,3 @@
 
-x = input()
+str = input()
+n = int(input())
