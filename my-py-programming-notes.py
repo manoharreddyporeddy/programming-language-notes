@@ -1,5 +1,10 @@
+print("hello")
 
- print("hello")
+print("a", end="")
+print("b", end="")
+print("c", end="")
+
+print()
 
 str = input()
 n = int(input())
