@@ -1,4 +1,6 @@
 
+ print("hello")
+
 str = input()
 n = int(input())
 
