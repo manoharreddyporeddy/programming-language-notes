@@ -70,3 +70,82 @@ class ShoppingList extends React.Component { // React component class, or React 
 //    <ShoppingList />,
 //    document.getElementById('root')
 //);
+
+function a() {
+    return (
+        <div>
+            <ShoppingList name="Mark" />
+        </div>
+    );
+}
+
+
+// <div /> syntax is transformed at build time to React.createElement('div')
+
+// return React.createElement(
+//   "div",
+//   { className: "shopping-list" },
+//   React.createElement(
+//     "h1",
+//     null,
+//     "Shopping List for ",
+//     props.name
+//   ),
+//   React.createElement(
+//     "ul",
+//     null,
+//     React.createElement(
+//       "li",
+//       null,
+//       "Instagram"
+//     ),
+//     React.createElement(
+//       "li",
+//       null,
+//       "WhatsApp"
+//     ),
+//     React.createElement(
+//       "li",
+//       null,
+//       "Oculus"
+//     )
+//   )
+// );
+
+
+// ==============================================================
+////
+//    // Square component
+//    //  renders a single <button>
+//    class Square extends React.Component {
+
+//        //constructor(props) {
+//        //    super(props);
+//        //    this.state = {
+//        //        i: null,
+//        //        j: 7
+//        //    };
+//        //}
+
+//        render() {
+//            return (
+//                // this.setState
+//                //    schedules an update to the component
+//                //      causing React to
+//                //          merge in the passed state
+//                //            to update and
+//                //            rerender the component
+//                //              along with its descendants.
+//                // recieve data through props
+//                // controlled components - since the onClick is in the parent
+//                <button className="square" onClick={() => this.props.onClick()}>
+//                    {this.props.i}
+//                </button>
+//                //<button className="square" onClick={() => this.setState({ i: "X" })}>
+//                //    {this.state.i + this.state.j}
+//                //</button>
+//            );
+//        }
+//    }
+////
+// ==============================================================
