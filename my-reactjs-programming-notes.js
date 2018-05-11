@@ -149,3 +149,54 @@ function a() {
 //    }
 ////
 // ==============================================================
+
+// custom html tag name          becomes  function/class's name
+// custom html tag's attributes  becomes  functiona rgument called 'props' or     class's 'constructor(props)' and this.props in render() member function
+
+// Functional Components
+//      instead of // extends React.Component
+function Square(props) {
+    return (
+        <button className="square" onClick={props.onClick}>
+            {props.i}
+        </button>
+    );
+}
+
+// Board component
+//  renders 9 squares
+class Board extends React.Component {
+
+    renderSquare(i) {
+        return (
+            <Square
+                i={this.props.squares[i]}
+                onClick={() => this.props.onClick(i)}
+            />
+        );
+        // return <Square i={this.props.squares[i]} />;    // custom React component // pass data through props
+        // return <Square>aaaa{i}</Square>;    // custom React components
+    }
+
+    render() {
+        return (
+            <div>
+                <div className="board-row">
+                    {this.renderSquare(0)}
+                    {this.renderSquare(1)}
+                    {this.renderSquare(2)}
+                </div>
+                <div className="board-row">
+                    {this.renderSquare(3)}
+                    {this.renderSquare(4)}
+                    {this.renderSquare(5)}
+                </div>
+                <div className="board-row">
+                    {this.renderSquare(6)}
+                    {this.renderSquare(7)}
+                    {this.renderSquare(8)}
+                </div>
+            </div>
+        );
+    }
+}
