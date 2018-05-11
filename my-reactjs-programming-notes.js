@@ -48,3 +48,25 @@ var newPlayer = { ...player, score: 2 };
 //              overall
 //                  application performance
 // =========================
+
+
+class ShoppingList extends React.Component { // React component class, or React component type // takes 'props' parameters
+    render() {
+        return ( // React element // lightweight description of what to render // hierarchy of views to display // JSX syntax // easier to write these structures
+            //  <!-- DOM components below -->
+            <div className="shopping-list">
+                <h1>Shopping List for {this.props.name}</h1>
+                <ul>
+                    <li>Instagram</li>
+                    <li>WhatsApp</li>
+                    <li>Oculus</li>
+                </ul>
+            </div>
+        );
+    }
+}
+
+//ReactDOM.render(
+//    <ShoppingList />,
+//    document.getElementById('root')
+//);
