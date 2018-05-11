@@ -200,3 +200,134 @@ class Board extends React.Component {
         );
     }
 }
+// Game component
+//  renders a board with some placeholders
+class Game extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            history: [
+                {
+                    squares: Array(9).fill(null),
+                }
+            ],
+            xIsNext: true,
+        };
+    }
+
+    // conventional in React apps to
+    //      use on* names for the attributes and
+    //      use handle* for the handler methods
+    handleClick(i) {
+        const history = this.state.history;
+        const current = history[history.length - 1];
+        const squares = current.squares.slice();
+
+        if (calculateWinner(squares) || squares[i]) {
+            return;
+        }
+
+        const squares1 = squares.slice();
+        squares1[i] = this.state.xIsNext ? 'X' : 'O';
+
+        history.push({ squares: squares1, });
+        this.setState(
+            {
+                xIsNext: !this.state.xIsNext
+            }
+        );
+    }
+
+    render() {
+        let status;
+
+        const history = this.state.history;
+        const current = history[history.length - 1];
+        const winner = calculateWinner(current.squares);
+
+        // array.map(       function(currentValue, index, arr),         thisValue)
+        const moves =
+            history
+                .map(
+                (step, move) => {
+                    const desc = move ? 'Go to move #' + move : 'Go to game start';
+                    return (
+                        <li key={move}>
+                            <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                        </li>
+                    );
+                }
+                );
+
+
+
+        if (winner) {
+            status = 'Winner: ' + winner;
+        } else {
+            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        }
+
+        return (
+            <div className="game">
+                <div className="game-board">
+                    <Board
+                        squares={current.squares}
+                        onClick={(i) => this.handleClick(i)}
+                    />
+                </div>
+                <div className="game-info">
+                    <div>{status}</div>
+                    <ol>{moves}</ol>
+                </div>
+            </div >
+        );
+        // Component keys like in
+        //
+        // <li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
+        //
+        //  key is a special property that’s reserved by React (along with ref, a more advanced feature).
+        //  When an element is created,
+        //      React
+        //          pulls off the key property and
+        //          stores the key directly on the returned element.
+        //              Even though it may look like it is part of props,
+        //                  it cannot be referenced with this.props.key.
+        //      React uses the key automatically
+        //          while deciding which children to update;
+        //      There is no way for a component to inquire about its own key.
+        //
+        // When a list is rerendered,
+        //   React takes each element in the new version and
+        //   looks for one with a matching key in the previous list.
+        //     When a key of a component is added to the set, a component is created;
+        //     when a key of a component is removed, a component is destroyed.
+        //     when a key of a component is changed, it will be completely destroyed & recreated with a new state.
+        //          Keys tell React about the identity of each component,
+        //              so that it can maintain the state across rerenders.
+
+        // It’s strongly recommended that you assign proper keys whenever you build dynamic lists.
+        //      If you don’t have an appropriate key handy,
+        //          you may want to consider restructuring your data so that you do.
+        //
+        // If you don’t specify any key,
+        //      React will warn you and
+        //          fall back to using the array index as a key
+        //              – which is not the correct choice if you ever reorder elements in the list or
+        //                  add / remove items anywhere but the bottom of the list.
+        //  Explicitly passing key= { i } silences the warning but
+        //      has the same problem so isn’t recommended in most cases.
+        //
+        // Component keys  like in
+        //          <ol>{moves}</ol> when li are populated
+        //          <li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
+        //      don’t need to be globally unique,
+        //      only unique relative to the immediate siblings.
+
+
+
+
+
+    }
+}
