@@ -20,3 +20,10 @@ import ReactDOM from 'react-dom';
 //<a func1={() => props.func1()} />
 //<a func1={props.func1} />         // same as above
 //<a func1={props.func1()} />         // wrong
+
+//================================
+//You can also check whether the code being executed is on the
+//  server- side or client- side using
+//  typeof window == "undefined" and
+//  then fetch your data accordingly
+//================================
