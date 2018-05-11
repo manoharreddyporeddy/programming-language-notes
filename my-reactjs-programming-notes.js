@@ -27,3 +27,24 @@ import ReactDOM from 'react-dom';
 //  typeof window == "undefined" and
 //  then fetch your data accordingly
 //================================
+
+// =========================
+// Data change with mutation
+var player = { score: 1, name: 'Jeff' };
+player.score = 2;
+// Now player is {score: 2, name: 'Jeff'}
+
+// Data change without mutation
+var player = { score: 1, name: 'Jeff' };
+var newPlayer = { ...player, score: 2 };
+//      var newPlayer = Object.assign({}, player, {score: 2});
+//      newPlayer is {score: 2, name: 'Jeff'}
+
+// The end result is the same
+//      but by not mutating (or changing the underlying data) directly
+//      we now have an added benefit that
+//          can help us increase
+//              component and
+//              overall
+//                  application performance
+// =========================
