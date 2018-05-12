@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f3cc9466-510a-4513-9d2e-e8c82b16eab3}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Compile Include="src\index-more.js" />
+    <Compile Include="src\Label.js" />
+    <Compile Include="src\new\test\Link.react.test.js" />
+    <Compile Include="src\setupTests.js" />
+    <Compile Include="src\test.js" />
+    <Compile Include="src\test\basic-testing\test.js" />
+    <Compile Include="src\test\dom-testing\CheckboxWithLabel.js" />
+    <Compile Include="src\test\dom-testing\__tests__\CheckboxWithLabel-test.js" />
+    <Compile Include="src\test\smoke-testing\App.js" />
+    <Compile Include="src\test\smoke-testing\App.test.js" />
+    <Compile Include="src\test\smoke-testing\App2.test.js" />
+    <Compile Include="src\test\smoke-testing\index.js" />
+    <Compile Include="src\test\smoke-testing\registerServiceWorker.js" />
+    <Compile Include="src\test\snapshot-testing\Link.react.js" />
+    <Compile Include="src\test\snapshot-testing\test\Link.react.test.js" />
+    <Compile Include="src\test\__jest-examples-original\async\request.js" />
+    <Compile Include="src\test\__jest-examples-original\async\user.js" />
+    <Compile Include="src\test\__jest-examples-original\async\__mocks__\request.js" />
+    <Compile Include="src\test\__jest-examples-original\async\__tests__\user.test.js" />
+    <Compile Include="src\test\__jest-examples-original\automatic_mocks\utils.js" />
+    <Compile Include="src\test\__jest-examples-original\automatic_mocks\__tests__\automock.test.js" />
+    <Compile Include="src\test\__jest-examples-original\automatic_mocks\__tests__\disableAutomocking.test.js" />
+    <Compile Include="src\test\__jest-examples-original\automatic_mocks\__tests__\genMockFromModule.test.js" />
+    <Compile Include="src\test\__jest-examples-original\enzyme\CheckboxWithLabel.js" />
+    <Compile Include="src\test\__jest-examples-original\enzyme\__tests__\checkbox_with_label.test.js" />
+    <Compile Include="src\test\__jest-examples-original\getting-started\sum.js" />
+    <Compile Include="src\test\__jest-examples-original\getting-started\sum.test.js" />
+    <Compile Include="src\test\__jest-examples-original\jquery\displayUser.js" />
+    <Compile Include="src\test\__jest-examples-original\jquery\fetchCurrentUser.js" />
+    <Compile Include="src\test\__jest-examples-original\jquery\__tests__\display_user.test.js" />
+    <Compile Include="src\test\__jest-examples-original\jquery\__tests__\fetch_current_user.test.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\FileSummarizer.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\models\user.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\models\__mocks__\user.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\__mocks__\fs.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\__mocks__\lodash.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\__tests__\file_summarizer.test.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\__tests__\lodashMocking.test.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\__tests__\user.test.js" />
+    <Compile Include="src\test\__jest-examples-original\manual-mocks\__tests__\userMocked.test.js" />
+    <Compile Include="src\test\__jest-examples-original\module-mock\fruit.js" />
+    <Compile Include="src\test\__jest-examples-original\module-mock\__tests__\full_mock.js" />
+    <Compile Include="src\test\__jest-examples-original\module-mock\__tests__\mock_per_test.js" />
+    <Compile Include="src\test\__jest-examples-original\module-mock\__tests__\partial_mock.js" />
+    <Compile Include="src\test\__jest-examples-original\react-native\index.android.js" />
+    <Compile Include="src\test\__jest-examples-original\react-native\index.ios.js" />
+    <Compile Include="src\test\__jest-examples-original\react-native\Intro.js" />
+    <Compile Include="src\test\__jest-examples-original\react-native\__tests__\intro.test.js" />
+    <Compile Include="src\test\__jest-examples-original\react\CheckboxWithLabel.js" />
+    <Compile Include="src\test\__jest-examples-original\react\__tests__\checkbox_with_label.test.js" />
+    <Compile Include="src\test\__jest-examples-original\snapshot\Clock.react.js" />
+    <Compile Include="src\test\__jest-examples-original\snapshot\Link.react.js" />
+    <Compile Include="src\test\__jest-examples-original\snapshot\__tests__\clock.react.test.js" />
+    <Compile Include="src\test\__jest-examples-original\snapshot\__tests__\link.react.test.js" />
+    <Compile Include="src\test\__jest-examples-original\timer\infiniteTimerGame.js" />
+    <Compile Include="src\test\__jest-examples-original\timer\timerGame.js" />
+    <Compile Include="src\test\__jest-examples-original\timer\__tests__\infinite_timer_game.test.js" />
+    <Compile Include="src\test\__jest-examples-original\timer\__tests__\timer_game.test.js" />
+    <Compile Include="src\test\__jest-examples-original\typescript\preprocessor.js" />
+    <Compile Include="src\test\__jest-examples-original\typescript\sum.js" />
+    <Compile Include="src\test\__jest-examples-original\typescript\__tests__\sum.test.js" />
+    <Content Include=".babelrc" />
+    <Content Include=".gitignore" />
+    <Content Include="my-build-log.txt" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="build\index.html" />
+    <Content Include="build\favicon.ico" />
+    <Content Include="build\asset-manifest.json" />
+    <Content Include="build\manifest.json" />
+    <Compile Include="build\service-worker.js" />
+    <Content Include="public\index.html" />
+    <Content Include="public\favicon.ico" />
+    <Content Include="public\manifest.json" />
+    <Content Include="README2.md" />
+    <Content Include="src\index.css" />
+    <Compile Include="src\Button.js" />
+    <Compile Include="src\index.js" />
+    <Content Include="build\static\css\main.4a941626.css" />
+    <Compile Include="build\static\js\main.f4b21fc6.js" />
+    <Content Include="src\aa\App.css" />
+    <Content Include="src\aa\index.css" />
+    <Content Include="src\aa\logo.svg" />
+    <Compile Include="src\aa\App.js" />
+    <Compile Include="src\aa\App.test.js" />
+    <Compile Include="src\aa\index.js" />
+    <Compile Include="src\aa\registerServiceWorker.js" />
+    <Content Include="src\new\test\__snapshots__\Link.react.test.js.snap" />
+    <Content Include="src\test\dom-testing\README.txt" />
+    <Content Include="src\test\README.txt" />
+    <Content Include="src\test\smoke-testing\App.css" />
+    <Content Include="src\test\smoke-testing\index.css" />
+    <Content Include="src\test\smoke-testing\logo.svg" />
+    <Content Include="src\test\smoke-testing\test mounts a component and makes sure that it didnt throw during rendering.txt" />
+    <Content Include="src\test\snapshot-testing\test\__snapshots__\Link.react.test.js.snap" />
+    <Content Include="src\test\__jest-examples-original\async\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\async\package.json" />
+    <Content Include="src\test\__jest-examples-original\automatic_mocks\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\automatic_mocks\package.json" />
+    <Content Include="src\test\__jest-examples-original\enzyme\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\enzyme\package.json" />
+    <Content Include="src\test\__jest-examples-original\getting-started\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\getting-started\package.json" />
+    <Content Include="src\test\__jest-examples-original\jquery\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\jquery\package.json" />
+    <Content Include="src\test\__jest-examples-original\manual-mocks\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\manual-mocks\package.json" />
+    <Content Include="src\test\__jest-examples-original\module-mock\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\module-mock\package.json" />
+    <Content Include="src\test\__jest-examples-original\react-native\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\react-native\.buckconfig" />
+    <Content Include="src\test\__jest-examples-original\react-native\.flowconfig" />
+    <Content Include="src\test\__jest-examples-original\react-native\.gitignore" />
+    <Content Include="src\test\__jest-examples-original\react-native\.watchmanconfig" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\BUCK" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\build.gradle" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\proguard-rules.pro" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\AndroidManifest.xml" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\java\com\jestrn\MainActivity.java" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\java\com\jestrn\MainApplication.java" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\mipmap-hdpi\ic_launcher.png" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\mipmap-mdpi\ic_launcher.png" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\mipmap-xhdpi\ic_launcher.png" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\mipmap-xxhdpi\ic_launcher.png" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\values\strings.xml" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\values\styles.xml" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\build.gradle" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\gradle.properties" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\gradlew" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\gradlew.bat" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\gradle\wrapper\gradle-wrapper.jar" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\gradle\wrapper\gradle-wrapper.properties" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\keystores\BUCK" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\keystores\debug.keystore.properties" />
+    <Content Include="src\test\__jest-examples-original\react-native\android\settings.gradle" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrn.xcodeproj\project.pbxproj" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrn.xcodeproj\xcshareddata\xcschemes\jestrn.xcscheme" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrnTests\Info.plist" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrnTests\jestrnTests.m" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrn\AppDelegate.h" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrn\AppDelegate.m" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrn\Base.lproj\LaunchScreen.xib" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrn\Images.xcassets\AppIcon.appiconset\Contents.json" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrn\Info.plist" />
+    <Content Include="src\test\__jest-examples-original\react-native\ios\jestrn\main.m" />
+    <Content Include="src\test\__jest-examples-original\react-native\package.json" />
+    <Content Include="src\test\__jest-examples-original\react-native\__tests__\__snapshots__\intro.test.js.snap" />
+    <Content Include="src\test\__jest-examples-original\react\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\react\package.json" />
+    <Content Include="src\test\__jest-examples-original\snapshot\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\snapshot\package.json" />
+    <Content Include="src\test\__jest-examples-original\snapshot\__tests__\__snapshots__\clock.react.test.js.snap" />
+    <Content Include="src\test\__jest-examples-original\snapshot\__tests__\__snapshots__\link.react.test.js.snap" />
+    <Content Include="src\test\__jest-examples-original\timer\.babelrc" />
+    <Content Include="src\test\__jest-examples-original\timer\package.json" />
+    <Content Include="src\test\__jest-examples-original\typescript\package.json" />
+    <Content Include="src\test\__jest-examples-original\typescript\tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build" />
+    <Folder Include="build\static" />
+    <Folder Include="build\static\css" />
+    <Folder Include="build\static\js" />
+    <Folder Include="public" />
+    <Folder Include="src" />
+    <Folder Include="src\aa" />
+    <Folder Include="src\new\" />
+    <Folder Include="src\new\test\" />
+    <Folder Include="src\new\test\__snapshots__\" />
+    <Folder Include="src\test\" />
+    <Folder Include="src\test\basic-testing\" />
+    <Folder Include="src\test\dom-testing\" />
+    <Folder Include="src\test\dom-testing\__tests__\" />
+    <Folder Include="src\test\smoke-testing\" />
+    <Folder Include="src\test\snapshot-testing\" />
+    <Folder Include="src\test\snapshot-testing\test\" />
+    <Folder Include="src\test\snapshot-testing\test\__snapshots__\" />
+    <Folder Include="src\test\__jest-examples-original\" />
+    <Folder Include="src\test\__jest-examples-original\async\" />
+    <Folder Include="src\test\__jest-examples-original\async\__mocks__\" />
+    <Folder Include="src\test\__jest-examples-original\async\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\automatic_mocks\" />
+    <Folder Include="src\test\__jest-examples-original\automatic_mocks\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\enzyme\" />
+    <Folder Include="src\test\__jest-examples-original\enzyme\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\getting-started\" />
+    <Folder Include="src\test\__jest-examples-original\jquery\" />
+    <Folder Include="src\test\__jest-examples-original\jquery\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\manual-mocks\" />
+    <Folder Include="src\test\__jest-examples-original\manual-mocks\models\" />
+    <Folder Include="src\test\__jest-examples-original\manual-mocks\models\__mocks__\" />
+    <Folder Include="src\test\__jest-examples-original\manual-mocks\__mocks__\" />
+    <Folder Include="src\test\__jest-examples-original\manual-mocks\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\module-mock\" />
+    <Folder Include="src\test\__jest-examples-original\module-mock\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\java\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\java\com\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\java\com\jestrn\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\mipmap-hdpi\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\mipmap-mdpi\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\mipmap-xhdpi\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\mipmap-xxhdpi\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\app\src\main\res\values\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\gradle\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\gradle\wrapper\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\android\keystores\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\jestrn.xcodeproj\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\jestrn.xcodeproj\xcshareddata\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\jestrn.xcodeproj\xcshareddata\xcschemes\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\jestrnTests\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\jestrn\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\jestrn\Base.lproj\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\jestrn\Images.xcassets\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\ios\jestrn\Images.xcassets\AppIcon.appiconset\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\react-native\__tests__\__snapshots__\" />
+    <Folder Include="src\test\__jest-examples-original\react\" />
+    <Folder Include="src\test\__jest-examples-original\react\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\snapshot\" />
+    <Folder Include="src\test\__jest-examples-original\snapshot\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\snapshot\__tests__\__snapshots__\" />
+    <Folder Include="src\test\__jest-examples-original\timer\" />
+    <Folder Include="src\test\__jest-examples-original\timer\__tests__\" />
+    <Folder Include="src\test\__jest-examples-original\typescript\" />
+    <Folder Include="src\test\__jest-examples-original\typescript\__tests__\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\test\__jest-examples-original\typescript\CheckboxWithLabel.tsx" />
+    <TypeScriptCompile Include="src\test\__jest-examples-original\typescript\sub.ts" />
+    <TypeScriptCompile Include="src\test\__jest-examples-original\typescript\sum.ts" />
+    <TypeScriptCompile Include="src\test\__jest-examples-original\typescript\__tests__\checkbox_with_label.test.tsx" />
+    <TypeScriptCompile Include="src\test\__jest-examples-original\typescript\__tests__\sub-test.ts" />
+    <TypeScriptCompile Include="src\test\__jest-examples-original\typescript\__tests__\sum-test.ts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
