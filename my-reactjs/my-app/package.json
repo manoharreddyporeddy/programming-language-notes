@@ -13,14 +13,20 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
     "jest": "^22.4.3",
+    "jest-enzyme": "^6.0.0",
     "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^16.3.2"
+    "react-test-renderer": "^16.3.2",
+    "source-map-explorer": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "testReactScriptsWithJSDOM": "react-scripts test --env=jsdom",
-    "testJest": "jest",
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "test_using_ReactScripts": "react-scripts test",
+    "test_using_ReactScripts_in_JSDOM": "react-scripts test --env=jsdom",
+    "test_using_Jest": "jest",
+    "test:debug": "react-scripts --debug-brk test --runInBand --env=jsdom",
+    "cc": "npm test -- --coverage",
     "eject": "react-scripts eject"
   }
 }
