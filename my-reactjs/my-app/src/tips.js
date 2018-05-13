@@ -130,3 +130,53 @@ ReactDOM.render(
     document.getElementById('root')
 );
 */
+
+/*
+
+
+The main difference between state and props is that props are immutable.
+This is why the
+    container component
+        should define the state
+            that can be updated and changed,
+    while the child components
+        should only pass data
+            from the state
+                using props
+
+    update the state in container component
+        all child components will be updated
+
+
+setState() method is
+    used to update the state of the component.
+    This method will not replace the state,
+        but only add changes to the original state
+
+react versions
+    https://github.com/facebook/react/releases
+        ..
+        v0.14.8
+        v15.0.0     // big jump here
+        ..
+        v16.3.2     // latest
+
+Flux is a programming concept, where the data is uni-directional. This data enters the app and flows through it in one direction until it is rendered on the screen.
+    Flux Elements
+    Following is a simple explanation of the flux concept. In the next chapter, we will learn how to implement this into the app.
+        Actions − Actions are sent to the dispatcher to trigger the data flow.
+        Dispatcher − This is a central hub of the app. All the data is dispatched and sent to the stores.
+        Store − Store is the place where the application state and logic are held. Every store is maintaining a particular state and it will update when needed.
+        View − The view will receive data from the store and re-render the app.
+        
+        Action -> Dispatcher -> Store -> View
+        
+        Flux Pros
+            Single directional data flow is easy to understand.
+            The app is easier to maintain.
+            The app parts are decoupled.
+
+    Flux is the application architecture/ pattern for building client-side web applications, for unidirectional data flow
+        
+*/
+

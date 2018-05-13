@@ -1,26 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
 ## Create React App is divided into two packages:
 * `create-react-app` is a global command-line utility   that you use to create new projects.
 * `react-scripts`    is a development dependency        in the generated projects (including this one).
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
-```
-
 
 ## Run tests with react-scripts
 
@@ -87,4 +67,28 @@ Run this command to get a full list of the options available:
 serve -h
 ```
 
+
+
+
+
 More: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+```
+my-app/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    App.css
+    App.js
+    App.test.js
+    index.css
+    index.js
+    logo.svg
+```
