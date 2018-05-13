@@ -1,6 +1,10 @@
 
 /*
-clousres
+
+best: https://github.com/facebook/create-react-app
+https://reactjs.org
+https://reactjs.org/tutorial/tutorial.html
+
 
 top down approch - when know most of compoent
 function compoentsnt - nzouser actino - not a top levle/ no state
@@ -180,3 +184,43 @@ Flux is a programming concept, where the data is uni-directional. This data ente
         
 */
 
+
+/*
+
+
+https://reactjs.org/community/testing.html
+    Jest:               Test all JavaScript code including React applications - used by Facebook
+    Enzyme:             JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output.
+    Expect-jsx:         toEqualJSX for expect.js
+    React-unit:         library for ReactJS with very few (js-only) dependencies.
+    Skin-deep:          Testing helpers for use with React’s shallowRender test utils.
+    Unexpected-react:   Plugin - to assert over your React Components and trigger events.
+
+https://facebook.github.io/jest/docs/en/tutorial-react.html#content
+    Snapshot Testing
+    DOM Testing
+    Custom transformers
+
+https://github.com/facebook/create-react-app
+Your environment will have everything you need to build a modern single-page React app:
+    React, JSX, ES6, and Flow syntax support.
+    Language extras beyond ES6 like the object spread operator.
+    Autoprefixed CSS, so you don’t need -webkit- or other prefixes.
+    A fast interactive unit test runner with built-in support for coverage reporting.
+    A live development server that warns about common mistakes.
+    A build script to bundle JS, CSS, and images for production, with hashes and sourcemaps.
+    An offline-first service worker and a web app manifest, meeting all the Progressive Web App criteria.
+    Hassle-free updates for the above tools with a single dependency.
+----
+
+
+reactjs testing
+    https://facebook.github.io/jest/docs/en/tutorial-react.html
+    https://facebook.github.io/jest/docs/en/expect.html#content
+    https://facebook.github.io/jest/docs/en/snapshot-testing.html
+    examples:
+        https://github.com/facebook/react/blob/48616e591fe23c0b89b0823c3ec99bae2d7b6853/packages/react-dom/src/__tests__/renderSubtreeIntoContainer-test.js
+        https://github.com/facebook/react/blob/master/packages/react-dom/src/__tests__/ReactTestUtils-test.js
+			Use shallow rendering when feasible, otherwise regular test utilities.
+			Shallow rendering limitations: refs (problematic), simulate (not so much)
+*/
