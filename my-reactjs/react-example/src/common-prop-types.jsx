@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
-let __allPropTypes = {
-    ContentPropTypes: {
+let common_prop_types = {
+
+    ContentPropTypes1: {
         name: PropTypes.string,
         propArray: PropTypes.array.isRequired,
         propBool: PropTypes.bool.isRequired,
@@ -9,6 +10,7 @@ let __allPropTypes = {
         propNumber: PropTypes.number,
         propString: PropTypes.string,
     }
+
 };
 
-export default __allPropTypes;
+export default common_prop_types;
