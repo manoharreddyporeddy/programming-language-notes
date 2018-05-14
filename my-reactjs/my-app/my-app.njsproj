@@ -17,10 +17,16 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Compile Include="src\index-more.js" />
+    <Compile Include="src\index-rr.js" />
     <Compile Include="src\Label.js" />
     <Compile Include="src\new\test\Link.react.test.js" />
+    <Compile Include="src\r1.js" />
+    <Compile Include="src\r2.js" />
+    <Compile Include="src\r3.js" />
+    <Compile Include="src\r4.js" />
     <Compile Include="src\setupTests.js" />
     <Compile Include="src\test.js" />
+    <Compile Include="src\test\basic-testing\sum.js" />
     <Compile Include="src\test\basic-testing\test.js" />
     <Compile Include="src\test\dom-testing\CheckboxWithLabel.js" />
     <Compile Include="src\test\dom-testing\__tests__\CheckboxWithLabel-test.js" />
@@ -77,7 +83,13 @@
     <Compile Include="src\test\__jest-examples-original\typescript\preprocessor.js" />
     <Compile Include="src\test\__jest-examples-original\typescript\sum.js" />
     <Compile Include="src\test\__jest-examples-original\typescript\__tests__\sum.test.js" />
+    <Compile Include="src\tips.js" />
     <Content Include=".babelrc" />
+    <Content Include=".env" />
+    <Content Include=".env.development" />
+    <Content Include=".env.production" />
+    <Content Include=".env.README.txt" />
+    <Content Include=".env.test" />
     <Content Include=".gitignore" />
     <Content Include="my-build-log.txt" />
     <Content Include="package.json" />
@@ -109,7 +121,7 @@
     <Content Include="src\test\smoke-testing\App.css" />
     <Content Include="src\test\smoke-testing\index.css" />
     <Content Include="src\test\smoke-testing\logo.svg" />
-    <Content Include="src\test\smoke-testing\test mounts a component and makes sure that it didnt throw during rendering.txt" />
+    <Content Include="src\test\smoke-testing\tests-mount-component-rendering--nothrow.txt" />
     <Content Include="src\test\snapshot-testing\test\__snapshots__\Link.react.test.js.snap" />
     <Content Include="src\test\__jest-examples-original\async\.babelrc" />
     <Content Include="src\test\__jest-examples-original\async\package.json" />

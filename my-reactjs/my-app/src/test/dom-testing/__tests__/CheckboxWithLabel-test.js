@@ -1,16 +1,14 @@
-// __tests__/CheckboxWithLabel-test.js
-
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import CheckboxWithLabel from '../CheckboxWithLabel';
 
 test('CheckboxWithLabel changes the text after click', () => {
-  // Render a checkbox with label in the document
-  const checkbox = shallow(<CheckboxWithLabel labelOn="On" labelOff="Off" />);
 
-  expect(checkbox.text()).toEqual('Off');
+    // Render a component1 with label in the document
+    const component1 = shallow(<CheckboxWithLabel labelOn="On" labelOff="Off" />);
 
-  checkbox.find('input').simulate('change');
+    expect(component1.text()).toEqual('Off');
+    component1.find('input').simulate('change');
+    expect(component1.text()).toEqual('On');
 
-  expect(checkbox.text()).toEqual('On');
 });
