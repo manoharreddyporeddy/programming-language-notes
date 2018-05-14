@@ -2,10 +2,10 @@ export const ADD_TODO = 'ADD_TODO'
 
 let nextTodoId = 0;
 
-export function addTodo(text) {
+export function addTodo(new_todotext) {
     return {
         type: ADD_TODO,
         id: nextTodoId++,
-        text
+        new_todotext
     };
 }

@@ -12,19 +12,19 @@ class commentny- state, top, and envet hanlders
 
 
 data in
-	instance property
-	internal state object - if we need to re-render everytime data is changed
-	
+    instance property
+    internal state object - if we need to re-render everytime data is changed
+
 every reacct event funciton, has event argument (wrapper around native event argument)
 
 ref property of an element, takes funciton with reference to wlwement when the element is mounted
-	<input type="text"
-		ref = {(input1) => this.userNameInput=input1}
-		/>
+    <input type="text"
+        ref = {(input1) => this.userNameInput=input1}
+        />
 
 controlled compoennts
-	method - o control input (rather than reading form dom)
-	more code but better than ref
+    method - o control input (rather than reading form dom)
+    more code but better than ref
 
 add key when creating a array/ map
 
@@ -56,7 +56,7 @@ resuable js module
             // expose the module to others      module.exports = mod1;
         requirejs asynchromous module definition (AMD)
         browserify
-                
+
 nodejs          run service side javascript
 browserify      expose node packages to browser - bundles node modules for use in browser, by default bundles all dependenciess into a single file (minimizes no. of requests)
 facebook react  view engine, components library  - packaging, composing, rendering html components - composing many components together - virtual dom, so very fast, when ui changes  compares state in memory  and renders on real dom,  virtual dom helps  client-side and server-side rendering (vdom differentiates angular and knockout)
@@ -151,7 +151,6 @@ This is why the
     update the state in container component
         all child components will be updated
 
-
 setState() method is
     used to update the state of the component.
     This method will not replace the state,
@@ -167,21 +166,23 @@ react versions
 
 Flux is a programming concept, where the data is uni-directional. This data enters the app and flows through it in one direction until it is rendered on the screen.
     Flux Elements
-    Following is a simple explanation of the flux concept. In the next chapter, we will learn how to implement this into the app.
-        Actions − Actions are sent to the dispatcher to trigger the data flow.
-        Dispatcher − This is a central hub of the app. All the data is dispatched and sent to the stores.
-        Store − Store is the place where the application state and logic are held. Every store is maintaining a particular state and it will update when needed.
-        View − The view will receive data from the store and re-render the app.
-        
+    Following is a simple explanation of the flux concept.
+
         Action -> Dispatcher -> Store -> View
         
+        Actions      Actions are sent to the dispatcher to trigger the data flow.
+        Dispatcher   This is a central hub of the app. All the data is dispatched and sent to the stores.
+        Store        Store is the place where the application state and logic are held.
+                     Every store is maintaining a particular state and it will update when needed.
+        View         The view will receive data from the store and re-render the app.
+
         Flux Pros
             Single directional data flow is easy to understand.
             The app is easier to maintain.
             The app parts are decoupled.
 
     Flux is the application architecture/ pattern for building client-side web applications, for unidirectional data flow
-        
+
 */
 
 
@@ -221,6 +222,6 @@ reactjs testing
     examples:
         https://github.com/facebook/react/blob/48616e591fe23c0b89b0823c3ec99bae2d7b6853/packages/react-dom/src/__tests__/renderSubtreeIntoContainer-test.js
         https://github.com/facebook/react/blob/master/packages/react-dom/src/__tests__/ReactTestUtils-test.js
-			Use shallow rendering when feasible, otherwise regular test utilities.
-			Shallow rendering limitations: refs (problematic), simulate (not so much)
+            Use shallow rendering when feasible, otherwise regular test utilities.
+            Shallow rendering limitations: refs (problematic), simulate (not so much)
 */

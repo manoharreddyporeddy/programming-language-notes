@@ -27,14 +27,14 @@
     <Content Include="src\z_package.json" />
     <Compile Include="src\App.jsx" />
     <Compile Include="src\AppComp1.jsx" />
+    <Compile Include="src\AppCompHOC5.jsx" />
     <Compile Include="src\Flux-actions\actions.js" />
     <Compile Include="src\Flux-components\AddTodo.js" />
     <Compile Include="src\Flux-components\Todo.js" />
     <Compile Include="src\Flux-components\TodoList.js" />
     <Compile Include="src\Flux-reducers\reducers.js" />
     <Compile Include="src\FluxMain.js" />
-    <Compile Include="src\FluxReduxAppComp4.jsx" />
-    <Compile Include="src\HOCAppComp5.jsx" />
+    <Compile Include="src\FluxApp.jsx" />
     <Compile Include="src\index.js" />
     <Compile Include="src\common-prop-types.jsx" />
     <Compile Include="src\RRAppComp3.jsx" />

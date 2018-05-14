@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO } from '../actions/actions'
+import { ADD_TODO } from '../Flux-actions/actions'
 
 function todo(state, action) {
     switch (action.type) {
@@ -12,7 +12,6 @@ function todo(state, action) {
             return state
     }
 }
-
 function todos(state = [], action) {
     switch (action.type) {
         case ADD_TODO:
@@ -24,9 +23,8 @@ function todos(state = [], action) {
             return state
     }
 }
-
-const todoApp = combineReducers({
+const todoAppReducer = combineReducers({
     todos
 })
 
-export default todoApp
+export default todoAppReducer
