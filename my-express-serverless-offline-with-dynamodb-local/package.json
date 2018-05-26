@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "serverless-http": "^1.5.5"
   },
   "devDependencies": {
     "serverless-dynamodb-local": "^0.2.30",
