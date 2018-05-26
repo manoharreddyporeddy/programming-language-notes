@@ -1,18 +1,20 @@
 <pre>
 
 
-COMMANDS
-----
+## COMMANDS
+
 
 npm install
 npm start
 
+Now you can jump to "PART 5. Test SEVERLESS OFFLINE"
 
 
-MORE DETAILS
-----
 
-==================== PART 1. CODING ====================
+## MORE DETAILS
+
+
+============= PART 1. CODING =============
 
 serverless.yaml
   see
@@ -26,7 +28,7 @@ index.js
 
 
 
-==================== PART 2. INSTALLATION ====================
+============= PART 2. INSTALLATION =============
 
 Install jre/jdk
   http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html
@@ -132,17 +134,17 @@ npm install serverless-offline --save-dev
   
 
 
-==================== PART 3. DynamoDB SHOULD NOT BE RUNNING - BEGIN ====================
+============= PART 3. DynamoDB SHOULD NOT BE RUNNING - BEGIN =============
   do
     ctrl + c
     on the dynamodb console
       to close the dynamodb instance
       else you will get "Could not start server on port 8000: Address already in use"
-==================== PART 3. DynamoDB SHOULD NOT BE RUNNING - END ====================
+============= PART 3. DynamoDB SHOULD NOT BE RUNNING - END =============
 
 
 
-==================== PART 4. Run SEVERLESS OFFLINE (stars DynamoDB internally) - BEGIN ====================
+============= PART 4. Run SEVERLESS OFFLINE (stars DynamoDB internally) - BEGIN =============
 
           ============ NOT REQUIRED - SAME AS 'npm start' - BEGIN ==============
                           https://github.com/dherault/serverless-offline
@@ -171,10 +173,10 @@ npm install serverless-offline --save-dev
           Serverless: Offline listening on http://localhost:3000
 
 
-==================== PART 4. Run SEVERLESS OFFLINE (stars DynamoDB internally) - END ====================
+============= PART 4. Run SEVERLESS OFFLINE (stars DynamoDB internally) - END =============
 
 
-==================== PART 5. Test SEVERLESS OFFLINE (stars DynamoDB internally) - BEGIN ====================
+============= PART 5. Test SEVERLESS OFFLINE - BEGIN =============
 
   postman
     hit below from postman
@@ -206,5 +208,5 @@ npm install serverless-offline --save-dev
           GetItem succeeded:{}
 
 
-==================== PART 5. Test SEVERLESS OFFLINE (stars DynamoDB internally) - END ====================
+============= PART 5. Test SEVERLESS OFFLINE - END =============
 </pre>
