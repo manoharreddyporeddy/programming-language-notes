@@ -92,7 +92,7 @@ npm install serverless-offline --save-dev
             Default region name [None]: us-east-1         
             Default output format [None]: 
 
-          cd /Users/vikash/repo/my-express-application
+          cd /my-express-application
             aws dynamodb list-tables --endpoint-url http://localhost:8000
                             {
                               "TableNames": [
@@ -149,7 +149,7 @@ npm install serverless-offline --save-dev
           ============ NOT REQUIRED - SAME AS 'npm start' - BEGIN ==============
                           https://github.com/dherault/serverless-offline
 
-                                cd /Users/vikash/repo/my-express-application
+                                cd /my-express-application
                                 serverless offline start
                                   or
                                 sls offline start
