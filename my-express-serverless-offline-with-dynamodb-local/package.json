@@ -1,0 +1,20 @@
+{
+  "name": "my-express-application",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "serverless offline start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.30",
+    "serverless-offline": "^3.24.1",
+    "eslint": "^4.19.1"
+  }
+}
