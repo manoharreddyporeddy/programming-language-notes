@@ -1,5 +1,17 @@
 <pre>
 
+
+COMMANDS
+----
+
+npm install
+npm start
+
+
+
+MORE DETAILS
+----
+
 ==================== PART 1. CODING ====================
 
 serverless.yaml
