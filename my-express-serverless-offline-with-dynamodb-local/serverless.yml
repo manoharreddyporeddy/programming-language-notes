@@ -1,4 +1,4 @@
-# serverless.yml
+# serverless.yml - this is serverless config
 
 service: my-express-application
 
