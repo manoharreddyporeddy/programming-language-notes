@@ -1,5 +1,13 @@
 
-Link: Oracle Certified Professional, Java SE 8 Programmer (https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=654&get_params=p_id:357&p_org_id=1080544&lang=US#tabs-1-1)
+Oracle Certified Professional, Java SE 5,6,7,8 Programmer
+    https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=654&get_params=p_id:357&p_org_id=1080544&lang=US#tabs-1-1
+
+
+Java Certificates list
+    https://en.wikipedia.org/wiki/Oracle_Certification_Program#Java_Certification_list
+
+Java Cetification Path - Diagram (certified master looks old)
+    https://en.wikipedia.org/wiki/File:Java_Certification_Path.gif
 
 <pre>
 
