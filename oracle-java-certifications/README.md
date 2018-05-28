@@ -9,11 +9,11 @@ Types:
 
 Paths
 	==========================================
-	Associate			-> Professional
+	Associate		-> Professional
 	==========================================
 	j5&j6__ocA__1Z0-850	->	j5&j6__ocP__1Z0-851	- old (java 5&6, use only for learning, like sample ques)
-	j7__ocA__1Z0-803		->	j7__ocP__1Z0-804		- old (java 7, use only for learning, like sample ques)
-	j8__ocA__1Z0-808		->	j8__ocP__1Z0-809		- new (java 8)
+	j7__ocA__1Z0-803	->	j7__ocP__1Z0-804	- old (java 7, use only for learning, like sample ques)
+	j8__ocA__1Z0-808	->	j8__ocP__1Z0-809	- new (java 8)
 	==========================================
 
 </pre>
