@@ -9,7 +9,10 @@ Java Cetification Path - Diagram (certified master looks old)
     https://en.wikipedia.org/wiki/File:Java_Certification_Path.gif
 
 7 Steps to Preparing for Java 8 Certification  
-    https://dzone.com/articles/how-to-prepare-java-certification-in-7-stepsx`
+    https://dzone.com/articles/how-to-prepare-java-certification-in-7-steps
+
+Best self study tutorial  
+    https://docs.oracle.com/javase/tutorial/
 
 <pre>
 
