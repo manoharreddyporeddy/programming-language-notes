@@ -1,10 +1,19 @@
 Swift & Objective-C notes  
 
+- Objective C is old, but many projects in this for now.
+- Swift is new.
+
+Objective-C Tutorial
+  Code School https://www.codeschool.com/courses/try-objective-c
+
+SoloLearn, Swift Fundamentals
+  https://www.sololearn.com/Course/Swift/ (see mobile app)
+
 Changes in swift versions    
   2.3 https://github.com/apple/swift-evolution/blob/master/releases/swift-2_2.md  
   3.0 https://github.com/apple/swift-evolution/blob/master/releases/swift-3_0.md  
   4.0 https://github.com/apple/swift-evolution/blob/master/releases/swift-4_0.md  
-  
+
 objective c to swift 3  
   https://developer.apple.com/swift/blog/  
   https://www.toptal.com/swift/from-objective-c-to-swift  
@@ -31,7 +40,11 @@ online swift compilers
   Swiftstub.com  
   Runswiftlang.com  
   iswift.org  
-     
+
+Discussion:
+  Swift vs Objective-C (iOS)
+  https://www.sololearn.com/Discuss/1006650/swift-vs-objective-c-ios
+
 books & others  
   https://ios.topcoder.com/learn  
   
