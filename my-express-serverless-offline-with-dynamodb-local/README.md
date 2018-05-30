@@ -45,13 +45,13 @@ sls dynamodb install
 
 
 https://github.com/dherault/serverless-offline
-cd /Users/vikash/repo/my-express-application
+cd /repo/my-express-application
 npm install serverless-offline --save-dev
 
 
 
 ======== NOT REQUIRED - CREATE TABLE - BEGIN ========
-        // cd /Users/vikash/repo/my-express-application
+        // cd /repo/my-express-application
         // sls dynamodb start --migrate
         //   NOTE: migrate creates table given in serverless.yaml
 ======== NOT REQUIRED - CREATE TABLE - END ========
@@ -70,7 +70,7 @@ npm install serverless-offline --save-dev
             add to path
               https://www.architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/
               sudo nano /etc/paths
-                /Users/vikash/Library/Python/3.6/bin
+                /Users/YOUR_USER_NAME_HERE/Library/Python/3.6/bin
                 ctrl+x
                 Yes
                 ENTER
