@@ -1,4 +1,3 @@
-<pre>
 
 Changes in swift versions
 	2.3 https://github.com/apple/swift-evolution/blob/master/releases/swift-2_2.md
@@ -35,4 +34,3 @@ online swift compilers
 books & others
 	https://ios.topcoder.com/learn
 
-</pre>
