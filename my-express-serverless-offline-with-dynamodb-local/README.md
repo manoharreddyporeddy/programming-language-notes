@@ -34,7 +34,7 @@ Install jre/jdk
   http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html
 
 sudo npm install eslint -g
-
+Note: sudo is required only Unix/MAC systems, not for Windows OS
 
 
 sudo npm install -g serverless
