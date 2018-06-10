@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body onload="onBodyLoad()">
+    <script src="index.js"></script>
+
+    <form method="post">
+        Enter the Book name: <input type="text" id="bookname" value="php"><br>
+        <input type="button" value="Submit" onclick="onSubmit()">
+    </form>
+    <hr>
+
+    <input type="button" id="previousButton" value="Previous" onclick="onPrevious()">
+    <input type="button" id="nextButton" value="Next" onclick="onNext()">
+    <hr>
+
+    <div id="resultsDiv">
+    </div>
+    <hr>
+
+    <div>
+        <table id="resultsTable" style="width:100%">
+            <caption><b>Book details</b></caption>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Publisher</th>
+                    <th>Published Date</th>
+                    <!--th>PrintType</th>
+                    <th>PageCount</th-->
+                    <th>Small Thumbnail</th>
+                    <!--th>Language</th-->
+                    <th>Info Link</th>
+                    <!--th>TextToSpeechPermission</th-->
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</body>
+</html>
