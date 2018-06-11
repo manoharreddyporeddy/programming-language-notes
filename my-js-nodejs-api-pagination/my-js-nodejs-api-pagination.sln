@@ -7,8 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{F83275C7-6ACD-4280-B77D-0C2852C615DA}"
 	ProjectSection(SolutionItems) = preProject
+		js\a.html = js\a.html
 		js\index.html = js\index.html
 		js\index.js = js\index.js
+		js\theme.css = js\theme.css
 	EndProjectSection
 EndProject
 Global
