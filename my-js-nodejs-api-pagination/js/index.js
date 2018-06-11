@@ -79,6 +79,34 @@ function displayResults() {
         thisRow.insertCell(tcolIndex++).appendChild(document.createTextNode(item.volumeInfo.publisher));
         thisRow.insertCell(tcolIndex++).appendChild(document.createTextNode(item.volumeInfo.publishedDate));
 
+
+
+    // details
+
+        let details = item.volumeInfo.description;
+        if (!details) {
+            details = "Details will be added soon."
+        }
+
+        let divDetailsParent = document.createElement("div");
+
+        let buttonDetails = document.createElement("button");
+        buttonDetails.className = "collapsible";
+        buttonDetails.textContent = details.substr(0, 50) + "... Click to see more.";
+
+        let divDetails = document.createElement("div");
+        divDetails.className = "content";
+
+        let pDetails = document.createElement("p");
+        pDetails.textContent = details;
+
+        divDetails.appendChild(pDetails);
+        divDetailsParent.appendChild(buttonDetails);
+        divDetailsParent.appendChild(divDetails);
+        thisRow.insertCell(tcolIndex++).appendChild(divDetailsParent);
+
+
+    // publishedDate
         let publishedDate = item.volumeInfo.publishedDate;
     // console.log("before " + publishedDate);
         let dateParts = publishedDate.split("-").length;
@@ -152,10 +180,15 @@ function displayResults() {
         "Earliest Publication Date: " + earliestPublctnDate.toString() + "<br/>" +
         "Server response time: " + (endTime - startTime) + " milli seconds <br/>";
 
+    makeCollapsible();
+
     //var x = document.getElementById("resultsTable").tBodies[0].rows.length;
     //var x = document.getElementById("resultsTable").tBodies[0].rows[0].cells[0].length;
     //var x = document.getElementById("resultsTable").tBodies[0].rows[0].cells[0].innerHTML = "hello";
 }
+
+
+// --------------- util functions - begin ---------------------
 
 function loadDoc(url) {
 
@@ -180,3 +213,28 @@ function loadDoc(url) {
     xhttp.open("GET", url, true);
     xhttp.send();
 }
+
+
+function makeCollapsible() {
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    // alert(coll.length);
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            var content = this.nextElementSibling;
+            // var content = getEle('content1');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+}
+
+// --------------- util functions - end ---------------------
+
