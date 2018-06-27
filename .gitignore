@@ -1,4 +1,6 @@
 .vs
 node_modules/
 Debug/
+obj/
+bin/
 *.exe
