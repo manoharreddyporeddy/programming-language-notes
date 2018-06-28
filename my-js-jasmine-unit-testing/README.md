@@ -231,6 +231,13 @@ All these are documented here: https://jasmine.github.io/2.0/introduction
 
 
 ==========
+
+if you get stuck doing the above
+then, download the files from here
+	https://github.com/manoharreddyporeddy/my-programming-language-notes/tree/master/my-js-jasmine-unit-testing
+
+==========
+
 Thats all. Best of luck.
 
-<.pre>
+</pre>
