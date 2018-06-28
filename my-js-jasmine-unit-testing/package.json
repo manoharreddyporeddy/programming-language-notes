@@ -1,0 +1,15 @@
+{
+  "name": "my-js-jasmine-unit-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^3.1.0"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "",
+  "license": "ISC"
+}
