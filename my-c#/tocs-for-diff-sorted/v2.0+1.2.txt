@@ -1,0 +1,557 @@
+! expressions
+&& expressions
+<c>
+<code>
+<example>
+<exception>
+<include>
+<list>
+<para>
+<param>
+<paramref>
+<permission>
+<remarks>
+<returns>
+<see>
+<seealso>
+<summary>
+<value>
+?: expressions
+Abstract classes
+Abstract classes and interfaces
+Abstract methods
+Access modifiers
+Access to private and protected members of the containing type
+Accessibility
+Accessibility constraints
+Accessibility domains
+Accessibility of a constructed type
+Accessing protected members
+Accessor declarations
+Accessor usage
+Accessors
+Addition operator
+An example
+Anonymous method blocks
+Anonymous method conversions
+Anonymous method evaluation
+Anonymous method expressions
+Anonymous method signatures
+Anonymous methods
+Applicable function member
+Application Startup
+Application entry point
+Application termination
+Argument lists
+Arithmetic operators
+Array access
+Array covariance
+Array creation
+Array creation expressions
+Array element access
+Array elements
+Array initializers
+Array members
+Array types
+Arrays
+Arrays and the generic IList interface
+Assignment
+Assignment operators
+Atomicity of variable references
+Attribute classes
+Attribute instances
+Attribute parameter types
+Attribute specification
+Attribute usage
+Attributes
+Attributes for Interoperation
+Automatic memory management
+Base access
+Base class
+Base classes
+Base classes and interfaces of a constructed type
+Base interfaces
+Base specification
+Base types
+Basic concepts
+Better conversion
+Better function member
+Binary numeric promotions
+Binary operator overload resolution
+Binary operators
+Bitwise complement operator
+Block statements, checked, and unchecked statements
+Blocks
+Boolean conditional logical operators
+Boolean equality operators
+Boolean expressions
+Boolean literals
+Boolean logical operators
+Boxing and unboxing
+Boxing and unboxing conversions
+Boxing conversions
+Break, continue, and goto statements
+C# source code
+Calling generic methods
+Candidate user-defined operators
+Captured outer variables
+Cast expressions
+Causes of exceptions
+Character literals
+Class and struct differences
+Class base specification
+Class body
+Class declarations
+Class members
+Class modifiers
+Class types
+Classes
+Classes and objects
+Comments
+Common Exception Classes
+Compilation of an attribute
+Compilation units
+Compound assignment
+Conditional attribute classes
+Conditional compilation directives
+Conditional compilation symbols
+Conditional logical operators
+Conditional operator
+Constant expressions
+Constants
+Constituent types
+Constraints
+Constructed types
+Constructor execution
+Constructor initializers
+Constructors
+Conversion operators
+Conversions
+Conversions involving type parameters
+Creating and using generics
+Database boolean type
+Database integer type
+Decimal comparison operators
+Declaration directives
+Declaration statements
+Declarations
+Declared accessibility
+Default constructors
+Default value
+Default value expression
+Default values
+Definite assignment
+Definite assignment checking
+Delegate creation expressions
+Delegate declarations
+Delegate equality operators
+Delegate instance equality
+Delegate instantiation
+Delegate invocation
+Delegate invocations
+Delegate members
+Delegate types
+Delegates
+Destructors
+Diagnostic directives
+Division operator
+Do statements
+Documentation comments
+Dynamic memory allocation
+Element access
+End points and reachability
+Enum declarations
+Enum members
+Enum modifiers
+Enum values and operations
+Enumerable interfaces
+Enumerable objects
+Enumeration comparison operators
+Enumeration logical operators
+Enumeration members
+Enumeration types
+Enumerator interfaces
+Enumerator objects
+Enums
+Equality operators and null
+Evaluation of user-defined conversions
+Event accessors
+Event assignment
+Events
+Exception statements
+Exceptions
+Execution order
+Explicit conversions
+Explicit enumeration conversions
+Explicit interface member implementations
+Explicit numeric conversions
+Explicit reference conversions
+Expression
+Expression classifications
+Expression statements
+Expressions
+Expressions and statements
+Extern alias directives
+Extern aliases
+External methods
+Field initialization
+Field initializers
+Field-like events
+Fields
+Fixed and moveable variables
+Fixed size buffer declarations
+Fixed size buffers
+Fixed size buffers in expressions
+Fixed statements
+Floating point types
+Floating-point comparison operators
+For statements
+Foreach statements
+Fully qualified interface member names
+Fully qualified name
+Fully qualified names
+Function member invocation
+Function members
+General rules for expressions with embedded expressions
+General rules for simple expressions
+General rules for statements
+Generic class declarations
+Generic delegate declarations
+Generic interface declarations
+Generic method signatures
+Generic methods
+Generic struct declarations
+Generic type instantiations
+Generics
+Grammar
+Grammar ambiguities
+Grammar extensions for unsafe code
+Grammar notation
+Grammars
+Hello world
+Hiding
+Hiding through inheritance
+Hiding through nesting
+How exceptions are handled
+ID string examples
+ID string format
+Identical simple names and type names
+Identifiers
+Identity conversion
+If statements
+Implementation example
+Implicit constant expression conversions
+Implicit conversions
+Implicit enumeration conversions
+Implicit numeric conversions
+Implicit reference conversions
+Indexer access
+Indexer overloading
+Indexers
+Inference of type arguments
+Inheritance
+Initially assigned variables
+Initially unassigned variables
+Instance constructors
+Instance field initialization
+Instance variable initializers
+Instance variables
+Instance variables in classes
+Instance variables in structs
+Instantiation of local variables
+Integer comparison operators
+Integer literals
+Integer logical operators
+Integral types
+Interface body
+Interface declarations
+Interface events
+Interface implementation inheritance
+Interface implementations
+Interface indexers
+Interface mapping
+Interface member access
+Interface members
+Interface methods
+Interface modifiers
+Interface properties
+Interface re-implementation
+Interface types
+Interfaces
+Interoperation with COM and Win32 components
+Interoperation with other .NET languages
+Introduction
+Introduction to C# 2.0
+Invariant meaning in blocks
+Invocation expressions
+Invocation expressions and object creation expressions
+Invocations on boxed instances
+Iteration statements
+Iterator blocks
+Iterators
+Jump statements
+Keywords
+Labeled statements
+Lexical analysis
+Lexical grammar
+Lexical structure
+Lifted conversions
+Lifted operators
+Line directives
+Line terminators
+Literals
+Local constant declarations
+Local variable declarations
+Local variables
+Lock statements
+Logical negation operator
+Logical operators
+Meaning of this
+Member access
+Member lookup
+Member lookup on type parameters
+Member names reserved for destructors
+Member names reserved for events
+Member names reserved for indexers
+Member names reserved for properties
+Members
+Members of a constructed type
+Members of generic classes
+Members that cannot be generic
+Method body
+Method body and local variables
+Method group conversions
+Method invocations
+Method overloading
+Method parameters
+Methods
+Modifiers
+Multiplication operator
+Name binding
+Name hiding
+Namespace alias qualifiers
+Namespace and type names
+Namespace declarations
+Namespace members
+Namespaces
+Nested types
+Nested types in generic classes
+Null literal conversions
+Nullable conversions
+Nullable types
+Numeric promotions
+Object creation expressions
+Open and closed types
+Operator overload resolution
+Operator overloading
+Operator precedence and associativity
+Operators
+Operators and punctuators
+Operators in generic classes
+Optional instance constructor parameters
+Other features
+Other function members
+Outer variables
+Output parameters
+Overload resolution
+Overloading in generic classes
+Override methods
+Overriding and generic classes
+Overriding and interface implementation
+Parameter array methods and type parameters
+Parameter arrays
+Parameters
+Parenthesized expressions
+Partial declarations
+Partial types
+Permitted user-defined conversions
+Permitted user-defined operators
+Pointer arithmetic
+Pointer comparison
+Pointer conversions
+Pointer element access
+Pointer increment and decrement
+Pointer indirection
+Pointer member access
+Pointer types
+Pointers in expressions
+Positional and named parameters
+Postfix increment and decrement operators
+Pragma directives
+Pragma warning
+Pre-processing directives
+Pre-processing expressions
+Precise rules for determining definite assignment
+Prefix increment and decrement operators
+Primary expressions
+Private constructors
+Processing the documentation file
+Program structure
+Programs
+Properties
+Property accessor accessibility
+Protected access for instance members
+Qualified alias member
+Readonly fields
+Real literals
+Recommended tags
+Reference equality operators
+Reference parameters
+Reference type equality operators
+Reference types
+References
+Referencing static class types
+Region directives
+Relational and type-testing operators
+Remainder operator
+Reserved attributes
+Reserved member names
+Resulting XML
+Return statements
+Revised lookup rules
+Right-shift grammar changes
+Run-time retrieval of an attribute instance
+Satisfying constraints
+Scopes
+Sealed classes
+Sealed methods
+Selection statements
+Shift operators
+Signatures and overloading
+Simple assignment
+Simple assignment expressions
+Simple names
+Simple types
+Stack allocation
+Standard conversions
+Standard explicit conversions
+Standard implicit conversions
+Statement lists
+Statements
+Static and instance events
+Static and instance fields
+Static and instance members
+Static and instance methods
+Static and instance properties
+Static class declarations
+Static classes
+Static constructors
+Static constructors in generic classes
+Static field initialization
+Static fields in generic classes
+Static variables
+String equality operators
+String literals
+Struct body
+Struct declarations
+Struct examples
+Struct interfaces
+Struct members
+Struct modifiers
+Struct types
+Structs
+Subtraction operator
+Switch statements
+Syntactic grammar
+Table of Contents
+The AttributeUsage attribute
+The Conditional attribute
+The Current property
+The Dispose method
+The GetEnumerator method
+The IndexerName attribute
+The MoveNext method
+The Obsolete attribute
+The System.Array type
+The System.Enum type
+The System.Exception class
+The System.ValueType type
+The address-of operator
+The as operator
+The bool type
+The bool? type
+The break statement
+The checked and unchecked operators
+The checked and unchecked statements
+The continue statement
+The decimal type
+The do statement
+The empty statement
+The fixed statement
+The for statement
+The foreach statement
+The goto statement
+The if statement
+The instance type
+The is operator
+The lock statement
+The new modifier
+The new operator
+The null coalescing operator
+The null literal
+The object type
+The return statement
+The sizeof operator
+The string type
+The switch statement
+The throw statement
+The try statement
+The typeof operator
+The using statement
+The value type constraint
+The while statement
+The yield statement
+This access
+Throw statements
+Tokens
+Try-catch statements
+Try-catch-finally statements
+Try-finally statements
+Type arguments
+Type declarations
+Type parameters
+Type parameters and boxing
+Type parameters and constraints
+Types
+Types and variables
+Unary minus operator
+Unary numeric promotions
+Unary operator overload resolution
+Unary operators
+Unary plus operator
+Unboxing conversions
+Unicode character escape sequences
+Uniqueness of aliases
+Uniqueness of implemented interfaces
+Unsafe code
+Unsafe contexts
+User-defined conditional logical operators
+User-defined conversions
+User-defined explicit conversions
+User-defined implicit conversions
+Using a generic method with a delegate
+Using alias directives
+Using directives
+Using namespace directives
+Using statements
+Using static readonly fields for constants
+Value parameters
+Value semantics
+Value types
+Values of expressions
+Variable categories
+Variable initializers
+Variable references
+Variables
+Versioning of constants and static readonly fields
+Virtual generic methods
+Virtual methods
+Virtual, override, and abstract methods
+Virtual, sealed, override, and abstract accessors
+Volatile fields
+While statements
+White space
+Why generics?
+Yield type
+this access
+|| expressions
