@@ -1,0 +1,160 @@
+Table of Contents
+Introduction to C# 2.0
+Generics
+Why generics?
+Creating and using generics
+Generic type instantiations
+Constraints
+Generic methods
+Anonymous methods
+Method group conversions
+Iterators
+Partial types
+Nullable types
+Generics
+Generic class declarations
+Type parameters
+The instance type
+Base specification
+Members of generic classes
+Static fields in generic classes
+Static constructors in generic classes
+Accessing protected members
+Overloading in generic classes
+Parameter array methods and type parameters
+Overriding and generic classes
+Operators in generic classes
+Nested types in generic classes
+Application entry point
+Generic struct declarations
+Generic interface declarations
+Uniqueness of implemented interfaces
+Explicit interface member implementations
+Generic delegate declarations
+Constructed types
+Type arguments
+Open and closed types
+Base classes and interfaces of a constructed type
+Members of a constructed type
+Accessibility of a constructed type
+Conversions
+Using alias directives
+Attributes
+Arrays and the generic IList interface
+Generic methods
+Generic method signatures
+Virtual generic methods
+Calling generic methods
+Inference of type arguments
+Grammar ambiguities
+Using a generic method with a delegate
+Members that cannot be generic
+Constraints
+Satisfying constraints
+Member lookup on type parameters
+Type parameters and boxing
+Conversions involving type parameters
+Expressions and statements
+Object creation expressions
+The typeof operator
+Reference equality operators
+The is operator
+The as operator
+Exception statements
+The lock statement
+The using statement
+The foreach statement
+Revised lookup rules
+Namespace and type names
+Member lookup
+Applicable function member
+Better function member
+Simple names
+Member access
+Method invocations
+Right-shift grammar changes
+Anonymous methods
+Anonymous method expressions
+Anonymous method signatures
+Anonymous method conversions
+Anonymous method blocks
+Outer variables
+Captured outer variables
+Instantiation of local variables
+Anonymous method evaluation
+Delegate instance equality
+Definite assignment
+Method group conversions
+Delegate creation expressions
+Implementation example
+Iterators
+Iterator blocks
+Enumerator interfaces
+Enumerable interfaces
+Yield type
+This access
+Enumerator objects
+The MoveNext method
+The Current property
+The Dispose method
+Enumerable objects
+The GetEnumerator method
+The yield statement
+Definite assignment
+Implementation example
+Partial types
+Partial declarations
+Attributes
+Modifiers
+Type parameters and constraints
+Base class
+Base interfaces
+Members
+Name binding
+Nullable types
+Nullable types
+Members
+Default value
+The value type constraint
+Conversions
+Null literal conversions
+Nullable conversions
+Boxing and unboxing conversions
+Permitted user-defined conversions
+Evaluation of user-defined conversions
+Lifted conversions
+User-defined implicit conversions
+User-defined explicit conversions
+Expressions
+Lifted operators
+Permitted user-defined operators
+Operator overload resolution
+Equality operators and null
+The is operator
+The as operator
+Compound assignment
+The bool? type
+The null coalescing operator
+Other features
+Property accessor accessibility
+Accessor declarations
+Accessor usage
+Overriding and interface implementation
+Static classes
+Static class declarations
+Referencing static class types
+Namespace alias qualifiers
+Qualified alias member
+Uniqueness of aliases
+Extern aliases
+Extern alias directives
+Pragma directives
+Pragma warning
+Default value expression
+Conditional attribute classes
+Fixed size buffers
+Fixed size buffer declarations
+Fixed size buffers in expressions
+Fixed statements
+Definite assignment checking
+
