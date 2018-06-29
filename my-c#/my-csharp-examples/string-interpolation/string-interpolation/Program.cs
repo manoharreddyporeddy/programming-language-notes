@@ -4,6 +4,8 @@ namespace string_interpolation
 {
     class Program
     {
+        static long MySquare(long x) => x* x;
+
         static void Main(string[] args)
         {
             string name = "Mark";
@@ -22,6 +24,12 @@ namespace string_interpolation
 
             // string interpolation
             Console.WriteLine($"Hello, {name} {world}!");           // Hello, Mark  world!
+
+            int i = 3;
+            // string interpolation
+            Console.WriteLine($"Hello, {i} {i*i}!");                // Hello, 3 9!
+            Console.WriteLine($"Hello, {i} {MySquare(i)}!");        // Hello, 3 9!
+
         }
     }
 }
