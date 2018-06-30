@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4ECCDEE3-6C30-4086-9BD3-A2C55352BFC6}</ProjectGuid>
+    <ProjectGuid>{363F9512-97A3-44C9-A103-1EF60FC0FBB6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>interface_example</RootNamespace>
-    <AssemblyName>interface-example</AssemblyName>
+    <RootNamespace>interfaces</RootNamespace>
+    <AssemblyName>interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

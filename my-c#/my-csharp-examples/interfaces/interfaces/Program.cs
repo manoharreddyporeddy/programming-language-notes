@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace interface_example
+namespace interfaces
 {
     // interface
     //      is important since C# does not have multiple inheritance
