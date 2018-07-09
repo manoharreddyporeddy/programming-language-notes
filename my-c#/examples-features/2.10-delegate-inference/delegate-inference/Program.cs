@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace delegate_inference
 {
-    delegate void MyDelegate(string msg);
+    delegate void MyDel1(string msg);
 
     class Program
     {
-        public static void Greetings(string greet)
+        public static void Func1(string str1)
         {
-            Console.WriteLine(greet);
+            Console.WriteLine(str1);
         }
 
         static void Main(string[] args)
         {
             {
-                MyDelegate del = new MyDelegate(Greetings);
-                del("hello world");
+                MyDel1 del = new MyDel1(Func1);
+                del("Hello1");
             }
 
             {
-                MyDelegate del = Greetings;  // delegate inference - pass the method name and the delegate type would be inferred
-                del("hello world");
+                MyDel1 del = Func1;  // delegate inference (pass the method name, the delegate type would be inferred)
+                del("Hello2");
             }
         }
     }

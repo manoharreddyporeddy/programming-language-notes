@@ -11,24 +11,21 @@ namespace expression_tree
     {
         static void Main(string[] args)
         {
-            // raw executable code
+            // raw executable "code"
 
-            // lambda expression as a   Func<int, int, int> function1
-            Func<int, int, int> function1 = (a, b) => a + b;
+            // delegate type   'Func'   is from   System namespace:           public delegate TResult Func<T1, T2, TResult>(T1 arg1, T2 arg2);
+            Func<int, int, long> function1 =
+                (a, b) => a + b;       // sum function   as a   lambda expression
             // function1 points at raw executable code
-            //
-            // delegate type   Func   is from   System namespace:
-            //      public delegate TResult Func<T1, T2, TResult>(T1 arg1, T2 arg2);
 
-            int c = function1(3, 5);
-            Console.WriteLine($"c is {c}");
-
+            long res = function1(3, 5);           // call it
+            Console.WriteLine($"res is {res}");
 
 
             // Expression trees
             //  are not executable code, they are a form of data structure
             //
-            //  is code converted into data
+            //  is code converted into "data"
             //
             //  they take an executable expression and capture its parts in a tree-like data structure.
             Expression<Func<int, int, int>> expression = (a, b) => a + b;

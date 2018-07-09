@@ -2,18 +2,21 @@
 
 namespace structs
 {
-    public struct CoOrds
+    // value type
+    public struct StPoint
     {
         public int x;
         public int y;
+
         public static int count = 0;
 
-        // public CoOrds() { }        // Error CS0568  Structs cannot contain explicit parameterless constructors
+        // public StPoint() { }        // Error CS0568  Structs cannot contain explicit parameterless constructors
 
-        public CoOrds(int p1, int p2)
+        // argument constructor
+        public StPoint(int x1, int y1)
         {
-            x = p1;
-            y = p2;
+            x = x1;
+            y = y1;
         }
     }
 
@@ -21,13 +24,15 @@ namespace structs
     {
         static void Main(string[] args)
         {
-            CoOrds coords0;
-            CoOrds coords1 = new CoOrds();
-            CoOrds coords2 = new CoOrds(10, 10);
+            StPoint p0;
+            StPoint p1 = new StPoint();
+            StPoint p2 = new StPoint(10, 10);
 
-            // Console.WriteLine($"coords0.x is {coords0.x}  coords0.y is {coords0.y}");
-            Console.WriteLine($"coords1.x is {coords1.x}  coords1.y is {coords1.y}");
-            Console.WriteLine($"coords2.x is {coords2.x}  coords2.y is {coords2.y}");
+            // Console.WriteLine($"p0.x is {p0.x}  p0.y is {p0.y}");
+            Console.WriteLine($"p1.x is {p1.x}  p1.y is {p1.y}");
+            Console.WriteLine($"p2.x is {p2.x}  p2.y is {p2.y}");
+
+            Console.WriteLine(p2.ToString());
         }
     }
 }

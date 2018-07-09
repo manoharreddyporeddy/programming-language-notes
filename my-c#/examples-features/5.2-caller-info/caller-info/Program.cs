@@ -11,11 +11,12 @@ namespace caller_info
     {
         static void Main(string[] args)
         {
-            ShowCallerInfo();
+            Func1(1);
         }
 
         // These three attributes can be useful when you may want to trace all the calls to specific function. 
-        public static void ShowCallerInfo(
+        public static void Func1(
+            int a,
             [CallerMemberName] string callerName = null,
             [CallerFilePath] string callerFilePath = null,
             [CallerLineNumber] int callerLine = -1

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;                // using                        System         namespace
 
-using System;                // using                        System         namespace
+// using static
 using static System.Math;    // using static members of this System.Math    class
 using static System.Console; // using static members of this System.Console class
 
@@ -24,17 +20,17 @@ public class Circle
 
     public double Circumference
     {
-        get { return 2 * Radius * PI; }     // Math.PI;
+        get { return 2 * Radius * PI; }     // Math.PI;             *********************
     }
 
     public double Area
     {
-        get { return PI * Pow(Radius, 2); } // Math.PI;  Math.Pow
+        get { return PI * Pow(Radius, 2); } // Math.PI;  Math.Pow             *********************
     }
 
     public void PrintRadius()
     {
-        WriteLine(Radius);                  // Console.WriteLine
+        WriteLine(Radius);                  // Console.WriteLine             *********************
     }
 }
 

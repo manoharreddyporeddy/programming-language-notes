@@ -8,20 +8,32 @@ namespace index_initializers
 {
     class Program
     {
+
         // collection initializers 
-        private static List<string> messages = new List<string> {
+        private static List<string> messages =
+            new List<string> {
                 "Page not Found",
                 "Page moved, but left a forwarding address.",
                 "The web server can't come out to play today."
             };
 
+        // general
+        public static Dictionary<int, string> dict =
+            new Dictionary<int, string>
+            {
+                {1,"One"},
+                {2, "Two"},
+                {3,"Three"}
+            };
+
         // Index Initializers
-        private static Dictionary<int, string> webErrors = new Dictionary<int, string>
-        {
-            [404] = "Page not Found",
-            [302] = "Page moved, but left a forwarding address.",
-            [500] = "The web server can't come out to play today."
-        };
+        private static Dictionary<int, string> webErrors =
+            new Dictionary<int, string>
+            {
+                [404] = "Page not Found",
+                [302] = "Page moved, but left a forwarding address.",
+                [500] = "The web server can't come out to play today."
+            };
 
         static void Main(string[] args)
         {
@@ -68,18 +80,12 @@ namespace index_initializers
             Console.WriteLine();
 
 
-            // other
-            Dictionary<int, string> dict = new Dictionary<int, string>
-                                                            {
-                                                                {1,"One"},
-                                                                {2, "Two"},
-                                                                {3,"Three"}
-                                                            };
             /*
                 Key: 1, Value: One
                 Key: 2, Value: Two
                 Key: 3, Value: Three
             */
+
             foreach (KeyValuePair<int, string> item in dict)
             {
                 Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);

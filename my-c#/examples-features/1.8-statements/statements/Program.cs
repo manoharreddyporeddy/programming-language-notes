@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace statements
 {
-    class Program
+    class cls1
     {
         public void a0()
         {
@@ -20,12 +20,12 @@ namespace statements
             // Constant declaration statement.
             const double pi = 3.14159;
 
-
-
             // Expression statement (assignment).
             area = 3.14 * (radius * radius);
+
             // Expression statement (method invocation).
             System.Console.WriteLine();
+
             // Expression statement (new object creation).
             System.Collections.Generic.List<string> strings = new System.Collections.Generic.List<string>();
         }
@@ -79,6 +79,7 @@ namespace statements
                 throw new ArgumentNullException();
             }
         }
+
         static void demo()
         {
             string s = null; // For demonstration purposes.
@@ -92,7 +93,8 @@ namespace statements
                 throw e;
             }
         }
-        static void Main(string[] args)
+
+        void callDemo()
         {
             try
             {
@@ -184,7 +186,6 @@ namespace statements
         }
     }
 
-
     // await
     // The await operator is applied to a task in an asynchronous method to insert a suspension point in the execution of the method until the awaited task completes. The task represents ongoing work.
 
@@ -227,7 +228,8 @@ namespace statements
             }
 
 
-            if (true) {
+            if (true)
+            {
                 // embedded statement in a block
                 int radius = 5;
                 Console.WriteLine(radius);
@@ -254,5 +256,13 @@ namespace statements
         }
     }
 
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+
+    }
 
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace auto_implemented_properties
 {
@@ -10,31 +6,32 @@ namespace auto_implemented_properties
     {
         //  compiler creates a
         //          private,
-        //          anonymous backing field that
-        //              can only be accessed through the property's get and set accessors.
+        //          anonymous backing field that    can only be accessed through the property's get and set accessors.
 
-        //            auto-implemented property
+        // auto-implemented property
         public string FirstName { get; set; }
 
-        // initialize auto-implemented property
+        // auto-implemented property - initialization
         public string FirstName2 { get; set; } = "Jane";
 
-        // auto-implemented properties
-        // read-only properties.
+        // auto-implemented property - read-only properties.
         public string Name { get; }
         public string Address { get; private set; }
 
         // public constructor.   
-        public Program(string contactName, string contactAddress)
+        public Program(string Name1, string Address1)
         {
-            Name = contactName;
-            Address = contactAddress;
+            Name = Name1;
+            Address = Address1;
         }
 
         static void Main(string[] args)
         {
             var p = new Program("contact1", "address1");
-            Console.WriteLine("done");
+            Console.WriteLine($"{p.FirstName}");
+            Console.WriteLine($"{p.FirstName2}");
+            Console.WriteLine($"{p.Name}");
+            Console.WriteLine($"{p.Address}");
         }
     }
 }

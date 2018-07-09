@@ -50,7 +50,6 @@ namespace tuple_and_deconstruct
 
 
         // Deconstruct
-
         class Point
         {
             public int X { get; }
@@ -63,13 +62,13 @@ namespace tuple_and_deconstruct
             }
 
             // Deconstruct method can also be an extension method
-            public void Deconstruct(out int x, out int y)
+            public void Deconstruct(out int x, out int y)           // **********************************************
             {
                 x = X;
                 y = Y;
             }
         }
-        static void PointUse()
+        static void use()
         {
             var (x, y) = new Point(1, 2);
             Console.WriteLine($"Coordinates: ({x}, {y})");
@@ -81,7 +80,7 @@ namespace tuple_and_deconstruct
         {
             Func1Use();
             Func2Use();
-            PointUse();
+            use();
         }
 
     }

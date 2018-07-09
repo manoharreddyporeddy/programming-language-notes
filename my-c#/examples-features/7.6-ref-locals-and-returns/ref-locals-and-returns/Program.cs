@@ -60,7 +60,7 @@ namespace ref_locals_and_returns
                 int[,] matrix = { { 1, 42 }, { 2, 4 } };
 
                 // ref local
-                ref var item = ref MatrixSearch.Find3(matrix, (val) => val == 42);
+                ref var item = ref MatrixSearch.Find3(matrix, (val) => val == 42);      //////////////////// ******** return item as ref
                 Console.WriteLine(item);
                 item = 24;
                 Console.WriteLine(matrix[0, 1]);    // prints 24

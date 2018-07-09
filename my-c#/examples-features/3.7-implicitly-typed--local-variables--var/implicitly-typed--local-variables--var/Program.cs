@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace implicitly_typed__local_variables__var
 {
@@ -11,6 +9,7 @@ namespace implicitly_typed__local_variables__var
         public string Name;
         public string City;
         public int Phone;
+
         public Customer(string Name, string City, int Phone)
         {
             this.Name = Name;
@@ -24,13 +23,12 @@ namespace implicitly_typed__local_variables__var
         static void Main(string[] args)
         {
             // local variable
-            var i = 10; // Implicitly typed
-            int j = 10; // Explicitly typed
+            int i = 10; // Explicitly typed
+            var j = 10; // Implicitly typed
             Console.WriteLine($"{i}, {j}");
 
-
-            // Example #1: var is optional because
-            // the select clause specifies a string
+            // var is optional because
+            //          the select clause specifies a string
             string[] words = { "apple", "strawberrys", "grape", "peach", "banana" };
             var wordQuery = from word in words
                             where word[0] == 'g'

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+// use the namespace
 using MyExtensionNs1;
 
 // normal namespace
@@ -12,24 +10,17 @@ namespace MyExtensionNs1
     public static class MyExtensionCls1
     {
         // static method
-
-        //
-        // extension method // first parameter is "this type1" ex:     ... func1(this string str, ...)
+        // extension method
+        //   first parameter is "this type1" ex:     ... func1(this string str, ...)
         //      method will be called by a string instance using the dot operator
         //      when source code does not exist to exend, we can write extension methods
 
-        // extension method for "string", only if original WordCount is not of same signation in "string"
-        public static int WordCount(this string str)
+        // extension method for "string", only if original MyLength is not of same signation in "string"
+        //  like extending with one more method for string datatype
+        public static int MyLength(this string str)
         {
-            string[] userString =
-                str.Split(
-                    new char[] { ' ', ',', '.', '?', '-', ':', ';' },
-                    StringSplitOptions.RemoveEmptyEntries
-                    );
-            int wordCount = userString.Length;
-            return wordCount;
+            return str.Length;
         }
-        // ...
     }
 }
 
@@ -39,10 +30,8 @@ namespace extension_methods
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(
-                "Total number of words is :" +
-                "Hello , world".WordCount()       //calls MyExtensionCls1 Method WordCount
-            );
+            string str1 = "hello world";
+            Console.WriteLine(str1.MyLength()); // calls MyLength (from MyExtensionCls1 automatically)
         }
     }
 }

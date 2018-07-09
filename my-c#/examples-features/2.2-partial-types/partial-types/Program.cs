@@ -7,39 +7,31 @@ using System.Threading.Tasks;
 namespace partial_types
 {
     // Partial Class
-    public partial class Employee
+    public partial class MyCls1
     {
-        public void DoWork()
-        {
-        }
-    }
-    public partial class Employee
-    {
-        public void GoToLunch()
+        public void Func1()
         {
         }
     }
 
-    // partial method declaration
-    //
-    //// Definition in file1.cs  
-    //partial void onNameChanged();
-    //
-    //// Implementation in file2.cs  
-    //partial void onNameChanged()
-    //{
-    //    // method body  
-    //}
+    // Partial Class
+    public partial class MyCls1
+    {
+        public void Func2()
+        {
+        }
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
-            // Partial Class
-            Employee e1 = new Employee();
-            e1.DoWork();
-            e1.GoToLunch();
+            // Partial Class usage
+            MyCls1 o1 = new MyCls1();
+            o1.Func1();
+            o1.Func2();
 
+            // can be different files?
         }
     }
 }

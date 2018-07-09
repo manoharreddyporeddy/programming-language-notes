@@ -27,7 +27,7 @@ namespace expression_bodied_members
         string FirstName = "a";
         string LastName = "b";
 
-        // expressions
+        // expression  bodied  members
         public string GetFullName() => FirstName + " " + LastName;
         public string FormalName => FirstName[0] + ". " + LastName;
     }

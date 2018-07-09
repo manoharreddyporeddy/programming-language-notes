@@ -18,7 +18,7 @@ namespace exception_filters
     }
     class App
     {
-        public static void DoSomethingThatMightFail()
+        public static void Func1()
         {
             var ex = new MyException(42);
             throw ex;
@@ -33,7 +33,7 @@ namespace exception_filters
         {
             try
             {
-                App.DoSomethingThatMightFail();
+                App.Func1();
             }
             catch (MyException ex)
             {
@@ -47,7 +47,7 @@ namespace exception_filters
         {
             try
             {
-                App.DoSomethingThatMightFail();
+                App.Func1();
             }
             catch (MyException ex) when (ex.Code == 42)
             {
@@ -69,7 +69,7 @@ namespace exception_filters
         {
             try
             {
-                App.DoSomethingThatMightFail();
+                App.Func1();
             }
             catch (Exception ex) when (Log(ex, "An error occurred.")) // logging exceptions on the fly without actually catching them, hence without unwinding the stack
             {

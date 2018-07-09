@@ -4,13 +4,18 @@ namespace interfaces
 {
     // interface
     //      is important since C# does not have multiple inheritance
-    interface ICar<T>
+    interface ICar
     {
         void Print();
     }
 
+    interface ICar2
+    {
+        void Print2();
+    }
+
     // class implements interface
-    public class Car : ICar<Car>
+    public class Car : ICar
     {
         string Name = "my car 1";
 

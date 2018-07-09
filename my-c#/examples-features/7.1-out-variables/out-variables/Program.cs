@@ -16,10 +16,10 @@ namespace out_variables
         static void Main(string[] args)
         {
             // old way
-            string name;
-            GetName(out name);
+            string name;            // variable 
+            GetName(out name);      // sent as out variable
 
-            // new way - name2 is a out variable
+            // new way - out variable (name2)
             GetName(out string name2);
 
             Console.WriteLine($"name: {name}");

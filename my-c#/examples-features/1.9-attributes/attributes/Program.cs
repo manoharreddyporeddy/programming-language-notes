@@ -53,7 +53,9 @@ namespace attributes
         // Objects of this type can be serialized.
     }
 
-    public class a
+
+
+    public class cls1
     {
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         extern static void SampleMethod();
@@ -77,7 +79,16 @@ namespace attributes
         //[DllImport("user32.dll", ExactSpelling = false, SetLastError = false)]
 
 
+    }
 
+
+
+
+    internal class ValidatedContractAttribute : Attribute
+    {
+    }
+    public class cls2
+    {
         // default: applies to method
         [ValidatedContract]
         int Method1() { return 0; }
@@ -91,9 +102,6 @@ namespace attributes
         int Method3() { return 0; }
     }
 
-    internal class ValidatedContractAttribute : Attribute
-    {
-    }
 
     class Program
     {
@@ -101,4 +109,6 @@ namespace attributes
         {
         }
     }
+
+
 }

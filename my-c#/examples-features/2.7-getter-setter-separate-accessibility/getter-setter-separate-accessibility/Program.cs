@@ -8,11 +8,11 @@ namespace getter_setter_separate_accessibility
 {
     class Employee
     {
-        private string m_name;
+        private string name;
         public string Name
         {
-            get { return m_name; }
-            protected set { m_name = value; }
+            get { return name; }
+            protected set { name = value; }
         }
     }
 
@@ -22,9 +22,15 @@ namespace getter_setter_separate_accessibility
         {
             Employee emp = new Employee();
 
-            // compile error
+            // OK - get
+            string s1 = emp.Name;
+
+            // compile error - set is protected
+            //
             //      Error	CS0272	The property or indexer 'Employee.Name' cannot be used in this context because the set accessor is inaccessible
+            //
             // emp.Name = "name 1";
+
         }
     }
 }

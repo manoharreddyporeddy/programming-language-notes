@@ -30,30 +30,13 @@ namespace anonymous_types
             from each object in the source sequence.
      */
 
-    class Product
-    {
-        private string color = string.Empty;
-        private int price = 0;
-        private string otherAttributes = string.Empty;
-
-        Product(string color, int price, string otherAttributes)
-        {
-            Color = color;
-            Price = price;
-            OtherAttributes = otherAttributes;
-        }
-        public string Color { get => color; set => color = value; }
-        public int Price { get => price; set => price = value; }
-        public string OtherAttributes { get => otherAttributes; set => otherAttributes = value; }
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
 
             {
-                var v = new { Amount = 101, Message = "Hello" };
+                var v = new { Amount = 101, Message = "Hello" };        // new of  an anonymous type
                 // compiler gives the anonymous type members
                 //      the same name as
                 //      the property being used to initialize them
@@ -66,11 +49,27 @@ namespace anonymous_types
             }
 
             {
-                var products = new List<Product>();
+                var anonArray = new[] {
+                    new { name = "apple", diam = 4 },   // new of  an anonymous type
+                    new { name = "grape", diam = 1 }    // new of  an anonymous type
+                };
 
+                foreach (var v in anonArray)
+                {
+                    Console.WriteLine($"{v.name}  {v.diam}");
+                }
+            }
+
+            {
+                var products = new List<Product>()
+                {
+                    new Product("red", 1, "ok"),
+                    new Product("red", 1, "ok"),
+                    new Product("red", 1, "ok"),
+                };
                 var productQuery =
                     from prod in products
-                    select new { prod.Color, prod.Price };
+                    select new { prod.Color, prod.Price };      // new of  an anonymous type
 
                 foreach (var v in productQuery)
                 {
@@ -78,13 +77,26 @@ namespace anonymous_types
                 }
             }
 
-            {
-                var anonArray = new[] {
-                    new { name = "apple", diam = 4 },
-                    new { name = "grape", diam = 1 }
-                };
-            }
-
         }
     }
+
+    class Product
+    {
+        private string color = string.Empty;
+        private int price = 0;
+        private string otherAttributes = string.Empty;
+
+        public Product(string color, int price, string otherAttributes)
+        {
+            Color = color;
+            Price = price;
+            OtherAttributes = otherAttributes;
+        }
+        public string Color { get => color; set => color = value; }
+        public int Price { get => price; set => price = value; }
+        public string OtherAttributes { get => otherAttributes; set => otherAttributes = value; }
+    }
+
+
+
 }

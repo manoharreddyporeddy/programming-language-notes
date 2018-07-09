@@ -20,7 +20,8 @@ namespace literals_constants_variables
 
 
         // literals
-        //  some are given as values on right side of below variables & constants
+        //      some are given as
+        //          values on right side of below variables & constants
 
         decimal d = 85;     /* decimal */
 
@@ -31,7 +32,8 @@ namespace literals_constants_variables
 
         // suffix - combination of U and L, for unsigned and long
         uint ui = 30u;      /* unsigned int */
-        long l = 30l;       /* long */
+        long l = 30L;       /* long */  // better CAPS L
+        // long l = 30l;       /* long */  // not recommended LOWER l
         ulong ul = 30ul;    /* unsigned long */
 
         // floating-point literal
@@ -77,6 +79,10 @@ Escape sequence	    Meaning
 */
 
 
+        static void f1(long x)
+        {
+        }
+
         static void Main(string[] args)
         {
 
@@ -95,6 +101,7 @@ dear");
 string s6 = "hello, " "d" "ear";
             */
 
+            f1(30L);
         }
     }
 }

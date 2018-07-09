@@ -8,18 +8,19 @@ namespace anonymous_methods
 {
     class Program
     {
-        delegate int NumberChangerDelegate(int n);
+        delegate void MyDel1();
 
         static void Main(string[] args)
         {
-            NumberChangerDelegate twice = delegate (int n) { Console.Write("called GetTwice: "); return 2 * n; };
+            MyDel1 twice = delegate () { Console.WriteLine("called MyFunc1: "); };
+
             //
             //      instead of
             //
-            // static int GetTwice(int q) { Console.Write("called GetTwice: "); return 2 * q; }
-            // NumberChangerDelegate twice = new NumberChangerDelegate(GetTwice);
+            //  static void MyFunc1() { Console.Write("called MyFunc1: "); }
+            //  MyDel1 twice = new MyDel1(MyFunc1);
 
-            Console.WriteLine(twice(2));    // called GetTwice: 4
+            twice();
         }
     }
 }

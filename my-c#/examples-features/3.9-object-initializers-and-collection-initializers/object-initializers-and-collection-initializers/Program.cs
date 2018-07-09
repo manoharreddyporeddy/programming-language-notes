@@ -8,8 +8,7 @@ namespace object_initializers_and_collection_initializers
 {
     class Cat
     {
-        // Auto-implemented properties.
-        public int Age { get; set; }
+        public int Age { get; set; }        // Auto-implemented properties.
         public string Name { get; set; }
     }
 
@@ -32,15 +31,15 @@ namespace object_initializers_and_collection_initializers
         static void use()
         {
 
+            Cat cat1 = new Cat() { Age = 10, Name = "Fluffy" };
 
             // object initializers
-            Cat cat = new Cat { Age = 10, Name = "Fluffy" };
-
-
+            Cat cat2 = new Cat { Age = 10, Name = "Fluffy" };
 
             // Object Initializers with anonymous types
             var pet = new { Age = 10, Name = "Fluffy" };
 
+            // collection initializer
             var productsList = new List<Product>()
             {
                 new Product("prod1", 101, 0 ),
@@ -48,29 +47,10 @@ namespace object_initializers_and_collection_initializers
                 new Product("prod3", 103, 0 )
             };
 
-            var productInfos =
-                from p in productsList
-                select new { p.ProductName, p.UnitPrice };
-            foreach (var p in productInfos)
-            {
-                //..
-            }
-
-            var productInfos2 =
-                from p in productsList
-                select new { p.ProductName, Price = p.UnitPrice };
-            foreach (var p in productInfos2)
-            {
-                //..
-            }
-
-
 
             // Object initializers with nullable types
             // It is a compile-time error to use an object initializer with a nullable struct.
             // TBD - example
-
-
 
             // Collection initializers
 
@@ -97,6 +77,27 @@ namespace object_initializers_and_collection_initializers
                 [9] = "nine",
                 [13] = "thirteen"
             };
+
+
+
+
+
+            var productInfos =
+                from p in productsList
+                select new { p.ProductName, p.UnitPrice };
+            foreach (var p in productInfos)
+            {
+                //..
+            }
+
+            var productInfos2 =
+                from p in productsList
+                select new { p.ProductName, Price = p.UnitPrice };
+            foreach (var p in productInfos2)
+            {
+                //..
+            }
+
 
             Console.WriteLine("All working.");
         }

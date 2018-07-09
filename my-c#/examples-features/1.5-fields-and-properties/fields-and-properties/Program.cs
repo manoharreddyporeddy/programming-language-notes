@@ -8,8 +8,47 @@ namespace fields_and_properties
 {
     class Properties1
     {
+
+        // field
+        // property (needs field (automatic/custom))
+
+
+        // 1. automatic storage defined for field (if field not defined)
+
+        /*
+          property
+
+          declarations for
+               a get and set accessor
+               that
+                    retrieves and
+                    assigns
+                        the value of that property
+        */
+
+
+        // property - initialized to default value (null)
+        public string SomeProp { get; set; }
+
+        // initialized to custom value (empty string)
+        public string Prop2 { get; set; } = string.Empty;
+
+        // read-only property
+        public string Prop3 { get; private set; }
+
+        public ICollection<string> points { get; } = new List<string>();
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string FullName { get { return FirstName + LastName; } }
+
+
+
+        // 2. custom storage defined for field (if field defined)
+
         // private field
-        private int _id;        // custom storage defined (field defined)
+        private int _id;
+
         // public property
         public int Id
         {
@@ -21,7 +60,8 @@ namespace fields_and_properties
             {
                 _id = value;
 
-                /*  // validations can be made
+                /*
+                // validations can be made
 
                 if (value != 0)
                 {
@@ -31,34 +71,11 @@ namespace fields_and_properties
                 {
                     throw new ArgumentOutOfRangeException();
                 }
-
                 */
             }
         }
 
-
-
-
-        // automatic storage defined (not field defined)
-
-        // initialized to default value (null)
-        public string FirstName { get; set; }       // property
-                                                    // declarations for
-                                                    //      a get and set accessor
-                                                    //      that retrieves and assigns the value of that property
-                                                    // initialized to custom value (empty string)
-        public string FirstName2 { get; set; } = string.Empty;
-
-        // read-only property
-        public string FirstName3 { get; private set; }
-
-        public ICollection<string> points { get; } = new List<string>();
-
-        public string FirstName4 { get; set; }
-        public string LastName4 { get; set; }
-        public string FullName4 { get { return FirstName4 + LastName4; } }
     }
-
 
 
 
@@ -93,21 +110,26 @@ namespace fields_and_properties
             get
             {
                 if (fullName == null)
+                {
                     fullName = $"{FirstName} {LastName}";
+                }
+
                 return fullName;
             }
         }
     }
 
-
-
-
     class Program
     {
         static void Main(string[] args)
         {
-        }
+            Person p = new Person();
 
+            p.FirstName = "hello";
+            p.LastName = " world";
+
+            Console.WriteLine(p.FullName);
+        }
     }
 
 }

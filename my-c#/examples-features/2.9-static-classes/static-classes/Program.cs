@@ -3,7 +3,7 @@
 namespace static_classes
 {
     // static class
-    static class StCls1
+    static class SCls1
     {
         // can contain only static members
         public static bool Func1(string str1)
@@ -13,20 +13,20 @@ namespace static_classes
         }
 
         // Cannot contain Instance Constructors.
-        /* StCls1() {       }*/
+        //      SCls1() { }
     }
 
-    // Is sealed
-    //class Derived : StCls1  {     }
+    // Is sealed, below derivated class is not possible
+    //          class Derived : SCls1  {     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            StCls1.Func1("hello world");
+            SCls1.Func1("hello");
 
             // Cannot be instantiated.
-            //      StCls1 p = new StCls1();
+            //      SCls1 p = new SCls1();
         }
     }
 }

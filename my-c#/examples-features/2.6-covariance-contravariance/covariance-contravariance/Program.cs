@@ -8,11 +8,12 @@ namespace covariance_contravariance
 {
     class Program
     {
-        static void SetObject(object o) {
+        static void MySetObject(object o)
+        {
         }
+
         static void Main(string[] args)
         {
-
             {
                 // covariance and contravariance enable
                 //  implicit reference conversion for
@@ -23,12 +24,11 @@ namespace covariance_contravariance
                 //  Covariance
                 //      preserves assignment compatibility and
                 //      contravariance reverses it.
-                
+
 
                 // Assignment compatibility.   
                 string str = "test";
                 object obj = str;   // An object of a more derived type is assigned to an object of a less derived type
-
 
                 // Covariance.   
                 IEnumerable<string> strings = new List<string>();
@@ -37,10 +37,9 @@ namespace covariance_contravariance
                 //          Assignment compatibility is preserved.   
                 IEnumerable<object> objects = strings;
 
-
                 // Contravariance.             
                 // Assume that the following method is in the class:   
-                Action<object> actObject = SetObject;
+                Action<object> actObject = MySetObject;
                 // An object that is instantiated with a less derived type argument is assigned
                 //      to an object instantiated with a more derived type argument.   
                 //          Assignment compatibility is REVERSED.   
@@ -48,8 +47,6 @@ namespace covariance_contravariance
             }
 
             {
-
-
                 //  IEnumerable<T> interface is covariant.
 
                 // interfaces are variant

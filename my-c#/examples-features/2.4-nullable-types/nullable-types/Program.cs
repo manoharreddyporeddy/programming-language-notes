@@ -6,27 +6,55 @@ namespace nullable_types
     {
         static void Main(string[] args)
         {
-            // null => HasValue is false
-            int? num = null;
-            if (num.HasValue == false)
-            {
-                Console.WriteLine("num.HasValue is false, so num = null");
+            // nullable type
+            int? n = null;
 
-                // if num.HasValue is false,  accessing  num.Value  throws an InvalidOperationException
-                int x;
-                try
-                {
-                    x = num.Value;
-                }
-                catch (InvalidOperationException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+            try
+            {
+                // accessing  n.Value  throws an InvalidOperationException, if n is null
+                int n2 = n.Value;
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine("Exception occured: " + e.Message);
             }
 
-            // GetValueOrDefault => value if exists, else default value like 0
-            int y = num.GetValueOrDefault();
-            Console.WriteLine("y = {0}", y);
+
+            // if n is null => n.HasValue is false
+            n = 1;
+            if (n.HasValue == true)
+            {
+                Console.WriteLine(n);
+            }
+            else
+            {
+                Console.WriteLine("n value does not exist");
+            }
+
+
+            n = null;
+            if (n.HasValue == true)
+            {
+                Console.WriteLine(n);
+            }
+            else
+            {
+                Console.WriteLine("n value does not exist");
+            }
+
+
+
+
+            // GetValueOrDefault => value, if value exists,   else   default value like 0
+            int n3;
+
+            n = null;
+            n3 = n.GetValueOrDefault();
+            Console.WriteLine("n3 = {0}", n3);
+
+            n = 10;
+            n3 = n.GetValueOrDefault();
+            Console.WriteLine("n3 = {0}", n3);
         }
     }
 }
