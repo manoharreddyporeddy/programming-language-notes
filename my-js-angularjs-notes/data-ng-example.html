@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>call a service</title>
+		<!-- script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script -->
+		<script src="./angular.min.js"></script>
+
+		<style>
+			input.ng-invalid {
+			  background-color: lightblue;
+			}
+		</style>
+	</head>
+	<body data-ng-app="myApp"
+		  data-ng-init="firstName='John'"
+		  >
+
+
+		<p>My first expression: {{ 5 + 5 }}</p>
+
+
+
+
+
+		<pre>
+The data-ng-app directive
+	also tells AngularJS that the div/body element is the "owner" of the AngularJS application.
+	defines the application
+	defines an AngularJS application
+	root element of an AngularJS application
+	will auto-bootstrap (automatically initialize) the application when a web page is loaded
+
+The data-ng-init directive
+	defines initial values for an AngularJS application
+	Using data-ng-init is not very common
+
+	initialize data in the chapter about controller
+	use a controller OR module instead
+		</pre>
+
+
+
+
+
+
+
+		<pre>
+
+AngularJS Directives - data-ng-directives - HTML attributes with an ng prefix
+
+The data-ng-app directive defines an AngularJS application.
+The data-ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+The data-ng-bind directive binds HTML view/innerHTML to the application data.
+		</pre>
+
+
+
+		<h2> color {{color}}</h2>
+
+		<pre>
+the data-ng-controller directive defines the controller.
+		</pre>
+		<div data-ng-controller="myCtrl1">
+			<h1>myCtrl1</h1>
+			<h2> color {{color}}</h2>
+		</div>
+
+		<div data-ng-controller="myCtrl2">
+			<h1>myCtrl2</h1>
+			<h2> color {{color}}</h2>
+		</div>
+
+		<pre>
+
+Data binding in AngularJS is the synchronization between the model and the view.
+The HTML container where the AngularJS application is displayed, is called the view.
+The view has access to the model, and there are several ways of displaying model data in the view.
+<!--
+You can use the ng-bind directive, which will bind the innerHTML of the element to the specified model property:
+	<p ng-bind="firstname"></p>
+You can also use double braces {{ }} to display content from the model:
+	<p>First name: {{firstname}}</p>
+
+Or you can use the ng-model directive on HTML controls to bind the model to the view.
+
+
+When data in the model changes, the view reflects the change, and
+when data in the view changes, the model is updated as well
+
+-->
+
+
+AngularJS Expressions (bind data to html, lly, data-ng-bind directive.)
+AngularJS binds data to HTML using Expressions.
+
+1. AngularJS expressions written inside double braces
+		</pre>
+
+		<p>My first expression: {{ 5 + 5 }}</p>
+
+		{{firstName}}
+
+
+
+		<pre>
+2. AngularJS expressions written inside a directive
+		</pre>
+		<p data-ng-bind="firstName"> <br/></p>
+
+		<!--
+			ng-model directives bind the input fields to the controller properties
+		-->
+		<p>Name : <input data-ng-model="firstName" type="text" placeholder="Enter name here"></p>
+
+		<div data-ng-init="myCol='lightblue'">
+			<!-- input style="background-color:{{myCol}}" data-ng-model="myCol" value="{{myCol}}" -->
+		</div>
+
+		<div data-ng-controller="personController">
+			<h1>personController</h1>
+			<!-- bind the value of an input field, to variable in AngularJS -->
+			<!--  initialization is done, using variables in controller file
+						this updates both input/textbox & expression in text below
+						when the input/textbox changes, both expression in text below & variables in controller file
+						due to data binding in AngularJS, the view will reflect any changes made in the controller
+			-->
+
+			Quantity: <input type="number" data-ng-model="quantity"><br/>
+			Costs:    <input type="number" data-ng-model="price"><br/>
+			<!-- AngularJS property -->
+			Total in dollar: {{ quantity * price }}<br/>
+
+
+			<!-- wow! html is calling javascript (used rarely?)
+				{{ setQuantity(12); }}
+				{{ getFullName(); }}
+			-->
+
+
+
+			<div >
+				<ul>
+					<li data-ng-repeat="x in names">
+						{{ x }}
+					</li>
+				</ul>
+
+				<ul>
+					<li data-ng-repeat="x in names2">
+						{{ x.name + ', ' + x.country }}
+					</li>
+				</ul>
+
+			</div>
+
+
+
+
+		</div>
+
+		<div data-ng-controller="myCtrl99">
+			<h2> color {{color}}</h2>
+
+			<h2>Options: {{lblOptions1}}</h2>
+			<h2>Status:  {{lblStatus1}}</h2>
+			<h2>Data:    {{lblData1}}</h2>
+			<h2>Error:   {{lblError1}}</h2>
+
+		</div>
+
+
+
+
+		<pre>
+To invoke the new directive, make an HTML element with the same tag name as the new directive.
+		</pre>
+
+		<!-- div>
+			<data-my-custom-directive1></data-my-custom-directive1>
+			<div data-my-custom-directive2></div>
+			<div class="data-my-custom-directive3"></div>
+			<directive: data-my-custom-directive4>
+			<directive: w3-test-directive>
+			</div -->
+
+
+
+		<form name="myForm1">
+			Email:
+			<input type="email" name="myAddress1" data-ng-model="myAddress1" data-ng-init="myAddress1='post@myweb.com'" required>
+
+			<!-- If the property in the ng-model attribute does not exist, AngularJS will create one for you.
+			The ng-model directive adds/removes the following classes, according to the status of the form field:
+				ng-empty
+				ng-not-empty
+				ng-touched
+				ng-untouched
+				ng-valid
+				ng-invalid
+				ng-dirty
+				ng-pending
+				ng-pristine
+			-->
+
+			<span data-ng-show="myForm1.myAddress1.$error.email">Not a valid e-mail address</span>
+
+			<!--
+			span will be displayed only if
+				 the expression in the ng-show attribute returns true.
+
+			-->
+
+			<h2> myAddress1 {{myAddress1}}</h2>
+
+
+			<p>Valid: {{myForm1.myAddress1.$valid}} (if true, the value meets all criteria).</p>
+			<p>Dirty: {{myForm1.myAddress1.$dirty}} (if true, the value has been changed).</p>
+			<p>Touched: {{myForm1.myAddress1.$touched}} (if true, the field has been in focus).</p>
+
+		</form>
+
+
+
+		<div data-ng-controller="filterCtrl" >
+
+			AngularJS Filters
+			- to format OR transform data
+
+			lowercase	Format a string to lower case.
+			uppercase	Format a string to upper case.
+
+			currency	Format a number to a currency format.
+			date		Format a date to a specified format.
+			json		Format an object to a JSON string.
+			number		Format a number to a string.
+
+			orderBy		Orders an array by an expression.
+
+			limitTo		Limits an array/string, into a specified number of elements/characters.
+			filter		Select a subset of items from an array.
+
+
+			<p>The name is {{firstName2}} </p>
+			<p>The name is {{ firstName2 | lowercase }}</p>
+			<p>The name is {{ firstName2 | uppercase }}</p>
+			<p>The name is {{ firstName2 | uppercase }}</p>
+			<p>The name is {{ firstName2 | uppercase }}</p>
+
+		</div>
+
+		<script src="myApp1.js"></script>
+		<script src="myCtrlr1.js"></script>
+		<script src="myDirec1.js"></script>
+
+	</body>
+</html>
