@@ -1,3 +1,4 @@
+<pre>
 
 project management fundamentals
 
@@ -121,7 +122,5 @@ project is NOT operations
 	same work/task day after day
 	produces same result
 
-	
 
-
-
+</pre>
