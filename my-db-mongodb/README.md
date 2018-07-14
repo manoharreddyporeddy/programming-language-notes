@@ -65,6 +65,7 @@ my-mongodb-notes
 
 # shell commands
 
+
 simple
 
 	// hierarchy:
@@ -142,6 +143,9 @@ simple
 	// to get what all commands exists for 'myCollection' collection
 	db.myCollection.help();
 
+
+
+More help is here: https://docs.mongodb.com/manual/reference/mongo-shell/
 
 ---------------------------------
 
