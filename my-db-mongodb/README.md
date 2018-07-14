@@ -1,6 +1,311 @@
 # my-mongodb-notes
 my-mongodb-notes
 
+
+# NEW DOCUMENTATION
+
+
+---------------------------------
+# installation
+
+	download mongodb
+		https://www.mongodb.com/download-center?jmp=nav#enterprise
+
+		select
+			"Community server" tab
+				> "Windows
+					> download
+
+
+	MongoDB 4.0.0 2008R2Plus SSL (64 bit)
+
+
+	Install MongoDB as a Service
+	* Run service as Network Service user
+	o Run service as local or domain user
+
+	Service Name: MongoDB
+	Data directory C:\Program Files\MongoDB\Server\4.0\data\
+	Log  directory C:\Program Files\MongoDB\Server\4.0\log\
+
+
+
+			NOTE: Install with old versions of mongodb:
+				// server
+				mongod
+					MongoDB shell version v4.0.0
+					connecting to: mongodb://127.0.0.1:27017
+					MongoDB server version: 4.0.0
+					
+					show dbs;
+						admin   0.000GB
+						config  0.000GB
+						local   0.000GB
+
+				// client
+				mongo
+					show dbs;
+					exit;
+
+				start mongo as a server
+					install config
+						mongod --config "C:\data\mongo.cfg" --install
+					start service
+						net start mongodb
+					stop service
+						net stop mongodb
+
+
+#2
+	MongoDB Compass
+		official GUI for MongoDB
+---------------------------------
+
+# shell commands
+
+simple
+
+	// hierarchy:
+	//
+	// 	dbs (like databases)
+	//		> collections (like tables)
+	//			> documents
+
+	// start mongo client
+	mongo
+
+	// list all databases
+	show dbs
+	// NOTE: assume one of the databases is myViewDb
+
+	// use the 'myViewDb' database
+	use myViewDb
+
+
+	// show all collections of 'myViewDb' database
+	show collections
+	// NOTE: assume one of the collections is 'mycollection1'
+
+	// show all documents of 'mycollection1' collection
+	db.mycollection1.find()
+
+	// delete the 'mycollection1' collection
+	db.mycollection1.drop1()
+	// NOTE: I have used drop1 instead of drop to eliminate accidental deletion
+	// NOTE:		if you really want to delete, change "drop1" to "drop" in the above command
+
+	// to get what all commands exists for 'mycollection1' collection
+	db.mycollection1.help();
+
+
+---------------------------------
+
+detailed
+
+
+	use db1;
+	db;
+	show collections;
+		students
+	db.students.find();
+	db.createUser({
+		user: "u1",
+		pwd: "p1",
+		roles: ["readWrite", "dbAdmin"]
+	})
+		// Successfully added user
+
+	// collections/ tables
+	db.createCollection("customers")
+		// {ok: 1}
+	show collections;
+		// customers
+	db.customers.insert({
+		firstName: "fn1",
+		lastName: "ln1"
+	})
+	db.customers.find();
+	{"_id": ObjectId("23412341432"),
+		"firstName": "fn1",
+		lastName: "ln1"
+		}
+
+	db.customers.insert(
+	[
+	{
+		firstName: "fn1",
+		lastName: "ln1"
+	},
+	{
+		firstName: "fn2",
+		lastName: "ln2",
+		gender: "male"
+	}
+	]
+	)
+	// BulkWriteResults ({ "writeErrors": [] ... })
+
+	db.customers.find();
+	//
+
+	db.customers.find().pretty();
+	//
+
+	// match1 - way1 - overwrite doc - must give all existing field + new field
+	db.customers.update(
+	{firstName: "John"},
+	{firstName: "John", lastName:"hello"}
+	);
+	//
+
+	// match1 - way1 - overwrite doc - must give all existing field + new field
+	db.customers.update(
+	{firstName: "John"},
+	{firstName: "John", lastName:"hello", gender:"male"}
+	);
+	//
+
+	// match1 - way2 - add/modify field - $set: {} - give only new field
+	db.customers.update(
+	{firstName: "John"},
+	{$set: {score:44}}
+	);
+	//
+
+	// increment by 5
+	db.customers.update(
+	{firstName: "John"},
+	{$inc: {score:5}}
+	);
+
+	// match1 - remove field - $unset: {} - give only new field
+	db.customers.update(
+	{firstName: "John"},
+	{$unset: {score:1}}
+	);
+	//
+
+	// upsert
+	db.customers.update(
+	{firstName: "John"},
+	{firstName: "John", lastName: "lnnn"},
+	{upsert: true}
+	);
+	//
+
+	// rename
+	db.customers.update(
+	{firstName: "John"},
+	{$rename: {score: score2}}
+	);
+	//
+
+	// ----------------------------------------------------------
+	// ----------------------------------------------------------
+
+	// remove all document of something
+	db.customers.remove(
+	{firstName: "John"}
+	);
+	//
+
+	// remove 1 document of something
+	db.customers.remove(
+	{firstName: "John"},
+	{justOne: true}
+	);
+	//
+
+	// ----------------------------------------------------------
+	// ----------------------------------------------------------
+	// find with $or: []
+	db.customers.find(
+	{
+		$or: [
+			{firstName: "John"},
+			{firstName: "Johnny"}
+		]
+	}
+	);
+	//
+
+	// find with $gt:nnn
+	db.customers.find(
+	{
+		age:{
+			{$lt: 40}
+		}
+	}
+	);
+	//
+
+	// find within an object ("obj1.field1": '') - NOTE: double quotes for object is must
+	db.customers.find(
+	{
+		"address.city": "boston"
+	}
+	);
+	//
+
+	// find within an array ("array1": 'arrayval1') - NOTE: double quotes for object is must
+	db.customers.find(
+	{
+		"array1": "arrayval1"
+	}
+	);
+	//
+
+	// find - sort ascending - by a field
+	db.customers.find().sort(
+	{"firstName": 1}
+	);
+	//
+
+	// find - sort descending - by a field
+	db.customers.find().sort(
+	{"firstName": -1}
+	);
+	//
+
+	// find - count()
+	db.customers.find().count();
+	//
+
+	// find - limit(nnn) - 1st nnn
+	db.customers.find().limit(4)
+	//
+
+	// find - limit(nnn) 1st nnn - sort
+	db.customers.find().limit(4).sort(
+	{"firstName": 1}
+	);
+	//
+
+	// find - limit(nnn) 1st nnn - sort
+	db.customers.find().forEach(function(doc) { print("Customer name: " + doc.firstName) });
+	//
+
+---------------------------------
+
+
+
+
+
+
+
+
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# OLD DOCUMENT
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+
 <pre>
 
 #1
