@@ -59,6 +59,8 @@ my-mongodb-notes
 #2
 	MongoDB Compass
 		official GUI for MongoDB
+
+
 ---------------------------------
 
 # shell commands
@@ -76,13 +78,13 @@ simple
 
 	// list all databases
 	show dbs
-	// NOTE: assume one of the databases is myViewDb
+	// NOTE: assume one of the databases is myNewDatabase
 
-	// use the 'myViewDb' database
-	use myViewDb
+	// use the 'myNewDatabase' database
+	use myNewDatabase
 
 
-	// show all collections of 'myViewDb' database
+	// show all collections of 'myNewDatabase' database
 	show collections
 	// NOTE: assume one of the collections is 'myCollection'
 
