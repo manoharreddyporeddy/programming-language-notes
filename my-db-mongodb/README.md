@@ -84,18 +84,43 @@ simple
 
 	// show all collections of 'myViewDb' database
 	show collections
-	// NOTE: assume one of the collections is 'mycollection1'
+	// NOTE: assume one of the collections is 'myCollection'
 
-	// show all documents of 'mycollection1' collection
-	db.mycollection1.find()
+	// show all documents of 'myCollection' collection
+	db.myCollection.find()
 
-	// delete the 'mycollection1' collection
-	db.mycollection1.drop1()
+	
+	
+	// keys
+	Object.keys(db.myCollection.findOne());
+
+	// print documents pretty
+	db.myCollection.find().pretty()
+
+	// same as above
+	db.myCollection.find().forEach(function(doc) {
+		printjson(doc);
+	});
+
+	// values
+	db.myCollection.find().forEach(function(doc) {
+		for (field in doc) {
+			print(doc[field]);
+		}
+	});
+	
+	
+	
+	
+	
+	
+	// delete the 'myCollection' collection
+	db.myCollection.drop1()
 	// NOTE: I have used drop1 instead of drop to eliminate accidental deletion
 	// NOTE:		if you really want to delete, change "drop1" to "drop" in the above command
 
-	// to get what all commands exists for 'mycollection1' collection
-	db.mycollection1.help();
+	// to get what all commands exists for 'myCollection' collection
+	db.myCollection.help();
 
 
 ---------------------------------
@@ -106,8 +131,8 @@ detailed
 	use db1;
 	db;
 	show collections;
-		students
-	db.students.find();
+		myCollection
+	db.myCollection.find();
 	db.createUser({
 		user: "u1",
 		pwd: "p1",
@@ -116,21 +141,21 @@ detailed
 		// Successfully added user
 
 	// collections/ tables
-	db.createCollection("customers")
+	db.createCollection("myCollection")
 		// {ok: 1}
 	show collections;
-		// customers
-	db.customers.insert({
+		// myCollection
+	db.myCollection.insert({
 		firstName: "fn1",
 		lastName: "ln1"
 	})
-	db.customers.find();
+	db.myCollection.find();
 	{"_id": ObjectId("23412341432"),
 		"firstName": "fn1",
 		lastName: "ln1"
 		}
 
-	db.customers.insert(
+	db.myCollection.insert(
 	[
 	{
 		firstName: "fn1",
@@ -145,48 +170,48 @@ detailed
 	)
 	// BulkWriteResults ({ "writeErrors": [] ... })
 
-	db.customers.find();
+	db.myCollection.find();
 	//
 
-	db.customers.find().pretty();
+	db.myCollection.find().pretty();
 	//
 
 	// match1 - way1 - overwrite doc - must give all existing field + new field
-	db.customers.update(
+	db.myCollection.update(
 	{firstName: "John"},
 	{firstName: "John", lastName:"hello"}
 	);
 	//
 
 	// match1 - way1 - overwrite doc - must give all existing field + new field
-	db.customers.update(
+	db.myCollection.update(
 	{firstName: "John"},
 	{firstName: "John", lastName:"hello", gender:"male"}
 	);
 	//
 
 	// match1 - way2 - add/modify field - $set: {} - give only new field
-	db.customers.update(
+	db.myCollection.update(
 	{firstName: "John"},
 	{$set: {score:44}}
 	);
 	//
 
 	// increment by 5
-	db.customers.update(
+	db.myCollection.update(
 	{firstName: "John"},
 	{$inc: {score:5}}
 	);
 
 	// match1 - remove field - $unset: {} - give only new field
-	db.customers.update(
+	db.myCollection.update(
 	{firstName: "John"},
 	{$unset: {score:1}}
 	);
 	//
 
 	// upsert
-	db.customers.update(
+	db.myCollection.update(
 	{firstName: "John"},
 	{firstName: "John", lastName: "lnnn"},
 	{upsert: true}
@@ -194,7 +219,7 @@ detailed
 	//
 
 	// rename
-	db.customers.update(
+	db.myCollection.update(
 	{firstName: "John"},
 	{$rename: {score: score2}}
 	);
@@ -204,13 +229,13 @@ detailed
 	// ----------------------------------------------------------
 
 	// remove all document of something
-	db.customers.remove(
+	db.myCollection.remove(
 	{firstName: "John"}
 	);
 	//
 
 	// remove 1 document of something
-	db.customers.remove(
+	db.myCollection.remove(
 	{firstName: "John"},
 	{justOne: true}
 	);
@@ -219,7 +244,7 @@ detailed
 	// ----------------------------------------------------------
 	// ----------------------------------------------------------
 	// find with $or: []
-	db.customers.find(
+	db.myCollection.find(
 	{
 		$or: [
 			{firstName: "John"},
@@ -230,7 +255,7 @@ detailed
 	//
 
 	// find with $gt:nnn
-	db.customers.find(
+	db.myCollection.find(
 	{
 		age:{
 			{$lt: 40}
@@ -240,7 +265,7 @@ detailed
 	//
 
 	// find within an object ("obj1.field1": '') - NOTE: double quotes for object is must
-	db.customers.find(
+	db.myCollection.find(
 	{
 		"address.city": "boston"
 	}
@@ -248,7 +273,7 @@ detailed
 	//
 
 	// find within an array ("array1": 'arrayval1') - NOTE: double quotes for object is must
-	db.customers.find(
+	db.myCollection.find(
 	{
 		"array1": "arrayval1"
 	}
@@ -256,33 +281,33 @@ detailed
 	//
 
 	// find - sort ascending - by a field
-	db.customers.find().sort(
+	db.myCollection.find().sort(
 	{"firstName": 1}
 	);
 	//
 
 	// find - sort descending - by a field
-	db.customers.find().sort(
+	db.myCollection.find().sort(
 	{"firstName": -1}
 	);
 	//
 
 	// find - count()
-	db.customers.find().count();
+	db.myCollection.find().count();
 	//
 
 	// find - limit(nnn) - 1st nnn
-	db.customers.find().limit(4)
+	db.myCollection.find().limit(4)
 	//
 
 	// find - limit(nnn) 1st nnn - sort
-	db.customers.find().limit(4).sort(
+	db.myCollection.find().limit(4).sort(
 	{"firstName": 1}
 	);
 	//
 
 	// find - limit(nnn) 1st nnn - sort
-	db.customers.find().forEach(function(doc) { print("Customer name: " + doc.firstName) });
+	db.myCollection.find().forEach(function(doc) { print("Customer name: " + doc.firstName) });
 	//
 
 ---------------------------------
