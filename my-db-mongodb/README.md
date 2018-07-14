@@ -73,28 +73,50 @@ simple
 	//		> collections (like tables)
 	//			> documents
 
-	// start mongo client
-	mongo
-
-	// list all databases
-	show dbs
-	// NOTE: assume one of the databases is myNewDatabase
-
-	// use the 'myNewDatabase' database
-	use myNewDatabase
 
 
-	// show all collections of 'myNewDatabase' database
-	show collections
-	// NOTE: assume one of the collections is 'myCollection'
 
-	// show all documents of 'myCollection' collection
-	db.myCollection.find()
 
-	
-	
-	// keys
-	Object.keys(db.myCollection.findOne());
+
+
+
+    // ------------
+
+    // start mongo client
+    mongo
+
+    // ------------
+    
+    // list all databases
+    show dbs
+    // NOTE: assume one of the databases is myNewDatabase
+    
+    // use the 'myNewDatabase' database
+    use myNewDatabase
+    
+    // ------------
+    
+    // show all collections of 'myNewDatabase' database
+    show collections
+    // NOTE: assume one of the collections is 'myCollection'
+    
+    // show all documents of 'myCollection' collection
+    db.myCollection.find()
+    
+    // ------------
+    
+    // keys
+    Object.keys(db.myCollection.findOne());
+    
+    // values
+    db.myCollection.find().forEach(function(doc) {
+    	for (field in doc) {
+    		print(doc[field]);
+    	}
+    });
+
+    // ------------
+
 
 	// print documents pretty
 	db.myCollection.find().pretty()
@@ -102,17 +124,10 @@ simple
 	// same as above
 	db.myCollection.find().forEach(function(doc) {
 		printjson(doc);
-	});
-
-	// values
-	db.myCollection.find().forEach(function(doc) {
-		for (field in doc) {
-			print(doc[field]);
-		}
-	});
+	});	
 	
 	
-	
+    // ------------
 	
 	
 	
