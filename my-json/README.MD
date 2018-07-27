@@ -1,22 +1,59 @@
+
+<pre>
 JavaScript Object Notation/ JSON
+
+	JSON (/ˈdʒeɪsən/ "Jason", /dʒeɪˈsɒn/) is
+		an open-standard file format
+		that uses
+			human-readable text to
+			transmit
+				data objects
+					consisting of attribute–value pairs and
+				array data types (or any other serializable value).
+
+	Type of format:		Data interchange
+	
+	It is a very common data format
+		used for asynchronous browser–server communication,
+			including
+				as a replacement for XML
+					in some AJAX-style systems.
 
 	It was derived from JavaScript
 	commonly used with JavaScript
+	a language-independent data format
 	many programming languages include code to generate and parse JSON-format data
 		Code for parsing and generating JSON data is readily available in many programming languages.
 		JSON's website lists JSON libraries by language
 			https://www.json.org/
 
-	a language-independent data format
-	an open-standard file format
-		that uses human-readable text
-		to transmit data objects
-			consisting of
-				attribute–value pairs and
-				array data types (or any other serializable value).
-
 	JSON filenames use the extension .json
 	Official Internet media type for JSON is application/json
+		The official
+			MIME type
+			for JSON text is
+			"application/json"
+				Most modern implementations have adopted this.
+					The (unofficial)
+						MIME type		"text/json" or the
+						content-type	"text/javascript"
+							also get legacy support by
+								many service providers,
+									browsers,
+									servers,
+									web applications,
+									libraries,
+									frameworks, and
+									APIs.
+						Notable examples include the
+							Google Search API,
+							Yahoo!,
+							Flickr,
+							Facebook API,
+							Lift framework,
+							Dojo Toolkit 0.4,
+							etc.
+
 
 	It is a very common data format used for
 		asynchronous browser–server communication,
@@ -283,3 +320,4 @@ JSON Schema
 
 
 
+</pre>
