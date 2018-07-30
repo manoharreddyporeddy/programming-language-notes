@@ -33,5 +33,7 @@
         }
       }
     }
-  }
+  },
+  "help": "Json.NET (MIT), JSON Schema Validation Libraries, https://www.tutorialspoint.com/json/json_schema.htm",
+  "help2": "http://json-schema.org/latest/json-schema-validation.html"
 }

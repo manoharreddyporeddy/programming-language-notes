@@ -1,0 +1,78 @@
+<html>
+
+<body>
+    <img id='img1' src='./beach-photo.jpeg' width="100%">
+
+    <script>
+
+
+        // https://www.json.org
+
+
+        var url = './img1.json';
+
+        var xhr1 = new XMLHttpRequest();
+        xhr1.open("GET", url, true);
+
+        var myJsonString;
+        xhr1
+            .onreadystatechange =
+            function () {
+
+                if (
+                    xhr1.readyState === 4 && // done
+                    xhr1.status === 200 // ok
+                ) {
+                    console.log('all good - got the image.');
+
+                    myJsonString = xhr1.response;
+                    console.log(myJsonString);
+
+                    var myJsonObj = JSON.parse(myJsonString);
+                    // var myJsonObj = JSON.stringify(myJsonString);
+                    // var myJsonObj = myJsonString;
+
+                    console.log('myJsonObj.myImages:', myJsonObj.myImages);
+                    console.log('myJsonObj.myImages.img1:', myJsonObj.myImages.img1);
+
+                    var img1 = document.getElementById('img1');
+                    img1.src = myJsonObj.myImages.img1;
+                    console.log('img1.src is set to: ' + myJsonObj.myImages.img1);
+
+
+                    /*
+                     // C#
+
+                    string myJsonString =
+                        "{\"ID\": 123,\"Name\": \
+                        "Afzaal Ahmad Zeeshan\",\"Gender\": true,
+                        \"DateOfBirth\": \"1995-08-29T00:00:00\"
+                        }";
+
+                    dynamic obj = JsonConvert.DeserializeObject(data);
+
+                    Console.WriteLine(obj.ID);
+
+
+
+                    From: https://www.c-sharpcorner.com/article/from-zero-to-hero-in-json-with-c-shar/
+
+                    Right click on the project and
+                            select Manage NuGet Packages..
+                            In that select Json.NET and install
+                    OR
+                            "Project" -> "Manage NuGet packages" -> "Search for "newtonsoft json". -> click "install".
+
+                    After installation,
+                            use the following namespace
+                                using Newtonsoft.Json;
+                            then use the following to deserialize
+                                JsonConvert.DeserializeObject
+                     */
+                }
+            };
+        xhr1.send(null);
+
+    </script>
+</body>
+</html>

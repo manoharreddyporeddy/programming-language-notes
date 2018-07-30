@@ -110,7 +110,7 @@ JSON's basic data types:
 			false
 
 	Array:
-		an  ordered
+		an  **ordered
 			list of
 				zero or more
 				values,
@@ -122,7 +122,7 @@ JSON's basic data types:
 			elements  are comma-separated
 
 	Object:
-		an unordered  collection of
+		an **unordered  collection of
 			name–value pairs
 			where
 				the names (also called keys) are strings.
@@ -147,7 +147,6 @@ JSON's basic data types:
 		An empty value,
 			using the word
 				null
-
 
 	Limited whitespace is
 		allowed and ignored
@@ -308,12 +307,73 @@ JSON Schema
 	There is
 		no standard file extension, but
 		some have suggested
-			.schema.json.
+			.schema.json
 
 
+Applications
 
+	JSON-RPC
+		is a remote procedure call (RPC) protocol built on JSON,
+			as a replacement for XML-RPC or SOAP
 
+		is a simple protocol that defines only a handful of data types and commands
+		
+		lets a system send
+			notifications (information to the server that does not require a response) and
+			multiple calls
+				to the server
+				that can be answered
+					out of order.
 
+		Example of a
+			JSON-RPC 2.0
+				request and response 
+				using positional parameters:
+
+			sample request:
+				--> {"jsonrpc": "2.0", "method": "subtract", "params": [42, 23], "id": 1}
+
+			sample response:
+				<-- {"jsonrpc": "2.0", "result": 19, "id": 1}
+
+	AJAJ
+		Asynchronous JavaScript and JSON (or AJAJ)
+			refers to the same 
+				dynamic web page methodology as 
+				Ajax, 
+					but instead of XML, 
+					JSON is the data format.
+
+		AJAJ is a web development technique that
+			provides for the
+				ability of a webpage to request new data
+				after it has loaded into the web browser.
+			Typically it
+				renders new data from the server
+					in response
+						to user actions
+						on that webpage.
+			For example,
+				what the user types into a search box,
+					client-side code then sends to the server,
+						which immediately responds with a drop-down list of matching database items.
+
+		The following JavaScript code is an example of
+			a client using XMLHttpRequest to request data in JSON format from a server.
+			(The server-side programming is omitted;
+			it must be set up to service requests to the url containing a JSON-formatted string.)
+
+				var my_JSON_object;
+				var http_request = new XMLHttpRequest();
+				http_request.open("GET", url, true);
+				http_request.responseType = "json";
+				http_request.onreadystatechange = function () {
+				  var done = 4, ok = 200;
+				  if (http_request.readyState === done && http_request.status === ok) {
+					my_JSON_object = http_request.response;
+				  }
+				};
+				http_request.send(null);
 
 
 
