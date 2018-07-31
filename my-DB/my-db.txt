@@ -1,0 +1,52 @@
+
+time series?
+	InfluxDb - real-time querying, millions of data points per second, storing summarized data for much longer or forever
+	data store for any use case involving
+		large amounts of timestamped data,
+		including
+			DevOps monitoring,
+			application metrics,
+			IoT sensor data, and
+			real-time analytics
+graph
+	Neo4j
+	native graph database platform
+		that is built to
+			store, query, analyze and manage highly connected data
+				more efficiently than other databases.
+	Data relationships are
+		first class citizens and
+		can be traversed in
+			constant time
+				without index lookups.
+		neo4j/neo4j
+key value
+	Redis
+	Redis powers
+		personalization,
+		real-time fraud detection,
+		IoT,
+		e-commerce,
+		real-time metering, and
+		social applications among many solutions.
+		It’s use cases range from
+			caching,
+			high-speed transactions,
+			time-series logs,
+			message broker,
+			real-time analytics,
+			data ingestion,
+				to
+					job and
+					queue management, and more.
+
+search
+document
+wide column
+oo dbms
+rdf store?
+native xml
+relational
+multivalue
+
+https://db-engines.com/en/ranking_categories
