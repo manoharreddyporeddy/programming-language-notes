@@ -1,0 +1,43 @@
+
+post
+to create subordinate resources. That is, subordinate to some other (e.g. parent) resource. In other words, when creating a new resource, POST to the parent and the service takes care of associating the new resource with the parent, assigning an ID (new resource URI), etc.
+returning a Location header with a link to the newly-created resource with the 201 HTTP status.
+
+POST is neither safe nor idempotent. It is therefore recommended for non-idempotent resource requests. Making two identical POST requests will most-likely result in two resources containing the same information.
+	non-idempotent request
+
+POST http://www.example.com/customers
+POST http://www.example.com/customers/12345/orders
+	?
+
+get
+to **read** (or retrieve) a representation of a resource
+
+** GET (along with HEAD) requests are used only to read data and not change it
+safe. That is, they can be called without risk of data modification or corruption—calling it once has the same effect as calling it 10 times, or none at all
+
+GET (and HEAD) is idempotent, which means that making multiple identical requests ends up having the same result as a single request.
+
+	GET http://www.example.com/customers/12345/orders
+		GET http://www.example.com/customers/12345
+		GET http://www.example.com/buckets/sample
+
+
+PUT-ing to a known resource URI
+	with the request body
+		containing the newly-updated representation
+		of the original resource.
+	creating with non-existing resource ID, is not recommended
+	idempotent request
+	replaces
+
+PUT http://www.example.com/customers/12345
+PUT http://www.example.com/customers/12345/orders/98765
+PUT http://www.example.com/buckets/secret_stuff
+
+
+PATCH
+modify
+	only needs to contain the
+		changes to the resource,
+		not the complete resource.
