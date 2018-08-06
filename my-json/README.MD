@@ -1,4 +1,7 @@
 
+Source: https://en.wikipedia.org/wiki/JSON#JSON_Schema
+
+Notes below:
 <pre>
 JavaScript Object Notation/ JSON
 
