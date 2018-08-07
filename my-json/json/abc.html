@@ -1,0 +1,53 @@
+<html>
+
+<body>
+
+    <img id="imggg1">
+
+    <script>
+        var myObj1;
+
+        var url = "dir1/abc.json"
+
+        var xhr1 = new XMLHttpRequest();
+        xhr1.open("GET", url, true);
+
+        xhr1
+            .onreadystatechange = function () {
+
+                if (
+                    xhr1.readyState === 4 &&
+                    xhr1.status === 200) {
+
+                    console.log(" successful ");
+
+                    myObj1 = xhr1.response;
+
+                    console.log(" myObj1 ");
+                    console.log(myObj1);
+
+
+                    // parse
+                    myObj1 = JSON.parse(myObj1);
+
+                    // stringify
+                    //      myObj1 = JSON.stringify(myObj1);
+
+
+                    console.log(" myObj1.myimage1 ");
+                    console.log(myObj1.myimage1);
+
+
+                    document.getElementById('imggg1').src = myObj1.myimage1;
+
+                }
+            };
+
+        xhr1.send(null);
+
+
+    </script>
+
+</body>
+
+</html>
