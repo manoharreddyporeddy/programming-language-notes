@@ -1,14 +1,12 @@
 /*
+------------------------------------------------------
+NOTE:
 
-------------------------------------------------------
-NOTE: These may not be 100%, though they may be :-)
-------------------------------------------------------
-NOTE: Below Regular expressions all have a start (^) and end ($), which you can remove.
-NOTE: Below Regular expressions all have one / at the begin, and another / at the end, that you can remove. That's a way to write in JavaScript.
-------------------------------------------------------
+Below Regular expressions all 
+	have a start (^) and end ($), which you can remove.
+	have one / at the begin, and another / at the end, that you can remove. That's a way to write in JavaScript.
 
-------------------------------------------------------
-SOME TEST DATA FOR REGULAR EXPRESSIONS:
+TEST DATA
 ------------------------------------------------------
 ab
 123
@@ -37,7 +35,7 @@ KY1-2345
 ZABC12340
 
 
-------------------------------------------------------
+
 REGULAR EXPRESSIONS:
 ------------------------------------------------------
 
@@ -78,6 +76,5 @@ REGULAR EXPRESSIONS:
   look ahead to have atleast a digit
   look ahead to have atleast a alphabet
   also must have only alpha numeric only
-------------------------------------------------------
 
 */
