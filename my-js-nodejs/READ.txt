@@ -1,0 +1,16 @@
+
+Links
+
+nodejs:     https://nodejs.org/en/
+expressjs:   https://www.npmjs.com/package/express
+
+unit testing
+test runner:   https://mochajs.org/
+assertion library:  http://www.chaijs.com/guide/styles/
+
+nodejs inbuilt packages:
+  https://nodejs.org/dist/latest-v8.x/docs/api/querystring.html
+  https://nodejs.org/api/buffer.html
+
+community packages
+  https://www.npmjs.com/search?q=query%20string
