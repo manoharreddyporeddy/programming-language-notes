@@ -1,0 +1,9 @@
+{
+  "name": "nodejs-web-app1",
+  "version": "0.0.0",
+  "description": "NodejsWebApp1",
+  "main": "server.js",
+  "author": {
+    "name": "Manohar_reddy_Poredd"
+  }
+}
