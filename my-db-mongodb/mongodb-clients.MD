@@ -4,6 +4,7 @@
 
 free & opensource
     active
+		mongo						shell
         mongo-express                Latest commit c3c94bd  5 days ago        https://github.com/mongo-express/mongo-express         Web-based MongoDB admin interface, written with Node.js and express
         nosqlclient (mongoclient)    Latest commit b1b65ba  8 days ago        https://github.com/nosqlclient/nosqlclient    
     inactive
