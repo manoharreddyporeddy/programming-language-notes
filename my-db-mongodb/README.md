@@ -69,7 +69,9 @@ my-mongodb-notes
 	MongoDB Compass
 		official GUI for MongoDB
 
-
+#3
+	mongo
+		shell official
 ---------------------------------
 
 List of mongo db clients
@@ -116,8 +118,8 @@ commercial only
 	// hierarchy:
 	//
 	// 	dbs (like databases)
-	//		> collections (like tables)
-	//			> documents
+	//	> collections (like tables)
+	//	>> documents (like rows)
 
 ---------------------------------
 
@@ -136,7 +138,8 @@ db.help();
 // db        // always means currently selected db
 
 // 'test' is default database
-// db.test.save( { a: 1 } )
+
+
 
 // ------------
 
@@ -146,10 +149,14 @@ db.help();
 show dbs
 // NOTE: assume one of the databases is myDatabase1
 
+
+
 // use the 'myDatabase1' database
 use myDatabase1
 
 // ------------
+
+
 
 // collections/ tables
 db.createCollection("myCollection1")
@@ -164,17 +171,21 @@ db.createCollection("myCollection1")
 //	max			number	(Optional) Specifies the maximum number of documents allowed in the capped collection.
 
 
+// to get what all commands exists for 'myCollection1' collection
+db.myCollection1.help();
+
+
 // show all collections of 'myDatabase1' database
 show collections
 // NOTE: assume one of the collections is 'myCollection1'
 
-// db.getCollectionNames();
+db.getCollectionNames();
+// db.getCollection('myCollection1');
 
 // show all documents of 'myCollection1' collection
 db.myCollection1.find()
-
-// db.getCollection('myCollection13');
 // db.getCollection('myCollection1').find({})
+
 
 // ------------
 
@@ -206,12 +217,12 @@ db.myCollection1.find().forEach(function(doc) {
 
 // ------------ insert ------------
 
-// db.myCollection1.insert({"name" : "myCollection1"})  // creates collection automatically, when you insert some document.
+db.myCollection1.insert({"name" : "myCollection1"})  // creates collection automatically, when you insert some document.
 
-// db.myCollection1.insert({"name":"author 1"})  // insert at least one document
-// db.myCollection1.insert({"title":"author 1 1"})
-// db.myCollection1.insert({"title":"author 1 2"})
-// db.myCollection1.insert({"title":"author 1 3"})
+db.myCollection1.insert({"name":"author 1"})  // insert at least one document
+db.myCollection1.insert({"title":"author 1 1"})
+db.myCollection1.insert({"title":"author 1 2"})
+db.myCollection1.insert({"title":"author 1 3"})
 
 db.myCollection1.insert({
 	firstName: "fn1",
@@ -219,7 +230,7 @@ db.myCollection1.insert({
 })
 db.myCollection1.find().pretty();
 
-	
+
 db.myCollection1.insert(
 	[
 		{
@@ -278,7 +289,7 @@ db.myCollection1.update(
 );
 //
 
-// update - replace multiple	- match1 - way1 - overwrite doc - must give all existing field + new field
+// update - replace multiple fields	- match1 - way1 - overwrite doc - must give all existing field + new field
 db.myCollection1.update(
 {firstName: "fn1"},
 {firstName: "fn1", lastName:"hello", gender:"male"}
@@ -327,24 +338,24 @@ db.myCollection1.update(
 db.myCollection1.update(
 {firstName: "fn1"},
 {$rename: {score: score2}}
-);	
+);
 
-// db.myCollection1.update({'_id':ObjectId("598aea8feb8b4de45c012fc8")},{$set:{'title':'New MongoDB Tutorial'}})
+db.myCollection1.update({'_id':ObjectId("598aea8feb8b4de45c012fc8")},{$set:{'title':'New MongoDB Tutorial'}})
 
-// db.myCollection1.update(
-// {'title':'MongoDB Overview'},
-// {$set:{'title':'New MongoDB Tutorial'}},
-// {multi:true}        // to update multiple documents, set a parameter 'multi' to true
-// )
+db.myCollection1.update(
+{'firstName':'fn1'},
+{$set:{'title':'New MongoDB Tutorial'}},
+{multi:true}        // to update multiple documents, set a parameter 'multi' to true
+)
 
 // replace
-db.myCollection1.save(
-	{
-	  "_id" : ObjectId("598aea8feb8b4de45c012fc8"),
-	   "title":"11 author 1 New Topic",
-		 "by":"author 1"
-	}
-)   
+// db.myCollection1.save(
+// 	{
+// 	  "_id" : ObjectId("598aea8feb8b4de45c012fc8"),
+// 	   "title":"11 author 1 New Topic",
+// 		 "by":"author 1"
+// 	}
+// )
 
 
 
@@ -352,9 +363,9 @@ db.myCollection1.save(
 // remove all document of something
 
 
-db.myCollection1.remove(
-{firstName: "fn1"}
-);
+// db.myCollection1.remove(
+// {firstName: "fn1"}
+// );
 
 
 // remove 1st document
@@ -362,6 +373,7 @@ db.myCollection1.remove(
 {firstName: "fn1"},
 {justOne: true}
 );
+
 
 // db.myCollection1.remove(ObjectId("598aea8feb8b4de45c012fc8"))
 // db.myCollection1.remove({'title':'NoSQL Database'})
@@ -489,12 +501,10 @@ db.myCollection1.drop1()
 
 
 ---------------------------------
-// to get what all commands exists for 'myCollection1' collection
-db.myCollection1.help();
 
 ---------------------------------
-db.testdb1.save( { a: 1} )
-db.testdb1.find()
+db.test.save( { a: 1} )
+db.test.find()
 
 ---------------------------------
 
@@ -565,31 +575,34 @@ Following are the possible stages in aggregation framework -
 
 
 // --------------------------- INDEX ---------------------------
-
-
-
 	// ensureIndex() method also accepts list of options (which are optional). Following is the list -
-	// Parameter	        Type	        Description
-	// background	        Boolean	        Builds the index in the background so that building an index does not block other database activities. Specify true to build in the background. The default value is false.
-	// unique	           	Boolean	        Creates a unique index so that the collection will not accept insertion of documents where the index key or keys match an existing value in the index. Specify true to create a unique index. The default value is false.
-	// name	                string	        The name of the index. If unspecified, MongoDB generates an index name by concatenating the names of the indexed fields and the sort order.
-	// dropDups	        	Boolean	        Creates a unique index on a field that may have duplicates. MongoDB indexes only the first occurrence of a key and removes all documents from the collection that contain subsequent occurrences of that key. Specify true to create unique index. The default value is false.
-	// sparse	            Boolean	        If true, the index only references documents with the specified field. These indexes use less space but behave differently in some situations (particularly sorts). The default value is false.
-	// expireAfterSeconds	integer	        Specifies a value, in seconds, as a TTL to control how long MongoDB retains documents in this collection.
-	// v	                index version	The index version number. The default index version depends on the version of MongoDB running when creating the index.
-	// weights	            document		The weight is a number ranging from 1 to 99,999 and denotes the significance of the field relative to the other indexed fields in terms of the score.
-	// default_language		string	        For a text index, the language that determines the list of stop words and the rules for the stemmer and tokenizer. The default value is english.
-	// language_override	string	        For a text index, specify the name of the field in the document that contains, the language to override the default language. The default value is language.
+	// 		Parameter	        Type	        Description
+	// 		background	        Boolean	        Builds the index in the background so that building an index does not block other database activities. Specify true to build in the background. The default value is false.
+	// 		unique	           	Boolean	        Creates a unique index so that the collection will not accept insertion of documents where the index key or keys match an existing value in the index. Specify true to create a unique index. The default value is false.
+	// 		name	            string	        The name of the index. If unspecified, MongoDB generates an index name by concatenating the names of the indexed fields and the sort order.
+	// 		dropDups	        Boolean	        Creates a unique index on a field that may have duplicates. MongoDB indexes only the first occurrence of a key and removes all documents from the collection that contain subsequent occurrences of that key. Specify true to create unique index. The default value is false.
+	// 		sparse	            Boolean	        If true, the index only references documents with the specified field. These indexes use less space but behave differently in some situations (particularly sorts). The default value is false.
+	// 		expireAfterSeconds	integer	        Specifies a value, in seconds, as a TTL to control how long MongoDB retains documents in this collection.
+	// 		v	                index version	The index version number. The default index version depends on the version of MongoDB running when creating the index.
+	// 		weights	            document		The weight is a number ranging from 1 to 99,999 and denotes the significance of the field relative to the other indexed fields in terms of the score.
+	// 		default_language	string	        For a text index, the language that determines the list of stop words and the rules for the stemmer and tokenizer. The default value is english.
+	// 		language_override	string	        For a text index, specify the name of the field in the document that contains, the language to override the default language. The default value is language.
 
 
     Indexes support the efficient resolution of queries
     Indexes are special data structures, that store a small portion of the data set in an easy-to-traverse form. The index stores the value of a specific field or set of fields, ordered by the value of the field as specified in the index.
 
+	
     create an index
-        db.COLLECTION_NAME.ensureIndex({KEY:1})
-            name of the field on which you want to create index
-             1 is for ascending order
-            -1 is for descending order
+		see createIndex()
+		
+		https://docs.mongodb.com/manual/indexes/#index-types
+		
+			old
+				db.COLLECTION_NAME.ensureIndex({KEY:1})
+					name of the field on which you want to create index
+					 1 is for ascending order
+					-1 is for descending order
 
 
 // db.myCollection1.stats();
@@ -661,7 +674,7 @@ db.isMaster()   // You can add mongod instance to replica set only when you are 
 
 // ADD NODES
 //      NOTE: start mongod instances on multiple machines
-//              rs.add(HOST_NAME:PORT)
+//      rs.add(HOST_NAME:PORT)
 //      rs.add("mongod1.net:27017")
 //      rs.add("mongod2.net:27017")
 
