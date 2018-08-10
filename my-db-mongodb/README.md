@@ -2,8 +2,7 @@
 my-mongodb-notes
 
 
-# NEW DOCUMENTATION
-
+<pre>
 
 ---------------------------------
 # installation
@@ -123,383 +122,383 @@ commercial only
 ---------------------------------
 
 # shell commands
-    // Run the below at command prompt/ terminal
-	cmd
+// Run the below at command prompt/ terminal
+cmd
 
-    // start mongo client
-    mongo
+// start mongo client
+mongo
 
-    // ------------
+// ------------
+
+db.stats();
+db.help();
+
+// db        // always means currently selected db
+
+// 'test' is default database
+// db.test.save( { a: 1 } )
+
+// ------------
+
+
+
+// list all databases
+show dbs
+// NOTE: assume one of the databases is myDatabase1
+
+// use the 'myDatabase1' database
+use myDatabase1
+
+// ------------
+
+// collections/ tables
+db.createCollection("myCollection1")
+// db.createCollection('myCollection1');
+// db.createCollection(name, options); // options about memory size and indexing
+// db.createCollection("myCollection1", { capped : true, autoIndexId : true, size : 6142800, max : 10000 } )
+//
+//	Field		Type	Description
+//	capped		Boolean	(Optional) If true, enables a capped collection. Capped collection is a fixed size collection that automatically overwrites its oldest entries when it reaches its maximum size. If you specify true, you need to specify size parameter also.
+//	autoIndexId	Boolean	(Optional) If true, automatically create index on _id field.s Default value is false.
+//	size			number	(Optional) Specifies a maximum size in bytes for a capped collection. If capped is true, then you need to specify this field also.
+//	max			number	(Optional) Specifies the maximum number of documents allowed in the capped collection.
+
+
+// show all collections of 'myDatabase1' database
+show collections
+// NOTE: assume one of the collections is 'myCollection1'
+
+// db.getCollectionNames();
+
+// show all documents of 'myCollection1' collection
+db.myCollection1.find()
+
+// db.getCollection('myCollection13');
+// db.getCollection('myCollection1').find({})
+
+// ------------
+
+// keys
+Object.keys(db.myCollection1.findOne());
+
+// values
+db.myCollection1.find().forEach(function(doc) {
+	for (field in doc) {
+		print(doc[field]);
+	}
+});
+
+// ------------
+
+
+// print documents pretty
+db.myCollection1.find().pretty()
+
+// same as above
+db.myCollection1.find().forEach(function(doc) {
+	printjson(doc);
+});	
+
+
+
+
+
+
+// ------------ insert ------------
+
+// db.myCollection1.insert({"name" : "myCollection1"})  // creates collection automatically, when you insert some document.
+
+// db.myCollection1.insert({"name":"author 1"})  // insert at least one document
+// db.myCollection1.insert({"title":"author 1 1"})
+// db.myCollection1.insert({"title":"author 1 2"})
+// db.myCollection1.insert({"title":"author 1 3"})
+
+db.myCollection1.insert({
+	firstName: "fn1",
+	lastName: "ln1"
+})
+db.myCollection1.find().pretty();
+
 	
-	db.stats();
-	db.help();
-
-	// db        // always means currently selected db
-
-	// 'test' is default database
-	// db.test.save( { a: 1 } )
-	
-    // ------------
-
-
-    
-    // list all databases
-    show dbs
-    // NOTE: assume one of the databases is myDatabase1
-    
-    // use the 'myDatabase1' database
-    use myDatabase1
-    
-    // ------------
-    
-	// collections/ tables
-	db.createCollection("myCollection1")
-	// db.createCollection('myCollection1');
-	// db.createCollection(name, options); // options about memory size and indexing
-	// db.createCollection("myCollection1", { capped : true, autoIndexId : true, size : 6142800, max : 10000 } )
-	//
-	//	Field		Type	Description
-	//	capped		Boolean	(Optional) If true, enables a capped collection. Capped collection is a fixed size collection that automatically overwrites its oldest entries when it reaches its maximum size. If you specify true, you need to specify size parameter also.
-	//	autoIndexId	Boolean	(Optional) If true, automatically create index on _id field.s Default value is false.
-	//	size			number	(Optional) Specifies a maximum size in bytes for a capped collection. If capped is true, then you need to specify this field also.
-	//	max			number	(Optional) Specifies the maximum number of documents allowed in the capped collection.
-
-	
-    // show all collections of 'myDatabase1' database
-    show collections
-    // NOTE: assume one of the collections is 'myCollection1'
-	
-	// db.getCollectionNames();
-    
-    // show all documents of 'myCollection1' collection
-    db.myCollection1.find()
-    
-	// db.getCollection('myCollection13');
-	// db.getCollection('myCollection1').find({})
-
-    // ------------
-    
-    // keys
-    Object.keys(db.myCollection1.findOne());
-    
-    // values
-    db.myCollection1.find().forEach(function(doc) {
-    	for (field in doc) {
-    		print(doc[field]);
-    	}
-    });
-
-    // ------------
+db.myCollection1.insert(
+	[
+		{
+			firstName: "fn3",
+			lastName: "ln3"
+		},
+		{
+			firstName: "fn2",
+			lastName: "ln2",
+			gender: "male"
+		}
+	]
+)
+// 		BulkWriteResults ({ "writeErrors": [] ... })
+db.myCollection1.find().pretty();
 
 
-	// print documents pretty
-	db.myCollection1.find().pretty()
+// big example
+db.myCollection1.insert([
+   {
+	  title: 'MongoDB Overview', 
+	  description: 'MongoDB is no sql database',
+	  by: 'tutorials point',
+	  url: 'http://www.myCollection1.com',
+	  tags: ['mongodb', 'database', 'NoSQL'],
+	  likes: 100
+   },	
+   {
+	  title: 'NoSQL Database', 
+	  description: 'NoSQL database doesnt have tables',
+	  by: 'tutorials point',
+	  url: 'http://www.myCollection1.com',
+	  tags: ['mongodb', 'database', 'NoSQL'],
+	  likes: 20, 
+	  comments: [	
+		 {
+			user:'user1',
+			message: 'My first comment',
+			dateCreated: new Date(2013,11,10,2,35),
+			like: 0 
+		 }
+	  ]
+   }
+])
 
-	// same as above
-	db.myCollection1.find().forEach(function(doc) {
-		printjson(doc);
-	});	
-	
+
 
 
 
 	
+// ------------ update for  update full/part feilds ------------
+// update - replace				- match1 - way1 - overwrite doc - must give all existing field + new field
+db.myCollection1.update(
+	{firstName: "fn1"},
+	{firstName: "fn1", lastName:"hello"}
+);
+//
 
-    // ------------ insert ------------
+// update - replace multiple	- match1 - way1 - overwrite doc - must give all existing field + new field
+db.myCollection1.update(
+{firstName: "fn1"},
+{firstName: "fn1", lastName:"hello", gender:"male"}
+);
+//
 
-	// db.myCollection1.insert({"name" : "myCollection1"})  // creates collection automatically, when you insert some document.
+// update - set (insert key)					- match1 - way2 - add/modify field - $set: {} - give only insert field
+db.myCollection1.update(
+{firstName: "fn1"},
+{$set: {score:44}}
+);
+//
 
-	// db.myCollection1.insert({"name":"author 1"})  // insert at least one document
-	// db.myCollection1.insert({"title":"author 1 1"})
-	// db.myCollection1.insert({"title":"author 1 2"})
-	// db.myCollection1.insert({"title":"author 1 3"})
+// update - set (update key)
+db.myCollection1.update(
+{firstName: "fn1"},
+{$set: {score:5}}
+);
 
-	db.myCollection1.insert({
-		firstName: "fn1",
-		lastName: "ln1"
-	})
-	db.myCollection1.find().pretty();
+// update - inc (increment key)		- increment by 5 - give updated only field(s)
+db.myCollection1.update(
+{firstName: "fn1"},
+{$inc: {score:5}}
+);
 
-		
-	db.myCollection1.insert(
-		[
-			{
-				firstName: "fn3",
-				lastName: "ln3"
-			},
-			{
-				firstName: "fn2",
-				lastName: "ln2",
-				gender: "male"
-			}
+// update - unset (remove key)		- match1 - remove field - $unset: {} - give only new field
+db.myCollection1.update(
+{firstName: "fn1"},
+{$unset: {score:1}}
+);
+
+// update - unset (remove key) - same as above
+db.myCollection1.update(
+{firstName: "fn1"},
+{$unset: {score:0}}
+);
+
+// update - insert/update = upsert
+db.myCollection1.update(
+{firstName: "fn1"},
+{firstName: "fn1", lastName: "lnnn"},
+{upsert: true}
+);
+
+// update - rename
+db.myCollection1.update(
+{firstName: "fn1"},
+{$rename: {score: score2}}
+);	
+
+// db.myCollection1.update({'_id':ObjectId("598aea8feb8b4de45c012fc8")},{$set:{'title':'New MongoDB Tutorial'}})
+
+// db.myCollection1.update(
+// {'title':'MongoDB Overview'},
+// {$set:{'title':'New MongoDB Tutorial'}},
+// {multi:true}        // to update multiple documents, set a parameter 'multi' to true
+// )
+
+// replace
+db.myCollection1.save(
+	{
+	  "_id" : ObjectId("598aea8feb8b4de45c012fc8"),
+	   "title":"11 author 1 New Topic",
+		 "by":"author 1"
+	}
+)   
+
+
+
+
+// remove all document of something
+
+
+db.myCollection1.remove(
+{firstName: "fn1"}
+);
+
+
+// remove 1st document
+db.myCollection1.remove(
+{firstName: "fn1"},
+{justOne: true}
+);
+
+// db.myCollection1.remove(ObjectId("598aea8feb8b4de45c012fc8"))
+// db.myCollection1.remove({'title':'NoSQL Database'})
+// db.myCollection1.remove({'title':'New MongoDB Tutorial 2'}, 1) // delete only the first record
+// db.myCollection1.remove({});    // Remove All Documents from a Collection // https://docs.mongodb.com/manual/reference/method/db.collection.remove/
+// db.myCollection1.remove({}); // remove all
+//      https://docs.mongodb.com/manual/reference/method/db.collection.remove/
+
+
+// find
+//      db.collection.find(query, projection)
+db.myCollection1.find() // print all
+// db.myCollection1.find({});
+// db.myCollection1.find({},{"title":1})           // _id field is displayed, even without selecting it with 1
+// db.myCollection1.find({},{_id:0, "title":1})    // _id field is now not displayed
+// db.myCollection1.find({"title" : "MongoDB Overview"})
+// db.myCollection1.find({"title" : "MongoDB Overview"}).pretty()
+// db.myCollection1.find({"likes":{$gte:20}}).pretty()
+// db.myCollection1.find({"likes":{$gt:20}}).pretty()
+// db.myCollection1.find({"by": "title1"}).pretty()	
+db.myCollection1.find({},{"title":1,_id:0}).limit(2)            // limit to 1st 2 documents
+db.myCollection1.find({},{"title":1,_id:0}).limit(2).skip(0)    // limit to 2, dont skip any - same as above - default value in skip() method is 0
+db.myCollection1.find({},{"title":1,_id:0}).limit(1).skip(1)    // limit to 1, after skipping 1 - that is, print from 2nd document
+db.myCollection1.find();
+db.myCollection1.find({},{"title":1,_id:0}).sort({"title":1})
+db.myCollection1.find({},{"title":1,_id:0}).sort({"title":-1})
+
+
+// Operation	        Syntax	                Example	                                                	RDBMS Equivalent
+// Equality	        	{<key>:<value>}	        db.myCollection1.find({"by":"tutorials point"}).pretty()	where by = 'tutorials point'
+// Less Than	        {<key>:{$lt:<value>}}	db.myCollection1.find({"likes":{$lt:50}}).pretty()	        where likes < 50
+// Less Than Equals		{<key>:{$lte:<value>}}	db.myCollection1.find({"likes":{$lte:50}}).pretty()	        where likes <= 50
+// Greater Than	    	{<key>:{$gt:<value>}}	db.myCollection1.find({"likes":{$gt:50}}).pretty()	        where likes > 50
+// Greater Than Equals	{<key>:{$gte:<value>}}	db.myCollection1.find({"likes":{$gte:50}}).pretty()	        where likes >= 50
+// Not Equals	        {<key>:{$ne:<value>}}	db.myCollection1.find({"likes":{$ne:50}}).pretty()	        where likes != 50
+
+// find with $or: []
+db.myCollection1.find(
+	{
+		$or: [
+			{firstName: "fn2"},
+			{firstName: "fn3"}
 		]
-	)
-	// 		BulkWriteResults ({ "writeErrors": [] ... })
-	db.myCollection1.find().pretty();
-	
-
-	// big example
-	db.myCollection1.insert([
-	   {
-		  title: 'MongoDB Overview', 
-		  description: 'MongoDB is no sql database',
-		  by: 'tutorials point',
-		  url: 'http://www.myCollection1.com',
-		  tags: ['mongodb', 'database', 'NoSQL'],
-		  likes: 100
-	   },	
-	   {
-		  title: 'NoSQL Database', 
-		  description: 'NoSQL database doesnt have tables',
-		  by: 'tutorials point',
-		  url: 'http://www.myCollection1.com',
-		  tags: ['mongodb', 'database', 'NoSQL'],
-		  likes: 20, 
-		  comments: [	
-			 {
-				user:'user1',
-				message: 'My first comment',
-				dateCreated: new Date(2013,11,10,2,35),
-				like: 0 
-			 }
-		  ]
-	   }
-	])
-	
-	
-	
-
-
-	
-	// ------------ update for  update full/part feilds ------------
-	// update - replace				- match1 - way1 - overwrite doc - must give all existing field + new field
-	db.myCollection1.update(
-		{firstName: "fn1"},
-		{firstName: "fn1", lastName:"hello"}
-	);
-	//
-
-	// update - replace multiple	- match1 - way1 - overwrite doc - must give all existing field + new field
-	db.myCollection1.update(
-	{firstName: "fn1"},
-	{firstName: "fn1", lastName:"hello", gender:"male"}
-	);
-	//
-
-	// update - set (insert key)					- match1 - way2 - add/modify field - $set: {} - give only insert field
-	db.myCollection1.update(
-	{firstName: "fn1"},
-	{$set: {score:44}}
-	);
-	//
-
-	// update - set (update key)
-	db.myCollection1.update(
-	{firstName: "fn1"},
-	{$set: {score:5}}
-	);
-	
-	// update - inc (increment key)		- increment by 5 - give updated only field(s)
-	db.myCollection1.update(
-	{firstName: "fn1"},
-	{$inc: {score:5}}
-	);
-
-	// update - unset (remove key)		- match1 - remove field - $unset: {} - give only new field
-	db.myCollection1.update(
-	{firstName: "fn1"},
-	{$unset: {score:1}}
-	);
-
-	// update - unset (remove key) - same as above
-	db.myCollection1.update(
-	{firstName: "fn1"},
-	{$unset: {score:0}}
-	);
-	
-	// update - insert/update = upsert
-	db.myCollection1.update(
-	{firstName: "fn1"},
-	{firstName: "fn1", lastName: "lnnn"},
-	{upsert: true}
-	);
-	
-	// update - rename
-	db.myCollection1.update(
-	{firstName: "fn1"},
-	{$rename: {score: score2}}
-	);	
-
-	// db.myCollection1.update({'_id':ObjectId("598aea8feb8b4de45c012fc8")},{$set:{'title':'New MongoDB Tutorial'}})
-
-	// db.myCollection1.update(
-    // {'title':'MongoDB Overview'},
-    // {$set:{'title':'New MongoDB Tutorial'}},
-    // {multi:true}        // to update multiple documents, set a parameter 'multi' to true
-    // )
-
-	// replace
-	db.myCollection1.save(
-		{
-		  "_id" : ObjectId("598aea8feb8b4de45c012fc8"),
-		   "title":"11 author 1 New Topic",
-			 "by":"author 1"
-		}
-	)   
-
-	
-	
-	
-	// remove all document of something
-	
-
-	db.myCollection1.remove(
-	{firstName: "fn1"}
-	);
-
-	
-	// remove 1st document
-	db.myCollection1.remove(
-	{firstName: "fn1"},
-	{justOne: true}
-	);
-	
-	// db.myCollection1.remove(ObjectId("598aea8feb8b4de45c012fc8"))
-	// db.myCollection1.remove({'title':'NoSQL Database'})
-	// db.myCollection1.remove({'title':'New MongoDB Tutorial 2'}, 1) // delete only the first record
-	// db.myCollection1.remove({});    // Remove All Documents from a Collection // https://docs.mongodb.com/manual/reference/method/db.collection.remove/
-	// db.myCollection1.remove({}); // remove all
-	//      https://docs.mongodb.com/manual/reference/method/db.collection.remove/
-	
-
-	// find
-	//      db.collection.find(query, projection)
-	db.myCollection1.find() // print all
-	// db.myCollection1.find({});
-	// db.myCollection1.find({},{"title":1})           // _id field is displayed, even without selecting it with 1
-	// db.myCollection1.find({},{_id:0, "title":1})    // _id field is now not displayed
-	// db.myCollection1.find({"title" : "MongoDB Overview"})
-	// db.myCollection1.find({"title" : "MongoDB Overview"}).pretty()
-	// db.myCollection1.find({"likes":{$gte:20}}).pretty()
-	// db.myCollection1.find({"likes":{$gt:20}}).pretty()
-	// db.myCollection1.find({"by": "title1"}).pretty()	
-	db.myCollection1.find({},{"title":1,_id:0}).limit(2)            // limit to 1st 2 documents
-	db.myCollection1.find({},{"title":1,_id:0}).limit(2).skip(0)    // limit to 2, dont skip any - same as above - default value in skip() method is 0
-	db.myCollection1.find({},{"title":1,_id:0}).limit(1).skip(1)    // limit to 1, after skipping 1 - that is, print from 2nd document
-	db.myCollection1.find();
-	db.myCollection1.find({},{"title":1,_id:0}).sort({"title":1})
-	db.myCollection1.find({},{"title":1,_id:0}).sort({"title":-1})
-
-
-	// Operation	        Syntax	                Example	                                                	RDBMS Equivalent
-	// Equality	        	{<key>:<value>}	        db.myCollection1.find({"by":"tutorials point"}).pretty()	where by = 'tutorials point'
-	// Less Than	        {<key>:{$lt:<value>}}	db.myCollection1.find({"likes":{$lt:50}}).pretty()	        where likes < 50
-	// Less Than Equals		{<key>:{$lte:<value>}}	db.myCollection1.find({"likes":{$lte:50}}).pretty()	        where likes <= 50
-	// Greater Than	    	{<key>:{$gt:<value>}}	db.myCollection1.find({"likes":{$gt:50}}).pretty()	        where likes > 50
-	// Greater Than Equals	{<key>:{$gte:<value>}}	db.myCollection1.find({"likes":{$gte:50}}).pretty()	        where likes >= 50
-	// Not Equals	        {<key>:{$ne:<value>}}	db.myCollection1.find({"likes":{$ne:50}}).pretty()	        where likes != 50
-	
-	// find with $or: []
-	db.myCollection1.find(
-		{
-			$or: [
-				{firstName: "fn2"},
-				{firstName: "fn3"}
-			]
-		}
-	);
-	
-	// find with $and: []
-	db.myCollection1.find(
-	   {
-		  $and: [
-				{firstName: "fn1"},
-				{lastName: "ln1"}
-				// , {"likes" : 20.0},
-				//   {"likes": 100}
-				//   {key1: value1}, {key2:value2}
-			]
-	   }
-	).pretty()
-
-	
-	
-	// find with $gt:nnn
-	db.myCollection1.find(
-	{
-		age:{
-			{$lt: 40}
-		}
 	}
-	);
-	//
+);
 
-	// find within an object ("obj1.field1": '') - NOTE: double quotes for object is must
-	db.myCollection1.find(
-	{
-		"address.city": "boston"
+// find with $and: []
+db.myCollection1.find(
+   {
+	  $and: [
+			{firstName: "fn1"},
+			{lastName: "ln1"}
+			// , {"likes" : 20.0},
+			//   {"likes": 100}
+			//   {key1: value1}, {key2:value2}
+		]
+   }
+).pretty()
+
+
+
+// find with $gt:nnn
+db.myCollection1.find(
+{
+	age:{
+		{$lt: 40}
 	}
-	);
-	//
+}
+);
+//
 
-	// find within an array ("array1": 'arrayval1') - NOTE: double quotes for object is must
-	db.myCollection1.find(
-	{
-		"array1": "arrayval1"
-	}
-	);
-	//
+// find within an object ("obj1.field1": '') - NOTE: double quotes for object is must
+db.myCollection1.find(
+{
+	"address.city": "boston"
+}
+);
+//
 
-	// find - sort ascending - by a field
-	db.myCollection1.find().sort(
-	{"firstName": 1}
-	);
-	//
+// find within an array ("array1": 'arrayval1') - NOTE: double quotes for object is must
+db.myCollection1.find(
+{
+	"array1": "arrayval1"
+}
+);
+//
 
-	// find - sort descending - by a field
-	db.myCollection1.find().sort(
-	{"firstName": -1}
-	);
-	//
+// find - sort ascending - by a field
+db.myCollection1.find().sort(
+{"firstName": 1}
+);
+//
 
-	// find - count()
-	db.myCollection1.find().count();
-	//
+// find - sort descending - by a field
+db.myCollection1.find().sort(
+{"firstName": -1}
+);
+//
 
-	// find - limit(nnn) - 1st nnn
-	db.myCollection1.find().limit(4)
-	//
+// find - count()
+db.myCollection1.find().count();
+//
 
-	// find - limit(nnn) 1st nnn - sort
-	db.myCollection1.find().limit(4).sort(
-	{"firstName": 1}
-	);
-	//
-	
-	
-	// find - limit(nnn) 1st nnn - sort
-	db.myCollection1.find().forEach(function(doc) { print("Customer name: " + doc.firstName) });
+// find - limit(nnn) - 1st nnn
+db.myCollection1.find().limit(4)
+//
 
-	
+// find - limit(nnn) 1st nnn - sort
+db.myCollection1.find().limit(4).sort(
+{"firstName": 1}
+);
+//
 
-	// drop		delete the 'myCollection1' collection
-	db.myCollection1.drop1()
-	// NOTE:	rename 'drop1' to 'drop' if you really want to delete collection (drop1 existing eliminate accidental deletion)
+
+// find - limit(nnn) 1st nnn - sort
+db.myCollection1.find().forEach(function(doc) { print("Customer name: " + doc.firstName) });
+
+
+
+// drop		delete the 'myCollection1' collection
+db.myCollection1.drop1()
+// NOTE:	rename 'drop1' to 'drop' if you really want to delete collection (drop1 existing eliminate accidental deletion)
 
 
 
 
 ---------------------------------
-	// to get what all commands exists for 'myCollection1' collection
-	db.myCollection1.help();
+// to get what all commands exists for 'myCollection1' collection
+db.myCollection1.help();
 
 ---------------------------------
-	db.testdb1.save( { a: 1} )
-	db.testdb1.find()
+db.testdb1.save( { a: 1} )
+db.testdb1.find()
 
 ---------------------------------
 
-	// db.dropDatabase()
+// db.dropDatabase()
 
 ---------------------------------
 aggregate() Method
@@ -719,62 +718,38 @@ Connecting to mongo db
 
 -------- for old versions of mongodb ---- begin ----------------
 
+#1
+download & install
+	Community Server
+	https://www.mongodb.com/download-center
 
-	#1
-	download & install
-		Community Server
-		https://www.mongodb.com/download-center
+#2
+start server
+	mkdir c:\data\db
+	mkdir c:\data\log
+	"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe"
 
-	#2
-	start server
-		mkdir c:\data\db
-		mkdir c:\data\log
-		"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe"
+NOTE: Now the server is running
 
-	NOTE: Now the server is running
+More:
+	//	"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "d:\test\mongodb\data"
+	//	(IF you want to run as service)
+	//	"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\3.4\mongod.cfg" --install
 
-	More:
-		//	"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "d:\test\mongodb\data"
-		//	(IF you want to run as service)
-		//	"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\3.4\mongod.cfg" --install
+#3
+start client
+	"C:\Program Files\MongoDB\Server\3.4\bin\mongo.exe"
 
-	#3
-	start client
-		"C:\Program Files\MongoDB\Server\3.4\bin\mongo.exe"
-
-		
-		
-	start mongo as a server
-		install config
-			mongod --config "C:\data\mongo.cfg" --install
-		start service
-			net start mongodb
-		stop service
-			net stop mongodb
+	
+	
+start mongo as a server
+	install config
+		mongod --config "C:\data\mongo.cfg" --install
+	start service
+		net start mongodb
+	stop service
+		net stop mongodb
 -------- for old versions of mongodb ---- end ----------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </pre>
-
-
-
-
