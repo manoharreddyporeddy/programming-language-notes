@@ -66,12 +66,19 @@ my-mongodb-notes
 
 
 #2
-	MongoDB Compass
-		official GUI for MongoDB
+	Official mongodb clients
+		MongoDB Compass
+			with GUI
+		mongo
+			with command line
 
-#3
-	mongo
-		shell official
+---------------------------------
+How to configure your mongodb server so that it can be accessed, from another machine
+
+	Go here:
+		https://stackoverflow.com/a/51718461/984471
+
+
 ---------------------------------
 
 List of mongo db clients
