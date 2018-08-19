@@ -205,7 +205,9 @@ use myDatabase1
 
 
 // collections/ tables
+
 db.createCollection("myCollection1")
+
 // db.createCollection('myCollection1');
 // db.createCollection(name, options); // options about memory size and indexing
 // db.createCollection("myCollection1", { capped : true, autoIndexId : true, size : 6142800, max : 10000 } )
@@ -216,6 +218,10 @@ db.createCollection("myCollection1")
 //	size			number	(Optional) Specifies a maximum size in bytes for a capped collection. If capped is true, then you need to specify this field also.
 //	max			number	(Optional) Specifies the maximum number of documents allowed in the capped collection.
 
+
+// Limiting a CAPPED collection to 2 MB
+db.createCollection(’logs’, {capped: true, size: 2097152})
+// that is, older documents are deleted when collection exceeds 2 MB data
 
 // to get what all commands exists for 'myCollection1' collection
 db.myCollection1.help();
@@ -695,15 +701,45 @@ Following are the possible stages in aggregation framework -
 
 // --------------------------- USERS ---------------------------
 
-	db.createUser(
-		{
-			user: "u2",
-			pwd: "p1",
-			roles: ["readWrite", "dbAdmin"]
-		}
-	)
-	// Successfully added user
+use financial
 
+db.createUser(
+	{
+		user: "user1_whoCanReadWrite_and_is_dbAdmin",
+		pwd: "123",
+		roles: ["readWrite", "dbAdmin"]
+	}
+)
+// Successfully added user
+
+db_name = db.toString()
+db.createUser(
+	{
+		user: "user1_whoCanReadViews",
+		pwd: "123",
+		roles: [ db_name + "_readAnyView"]
+	}
+)
+
+// --------------------------- Roles ---------------------------
+
+use admin
+db.runCommand(
+	{
+		createRole: "readViewCollection",
+		privileges: [
+			{
+				resource: {
+					db: "",
+					collection: "system.views"
+				},
+				actions: [ "find" ]
+			}
+		],
+		roles : []
+	}
+)
+db.grantRoleToUser('user1', ['readViewCollection'])
 
 // --------------------------- REPLICA SET ---------------------------
 
