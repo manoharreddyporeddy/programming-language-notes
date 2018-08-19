@@ -66,15 +66,20 @@ my-mongodb-notes
 
 
 #2
-	Official mongodb clients
-		MongoDB Compass
-			with GUI
+mongodb
+	server is
+		mongod
+	client (official) are
 		mongo
-			with command line
+			starts the mongodb shell, to connect to above server
+		mongodb compass
+			SQL IDE/ UI, to connect to above server
 
 ---------------------------------
 How to configure your mongodb server so that it can be accessed, from another machine
 
+	Below error comes up when we access local mongodb server, from a mongodb client on remote machine
+		"Error: MongoDB not running on the provided host and port"
 	Go here:
 		https://stackoverflow.com/a/51718461/984471
 
@@ -122,11 +127,45 @@ commercial only
 
 ---------------------------------
 
-	// hierarchy:
-	//
-	// 	dbs (like databases)
-	//	> collections (like tables)
-	//	>> documents (like rows)
+mongodb structure
+. 
+.database (like sql databases)
+. collections (like sql tables)
+.   documents (like sql rows)
+. views (like sql views)
+. transactions (commit/abort)
+. package
+. 	store proc	<----------------------------------
+. 	function	<----------------------------------
+.
+. nodejs example to mongodb
+.
+. constaints on fields
+. trigger
+. index
+. users
+. 	updateUser
+. 		grant access to db
+. 		grant access to db/collection
+. 		grant roles
+. 		grant permission to db
+. 		grant permission to db/collection
+. archival
+. purge
+. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---------------------------------
 
