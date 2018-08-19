@@ -786,6 +786,21 @@ db.isMaster()   // You can add mongod instance to replica set only when you are 
 // ---------------------------
 
 
+
+
+Advanced schema
+	http://video.mongodb.com/watch/vQYPRdczUQN3BBfwfYfS6H?custom_id=
+
+// ---------------------------
+
+
+
+
+
+
+
+
+
 More help is here: https://docs.mongodb.com/manual/reference/mongo-shell/
 
 
