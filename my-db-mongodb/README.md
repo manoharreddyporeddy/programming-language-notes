@@ -229,12 +229,31 @@ show collections
 db.getCollectionNames();
 // db.getCollection('myCollection1');
 
+// ------------
+
+
+
 // show all documents of 'myCollection1' collection
 db.myCollection1.find()
 // db.getCollection('myCollection1').find({})
 
+////////
+//////// NODE.JS CODE
+////////
+//////// ------- find all
+//////// dbo.collection("customers").find(query, projection).limit(limit).toArray(function(err, result) {
+//////// 	if (err) throw err;
+//////// 	console.log(result);
+//////// 	db.close();
+//////// });
+//////// 
+//////// ------- find one
+//////// dbo.collection("customers").findOne(query, projection).limit(limit).toArray(function(err, result) {
+//////// 	if (err) throw err;
+//////// 	console.log(result);
+//////// 	db.close();
+//////// });
 
-// ------------
 
 // keys
 Object.keys(db.myCollection1.findOne());
