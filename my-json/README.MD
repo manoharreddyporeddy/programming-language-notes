@@ -1,4 +1,69 @@
 
+=================================================  
+// XML example
+<?xml version = "1.0" encoding = "UTF-8" ? >  
+	<name > Afzaal Ahmad Zeeshan < /name>   
+	<age > 20 < /age>   
+	<emptyObj />
+</xml>
+
+=================================================
+// JSON example
+{
+    "name": "Afzaal Ahmad Zeeshan",  
+    "age": 20,  
+    "emptyObj": {}  
+}
+
+=================================================
+// JSON Schema example
+{
+    "id": "/MySimpleNumber",
+	"type": "object",
+    "properties": {
+        "age": { "type": "integer", "minimum": 0 }
+    }
+}
+
+=================================================
+
+// xml to json manual conversion
+
+replacers
+	end tag			"
+	starttag		starttag" : "
+
+	<tag at1=va11 at2=val2>
+
+	key = value
+	key : value
+
+// automated xml to json conversion
+	https://www.npmjs.com/package/xml2js
+
+schema
+	http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.3.2
+
+schema validator
+	https://www.npmjs.com/package/jsonschema
+
+
+chrome extension - json view
+	https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Source: https://en.wikipedia.org/wiki/JSON#JSON_Schema
 
 Notes below:
