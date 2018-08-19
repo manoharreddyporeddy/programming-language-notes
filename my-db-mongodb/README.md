@@ -143,6 +143,7 @@ mongodb structure
 . constaints on fields
 . trigger
 . index
+. cursors
 . users
 . 	updateUser
 . 		grant access to db
@@ -154,17 +155,11 @@ mongodb structure
 . purge
 . 
 
-
-
-
-
-
-
-
-
-
-
-
+https://www.tutorialsjar.com/mongodb-index-tutorial/
+https://docs.mongodb.com/stitch/mongodb/triggers/
+https://docs.mongodb.com/manual/faq/fundamentals/
+https://docs.mongodb.com/manual/core/server-side-javascript/
+https://stackoverflow.com/questions/9691316/how-to-listen-for-changes-to-a-mongodb-collection
 
 
 ---------------------------------
@@ -696,8 +691,9 @@ Following are the possible stages in aggregation framework -
 
 
 
+// --------------------------- LOAD FROM DB SCRIPT FILE ---------------------------
 
-
+db.load('C:\mydbscript.js')
 
 // --------------------------- USERS ---------------------------
 
@@ -785,14 +781,10 @@ db.isMaster()   // You can add mongod instance to replica set only when you are 
 // db.killOp(<opId>)
 // ---------------------------
 
-
-
-
 Advanced schema
 	http://video.mongodb.com/watch/vQYPRdczUQN3BBfwfYfS6H?custom_id=
 
 // ---------------------------
-
 
 
 
