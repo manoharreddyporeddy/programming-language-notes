@@ -70,3 +70,12 @@ http://localhost:13755/proj1/services/cls1
 http://localhost:8080/proj1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:13755/proj1/services/cls1
 http://localhost:8080/wpa1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:9537/wpa1/services/Cls1
 
+
+----------------
+As far as I understand,
+	classpath
+		points to class files (or, rather, the folders/jars/zips containing them)
+	modulepath
+		points to modules, which all contain module-info.java. Modules: blog.andresteingress.com/2017/09/29/java-9-modules.html
+
+----------------
