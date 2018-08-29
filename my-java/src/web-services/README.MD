@@ -1,4 +1,9 @@
 
+https://www.eclipse.org/webtools/
+https://www.eclipse.org/webtools/jst/main.php
+https://www.eclipse.org/webtools/server/
+
+
 Directory structure Dynamic Web Project
 
 	Java Servlet API requirements
