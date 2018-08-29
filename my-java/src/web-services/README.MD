@@ -2,20 +2,46 @@
 -------------
 links
 
+eclipse, tomcat
 https://www.eclipse.org/webtools/  
 https://www.eclipse.org/webtools/jst/main.php  
 https://www.eclipse.org/webtools/server/  
+https://tomcat.apache.org/download-90.cgi
+https://axis.apache.org/axis/
 
-https://docs.oracle.com/javaee/5/api/javax/xml/bind/annotation/XmlRootElement.html  
+jee 5/6/7/8
+https://docs.oracle.com/javaee/5/firstcup/doc/
+https://docs.oracle.com/javaee/5/tutorial/doc/
+https://docs.oracle.com/javaee/5/
+https://docs.oracle.com/javaee/6/firstcup/doc/
+https://docs.oracle.com/javaee/6/tutorial/doc/
+https://docs.oracle.com/javaee/6/
+https://docs.oracle.com/javaee/7/firstcup/index.html
+https://docs.oracle.com/javaee/7/tutorial/index.html
+https://javaee.github.io/firstcup/toc.html
+https://javaee.github.io/tutorial/toc.html
+
 https://en.wikipedia.org/wiki/Data_access_object  
+https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services
+https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services
+https://en.wikipedia.org/wiki/Java_servlet
 https://javaee.github.io/servlet-spec/DOWNLOADS.html  
+https://javaee.github.io/tutorial/toc.html
 https://jcp.org/en/jsr/detail?id=370  
 https://stackoverflow.com/questions/5930795/difference-between-servlet-and-web-service  
-https://www.tutorialspoint.com/restful/restful_methods.htm  
+https://www.pegaxchange.com/2016/09/02/java-eclipse-tomcat/
+
+jax-rs
+https://javaee.github.io/tutorial/jaxrs.html
+https://www.javatpoint.com/jax-rs-example-jersey
+http://www.vogella.com/tutorials/REST/article.html
 https://www.tutorialspoint.com/restful/restful_environment.htm  
 https://www.tutorialspoint.com/restful/restful_first_application.htm  
+https://www.tutorialspoint.com/restful/restful_methods.htm  
 OLD https://wiki.eclipse.org/Creating_a_JAX-RS_Web_Service  
+search in youtube.com for jax-rs
 
+	
 <pre>
 -------------
 
