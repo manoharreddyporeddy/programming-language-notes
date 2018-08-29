@@ -18,3 +18,13 @@ Implement a web service
 					you can also test and
 					use your web service.
 
+A servlet is used
+	to transport HTTP requests and resonses.
+	It can be used
+		to write a web application with JSPs and HTML, or
+		to serve XML and JSON responses (as in a RESTful service) and
+		to receive and return SOAP messages.
+			one layer below web services.
+		Servlets have their own standard which is currently the Java Servlet Specification Version 3.1
+			https://java.net/downloads/servlet-spec/Final/servlet-3_1-final-change-bar.pdf
+			https://javaee.github.io/servlet-spec/DOWNLOADS.html
