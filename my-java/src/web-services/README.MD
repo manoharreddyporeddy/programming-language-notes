@@ -2,19 +2,19 @@
 -------------
 links
 
-https://www.eclipse.org/webtools/
-https://www.eclipse.org/webtools/jst/main.php
-https://www.eclipse.org/webtools/server/
+https://www.eclipse.org/webtools/  
+https://www.eclipse.org/webtools/jst/main.php  
+https://www.eclipse.org/webtools/server/  
 
-https://docs.oracle.com/javaee/5/api/javax/xml/bind/annotation/XmlRootElement.html
-https://en.wikipedia.org/wiki/Data_access_object
-https://javaee.github.io/servlet-spec/DOWNLOADS.html
-https://jcp.org/en/jsr/detail?id=370
-https://stackoverflow.com/questions/5930795/difference-between-servlet-and-web-service
-https://www.tutorialspoint.com/restful/restful_methods.htm
-https://www.tutorialspoint.com/restful/restful_environment.htm
-https://www.tutorialspoint.com/restful/restful_first_application.htm
-OLD https://wiki.eclipse.org/Creating_a_JAX-RS_Web_Service
+https://docs.oracle.com/javaee/5/api/javax/xml/bind/annotation/XmlRootElement.html  
+https://en.wikipedia.org/wiki/Data_access_object  
+https://javaee.github.io/servlet-spec/DOWNLOADS.html  
+https://jcp.org/en/jsr/detail?id=370  
+https://stackoverflow.com/questions/5930795/difference-between-servlet-and-web-service  
+https://www.tutorialspoint.com/restful/restful_methods.htm  
+https://www.tutorialspoint.com/restful/restful_environment.htm  
+https://www.tutorialspoint.com/restful/restful_first_application.htm  
+OLD https://wiki.eclipse.org/Creating_a_JAX-RS_Web_Service  
 
 <pre>
 -------------
@@ -119,8 +119,8 @@ A servlet is used
 			one layer below web services.
 		Servlets have their own standard which is currently the Java Servlet Specification Version 3.1
 </pre>
-			https://java.net/downloads/servlet-spec/Final/servlet-3_1-final-change-bar.pdf
-			https://javaee.github.io/servlet-spec/DOWNLOADS.html
+https://java.net/downloads/servlet-spec/Final/servlet-3_1-final-change-bar.pdf  
+https://javaee.github.io/servlet-spec/DOWNLOADS.html  
 <pre>
 
 A more comprehensive and practical approach is
@@ -140,13 +140,13 @@ In order to write RESTful services,
 			using Jersey
 				reference implementation is Jersey
 </pre>
-					https://jersey.github.io/download.html
+https://jersey.github.io/download.html  
 <pre>
 			OR
 			using Apache WINK JAX-RS implementation library:
 				NOTE: Apache Wink has been **RETIRED**.
 </pre>
-				https://wiki.eclipse.org/Creating_a_JAX-RS_Web_Service
+https://wiki.eclipse.org/Creating_a_JAX-RS_Web_Service  
 <pre>
 			OR
 			using Spring WebMVC, but afaik that is not the main purpose of this framework
@@ -170,9 +170,9 @@ How you use servlets depends mainly on the Framework that you use.
 
 Sample links that open when running local
 
-http://localhost:13755/proj1/services/cls1
-http://localhost:8080/proj1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:13755/proj1/services/cls1
-http://localhost:8080/wpa1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:9537/wpa1/services/Cls1
+http://localhost:13755/proj1/services/cls1  
+http://localhost:8080/proj1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:13755/proj1/services/cls1  
+http://localhost:8080/wpa1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:9537/wpa1/services/Cls1  
 
 <pre>
 ----------------
@@ -181,7 +181,7 @@ As far as I understand,
 		points to class files (or, rather, the folders/jars/zips containing them)
 	modulepath
 		points to modules, which all contain module-info.java. Modules: </pre>
-https://blog.andresteingress.com/2017/09/29/java-9-modules.html
+https://blog.andresteingress.com/2017/09/29/java-9-modules.html  
 <pre>
 
 ----------------
