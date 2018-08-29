@@ -27,6 +27,25 @@ Directory structure Dynamic Web Project
 				  |_lib           <--	jars
 										libraries (jars) your application need. maven manages dependencies (automatically copies the needed jar files to the WEB-INF/lib folder) in maven project.
 										application level (not system level) 3rd party libraries
+
+					((WEB-INF))
+						A special directory exists within the application hierarchy named  WEB-INF.
+							contains all things related to the application that aren’t in the document root of the application.
+							The WEB-INF node directory
+								not part of the public document tree of the application.
+								No file contained in the WEB-INF directory may be served directly to a client by the container.
+								NOTE: servlet 3.0 can can serve 
+								are visible to servlet code using the
+									getResource and
+									getResourceAsStream method calls
+										on the ServletContext,
+										and may be exposed using the RequestDispatcher calls.
+
+							WEB-INF/classes folder will contain
+								all compiled java classes and
+								resources (src/main/java and src/main/resources) that
+									need to be loaded by the Classloader to start the application.
+
 										
 				  your resources (JSP files, plain text files, script files)
 				  authorization restrictions
