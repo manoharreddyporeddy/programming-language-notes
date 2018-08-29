@@ -27,7 +27,6 @@ Directory structure Dynamic Web Project
 				  |_lib           <--	jars
 										libraries (jars) your application need. maven manages dependencies (automatically copies the needed jar files to the WEB-INF/lib folder) in maven project.
 										application level (not system level) 3rd party libraries
-
 					((WEB-INF))
 						A special directory exists within the application hierarchy named  WEB-INF.
 							contains all things related to the application that aren’t in the document root of the application.
@@ -55,6 +54,9 @@ Directory structure Dynamic Web Project
 				direct access from their browser
 
 
+			The Servlet container/ application server
+				If you use Apache Tomcat,
+					root directory of your application must be placed in the webapp folder
 
 Web service is a
 	service that provides
