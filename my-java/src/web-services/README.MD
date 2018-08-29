@@ -28,3 +28,23 @@ A servlet is used
 		Servlets have their own standard which is currently the Java Servlet Specification Version 3.1
 			https://java.net/downloads/servlet-spec/Final/servlet-3_1-final-change-bar.pdf
 			https://javaee.github.io/servlet-spec/DOWNLOADS.html
+
+A more comprehensive and practical approach is
+	to write a web service with a framework and
+	to publish it on an application server or servlet container
+		such as Tomcat or JBoss.
+			In this case you would use a
+				Servlet to handle the transport of the HTTP requests
+					which transmit your SOAP or REST messages.
+
+To write a web service with servlet technology
+	use
+		JAX-WS (XML based - e.g. SOAP)
+In order to write RESTful services,
+	use
+		JAX-RS
+			(reference implementation is Jersey https://jersey.java.net/), or
+				https://jersey.github.io/download.html
+		use Spring WebMVC, but afaik that is not the main purpose of this framework
+				@Controller annotation is a Spring specific stereotype annotation that tells Spring something about what your bean is supposed to do.
+			Jersey is considerably easier to use.
