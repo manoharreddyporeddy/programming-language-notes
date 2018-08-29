@@ -59,3 +59,6 @@ How you use servlets depends mainly on the Framework that you use.
 			overwriting the necessary methods
 				such as doGet which responds to HTTP GET requests from your browser.
 
+http://localhost:13755/proj1/services/cls1
+http://localhost:8080/proj1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:13755/proj1/services/cls1
+http://localhost:8080/wpa1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:9537/wpa1/services/Cls1
