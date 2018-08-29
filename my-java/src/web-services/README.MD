@@ -1,10 +1,22 @@
 
+-------------
 https://www.eclipse.org/webtools/
 https://www.eclipse.org/webtools/jst/main.php
 https://www.eclipse.org/webtools/server/
+-------------
 
+Web service	- service that exposes API/methods to web
+Web app		- application that uses web service, and show UI for user interaction 
 
-Directory structure Dynamic Web Project
+Java Web Services at
+	low level
+		Servlets
+	high level
+		XML-based like SOAP	- Example:	JAX-WS  (Java API for, XML Web Services, like SOAP)
+		REST-based			- Example:	JAX-RS  (Java API for, RESTful Web Services)
+-------------
+
+Dynamic Web Project - Directory structure
 
 	Java Servlet API requirements
 		requests being processed by some logic provided by your application.
