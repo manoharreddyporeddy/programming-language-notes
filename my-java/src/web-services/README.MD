@@ -1,8 +1,21 @@
 
 -------------
+links
+
 https://www.eclipse.org/webtools/
 https://www.eclipse.org/webtools/jst/main.php
 https://www.eclipse.org/webtools/server/
+
+https://docs.oracle.com/javaee/5/api/javax/xml/bind/annotation/XmlRootElement.html
+https://en.wikipedia.org/wiki/Data_access_object
+https://javaee.github.io/servlet-spec/DOWNLOADS.html
+https://jcp.org/en/jsr/detail?id=370
+https://stackoverflow.com/questions/5930795/difference-between-servlet-and-web-service
+https://www.tutorialspoint.com/restful/restful_methods.htm
+https://www.tutorialspoint.com/restful/restful_environment.htm
+https://www.tutorialspoint.com/restful/restful_first_application.htm
+OLD https://wiki.eclipse.org/Creating_a_JAX-RS_Web_Service
+
 -------------
 
 Web service	- service that exposes API/methods to web
