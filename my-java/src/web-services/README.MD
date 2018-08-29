@@ -48,6 +48,9 @@ In order to write RESTful services,
 		use Spring WebMVC, but afaik that is not the main purpose of this framework
 				@Controller annotation is a Spring specific stereotype annotation that tells Spring something about what your bean is supposed to do.
 			Jersey is considerably easier to use.
+			JAX-RS
+				File → export → Web → War File
+					C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\UserManagement.war
 
 A class that is annotated with @Controller is not yet a servlet, it is simply a bean.
 How you use servlets depends mainly on the Framework that you use.
@@ -62,3 +65,4 @@ How you use servlets depends mainly on the Framework that you use.
 http://localhost:13755/proj1/services/cls1
 http://localhost:8080/proj1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:13755/proj1/services/cls1
 http://localhost:8080/wpa1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:9537/wpa1/services/Cls1
+----------------
