@@ -48,3 +48,14 @@ In order to write RESTful services,
 		use Spring WebMVC, but afaik that is not the main purpose of this framework
 				@Controller annotation is a Spring specific stereotype annotation that tells Spring something about what your bean is supposed to do.
 			Jersey is considerably easier to use.
+
+A class that is annotated with @Controller is not yet a servlet, it is simply a bean.
+How you use servlets depends mainly on the Framework that you use.
+	For example, when you use Spring, the servlet job is done by Springs DispatcherServlet which in turn forwards requests to the correct beans.
+	If you use Tomcat, then
+		directly write your own servlets
+		by simply 
+			subclassing the javax.servlet.http.HttpServlet class and
+			overwriting the necessary methods
+				such as doGet which responds to HTTP GET requests from your browser.
+
