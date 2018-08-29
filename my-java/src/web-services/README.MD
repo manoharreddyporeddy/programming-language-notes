@@ -1,4 +1,42 @@
 
+Directory structure Dynamic Web Project
+
+	Java Servlet API requirements
+		requests being processed by some logic provided by your application.
+			ApplicationName
+			|
+			|_Java Resources
+			|__src\
+			|	|_packagename
+			|		_servlets
+			|		_.java files with classes
+			|			entity classes
+			|			db classes
+			|			other busines class
+			|__build\classes
+			|	output folder / default
+			|_WebContent
+			|__META-INF
+				  |_MANIFEST.MF
+			|__WEB-INF - contents are only accessible by the server - pages that do not go to public
+				  |_web.xml       <-- Here is the configuration file of your web app (where you define servlets, filters, listeners)
+				  |_classes (classpath)  <-- Here goes all the classes of your webapp, following the package structure you defined. Only 
+											frameworks (struts, spring, hibernate) configuration files
+											present in any web-app
+											compiled .java files 
+				  |_lib           <--	jars
+										libraries (jars) your application need. maven manages dependencies (automatically copies the needed jar files to the WEB-INF/lib folder) in maven project.
+										application level (not system level) 3rd party libraries
+										
+				  your resources (JSP files, plain text files, script files)
+				  authorization restrictions
+				  
+			JSP or facelets
+			application root directory
+				direct access from their browser
+
+
+
 Web service is a
 	service that provides
 		service methods
