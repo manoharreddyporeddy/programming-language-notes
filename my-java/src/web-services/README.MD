@@ -16,6 +16,7 @@ https://www.tutorialspoint.com/restful/restful_environment.htm
 https://www.tutorialspoint.com/restful/restful_first_application.htm
 OLD https://wiki.eclipse.org/Creating_a_JAX-RS_Web_Service
 
+<pre>
 -------------
 
 Web service	- service that exposes API/methods to web
@@ -101,7 +102,9 @@ Implement a web service
 		write a class and
 		annotate it with the @WebService and @WebMethod annotations from javax.jws, and
 			then launch it from a main-method with:
+</pre>
 				Endpoint.publish("http://localhost:8089/myservice", new MyWebService());
+<pre>
 			The result is that you can view the WSDL at the registered URL and
 				if you have SoapUI or any other SOAP client
 					you can also test and
@@ -115,8 +118,10 @@ A servlet is used
 		to receive and return SOAP messages.
 			one layer below web services.
 		Servlets have their own standard which is currently the Java Servlet Specification Version 3.1
+</pre>
 			https://java.net/downloads/servlet-spec/Final/servlet-3_1-final-change-bar.pdf
 			https://javaee.github.io/servlet-spec/DOWNLOADS.html
+<pre>
 
 A more comprehensive and practical approach is
 	to write a web service with a framework and
@@ -133,11 +138,17 @@ In order to write RESTful services,
 	use
 		JAX-RS
 			using Jersey
-				(reference implementation is Jersey https://jersey.java.net/), or
+				reference implementation is Jersey
+</pre>
 					https://jersey.github.io/download.html
+<pre>
+			OR
 			using Apache WINK JAX-RS implementation library:
 				NOTE: Apache Wink has been **RETIRED**.
+</pre>
 				https://wiki.eclipse.org/Creating_a_JAX-RS_Web_Service
+<pre>
+			OR
 			using Spring WebMVC, but afaik that is not the main purpose of this framework
 					@Controller annotation is a Spring specific stereotype annotation that tells Spring something about what your bean is supposed to do.
 				Jersey is considerably easier to use.
@@ -155,16 +166,23 @@ How you use servlets depends mainly on the Framework that you use.
 			overwriting the necessary methods
 				such as doGet which responds to HTTP GET requests from your browser.
 
+</pre>
+
+Sample links that open when running local
+
 http://localhost:13755/proj1/services/cls1
 http://localhost:8080/proj1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:13755/proj1/services/cls1
 http://localhost:8080/wpa1Client/sampleCls1Proxy/TestClient.jsp?endpoint=http://localhost:9537/wpa1/services/Cls1
 
-
+<pre>
 ----------------
 As far as I understand,
 	classpath
 		points to class files (or, rather, the folders/jars/zips containing them)
 	modulepath
-		points to modules, which all contain module-info.java. Modules: blog.andresteingress.com/2017/09/29/java-9-modules.html
+		points to modules, which all contain module-info.java. Modules: </pre>
+https://blog.andresteingress.com/2017/09/29/java-9-modules.html
+<pre>
 
 ----------------
+</pre>
