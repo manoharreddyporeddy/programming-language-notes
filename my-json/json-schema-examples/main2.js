@@ -5,8 +5,8 @@ var v = new Validator();
 // Example #2
 
 // JSON SCHEMA
-var addressSchema = require('./jsc2-address.schema.js');
-var testSchema = require('./jsc2-person.schema.js');
+var childSchema = require('./jsc2-address.schema.js');
+var parentSchema = require('./jsc2-person.schema.js');
 
 // JSON TO TEST
 var testJson;
@@ -17,11 +17,11 @@ testJson = require('./j2-person-bad-is-not-of-a-type---country.js');
 
 
 // if external json $ref exists
-v.addSchema(addressSchema, '/SimpleAddress');   // otherwise,  SchemaError: no such schema </SimpleAddress>,  due to $ref
+v.addSchema(childSchema, '/SimpleAddress');   // otherwise,  SchemaError: no such schema </SimpleAddress>,  due to $ref
 
 
 // VALIDATE		- JSON AGAINST JSON SCHEMA
-let result = v.validate(testJson, testSchema)
+let result = v.validate(testJson, parentSchema)
 
 
 // DISPLAY RESULT
