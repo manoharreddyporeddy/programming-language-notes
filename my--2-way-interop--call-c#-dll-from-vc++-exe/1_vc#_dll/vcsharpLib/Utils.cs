@@ -56,6 +56,131 @@ namespace ns_vcsharpLib
                 NativeMethods.FreeLibrary(hExe);
             }
         }
+
+
+
+
+        // https://referencesource.microsoft.com/#WindowsBase/parent/parent/InternalApis/NDP_FX/inc/ZLibNative.cs,265
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate int VCPP_I_I(int x);
+
+        public VCPP_I_I GetFunc_i_i(string fName1, string executable1 = @"VCppProj.exe")
+        {
+            IntPtr fptr1 = NativeMethods.GetProcAddress(hExe, fName1);
+            if (fptr1 == IntPtr.Zero)
+            {
+                // error
+                string err = "Error: could not get address of: " + fName1;
+                Console.WriteLine(err);
+                throw new Exception(err);
+            }
+
+            try
+            {
+                return (VCPP_I_I)
+                           Marshal.GetDelegateForFunctionPointer(fptr1, typeof(VCPP_I_I));
+            }
+            catch (Exception e)
+            {
+                string err = "Error: 111111111111111111 could not get convert from fptr to delgt. " + e.Message;
+                Console.WriteLine(err);
+                throw e;
+            }
+        }
+
 		
+		
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate long VCPP_II_L(int x, int y);
+
+        public VCPP_II_L GetFunc_ii_l(string fName1, string executable1 = @"VCppProj.exe")
+        {
+            LoadLib1(executable1);
+
+            IntPtr fptr1 = NativeMethods.GetProcAddress(hExe, fName1);
+            if (fptr1 == IntPtr.Zero)
+            {
+                // error
+                string err = "Error: could not get address of: " + fName1;
+                Console.WriteLine(err);
+                throw new Exception(err);
+            }
+
+            try
+            {
+                return (VCPP_II_L)
+                           Marshal.GetDelegateForFunctionPointer(fptr1, typeof(VCPP_II_L));
+            }
+            catch (Exception e)
+            {
+                string err = "Error: could not get convert from fptr to delgt. " + e.Message;
+                Console.WriteLine(err);
+                throw e;
+            }
+        }
+
+		
+		
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate int VCPP_S_I(string i);
+
+        public VCPP_S_I GetFunc_s_i(string fName1, string executable1 = @"VCppProj.exe")
+        {
+            LoadLib1(executable1);
+
+            IntPtr fptr1 = NativeMethods.GetProcAddress(hExe, fName1);
+            if (fptr1 == IntPtr.Zero)
+            {
+                // error
+                string err = "Error: could not get address of: " + fName1;
+                Console.WriteLine(err);
+                throw new Exception(err);
+            }
+
+            try
+            {
+                return (VCPP_S_I)
+                           Marshal.GetDelegateForFunctionPointer(fptr1, typeof(VCPP_S_I));
+            }
+            catch (Exception e)
+            {
+                string err = "Error: could not get convert from fptr to delgt. " + e.Message;
+                Console.WriteLine(err);
+                throw e;
+            }
+        }
+
+		
+		
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate string VCPP_I_S(int i);
+
+        public VCPP_I_S GetFunc_i_s(string fName1, string executable1 = @"VCppProj.exe")
+        {
+            LoadLib1(executable1);
+
+            IntPtr fptr1 = NativeMethods.GetProcAddress(hExe, fName1);
+            if (fptr1 == IntPtr.Zero)
+            {
+                // error
+                string err = "Error: could not get address of: " + fName1;
+                Console.WriteLine(err);
+                throw new Exception(err);
+            }
+
+            try
+            {
+                return (VCPP_I_S)
+                           Marshal.GetDelegateForFunctionPointer(fptr1, typeof(VCPP_I_S));
+            }
+            catch (Exception e)
+            {
+                string err = "Error: could not get convert from fptr to delgt. " + e.Message;
+                Console.WriteLine(err);
+                throw e;
+            }
+        }
+
     }
 }
