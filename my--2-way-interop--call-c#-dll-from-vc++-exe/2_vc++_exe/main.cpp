@@ -23,7 +23,26 @@ int main() {
 		obj->CallVcsFuncSetN(123);
 		cout << "CallVcsFuncGetN(): " << obj->CallVcsFuncGetN() << endl;
 	}
-	
+
+	{
+		int actual = obj->CallVcsFunc_i_i(123);
+		cout << "CallVcsFunc_i_i: " << actual << endl;
+	}
+
+	{
+		long actual = obj->CallVcsFunc_ii_l(2, 3);
+		cout << "CallVcsFunc_ii_l: " << actual << endl;
+	}
+
+	{
+		string actual = obj->CallVcsFunc_i_s(123);
+		cout << "CallVcsFunc_i_s: " << actual << endl;
+	}
+
+	{
+		int actual = obj->CallVcsFunc_s_i("123");
+		cout << "CallVcsFunc_s_i: " << actual << endl;
+	}
 	// ========================= Call 4 VC# functions - exported/COM registered from another C# DLL ===============================
 
 
