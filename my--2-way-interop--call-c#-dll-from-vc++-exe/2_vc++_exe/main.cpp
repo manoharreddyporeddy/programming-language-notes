@@ -10,6 +10,17 @@ namespace ns_vcsharpLib = vcsharpLib;	// make alias:   DEFAULT assembly name  to
 using namespace std;
 
 int main() {
+	CoInitialize(NULL);
+
+
+	// ========================= Call 4 VC# functions - exported/COM registered from another C# DLL ===============================
+	ns_vcsharpLib::IClass1Ptr obj;		// use namespace here
+	obj.CreateInstance(__uuidof(ns_vcsharpLib::Class1));
+	// ========================= Call 4 VC# functions - exported/COM registered from another C# DLL ===============================
+
+
+	CoUninitialize();
+	return 0;
 }
 
 // ========================= 4 VC++ functions - exported from this .exe ===============================
