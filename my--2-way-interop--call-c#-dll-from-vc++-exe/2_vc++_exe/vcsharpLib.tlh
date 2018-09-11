@@ -1,0 +1,89 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (280c4297).
+//
+// vcsharpLib.tlh
+//
+// C++ source equivalent of Win32 type library ..\vcsharpLib.tlb
+// compiler-generated file created 09/11/18 at 08:57:45 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace vcsharpLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("875423de-357e-39d5-a710-3beb2452549d"))
+/* dual interface */ IClass1;
+struct /* coclass */ Class1;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IClass1, __uuidof(IClass1));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("875423de-357e-39d5-a710-3beb2452549d"))
+IClass1 : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT CallVcsFuncSetN (
+        long n );
+    long CallVcsFuncGetN ( );
+    long CallVcsFunc_i_i (
+        long x );
+    __int64 CallVcsFunc_ii_l (
+        long x,
+        long y );
+    _bstr_t CallVcsFunc_i_s (
+        long x );
+    long CallVcsFunc_s_i (
+        _bstr_t x );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_CallVcsFuncSetN (
+        long n ) = 0;
+    virtual HRESULT __stdcall raw_CallVcsFuncGetN (
+        long * pRetVal ) = 0;
+    virtual HRESULT __stdcall raw_CallVcsFunc_i_i (
+        long x,
+        long * pRetVal ) = 0;
+    virtual HRESULT __stdcall raw_CallVcsFunc_ii_l (
+        long x,
+        long y,
+        __int64 * pRetVal ) = 0;
+    virtual HRESULT __stdcall raw_CallVcsFunc_i_s (
+        long x,
+        BSTR * pRetVal ) = 0;
+    virtual HRESULT __stdcall raw_CallVcsFunc_s_i (
+        BSTR x,
+        long * pRetVal ) = 0;
+};
+
+struct __declspec(uuid("473825cb-0411-3645-966e-572d62ed584e"))
+Class1;
+    // interface _Object
+    // [ default ] interface IClass1
+
+//
+// Wrapper method implementations
+//
+
+#include "vcsharpLib.tli"
+
+} // namespace vcsharpLib
+
+#pragma pack(pop)

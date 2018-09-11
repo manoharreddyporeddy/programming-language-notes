@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: VCppProj - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\MANOHA~1\AppData\Local\Temp\RSP2D38.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/VCppProj.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\repo\share\gg\my-programming-language-notes\my--2-way-interop--call-c#-dll-from-vc++-exe\2_vc++_exe\main.cpp"
+]
+Creating command line "cl.exe @C:\Users\MANOHA~1\AppData\Local\Temp\RSP2D38.tmp" 
+Creating temporary file "C:\Users\MANOHA~1\AppData\Local\Temp\RSP2D48.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/VCppProj.pdb" /debug /machine:I386 /def:".\main.def" /out:"../VCppProj.exe" /pdbtype:sept 
+".\Debug\main.obj"
+]
+Creating command line "link.exe @C:\Users\MANOHA~1\AppData\Local\Temp\RSP2D48.tmp"
+<h3>Output Window</h3>
+Compiling...
+main.cpp
+Linking...
+   Creating library ../VCppProj.lib and object ../VCppProj.exp
+
+
+
+<h3>Results</h3>
+VCppProj.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
