@@ -16,6 +16,14 @@ int main() {
 	// ========================= Call 4 VC# functions - exported/COM registered from another C# DLL ===============================
 	ns_vcsharpLib::IClass1Ptr obj;		// use namespace here
 	obj.CreateInstance(__uuidof(ns_vcsharpLib::Class1));
+
+
+	{
+		cout << "CallVcsFuncSetN(123)" << endl;
+		obj->CallVcsFuncSetN(123);
+		cout << "CallVcsFuncGetN(): " << obj->CallVcsFuncGetN() << endl;
+	}
+	
 	// ========================= Call 4 VC# functions - exported/COM registered from another C# DLL ===============================
 
 
