@@ -20,4 +20,42 @@ namespace ns_vcsharpLib
         [DllImport("kernel32.dll")]
         public static extern bool FreeLibrary(IntPtr hModule);
     }
+
+    class Vcpp
+    {
+        private IntPtr hExe;     // vcpp exe/dll handle
+
+        public Vcpp(string executable1 = @"VCppProj.exe")
+        {
+            LoadLib1(executable1);
+        }
+
+        ~Vcpp()
+        {
+            FreeLib1();
+        }
+
+        public void LoadLib1(string executable1)
+        {
+            if (hExe == IntPtr.Zero) // dll not loaded
+            {
+                hExe = NativeMethods.LoadLibrary(executable1);  // load executable
+                if (hExe == IntPtr.Zero)
+                {
+                    // error
+                    Console.WriteLine("Error: could not load: " + executable1);
+                    throw new Exception("Error: could not load: " + executable1); ;
+                }
+            }
+        }
+
+        public void FreeLib1()
+        {
+            if (hExe != null)
+            {
+                NativeMethods.FreeLibrary(hExe);
+            }
+        }
+		
+    }
 }
