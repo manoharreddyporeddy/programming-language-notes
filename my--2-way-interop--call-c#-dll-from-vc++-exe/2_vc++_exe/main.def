@@ -1,2 +1,5 @@
 EXPORTS  
-   vcpp_func
+   vcpp_i_i
+   vcpp_ii_l
+   vcpp_i_s
+   vcpp_s_i

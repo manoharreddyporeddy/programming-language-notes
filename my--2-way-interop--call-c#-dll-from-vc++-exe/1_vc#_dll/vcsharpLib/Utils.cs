@@ -89,8 +89,6 @@ namespace ns_vcsharpLib
             }
         }
 
-		
-		
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate long VCPP_II_L(int x, int y);
 
@@ -120,8 +118,6 @@ namespace ns_vcsharpLib
             }
         }
 
-		
-		
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int VCPP_S_I(string i);
 
@@ -151,8 +147,6 @@ namespace ns_vcsharpLib
             }
         }
 
-		
-		
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate string VCPP_I_S(int i);
 
