@@ -4,3 +4,12 @@ Debug/
 obj/
 bin/
 *.exe
+.gradle
+.idea
+
+# Cordova
+my-cordova/**/platforms
+my-cordova/**/plugins
+
+# res
+my-cordova/**/resources/signing
