@@ -13,3 +13,5 @@ my-cordova/**/plugins
 
 # res
 my-cordova/**/resources/signing
+
+package-lock.json
