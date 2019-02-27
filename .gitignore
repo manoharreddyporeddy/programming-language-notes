@@ -15,3 +15,5 @@ my-cordova/**/plugins
 my-cordova/**/resources/signing
 
 package-lock.json
+
+react-dest

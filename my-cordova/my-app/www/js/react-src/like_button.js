@@ -1,7 +1,5 @@
 'use strict';
 
-// const e = React.createElement;
-
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
@@ -13,17 +11,9 @@ class LikeButton extends React.Component {
       return 'You liked comment number ' + this.props.commentID; // this button changes to text
     }
 
-    // when false, renders as html button
-    // return React.createElement(
-    //   'button', // html element
-    //   { onClick: () => this.setState({ liked: true }) },  // events
-    //   'Like'  // html element text/caption
-    // );
-
+    // when false, renders as html button   html element, events, html element text/caption
     return (
-      <button onClick={() => this.setState({ liked: true })}>
-        Like
-      </button>
+      <button onClick={() => this.setState({ liked: true })}>Like!</button>
     );
   }
 }
@@ -34,10 +24,10 @@ document.querySelectorAll('.like_button_container')
     // Read the comment ID from a data-* attribute.
     const commentID1 = parseInt(domContainer.dataset.commentid, 10);
     ReactDOM.render(
-      React.createElement(LikeButton, { commentID: commentID1 }),   // render Like custom button
+      <LikeButton commentID={commentID1} />,    // render Like custom button
       domContainer                                                  //  under div with class "like_button_container"
     );
   });
 
 // const domContainer = document.querySelector('#like_button_container');
-// ReactDOM.render(React.createElement(LikeButton), domContainer);
+// ReactDOM.render(<LikeButton/>, domContainer);
