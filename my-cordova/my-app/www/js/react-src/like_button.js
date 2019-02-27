@@ -14,10 +14,16 @@ class LikeButton extends React.Component {
     }
 
     // when false, renders as html button
-    return React.createElement(
-      'button', // html element
-      { onClick: () => this.setState({ liked: true }) },  // events
-      'Like'  // html element text/caption
+    // return React.createElement(
+    //   'button', // html element
+    //   { onClick: () => this.setState({ liked: true }) },  // events
+    //   'Like'  // html element text/caption
+    // );
+
+    return (
+      <button onClick={() => this.setState({ liked: true })}>
+        Like
+      </button>
     );
   }
 }
