@@ -1,3 +1,27 @@
+
+This is a cordova + reactjs app
+Same app works on android, browser, windows, etc.
+
+Usage:
+
+1. install npm modules
+cmd
+cd C:\MS\my-programming-language-notes\my-cordova\my-app\
+npm install
+
+2. preprocess jsx, run below
+cmd
+ppjsx
+
+3. run anyone of these:
+cmd
+cordova run browser
+cordova run windows
+cordova run android
+
+
+========
+
 https://cordova.apache.org/
 
 npm install -g cordova
@@ -24,6 +48,13 @@ cordova run android
 cordova clean
 
 =========
+minify js - https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3
+npm init -y
+
+jsx preprocessor
+    npx babel --watch my-app/www/js/react-src --out-dir my-app/www/js --presets react-app/prod
+=========
+
 npx create-react-app my-app
 cd my-app
 npm start
