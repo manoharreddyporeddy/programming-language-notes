@@ -1,23 +1,27 @@
 
 This is a cordova + reactjs app
+
 Same app works on android, browser, windows, etc.
 
 Usage:
 
 1. install npm modules
-cmd
-cd C:\MS\my-programming-language-notes\my-cordova\my-app\
-npm install
+
+    cmd
+    cd C:\MS\my-programming-language-notes\my-cordova\my-app\
+    npm install
 
 2. preprocess jsx, run below
-cmd
-ppjsx
+
+    cmd
+    ppjsx
 
 3. run anyone of these:
-cmd
-cordova run browser
-cordova run windows
-cordova run android
+
+    cmd
+    cordova run browser
+    cordova run windows
+    cordova run android
 
 
 ========
