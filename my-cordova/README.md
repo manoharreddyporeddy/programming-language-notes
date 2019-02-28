@@ -1,5 +1,9 @@
 
 This is a cordova + reactjs app
+---
+
+You can remove reactjs app by deleting react-src & react-dist folders easily later, once everything is running.
+
 
 Same app works on android, browser, windows, etc.
 ---
