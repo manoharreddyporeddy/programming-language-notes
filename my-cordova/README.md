@@ -2,31 +2,31 @@
 This is a cordova + reactjs app
 
 Same app works on android, browser, windows, etc.
+---
 
 Usage:
 
-1. install npm modules
-`
+1.install npm modules
+
     cmd  
-    
-    cd C:\MS\my-programming-language-notes\my-cordova\my-app\  
-    
+    cd C:\MS\my-programming-language-notes\my-cordova\my-app\      
     npm install  
-`
-2. preprocess jsx, run below
-`
+
+2.preprocess jsx, run below
+
     cmd  
     ppjsx  
-`
-3. run anyone of these:
-`
+
+3.run anyone of these:
+
     cmd  
     cordova run browser  
     cordova run windows  
     cordova run android  
-`
 
-========
+
+More details:
+---
 
 https://cordova.apache.org/
 
@@ -53,13 +53,15 @@ cordova run android
 
 cordova clean
 
-=========
+--
+
 minify js - https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3
 npm init -y
 
 jsx preprocessor
     npx babel --watch my-app/www/js/react-src --out-dir my-app/www/js --presets react-app/prod
-=========
+
+--
 
 npx create-react-app my-app
 cd my-app
@@ -68,7 +70,8 @@ npm start
 npm start
 npm run build
 npm test
-=========
+
+--
 
     JAVA_HOME = C:\Program Files\Java\jdk1.8.0_192
     ANDROID_HOME = C:\Program Files (x86)\Android\android-sdk
@@ -95,7 +98,8 @@ $ cordova requirements
         Cordova tooling for iOS requires Apple OS X
     Error: Some of requirements check failed
 
----
+--
+
 https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html
 admin cmd
     @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
@@ -112,7 +116,9 @@ ANDROID_HOME
 PATH
     C:\Users\user1\AppData\Local\android-sdk\tools
     C:\Users\user1\AppData\Local\android-sdk\platform-tools
----
+
+--
+
     https://cordova.apache.org/docs/en/latest/config_ref/images.html
     <platform name="android">
         <!--
@@ -130,4 +136,5 @@ PATH
         <icon src="res/android/xxhdpi.png" density="xxhdpi" />
         <icon src="res/android/xxxhdpi.png" density="xxxhdpi" />
     </platform>
----
+
+--
