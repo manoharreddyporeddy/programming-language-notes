@@ -8,7 +8,9 @@ Usage:
 1. install npm modules
 `
     cmd  
+    
     cd C:\MS\my-programming-language-notes\my-cordova\my-app\  
+    
     npm install  
 `
 2. preprocess jsx, run below
