@@ -107,12 +107,42 @@ foo
 	I said bar.
 bar
 # ------------------
+
+
+def identify_class(obj)
+  case obj
+    when Hacker
+      puts "It's a Hacker!"
+    when Submission
+      puts "It's a Submission!"
+    when TestCase
+      puts "It's a TestCase!"
+    when Contest
+      puts "It's a Contest!"
+    else
+      puts "It's an unknown model"
+  end
+end
+
+def identify_class__2(obj)
+    case obj
+    when Hacker,Submission,TestCase,Contest
+        puts "It's a #{obj.class}!"
+    else
+        puts "It's an unknown model"
+    end
+end
+
+
+# global variables - available across classes
+$abc
+
 class Customer
 
-  # class variables
-  @@abc
+  # class variables - available across different objects
+  @@abc = 0
 
-  # instance variables
+  # instance variables - change from object to object
   @abc
 
   fun1 ???
@@ -144,14 +174,48 @@ Class Vehicle {
 
 
 
+# arrays
 
+names = Array.new
+names = Array.new(20)
+names = Array.new(20)
+puts names.size  # This returns 20
+puts names.length # This also returns 20
 
+names = Array.new(4, "mac")
+puts "#{names}"
+# ["mac", "mac", "mac", "mac"]
 
+nums = Array.new(10) { |e| e = e * 2 }
+puts "#{nums}"
+# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 
+nums = Array.[](1, 2, 3, 4,5)
+nums = Array[1, 2, 3, 4,5]
 
+digits = Array(0..9)
+puts "#{digits}
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+# create an instance of Array object
+#   Array.[](...)
+#   Array[...]
+#   [...]
 
+digits = Array(0..9)
+num = digits.at(6)
+puts "#{num}"
+# 6
 
+# Array pack Directives
+a = [ "a", "b", "c" ]
+n = [ 65, 66, 67 ]
+puts a.pack("A3A3A3")   #=> "a  b  c  "
+puts a.pack("a3a3a3")   #=> "a\000\000b\000\000c\000\000"
+puts n.pack("ccc")      #=> "ABC"
+# a  b  c
+# abc
+# ABC
 
 
 
