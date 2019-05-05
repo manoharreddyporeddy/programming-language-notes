@@ -468,9 +468,214 @@ hackerrank = {"simmy" => 100, "vivmbbs" => 200}
 # hackerrank = Hash[["simmy", 100], ["vivmbbs", 200]]
 
 
+user = {"viv" : 10, "simmy" : 20, "sp2hari" : 30}
+
+user.each do |key, value|
+    # some code on individual key, value
+end
+
+user.each do |arr|
+    # here arr[0] is the key and arr[1] is the value
+end
+
+
+def iter_hash(hash)
+    hash.each do |key1, value1|
+      puts key1
+      puts value1
+    end
+end
+
+# hash.each { |p| puts p }
+#         puts prints each element in seperate line
+#
+# puts hash.to_a
+#
+# puts hash.map.to_a
+#
+# hash.each {|key, value| puts "#{key}\n#{value}"}
 
 
 
+h = Hash.new
+h.default = 0
+
+# add key value to hash
+h[key] = value
+h.store(key, value)
+
+# delete key from hash
+h.delete(key)
+
+# For destructive selection and deletion
+#     keep_if and delete_if
+#       similar to Array
+h = {1 => 1, 2 => 4, 3 => 9, 4 => 16, 5 => 25}
+#       {1 => 1, 2 => 4, 3 => 9, 4 => 16, 5 => 25}
+
+h.keep_if {|key, value| key % 2 == 0}
+# or h.delete_if {|key, value| key % 2 != 0}
+#       {2 => 4, 4 => 16}
+
+# For non-destructive selection or rejection
+#   select, reject, and drop_while
+#       similar to Array
+
+
+
+hackerrank = Hash.new
+hackerrank.store(543121, 100)
+# hackerrank[543121]=100
+hackerrank.keep_if { |key, value| key.is_a? Integer }
+hackerrank.delete_if { |key, value| key % 2 == 0 }
+
+
+
+%w[ant bear cat].all? { |word| word.length >= 3 } #=> true
+%w[ant bear cat].all? { |word| word.length >= 4 } #=> false
+%w[ant bear cat].all?(/t/)                        #=> false
+[1, 2i, 3.14].all?(Numeric)                       #=> true
+[nil, true, 99].all?                              #=> false
+[].all?                                           #=> true
+
+%w[ant bear cat].any? { |word| word.length >= 3 } #=> true
+%w[ant bear cat].any? { |word| word.length >= 4 } #=> true
+%w[ant bear cat].any?(/d/)                        #=> false
+[nil, true, 99].any?(Integer)                     #=> true
+[nil, true, 99].any?                              #=> true
+[].any?                                           #=> false
+
+def iterate_colors(colors)
+  colors.to_a
+  colors.select { |obj| obj }
+  colors.map { |e| e }
+  # (1..4).collect { "cat"  }   #=> ["cat", "cat", "cat", "cat"]
+  colors.enum_for.to_a
+end
+
+def skip_animals(animals, skip)
+  arr = []
+  (animals.each_with_index { |item, index| arr.push("#{index}:#{item}") if index >= skip }).to_a
+  arr
+end
+
+# skip_animals(['leopard', 'bear', 'fox', 'wolf'], 2)
+#   ["2:fox", "3:wolf"]
+def skip_animals(animals, skip)
+    results = []
+    animals.drop(skip).each_with_index do |animal, i|
+        results << "#{i+skip}:#{animal}"
+    end
+    results
+end
+
+def skip_animals(animals, skip)
+    animals.map.with_index { |v, i| "#{i}:#{v}" }.drop(skip)
+end
+
+def skip_animals(animals, skip)
+     animals.drop_while {|a| animals.index(a) < skip }.map.with_index{|a, index| "#{index}:#{a}"}
+end
+
+# -------------------- collect/map method --------------------------
+# returns new collection   (each returns same collection)
+
+[1,2,3].map { |x| 2*x }
+# [2, 4, 6]
+
+# ???????? :
+{:a=>1, :b=>2, :c=>3}.collect { |key, value| 2*value }
+# [2, 4, 6]
+
+
+
+rot13 = {
+"a" : "n", "b" : "o", "c" : "p", "d" : "q", "e" : "r", "f" : "s", "g" : "t",
+"h" : "u", "i" : "v", "j" : "w", "k" : "x", "l" : "y", "m" : "z",
+
+"A" : "N", "B" : "O", "C" : "P", "D" : "Q", "E" : "R", "F" : "S", "G" : "T",
+"H" : "U", "I" : "V", "J" : "W", "K" : "X", "L" : "Y", "M" : "Z",
+
+}
+
+text = "Sammy has a balloon"
+indices = text.chars
+  .each_with_index
+  .select{|char, index| char == "a" }
+  .map{|pair| pair.last}
+
+print indices
+
+
+
+def rot13(secret_messages)
+  
+  # small   letters a to m should change to n to z
+  # small   letters n to z should change to a to m
+  # capital letters A to M should change to N to Z
+  # capital letters N to Z should change to A to M
+  
+  # tr
+  #   translate
+  #     https://ruby-doc.org/core-2.4.1/String.html#method-i-tr
+
+  secret_messages.map {
+    |a_word|
+      a_word
+        .tr("a-mn-zA-MN-Z", "n-za-mN-ZA-M")
+  }
+end
+
+
+def rot13(secret_messages)
+  
+  rot13 = {
+    "a" => "n", "b" => "o", "c" => "p", "d" => "q", "e" => "r", "f" => "s", "g" => "t", "h" => "u", "i" => "v", "j" => "w", "k" => "x", "l" => "y", "m" => "z",
+    "n" => "a", "o" => "b", "p" => "c", "q" => "d", "r" => "e", "s" => "f", "t" => "g", "u" => "h", "v" => "i", "w" => "j", "x" => "k", "y" => "l", "z" => "m",
+    "A" => "N", "B" => "O", "C" => "P", "D" => "Q", "E" => "R", "F" => "S", "G" => "T", "H" => "U", "I" => "V", "J" => "W", "K" => "X", "L" => "Y", "M" => "Z",
+    "N" => "A", "O" => "B", "P" => "C", "Q" => "D", "R" => "E", "S" => "F", "T" => "G", "U" => "H", "V" => "I", "W" => "J", "X" => "K", "Y" => "L", "Z" => "M"
+  }
+
+  secret_messages
+    .map {
+      |word|
+
+      newWord =
+        word
+          .chars
+            .each_with_index
+            .select{|char, index| 1 == 1 }
+            .map{ |pair| rot13[pair.first] || pair.first }
+            .join
+
+      newWord
+  }
+end
+
+#         (x.ord+13).chr  
+
+
+    # puts rot13(["Jul", "qvq"])
+
+    #       indices =
+    #         word.chars
+    #           .each_with_index
+    #           .select{|char, index| char == "a" }
+    #           .map{|pair| pair.last}
+    #       print indices
+
+"hello".tr('el', 'ip')      #=> "hippo"
+"hello".tr('aeiou', '*')    #=> "h*ll*"
+"hello".tr('a-y', 'b-z')    #=> "ifmmp"
+"hello".tr('^aeiou', '*')   #=> "*e**o"
+
+
+
+
+
+# https://apidock.com/ruby/String/tr
+# https://apidock.com/ruby/String/tr
+# https://apidock.com/ruby/String/tr
 
 
 
