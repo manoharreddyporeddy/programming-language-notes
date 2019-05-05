@@ -6,6 +6,15 @@ puts "This is main Ruby Program"
 
 puts "This is main Ruby Program"
 
+
+p "1 2"           #       "1 2"
+print "1 2"       #        1 2
+
+a = "hello "
+b = "world"
+print "#{a}#{b}"
+
+
 # I am a comment. Just ignore me.
 
 = begin
@@ -530,7 +539,8 @@ hackerrank.keep_if { |key, value| key.is_a? Integer }
 hackerrank.delete_if { |key, value| key % 2 == 0 }
 
 
-
+# `all`
+#     are true? (not nil and not false)
 %w[ant bear cat].all? { |word| word.length >= 3 } #=> true
 %w[ant bear cat].all? { |word| word.length >= 4 } #=> false
 %w[ant bear cat].all?(/t/)                        #=> false
@@ -538,12 +548,107 @@ hackerrank.delete_if { |key, value| key % 2 == 0 }
 [nil, true, 99].all?                              #=> false
 [].all?                                           #=> true
 
+arr = [1, 2, 3, 4, 5, 6]              # => [1, 2, 3, 4, 5, 6]
+h = {"a" => 1, "b" => 2, "c" => 3}    # => {"a" => 1, "b" => 2, "c" => 3}
+> arr.all? {|a| a.is_a? Integer} # checks if all elements of the array are of the type Integer
+# => True
+> h.all? {|key, value| key.is_a? String} # checks if all keys of the Hash object are of the type String
+# => True
+
+# `any`
+#     any one is true? (not nil and not false)
 %w[ant bear cat].any? { |word| word.length >= 3 } #=> true
 %w[ant bear cat].any? { |word| word.length >= 4 } #=> true
 %w[ant bear cat].any?(/d/)                        #=> false
 [nil, true, 99].any?(Integer)                     #=> true
 [nil, true, 99].any?                              #=> true
 [].any?                                           #=> false
+
+arr = [1, 2, 3, 4, 5, 6]              # => [1, 2, 3, 4, 5, 6]
+h = {"a" => 1, "b" => 2, "c" => 3}    # => {"a" => 1, "b" => 2, "c" => 3}
+> arr.any? {|a| a % 2 == 0} # checks if any number in the array is even
+# => True
+> h.any? {|key, value| value.is_a? String} # checks if any value of the Hash object is of the type String
+# => False
+
+# `none`
+#     none is true? (not nil and not false)
+
+arr = [1, 2, 3, 4, 5, 6]              # => [1, 2, 3, 4, 5, 6]
+h = {"a" => 1, "b" => 2, "c" => 3}    # => {"a" => 1, "b" => 2, "c" => 3}
+> arr.none? {|a| a.nil?} # Checks if none of the elements in the array are of nil type
+# => True
+> h.none? {|key, value| value < 3} # checks if all values of the Hash object are less than 3
+# => False
+
+# `find`
+#     returns first   element (array incase of hash element)   which is true (not nil and not false)
+arr = [1, 2, 3, 4, 5, 6]              # => [1, 2, 3, 4, 5, 6]
+h = {"a" => 1, "b" => 2, "c" => 3}    # => {"a" => 1, "b" => 2, "c" => 3}
+> arr.find {|a| a > 5} # returns the first element greater than 5 and `nil` if none satisfies the condition
+# => 6
+> h.find {|key, value| key == "b"} # returns an Array of the first match [key, value] that satisfies the condition and nil otherwise
+# => ["b", 2]
+#   or nil
+
+
+def func_any(hash)
+    # Check and return true if any key object within the hash is of the type Integer
+    # If not found, return false.
+  hash.any? { |key1, value1|  key1.is_a? Integer }
+end
+
+def func_all(hash)
+    # Check and return true if all the values within the hash are Integers and are < 10
+    # If not all values satisfy this, return false.
+  hash.all? { |key1, value1|  (value1.is_a? Integer) and (value1 < 10) }
+end
+
+def func_none(hash)
+    # Check and return true if none of the values within the hash are nil
+    # If any value contains nil, return false.
+  hash.none? { |key1, value1|  (value1 == nil) }
+end
+
+def func_find(hash)
+    # Check and return the first object that satisfies either of the following properties:
+    #   1. There is a [key, value] pair where the key and value are both Integers and the value is < 20 
+    #   2. There is a [key, value] pair where the key and value are both Strings and the value starts with `a`.
+  hash.find {
+    |key1, value1|
+    ((key1.is_a? Integer) and (value1.is_a? Integer) and (value1 < 20)) or
+    ((key1.is_a? String)  and (value1.is_a? String)  and (value1.start_with?('a')))
+  }
+end
+
+
+
+
+
+(1..5)
+  .group_by {
+    |x| x%2
+  }
+# { 1=>[1,3,5],  0=>[2, 4]  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def iterate_colors(colors)
   colors.to_a
@@ -676,6 +781,159 @@ end
 # https://apidock.com/ruby/String/tr
 # https://apidock.com/ruby/String/tr
 # https://apidock.com/ruby/String/tr
+
+
+
+
+(5..10).inject(1) {|product, n| product * n }
+# 151200
+
+(5..10).reduce(1, :*)   # :* is shorthand for multiplication
+# 151200
+
+
+def sum_terms(n)
+  # (1..n).reduce(0, :+)
+  # (1..n).inject(0) { |sum, i|  sum + (i*i + 1)  }
+  (1..n).reduce(0) { |sum, i|  sum + (i*i + 1)  }
+
+end
+
+# sum_terms(3)
+
+
+
+
+
+
+def group_by_marks(marks, pass_marks)
+
+  # print " --------------- "
+  # print marks
+  # print "\n"
+
+  hash_1_pass_0_fail =
+    marks
+    .group_by {
+      |name, marks|
+      marks >= pass_marks
+    }
+
+  new1 = {}
+
+  hash_1_pass_0_fail
+    .map {
+      |key, val|
+      case key
+        when true
+          new1["Passed"] = val
+        when false
+          new1["Failed"] = val
+      end
+    }
+
+  new1
+
+end
+
+def group_by_marks(marks, pass_marks)
+
+  # print " --------------- "
+  # print marks
+  # print "\n"
+
+  hash_1_pass_0_fail =
+    marks
+    .group_by {
+      |name, marks|
+      marks >= pass_marks
+    }
+  
+  hash_1_pass_0_fail
+    .map {
+      |key, val|
+      case key
+        when true
+          [ "Passed", val ]
+        when false
+          [ "Failed", val ]
+      end
+    }
+    .to_h
+end
+
+# group by first letter:
+['cat', 'dog', 'cow', 'horse', 'donkey'].group_by{|animal| animal[0]}
+# => {"c"=>["cat", "cow"], "d"=>["dog", "donkey"], "h"=>["horse"]}
+
+cats = ["Tiger", "Lion", "Puma", "Leopard", "Jaguar", "Cheetah", "Bobcat"]
+grouped_by_length = cats.group_by { |cat| cat.length }
+#{5=>[Tiger], 4=>[Lion, Puma], 7=>[Leopard, Cheetah], 6=>[Jaguar, Bobcat]}
+
+
+
+
+
+
+#   root Object class 
+#     all will be private methods
+#
+# def hello_world
+#     'Eha! Ruby'
+# end
+# 
+# is same as
+# 
+# class Object
+#     private
+# 
+#     def hello_world2
+#         'Eha! Ruby'
+#     end
+# end
+
+
+
+
+
+
+def prime? (n)
+
+  if (n < 2)
+    return false
+  end
+
+  # for i in 2..(n-1)
+  # for i in 2..(n/2)
+  for i in 2..(Math.sqrt n)
+      if (n % i == 0)
+        return false
+      end
+  end
+
+  return true
+end
+
+def prime?(a)
+        Prime.prime?(a)    
+end
+
+def prime? (n)
+
+  if (n < 2)
+    return false
+  end
+
+  (2..(Math.sqrt n)).none? { |i| (n % i == 0) }
+end
+
+
+
+
+
+
+
+
 
 
 
