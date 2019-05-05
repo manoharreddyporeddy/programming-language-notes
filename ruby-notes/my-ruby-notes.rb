@@ -253,6 +253,16 @@ array.take(3)
 array.drop(3)
 
 
+def mytake (arr, len = 1)
+  arr.drop(len)
+end
+# take([1,2,3], 1)
+#   [2, 3]
+# take([1,2,3], 2)
+#   [3]
+# take([1,2,3])
+#   [2, 3]
+
 
 # added at the beginning of the list
 x = [4, 5, 6]
@@ -929,6 +939,16 @@ end
 
 
 
+def sum(first1, *rest1)
+    rest1.reduce(first1) { |ans, x| ans + x }
+end
+
+# sum(1)          # first = 1, rest = []
+#     1
+# sum(1, 2)       # first = 1, rest = [2]
+#     3
+# sum(1, 2, 3)    # first = 1, rest = [2, 3]
+#     6
 
 
 
