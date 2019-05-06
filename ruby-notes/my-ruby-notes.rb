@@ -713,7 +713,7 @@ rot13 = {
 
 }
 
-text = "Sammy has a balloon"
+text = "Something has a balloon"
 indices = text.chars
   .each_with_index
   .select{|char, index| char == "a" }
@@ -938,6 +938,8 @@ def prime? (n)
 end
 
 
+#  -------------------------- splat (*) collects all the extra named keywords as a array parameter --------------------------
+
 
 def sum(first1, *rest1)
     rest1.reduce(first1) { |ans, x| ans + x }
@@ -949,6 +951,317 @@ end
 #     3
 # sum(1, 2, 3)    # first = 1, rest = [2, 3]
 #     6
+
+
+def full_name (first, *rest)
+
+  rest.reduce(first) {
+      |fullword1, word1|
+      fullword1 + " " + word1
+  }
+
+end
+
+def full_name(first_name, *middle_names, last_name)
+  middle_names
+    .unshift(first_name)
+    .push(last_name)
+    .join(' ')
+end
+
+def full_name(f_name,*rest,l_name)
+
+    a = rest.reduce(f_name){|x,y| "#{x} #{y}"}
+
+    "#{a} #{l_name}"
+end
+
+
+def full_name(*names)
+    names.join(' ');
+end
+
+def full_name(firts_name, *rest)
+    return "#{firts_name} #{rest.join(' ')}"
+end
+
+
+
+
+
+def fetch_file(uri, options)
+    if options.has_key?(:proxy)
+        # do something
+    end
+end
+
+
+def foo(x, str: "foo", num: 424242)
+  [x, str, num]
+end
+
+#   foo(13) #=> [13, 'foo', 424242]
+#   foo(13, str: 'bar') #=> [13, 'bar', 424242]
+
+
+#  -------------------------- double splat (*) collects all the extra named keywords as a hash parameter --------------------------
+
+def foo(str: "foo", num: 424242, **options)
+  [str, num, options]
+end
+
+#   foo                 # => ['foo', 424242, {}]
+#   foo(check: true)    # => ['foo', 424242, {check: true}]
+
+
+
+
+def convert_temp (temperature, input_scale, output_scale='celsius')
+  case input_scale
+    when "celsius"
+      case output_scale
+        when "fahrenheit"
+          temperature * (9/5.0) + 32
+        when "kelvin"
+          temperature + 273.15
+        else
+          temperature
+      end
+    when "fahrenheit"
+      case output_scale
+        when "celsius"
+          (temperature - 32) * (5/9.0)
+        when "kelvin"
+          (temperature - 32) * (5/9.0) + 273.15
+        else
+          temperature
+      end
+    when "kelvin"
+      case output_scale
+        when "celsius"
+          temperature - 273.15
+        when "fahrenheit"
+          (temperature - 273.15) * (9/5.0) + 32
+        else
+          temperature
+      end
+  end
+  return converted_temperature
+end
+
+#   convert_temp(0, input_scale: 'celsius', output_scale: 'kelvin')           => 273.15
+#   convert_temp(0, input_scale: 'celsius', output_scale: 'fahrenheit')       => 32.0
+
+
+
+
+# def convert_temp(temp, input_scale:, output_scale: 'Celsius')
+def convert_temp (temperature, output_scale: 'celsius', **options)
+
+  input_scale = options.first.last
+
+  case input_scale
+    when "celsius"
+
+      case output_scale
+        when "fahrenheit"
+          return temperature * (9/5.0) + 32
+        when "kelvin"
+          return temperature + 273.15
+        else
+          return temperature
+      end # case output_scale
+
+    when "fahrenheit"
+
+      case output_scale
+        when "celsius"
+          return (temperature - 32) * (5/9.0)
+        when "kelvin"
+          return (temperature - 32) * (5/9.0) + 273.15
+        else
+          return temperature
+      end # case output_scale
+
+    when "kelvin"
+
+      case output_scale
+        when "celsius"
+          return temperature - 273.15
+        when "fahrenheit"
+          return (temperature - 273.15) * (9/5.0) + 32
+        else
+          return temperature
+      end # case output_scale
+
+    else
+      return temperature
+
+  end # case input_scale
+
+end
+
+# 273.15 
+# print "  "
+# print convert_temp(0, input_scale: 'celsius', output_scale: 'fahrenheit')
+# 32.0
+# print "  "
+
+
+
+
+
+
+# ------------------- blocks -------------------------------
+
+# define `method1`   with no parameters
+def method1
+    puts " mmm 1"
+    yield   #    Calling yield will execute the code within the block that is provided to the method.
+    puts " mmm 2"
+end 
+
+# call the `method1`
+#   pass the  block of code  as parameter
+method1 do
+    puts " blockkkk "
+end
+
+#     mmm 1
+#     blockkkk
+#     mmm 2
+# ----------------------------------------------------------
+
+# define `method1`   with parameters
+def method1(a,b)
+    yield(a, b)         #  yield statement invokes the  block  with parameters a and b, and executes it.
+end
+
+# call the `method1`
+#   pass the expected parameters  and
+#   then an additional  block of code  as parameter
+puts method1(15, 10) {|a, b| a - b}  
+# ----------------------------------------------------------
+
+
+def factorial
+    yield
+end
+
+n = gets.to_i
+factorial do 
+    puts (1..n).reduce(1, :*)
+end
+
+
+
+
+
+# Blocks (do .. end) are not objects, and they can't be saved to variables
+# `Proc` objects are blocks of code that can be bound to a set of local variables
+#     think of a proc object as a "saved" block
+
+def foo(a, b, my_proc)
+    my_proc.call(a, b)
+end
+
+add = proc {|x, y| x + y}
+
+puts foo(15, 10, add)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# remove all whitespace     from one or both ends
+"        Something".rstrip    # "Something"
+"Something        ".lstrip    # "Something"
+"  \t    Something \r\n ".strip     # "Something"
+
+
+
+# remove multiple char at end
+a = "Something"
+a2 = a.chomp("ng")                              # a2 is "Somethi"   (check this)
+
+a = "Something\n"
+b = a.chomp                                     # default: remove traling newline
+
+a = "Something"
+b = a.chomp                                     # default: <nothing is done since no newline>
+
+# chomp! is used for in-place remove
+
+
+# remove 1 char at end
+# creates new string
+a = "Something"
+a2 = a.chop                                     # a2 is "Somethin" (a is unchanged)
+
+a = "Something\n"
+b = a.chop                                      # a2 is "Something" (a is unchanged)
+
+# inplace
+a = "Something"
+a.chop!                                         # a is "Somethin"
+
+a = "Something\n"
+a.chop!                                         # a is "Something"
+
+
+
+
+
+def process_text(strarr)
+
+  strarr
+    .map { |str1| str1.strip }
+    .join(' ')
+
+end
+
+
+
+
+"hello".include? "lo"   #=> true  
+"hello".include? "ol"   #=> fals
+
+"hello".gsub(/[aeiou]/, '*')                  #=> "h*ll*"
+"hello".gsub(/([aeiou])/, '')             #=> "hll"
+
+
+
+
+def strike(str1)
+    "<strike>#{str1}</strike>"
+end
+
+def mask_article(str1, arr1)
+  
+  if (arr1.length == 0)
+    strike(str1)
+    
+  else
+    arr1
+    .map {
+        |a_str|
+        str1.gsub!(a_str, strike(a_str))
+    }
+
+    str1
+  end
+
+end
+
+
 
 
 
