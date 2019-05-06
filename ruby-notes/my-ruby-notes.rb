@@ -1161,17 +1161,162 @@ end
 # `Proc` objects are blocks of code that can be bound to a set of local variables
 #     think of a proc object as a "saved" block
 
+add = proc {|x, y| x + y}
+
 def foo(a, b, my_proc)
     my_proc.call(a, b)
 end
-
-add = proc {|x, y| x + y}
 
 puts foo(15, 10, add)
 
 
 
+proc_square_number = proc { |x| x*x }
+proc_sum_array     = proc { |arr| arr.reduce(0, :+) }
 
+def square_of_sum (my_array, proc_square, proc_sum)
+    sum = proc_sum.call(my_array)
+    proc_square.call(sum)
+end
+
+my_array = gets.split().map(&:to_i)
+puts square_of_sum(my_array, proc_square_number, proc_sum_array)
+
+
+
+# Lambdas are anonymous functions
+#     objects of the class Proc
+#     can be used
+#         as arguments to higher-order functions
+#         to construct the result of a higher-order function that needs to return a function.
+
+#Ruby version <= 1.8
+    lambda { /**/ } 
+
+    lambda do
+        /**/
+    end
+
+#Ruby version >= 1.9, "stabby lambda" syntax is added
+    -> { /**/ }
+
+    -> do
+        /**/
+    end
+
+
+# examples
+
+#   no arguments
+
+def area (l, b)
+   -> { l * b } 
+end
+
+x = 10.0; y = 20.0
+
+area_rectangle = area(x, y).call
+area_triangle = 0.5 * area(x, y).()
+
+puts area_rectangle     #200.0
+puts area_triangle      #100.0
+
+#   one or more arguments.
+
+area = ->(a, b) { a * b }
+
+x = 10.0; y = 20.0
+
+area_rectangle = area.call(x, y)
+area_triangle = 0.5 * area.(x, y)
+
+puts area_rectangle     #200.0
+puts area_triangle      #100.0    
+
+
+--
+# Write a lambda which takes an integer and square it
+square      = ->(x) { x*x }
+
+# Write a lambda which takes an integer and increment it by 1
+plus_one    = ->(x) { x+1 }
+
+# Write a lambda which takes an integer and multiply it by 2
+into_2      = ->(x) { x*2 }
+
+# Write a lambda which takes two integers and adds them
+adder       = ->(x,y) { x+y }
+
+# Write a lambda which takes a hash and returns an array of hash values
+values_only = ->(hash1) { hash1.values }
+
+
+input_number_1 = gets.to_i
+input_number_2 = gets.to_i
+input_hash = eval(gets)
+
+a = square.(input_number_1); b = plus_one.(input_number_2);c = into_2.(input_number_1); 
+d = adder.(input_number_1, input_number_2);e = values_only.(input_hash)
+
+p a; p b; p c; p d; p e
+
+
+--
+
+
+
+
+# closures
+# Blocks, Procs and Lambdas     are     closures in Ruby.
+
+
+def plus_1(y)
+   x = 100      # no effect on y call below
+   y.call       #remembers the value of x = 1
+end
+
+x = 1
+y = -> { x + 1 }  # x value will always be 1 (check ?????????)
+puts plus_1(y)  #2
+
+
+
+
+def block_message_printer
+    message = "Welcome to Block Message Printer"
+    if block_given?
+        yield
+    end
+  puts "But in this function/method message is :: #{message}"
+end
+
+message = gets
+block_message_printer { puts "This message remembers message :: #{message}" }
+
+#####################################################################################
+
+def proc_message_printer(my_proc)
+    message = "Welcome to Proc Message Printer"
+    my_proc.call
+    puts "But in this function/method message is :: #{message}"
+end
+
+
+my_proc = proc { puts "This message remembers message :: #{message}" }
+proc_message_printer(my_proc)
+    
+######################################################################################    
+    
+def lambda_message_printer(my_lambda)
+    message = "Welcome to Lambda Message Printer"
+    my_lambda.call
+    puts "But in this function/method message is :: #{message}"
+end
+
+my_lambda = -> { puts "This message remembers message :: #{message}" }
+lambda_message_printer(my_lambda)    
+    
+######################################################################################
 
 
 
