@@ -1322,6 +1322,97 @@ lambda_message_printer(my_lambda)
 
 
 
+# In Partial Application, we create a lambda that takes a parameter and returns a lambda that does something with it.
+# https://en.wikipedia.org/wiki/Partial_application
+
+multiply_function = -> (number) do
+   -> (another_number) do
+       number * another_number
+   end
+end
+
+doubler = multiply_function.(2)
+tripler = multiply_function.(3)
+
+puts doubler.(4)
+puts tripler.(4)
+
+
+
+
+
+
+combination = -> (n) {  -> (r) {
+    r = n-r    if (r > n-r)
+    ((n-r+1)..n).reduce(1, :*) /  (1..r).reduce(1, :*)   # numer/denom
+  }}
+
+n = gets.to_i
+r = gets.to_i
+nCr = combination.(n)
+puts nCr.(r)
+
+# combination = -> (n) do
+#   -> (r) do
+#     k=1
+#     r.times{
+#       |i|
+#       k=k*(n-i)/(i+1)
+#     }
+#   k
+# end 
+
+# combination = -> (number) do
+#   -> (another_number) do
+#     (
+#       number.fact/ (another_number.fact * (number - another_number).fact)
+#     )
+#   end
+# end
+
+
+
+z.downto(1)
+
+
+
+
+# Currying is a technique in which
+#     a function accepts  parameters and
+#       turns it into a sequence of  functions
+#         each of them take 1 parameter.
+
+multiply_numbers = -> (x,y) do
+    x*y
+end
+
+doubler = multiply_numbers.curry.(2)
+tripler = multiply_numbers.curry.(3)
+
+puts doubler.(4)    #8
+puts tripler.(4)    #12
+
+
+
+
+
+power_function = -> (x, z) {
+    (x) ** z
+}
+
+base = gets.to_i
+raise_to_power = power_function.curry.(base)
+
+power = gets.to_i
+puts raise_to_power.(power)
+
+
+
+
+
+
+
+
 
 
 
