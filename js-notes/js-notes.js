@@ -174,8 +174,172 @@ console.log(fourthString);
 
 
 //  substr()
-//  +
-//  concat()
+
+
+/*
+var s = "abcdef"
+var s2 = String(4);
+
+console.log(s.length);
+console.log(s.charAt(0));
+console.log(s + " " + t);
+console.log(s.concat(t));
+s.includes("")
+s.includes("abc")
+s.endsWith("def")
+
+fromIndex = 5
+
+s = "abcabcabc"
+s.indexOf("abc")              // -1 or   0 to n-1
+s.indexOf("abc", fromIndex)   // -1 or   0 to n-1
+
+s = "abcabcabc"
+s.lastIndexOf("abc")              // search from reverse
+s.lastIndexOf("abc", fromIndex)
+
+var s = "HackerRank";
+console.log(s.match());
+console.log(s.match("[a-z]+"));     // null, or
+//    [ '',           index: 0, input: 'HackerRank', groups: undefined ]
+//    [ 'acker',      index: 1, input: 'HackerRank', groups: undefined 
+
+console.log(s.repeat(2))
+
+
+"abcabc".replace("a", "") // replace 1st occurance
+
+"abcabc".search("ab")
+"abcabc".search("[a-z]")    // -1, or  search for 1st occurance
+"abcabc".search(/blue/i);
+
+
+// slice[i,j)
+""
++ "abcabc".slice()        // abcabc
++ "abcabc".slice(1)     // bcabc
++ "abcabc".slice(1,2)   // b
+
+
+// substr[i,len)
+""
++ "abcabc".substr()      // abcabc
++ "abcabc".substr(1)     // bcabc
++ "abcabc".substr(1,2)   // bc
+
+""
++ "abcabc".split()
++ "abcabc".split().length
++ "abcabc".split("")
++ "abcabc".split("").length
++ "abcabc".split("a")
++ "abcabc".split("a").length
+// + "<br>"
+
+
+"ABC".toLowerCase()
+"abc".toUpperCase()
+
+"  abc ABC  ".trim()
+"  abc ABC  ".trimLeft()
+"  abc ABC  ".trimRight()
+
+
+/*
+abcabc
+1
+a,b,c,a,b,c
+6
+,bc,bc
+3
+*/
+
+
+"abcabc".startsWith("a")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+???????????/////
+String.normalize()
+Returns a string containing the Unicode Normalization Form of the calling string's value. The argument must be one of the following:
+
+"NFC": Normalization Form Canonical Composition. This is the default in the event that no argument is given.
+"NFD": Normalization Form Canonical Decomposition.
+"NFKC": Normalization Form Compatibility Composition.
+"NFKD": Normalization Form Compatibility Decomposition.
+For example:
+
+1
+var s = "HackerRank";
+2
+console.log(s.normalize());
+3
+console.log(s.normalize("NFKC"));
+Run Output
+HackerRank
+HackerRank
+??????????????/?
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -980,40 +1144,314 @@ function asdasdads() {
 }
 
 
-function aasadfsadf() {
+var myglobalvar1 = 2;
+function vvvvvvvvvvvvvvvvvv() {
   
   // Variable Declaration Keywords
+  
+  // var
+  //    declares variable(s)
+  //    scope is within the context wherever it was declared.
+  //        declared outside any function   means they are globally available throughout the program.
+  //        declared within a function      means they are     only available within the function itself.
+  
+  var localvar1 = 3;
+}
+
+
+function lllllllllllll(input) {  
+  // let
+  //      to declare variables that are limited in scope to the block, statement, or expression in which they are used.
+  
+    let a = 1;
+    // let a = 1.2; // error
+    
+    if (a) {      
+        // this a is with this if-scope
+        let a = 2;
+        console.log("if(a): " + a);     // 1
+    }
+
+    console.log("main(a): " + a);       // 2
+}
+
+function ccccccccccccccccccccc() {
+
+    // const
+
+    //  to create a read-only reference to a value
+    //    value referenced by this variable cannot be reassigned
+    //    the value referenced by a constant variable cannot be reassigned
+    //    requires that constant variables always be initialized.
+
+    const a = input;
+
+    // This will throw "SyntaxError: Missing initializer in const declaration"
+    const b; 
 
 }
 
 
 
+function getGrade(score) {
+    let grade;
+
+    if (score > 25 && score <= 30) {
+        grade = 'A'
+    }
+    else if (score > 20 && score <= 25) {
+        grade = 'B'
+    }
+    else if (score > 15 && score <= 20) {
+        grade = 'C'
+    }
+    else if (score > 10 && score <= 15) {
+        grade = 'D'
+    }
+    else if (score > 5 && score <= 10) {
+        grade = 'E'
+    }
+    else if (score > 0 && score <= 5) {
+        grade = 'F'
+    }
+    
+    return grade;
+}
+
+function getLetter(s) {
+    let letter;
+
+    switch (s[0]) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            letter = 'A';
+            break;
+        case 'b':
+        case 'c':
+        case 'd':
+        case 'f':
+        case 'g':
+            letter = 'B';
+            break;
+        case 'h':
+        case 'j':
+        case 'k':
+        case 'l':
+        case 'm':
+            letter = 'C';
+            break;
+        case 'n':
+        case 'p':
+        case 'q':
+        case 'r':
+        case 's':
+        case 't':
+        case 'v':
+        case 'w':
+        case 'x':
+        case 'y':
+        case 'z':
+            letter = 'D';
+            break;
+    }
+    
+    return letter;
+}
+
+function setaaaaaaaaaaaaaaaaaaaa(s) {
+    let letter;
+    var mySet1 = new Set(['a','e','i','o','u']);
+    if (mySet1.has(s[0])) {
+        letter='A';
+    }
+    return letter;
+}
+
+function regexaaaaaaaaaaaAAA() 
+    if ( s.match(/^[n, p-t, v-z]/) != null ) {
+    }
+
+    if("abc".match(/^[aeiou]/)){
+    }
+    
+    if (new RegExp(/[aeiou]/gi).test(first)) {
+    }
+    
+     return s[0]
+        .replace(/[aeiou]/, "A")
+        .replace(/[bcdfg]/, "B")
+        .replace(/[hjklm]/, "C")
+        .replace(/[a-z]/, "D");
+}
+
+function getLetteraaaaaaaaaaaaaaa(s) {
+    let letter;
+    // Write your code here
+    switch (s.charAt(0)) {
+        case 'a'|| 'e' || 'i' || 'o' || 'u': {
+            return letter = 'A';
+        }
+        case 'b' || 'c' || 'd' || 'f' || 'g': {
+            return letter = 'B';
+        }
+        case 'h' || 'j'  || 'k' || 'l' || 'm': {
+            return letter = 'C';
+        }
+        default: {
+            return letter = 'D';
+        }
+    }
+    
+    return letter;
+}
+
+function getLetteraaaaaaaaaaaaaaaaa(s) {
+    let l=s.charAt(0);
+    var a=['a','e','i','o','u'];
+    var b=['b','c','d','f','g'];
+    var c=['h','j','k','l','m'];
+    return a.filter(w=>w==l).length>0?'A':b.filter(w=>w==l).length>0?'B':c.filter(w=>w==l).length>0?'C':'D';
+}
+
+//   let vowels = s.split('').filter(x => /[aeiou]/i.test(x));
+
+/*
+ var arr = s.split('');
+    const VOWELS = "aeiou";
+    var consArr = arr.filter((val, index, arr) => {
+        if (VOWELS.includes(val)) {
+            console.log(val);                        
+        } else {
+            return val;
+        }       
+    });
+    */
+
+//     console.log(consArr.join('\n'));
+//    arr.forEach(c => console.log(c))
+
+
+/*
+loops
+  for
+  while
+  do-while
+  for-in
+  for-of
+
+for (initialization; condition; finalExpression) {
+    statement(s);
+}
+
+for (var i = 1; i <= input; i++) {
+    process.stdout.write(i + " ");
+}
+
+
+while (condition) {
+    statement(s);
+}
+
+do {
+    statement(s);
+} while (condition);
+
+var i = 1;
+do {
+    process.stdout.write(i + " ");
+    i++;
+} while (i <= input);
+
+
+// for-in
+// This loop iterates (in an arbitrary order) over the name of each enumerable property in an object, allowing statements to be executed for each distinct property.
+
+
+for (var variable in object) {
+    // insert code that uses variable here
+}
+
+var actress = {
+    firstName: "Julia",
+    lastName: "Roberts",
+    dateOfBirth: "October 28, 1967",
+    nationality: "American",
+    firstMovie: "Satisfaction"
+};
+
+for (var property in actress) {
+    console.log("actress." + property + " = " + actress[property]);
+}
 
 
 
+// for-in
+//      loop iterates over iterable objects such as an Array, Map, Set, String, TypedArray, arguments object, etc.
+for (let variable of iterable) {
+    statement(s);
+}
+ for (let value of array) {
+        console.log(value);
+    }
+
+let actress = new Map([
+    ["firstName", "Julia"],
+    ["lastName", "Roberts"],
+    ["dateOfBirth", "October 28, 1967"],
+    ["nationality", "American"],
+    ["firstMovie", "Satisfaction"]
+]);
+
+// Print each Key-Value pair in the map
+for (let info of actress) {
+    console.log(info);
+}
+
+// Print each Key and Value as "Key: Value"
+console.log();
+for (let info of actress) {
+    console.log(info[0] + ": " + info[1]);
+}
+
+
+*/
 
 
 
+/*
+ * Complete the vowelsAndConsonants function.
+ * Print your output using 'console.log()'.
+ */
+function vowelsAndConsonants(s) {
 
+    for (let i=0; i<2; i++) { // 0 print vowels, 1 print consonants
+        for (let ch of s) {
+            switch(ch) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    if (i == 0) {
+                        console.log(ch);
+                    }
+                    break;
+                default:
+                    if (i == 1) {
+                        console.log(ch);
+                    }
+                    break;
+            } 
+        }
+    }
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     v.push(...c);
+//    vowels.map(v => console.log(v));
 
 
 
