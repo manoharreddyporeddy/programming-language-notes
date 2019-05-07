@@ -558,31 +558,517 @@ console.log(4 <= 6);
 // true
 
 
+// Logical Operators
+// Logical AND (&&)
+// Logical OR (||)
+// Logical NOT (!)
+
+console.log((5 < 7) && (4 < 4))
+console.log((5 < 7) && (4 >= 4))
+console.log((5 < 7) || (4 < 4)) 
+console.log((5 >= 7) || (4 > 4))
+console.log(!(2**3))
+// false
+// true
+// true
+// false
+// false
+
+
+/*
+// Short-Circuit Evaluation
+
+false && expression
+true || expression
+*/
+}
+
+
+
+
+
+/*
+if (condition) {
+    statement1;
+} 
+else {
+    statement2;
+}
+
+
+if (condition1) {
+    statement1;
+    statement4;
+    statement5;
+} 
+else {
+    statement2;
+    statement3;
+    if (condition2) {
+    	statement6;
+    }
+}
+
+
+if (condition1) {
+    statement1;
+} 
+else if (condition2) {
+    statement2;
+} 
+else if (conditionN) {
+    statementN;
+} 
+else {
+    statementLast;
+}
+
+*/
+function classifyAge(age) {
+    /* First, let's check the lower bound on our age range: */
+    if (age < 13) {
+        return age + " is a child.";
+    }
+    /* If this condition is checked, we know that age < 13 is false: */
+    else if (age < 20) {
+        return age + " is a teenager.";
+    }
+    /* If this condition is checked, we know both of these are false:
+    *   age < 13 is false
+    *   age < 20 is false
+    *  This tells us that either age >= 20 is true, or age is not a number:
+    */
+    else if (age >= 20){
+        return age + " is an adult.";
+    }
+    /* The input wasn't a number. */
+    else {
+        return "Your input must be an integer.";
+    }
+}
+
+
+
+
+function aaaa() {
+  
+/*
+Falsy Values
+The following six values are known as Falsy values, meaning they evaluate to false:
+
+false
+undefined
+null
+0
+NaN
+"" (i.e., the empty string)
+*/
+
+
+var a = true;
+var b = new Boolean(false);
+var c = "";
+
+console.log(a);
+console.log(b);
+console.log("\"" + c + "\"");
+
+if (a) {
+    console.log("Hello from a");
+}
+
+if (b) {
+    console.log("Hello from b");
+}
+
+if (c) {
+    console.log("Hello from c");
+}
+else {
+    console.log("c is false");
+}
+
+/*
+true
+[Boolean: false]
+""
+Hello from a
+Hello from b
+c is false
+*/
+
+
+// Conditional (Ternary) Operator
+//    condition ? trueStatement : falseStatement
+
+var input = 4;
+
+  // Example 1:
+  input % 2 == 0 ? console.log(input + " is EVEN") : console.log(input + " is ODD");
+
+  // Example 2:
+  console.log( input + " is " + ((input % 2 == 0) ? "EVEN" : "ODD"));
+
+  // Example 3:
+  var parity = input % 2 == 0 ? "EVEN" : "ODD";
+  console.log(input + " is " + parity);
+
+/*
+4 is EVEN
+4 is EVEN
+4 is EVEN
+*/
 
 
 
 
 
 
+/*
+switch (expression) {
+    case label1:
+        statement1;
+        break;
+    case label2:
+        statement2;
+        break;
+    case label3:
+        statement3;
+        statement4;
+        break;
+    default:
+        statement;
+}
+*/
 
 
 
+    var n = 3;
+
+    switch (n) {
+        case 1:
+            console.log("A");
+            break;
+        case 2:
+            console.log("B");
+            break;
+        case 3:
+            console.log("C");
+            break;
+        case 4:
+            console.log("D");
+            break;
+        default:
+            console.log("E");
+    }
+    
+    // C
+
+    var n = parseInt(readLine());
+
+    switch (n) {
+        case 2:
+            console.log("A");
+            break;
+        case 3:
+            console.log("B");
+            break;
+        case 4:
+            console.log("C");
+            break;
+        case 5:
+            console.log("D");
+            break;
+        default:
+            console.log("E");
+    }
+
+    /*
+    C
+    D
+    E
+    */
 
 
-
-
-
-
-
-
-
-
-
-
-
+    switch (n) {
+        case 2:
+        case 4:
+        case 6:
+            console.log("A");
+            break;
+        case 3:
+        case 5:
+        case 7:
+            console.log("B");
+            break;
+        default:
+            console.log("C");
+    }
 
 
 }
+
+
+
+/**
+*   Calculate the area of a rectangle.
+*
+*   length: The length of the rectangle.
+*   width: The width of the rectangle.
+*   
+*	Return a number denoting the rectangle's area.
+**/
+function getArea(length, width) {
+    let area = length * width;
+    return area;
+}
+
+/**
+*   Calculate the perimeter of a rectangle.
+*	
+*	length: The length of the rectangle.
+*   width: The width of the rectangle.
+*   
+*	Return a number denoting the perimeter of a rectangle.
+**/
+function getPerimeter(length, width) {
+    let perimeter = 2 * (length + width);
+    return perimeter;
+}
+
+
+// const getArea = (length, width) => length * width;
+// const getPerimeter = (length, width) => 2 * (length + width);
+
+
+
+
+function greetings(name) {
+    console.log("Hello, " + name);
+}
+
+function sum(a, b) {
+    return a + b;
+}
+
+function factorial(n) {
+    if (n == 1) {
+        return 1;
+    }
+    
+    return n * factorial(n - 1);
+}
+
+function factorial(n) {
+    if (n <= 1) {
+        return 1;
+    }
+    
+    return n * factorial(n - 1);
+}
+
+// recursive
+function factorial(n) {
+    if (n > 1) {
+        return n * factorial(n - 1);
+    }
+    // else, n is <= 1
+    return 1;
+}
+
+var factorial = (num) => {
+    for (var i = num - 1; i > 0; i--){
+        num *= i;
+    }
+    return num;
+}
+
+function factorial(n) {
+    return (n > 1) ? n * factorial(n - 1) : 1;
+}
+
+function factorial(n) {
+    var ints = [...Array(n + 1).keys()];
+    ints.shift();
+    return ints.reduce((a, c) => a * c);
+}
+
+// iterative
+function factorial(n) {
+    let factorial = n;
+    while(n-- > 1) {
+        factorial = factorial * n;
+    }
+
+    return factorial;
+}
+
+function factorial(n) {
+    // A variable that holds the running value of factorial during calculation
+    let factorial = n;
+    
+    // Note that this loop decrements the value of n during each iteration
+    while(n-- > 1) {
+        factorial = factorial * n;
+    }
+
+    return factorial;
+}
+
+// Unnamed Function Expression
+// unnamed function
+var square = function(x) {
+    return x * x;
+};
+
+// Named Function Expression
+
+var math = {
+    // Declare the factorial property
+    factorial: 
+        // Declare the function as the property's value
+        function factorial(n) {
+            if (n > 1) {
+                return n * factorial(n - 1);
+            }
+            // Returns 1 if n <= 1
+            return 1;
+        }
+};
+
+var fib = function fibonacci(n){
+    if (n > 2) {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    else if (n < 1) {
+        return 0;
+    }
+    // else, return 1
+    return 1;
+}
+
+// Recursion
+
+// splitting a problem into two parts:
+//    a base case and
+//    a recursive case
+
+// Multiply 'n' by 'k' using addition:
+private static int nTimesK(int n, int k) {
+    // Print current value of n
+    System.out.println("n: " + n);
+
+    // Recursive Case
+    if(n > 1) { 
+        return k + nTimesK(n - 1, k);
+    }
+    // Base Case n = 1
+    else { 
+        return k;
+    }
+}
+
+function asdasdads() {
+    const PI = Math.PI
+
+    let r = 2;
+    let area = PI * (r ** 2);
+    let perimeter = 2 * PI * r;
+
+    console.log(area);
+    console.log(perimeter);
+}
+
+
+function aasadfsadf() {
+  
+  // Variable Declaration Keywords
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
