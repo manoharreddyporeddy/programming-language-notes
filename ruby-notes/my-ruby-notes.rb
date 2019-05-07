@@ -87,7 +87,7 @@ end
 loop do
   coder.practice
   break if coder.oh_one?
-  
+
   # coder.oh_one? ? break : coder.practice
 end
 
@@ -167,7 +167,7 @@ class Customer
     # local variables
     abc
     _abc
-    
+
   ???
 end
 
@@ -278,27 +278,27 @@ end
 #                    122 123 124
 #  push(125)         122 123 124 125
 #  unshift(121)  121 122 123 124 125
-#  
+#
 #                      3 4 5   7 8 9
 #  insert(3, 6)        3 4 5 6 7 8 9
-#  
-#  
-#            arr = [5, 6, 5, 4, 3, 1, 2, 5, 4, 3, 3, 3] 
-#  arr.pop   arr = [5, 6, 5, 4, 3, 1, 2, 5, 4, 3, 3] 
-#  
+#
+#
+#            arr = [5, 6, 5, 4, 3, 1, 2, 5, 4, 3, 3, 3]
+#  arr.pop   arr = [5, 6, 5, 4, 3, 1, 2, 5, 4, 3, 3]
+#
 #              arr = [5, 6, 5, 4, 3, 1, 2, 5, 4, 3, 3]
 #  arr.shift   arr =    [6, 5, 4, 3, 1, 2, 5, 4, 3, 3]
-#  
+#
 #                              [6, 5, 4, 3, 1, 2, 5, 4, 3, 3]
 #  arr.delete_at(2)   arr =    [6, 5,    3, 1, 2, 5, 4, 3, 3]
-#  
+#
 #                     arr =    [6, 5,    3, 1, 2, 5, 4, 3, 3]
 #  arr.delete(5)      arr =    [6,       3, 1, 2,    4, 3, 3]
 #  arr.delete(3)      arr =    [6,          1, 2,    4      ]
-#  
+#
 #         0123  4      -3 -2  -1
 #  str = "Hell  o  Wo  r  l d"
-#  
+#
 #  str[0,4]
 
 
@@ -340,21 +340,21 @@ def element_at(arr, index)
     # return the element of the Array variable `arr` at the position `index`
     # arr.at(index) # or
     # arr[index]
-  
+
   arr[index]
-  
+
 end
 
 def inclusive_range(arr, start_pos, end_pos)
     # return the elements of the Array variable `arr` between the start_pos and end_pos (both inclusive)
-  
+
     arr[start_pos .. end_pos]
 
 end
 
 def non_inclusive_range(arr, start_pos, end_pos)
     # return the elements of the Array variable `arr`, start_pos inclusive and end_pos exclusive
-  
+
       arr[start_pos ... end_pos]
 
 end
@@ -375,16 +375,16 @@ end
 
 def start_arr_delete(arr)
     # delete the element at the beginning of the array and return the deleted element
-  
+
   return arr.shift
-    
+
 end
 
 def delete_at_arr(arr, index)
     # delete the element at the position #index
-  
+
   arr.delete_at(index)
-    
+
 end
 
 def delete_all(arr, val)
@@ -400,26 +400,26 @@ end
 def serial_average(str)
   # str = SSS-XX.XX-YY.YY
   # print str
-  
+
   d1 = str[4,5]
   d2 = str[10,5]
-  
+
   # print " d1 "
   # print d1
   # print " d2 "
   # print d2
   # print " "
-  
+
   aa = (d1.to_f + d2.to_f).to_f / 2
-  # print " aa "  
+  # print " aa "
   # print aa
-  
+
   # print " str[0,4] "
   # print str[0,4]
-  
+
   # print "" + str[0,4] + "#{aa.round(2)}"
   # print " "
-  
+
   "" + str[0,4] + "#{aa.round(2)}"
 end
 
@@ -452,7 +452,7 @@ arr.reject {|a| a > 2}
 # [2, 1, 2]
 
 arr
-# [3, 4, 2, 1, 2, 3, 4, 5, 6]     # array remains unchanged. This is called Non-Destructive Selection. 
+# [3, 4, 2, 1, 2, 3, 4, 5, 6]     # array remains unchanged. This is called Non-Destructive Selection.
 
 # ?????????????????
 arr.drop_while {|a| a > 1} # removes elements till the block returns false for the first time
@@ -462,10 +462,10 @@ arr.drop_while {|a| a > 1} # removes elements till the block returns false for t
 
 # B) Destructive Selection (change to the original array)
 
-arr = [3, 4, 2, 1, 2, 3, 4, 5, 6]  
+arr = [3, 4, 2, 1, 2, 3, 4, 5, 6]
 arr.delete_if {|a| a < 2}
-# [3, 4, 2, 2, 3, 4, 5, 6]  
-arr.keep_if {|a| a < 4}  
+# [3, 4, 2, 2, 3, 4, 5, 6]
+arr.keep_if {|a| a < 4}
 # [3, 2, 2, 3]
 
 
@@ -500,7 +500,7 @@ end
 #               hashes use any object as its index.
 #
 
-empty_hash = Hash.new 
+empty_hash = Hash.new
 # empty_hash = {}
 
 # Hash.default is used to
@@ -660,7 +660,7 @@ end
 
 def func_find(hash)
     # Check and return the first object that satisfies either of the following properties:
-    #   1. There is a [key, value] pair where the key and value are both Integers and the value is < 20 
+    #   1. There is a [key, value] pair where the key and value are both Integers and the value is < 20
     #   2. There is a [key, value] pair where the key and value are both Strings and the value starts with `a`.
   hash.find {
     |key1, value1|
@@ -762,12 +762,12 @@ print indices
 
 
 def rot13(secret_messages)
-  
+
   # small   letters a to m should change to n to z
   # small   letters n to z should change to a to m
   # capital letters A to M should change to N to Z
   # capital letters N to Z should change to A to M
-  
+
   # tr
   #   translate
   #     https://ruby-doc.org/core-2.4.1/String.html#method-i-tr
@@ -781,7 +781,7 @@ end
 
 
 def rot13(secret_messages)
-  
+
   rot13 = {
     "a" => "n", "b" => "o", "c" => "p", "d" => "q", "e" => "r", "f" => "s", "g" => "t", "h" => "u", "i" => "v", "j" => "w", "k" => "x", "l" => "y", "m" => "z",
     "n" => "a", "o" => "b", "p" => "c", "q" => "d", "r" => "e", "s" => "f", "t" => "g", "u" => "h", "v" => "i", "w" => "j", "x" => "k", "y" => "l", "z" => "m",
@@ -805,7 +805,7 @@ def rot13(secret_messages)
   }
 end
 
-#         (x.ord+13).chr  
+#         (x.ord+13).chr
 
 
     # puts rot13(["Jul", "qvq"])
@@ -896,7 +896,7 @@ def group_by_marks(marks, pass_marks)
       |name, marks|
       marks >= pass_marks
     }
-  
+
   hash_1_pass_0_fail
     .map {
       |key, val|
@@ -923,18 +923,18 @@ grouped_by_length = cats.group_by { |cat| cat.length }
 
 
 
-#   root Object class 
+#   root Object class
 #     all will be private methods
 #
 # def hello_world
 #     'Eha! Ruby'
 # end
-# 
+#
 # is same as
-# 
+#
 # class Object
 #     private
-# 
+#
 #     def hello_world2
 #         'Eha! Ruby'
 #     end
@@ -963,7 +963,7 @@ def prime? (n)
 end
 
 def prime?(a)
-        Prime.prime?(a)    
+        Prime.prime?(a)
 end
 
 def prime? (n)
@@ -1139,7 +1139,7 @@ def convert_temp (temperature, output_scale: 'celsius', **options)
 
 end
 
-# 273.15 
+# 273.15
 # print "  "
 # print convert_temp(0, input_scale: 'celsius', output_scale: 'fahrenheit')
 # 32.0
@@ -1157,7 +1157,7 @@ def method1
     puts " mmm 1"
     yield   #    Calling yield will execute the code within the block that is provided to the method.
     puts " mmm 2"
-end 
+end
 
 # call the `method1`
 #   pass the  block of code  as parameter
@@ -1178,7 +1178,7 @@ end
 # call the `method1`
 #   pass the expected parameters  and
 #   then an additional  block of code  as parameter
-puts method1(15, 10) {|a, b| a - b}  
+puts method1(15, 10) {|a, b| a - b}
 # ----------------------------------------------------------
 
 
@@ -1187,7 +1187,7 @@ def factorial
 end
 
 n = gets.to_i
-factorial do 
+factorial do
     puts (1..n).reduce(1, :*)
 end
 
@@ -1229,7 +1229,7 @@ puts square_of_sum(my_array, proc_square_number, proc_sum_array)
 #         to construct the result of a higher-order function that needs to return a function.
 
 #Ruby version <= 1.8
-    lambda { /**/ } 
+    lambda { /**/ }
 
     lambda do
         /**/
@@ -1248,7 +1248,7 @@ puts square_of_sum(my_array, proc_square_number, proc_sum_array)
 #   no arguments
 
 def area (l, b)
-   -> { l * b } 
+   -> { l * b }
 end
 
 x = 10.0; y = 20.0
@@ -1269,7 +1269,7 @@ area_rectangle = area.call(x, y)
 area_triangle = 0.5 * area.(x, y)
 
 puts area_rectangle     #200.0
-puts area_triangle      #100.0    
+puts area_triangle      #100.0
 
 
 --
@@ -1293,7 +1293,7 @@ input_number_1 = gets.to_i
 input_number_2 = gets.to_i
 input_hash = eval(gets)
 
-a = square.(input_number_1); b = plus_one.(input_number_2);c = into_2.(input_number_1); 
+a = square.(input_number_1); b = plus_one.(input_number_2);c = into_2.(input_number_1);
 d = adder.(input_number_1, input_number_2);e = values_only.(input_hash)
 
 p a; p b; p c; p d; p e
@@ -1342,9 +1342,9 @@ end
 
 my_proc = proc { puts "This message remembers message :: #{message}" }
 proc_message_printer(my_proc)
-    
-######################################################################################    
-    
+
+######################################################################################
+
 def lambda_message_printer(my_lambda)
     message = "Welcome to Lambda Message Printer"
     my_lambda.call
@@ -1352,8 +1352,8 @@ def lambda_message_printer(my_lambda)
 end
 
 my_lambda = -> { puts "This message remembers message :: #{message}" }
-lambda_message_printer(my_lambda)    
-    
+lambda_message_printer(my_lambda)
+
 ######################################################################################
 
 
@@ -1398,7 +1398,7 @@ puts nCr.(r)
 #       k=k*(n-i)/(i+1)
 #     }
 #   k
-# end 
+# end
 
 # combination = -> (number) do
 #   -> (another_number) do
@@ -1505,7 +1505,7 @@ end
 
 
 
-"hello".include? "lo"   #=> true  
+"hello".include? "lo"   #=> true
 "hello".include? "ol"   #=> fals
 
 "hello".gsub(/[aeiou]/, '*')                  #=> "h*ll*"
@@ -1519,10 +1519,10 @@ def strike(str1)
 end
 
 def mask_article(str1, arr1)
-  
+
   if (arr1.length == 0)
     strike(str1)
-    
+
   else
     arr1
     .map {
