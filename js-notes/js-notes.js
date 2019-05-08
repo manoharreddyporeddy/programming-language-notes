@@ -2086,11 +2086,11 @@ function filter_aaaaaaaaa() {
 
   // [ 3, 4 ]
   // [ 2, 4 ]
-  // [ 'abc', 'efg', 'hijk' ]
+  // [ 'abc', 'hijk' ]
   const arr0 = [1,2,3,4].filter(_ => _>2);
   const arr1 = [1,2,3,4].filter(val => val>2);
   const arr2 = [1,2,3,4].filter((val, index, arr) => val%2==0, this); // full syntax
-  const arr3 = ['ab', 'abc', 'de', 'efg', 'hijk'].filter(word => word.length > 2);
+  const arr3 = ['ab', 'abc', 'de', 'hijk'].filter(word => word.length > 2);
 
   const pp   =  arg  => console.log(arg);
   pp(arr0);
@@ -2113,6 +2113,247 @@ function filter_aaaaaaaaa() {
 
 }
 
+function filter_aaaaaaaaa() {
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+
+  /*
+  false
+  true
+  true
+  false
+  */
+  const isX1 = [1,2,3,4].every(_ => _>2);
+  const isX2 = [3,3,3,4].every(val => val>2);
+  const isX3 = [0,2,6,4].every((val, index, arr) => val%2==0, this); // full syntax
+  const isX4 = ['ab', 'abc', 'de', 'hijk'].every(word => word.length > 2);
+
+  const pp   =  arg  => console.log(arg);
+  pp(isX1);
+  pp(isX2);
+  pp(isX3);
+  pp(isX4);
+
+}
+
+function some__aaaaaaaa () {
+  /*
+  true
+  1
+  2
+  true
+  true
+  */
+
+  // stops search if one statisfies condition given
+  const isX1 = [3,3,3,4].some(val => val>2);
+  const isX2 = [1,2,6,4].some((val, index, arr) => { console.log(val); return val%2==0 }, this); // full syntax
+  const isX3 = ['ab', 'abc', 'de', 'hijk'].some(word => word.length > 2);
+
+  const pp   =  arg  => console.log(arg);
+  pp(isX1);
+  pp(isX2);
+  pp(isX3);
+}
+
+function find_aaaa() {
+  /*
+  3
+  2
+  abc
+  */
+  // stops search if one statisfies condition given
+  const isX1 = [2,1,3,1,1,4].find(val => val>2 );
+  const isX2 = [1,2,6,4].find((val, index, arr) => val%2==0, this); // full syntax
+  const isX3 = ['ab', 'abc', 'de', 'hijk'].find(word => word.length > 2);
+
+  const pp   =  arg  => console.log(arg);
+  pp(isX1);
+  pp(isX2);
+  pp(isX3);
+}
+
+function array____more() {
+  
+  // new Array(arrayLength)
+  Array(7);          // [ , , , , , , ]
+
+  // new Array(element0, element1[, ...[, elementN]])
+  //  Array.of(element0[, element1[, ...[, elementN]]])
+  //          [element0, element1, ..., elementN]
+  Array(1, 2, 3);    //  [1, 2, 3]
+  Array.of(1, 2, 3); //  [1, 2, 3]
+  [1,2,3]
+
+
+  var fruits = ['Apple', 'Banana'];
+  
+  console.log(fruits.length);   // 2
+  var first = fruits[0];    // Apple
+  var last = fruits[fruits.length - 1];   // Banana
+
+  fruits.forEach(function(item, index, array) {    console.log(item, index);  });
+  // Apple 0
+  // Banana 1
+
+  // push/pop - add/remove at-the-end
+  var newLength = fruits.push('Orange');  // ["Apple", "Banana", "Orange"]
+  var last = fruits.pop();    // ["Apple", "Banana"];
+  
+  // unshift/ shift - add/remove front
+  var first = fruits.shift();   // ["Banana"];  
+  var newLength = fruits.unshift('Strawberry');  // ["Strawberry", "Banana"];
+  
+  fruits.push('Mango'); // ["Strawberry", "Banana", "Mango"]
+  var pos = fruits.indexOf('Banana'); // 1
+  var removedItem = fruits.splice(pos, 2); // ["Strawberry"]       // index, numberOfItemsToRemove
+  
+  var shallowCopy = fruits.slice(); // ["Strawberry", "Mango"]
+  
+  
+  
+  ???????????????????
+  // join
+  
+  // ["Apple", "Banana"]
+  fruits[5] = 'Mango';
+  // ["Apple", "Banana", , , , "Mango"]
+  console.log(Object.keys(fruits));  // ['0', '1', '5']
+  console.log(fruits.length); // 6
+  
+    // decreasing length, delete elements
+    fruits.length = 2;
+    console.log(Object.keys(fruits)); // ['0', '1']
+    console.log(fruits.length); // 2
+  
+  
+  // arr.fill(value[, start[, end]])
+  Array(3).fill(4);                // [4, 4, 4]
+  [].fill.call({ length: 3 }, 4);  // {0: 4, 1: 4, 2: 4, length: 3}
+
+  [1, 2, 3].fill(4);               // [4, 4, 4]   // fill all
+  [1, 2, 3].fill(4, 1);            // [1, 4, 4]   // fill from index 1
+  [1, 2, 3].fill(4, 1, 2);         // [1, 4, 3]   // fill index(es) [1, 2)
+
+
+  [].fill.call({ length: 3 }, 4);  // {0: 4, 1: 4, 2: 4, length: 3}
+  // Objects by reference.
+  var arr = Array(3).fill({}) // [{}, {}, {}];
+  arr[0].hi = "hi"; // [{ hi: "hi" }, { hi: "hi" }, { hi: "hi" }]
+
+
+  // reverse
+  const a = [1, 2, 3];
+  a.reverse(); 
+  console.log(a); // [3, 2, 1]  
+
+  var array1 = ['one', 'two', 'three'];
+  var reversed = array1.reverse(); 
+  console.log('reversed: ', reversed);  //  Array ['three', 'two', 'one']
+
+  const a = {0: 1, 1: 2, 2: 3, length: 3};
+  Array.prototype.reverse.call(a); //same syntax for using apply()
+  console.log(a); // {0: 3, 1: 2, 2: 1, length: 3}
+
+
+  // concat
+  var array1 = ['a', 'b', 'c'];
+  var array2 = ['d', 'e', 'f'];
+  console.log(array1.concat(array2)); //  ["a", "b", "c", "d", "e", "f"]
+
+  const letters = ['a', 'b', 'c'];
+  const alphaNumeric = letters.concat(1, [2, 3]);
+  console.log(alphaNumeric);    // results in ['a', 'b', 'c', 1, 2, 3]
+
+  const num1 = [[1]];
+  const num2 = [2, [3]];
+  const numbers = num1.concat(num2);
+  console.log(numbers);     // results in [[1], 2, [3]]
+  num1[0].push(4);  // modify the first element of num1
+  console.log(numbers);   // results in [[1, 4], 2, [3]]
+
+
+  // includes
+  console.log([1, 2, 3].includes(2));      // expected output: true
+  console.log(['cat', 'dog', 'bat'].includes('cat'));    // expected output: true    
+  [1, 2, 3].includes(3, 3);  // false
+  [1, 2, 3].includes(1, 3);  // false     // >=array.length is false
+  [1, 2, 3].includes(3, -1); // true      // array.length + fromIndex,     for -ve values of fromIndex
+  // ??????????
+  (function() {
+    console.log([].includes.call(arguments, 'a')); // true
+    console.log([].includes.call(arguments, 'd')); // false
+  })('a','b','c');
+
+
+  // join    - default seperator is ,
+  // If an element is undefined or null, it is converted to the empty string.
+  console.log(['Fire'].join());	// expected output: "Fire"
+  console.log(['Fire', 'Air', 'Water'].join());	// expected output: "Fire,Air,Water"
+  console.log(['Fire', 'Air', 'Water'].join(''));	// expected output: "FireAirWater"
+  console.log(['Fire', 'Air', 'Water'].join(', '));	// expected output: "Fire, Air, Water"
+  console.log(['Fire', 'Air', 'Water'].join('-'));	// expected output: "Fire-Air-Water"
+
+  // indexOf
+  // arr.indexOf(searchElement[, fromIndex])
+  var beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+  console.log(beasts.indexOf('giraffe'));	// expected output: -1
+  console.log(beasts.indexOf('bison'));	// expected output: 1
+  // start from index 2
+  console.log(beasts.indexOf('bison', 2));	// expected output: 4
+  var array = [2, 9, 9];
+  array.indexOf(2);     // 0
+  array.indexOf(7);     // -1
+  array.indexOf(9, 2);  // 2
+  array.indexOf(2, -1); // -1
+  array.indexOf(2, -3); // 0
+  
+  // Finding all the occurrences of an elementSection
+  var indices = [];
+  var array = ['a', 'b', 'a', 'c', 'a', 'd'];
+  var element = 'a';
+  var idx = array.indexOf(element);
+  while (idx != -1) {
+    indices.push(idx);
+    idx = array.indexOf(element, idx + 1);
+  }
+  console.log(indices);
+  // [0, 2, 4]
+
+
+
+  // lastIndexOf
+  // arr.lastIndexOf(searchElement[, fromIndex])
+  console.log(['Dodo', 'Tiger', 'Penguin', 'Dodo'].lastIndexOf('Dodo'));// expected output: 3
+  console.log(['Dodo', 'Tiger', 'Penguin', 'Dodo'].lastIndexOf('Tiger'));// expected output: 1
+  var numbers = [2, 5, 9, 2];
+  numbers.lastIndexOf(2);     // 3
+  numbers.lastIndexOf(7);     // -1
+  numbers.lastIndexOf(2, 3);  // 3
+  numbers.lastIndexOf(2, 2);  // 0
+  numbers.lastIndexOf(2, -2); // 0
+  numbers.lastIndexOf(2, -1); // 3
+
+  // Finding all the occurrences of an element
+  var indices = [];
+  var array = ['a', 'b', 'a', 'c', 'a', 'd'];
+  var element = 'a';
+  var idx = array.lastIndexOf(element);
+  while (idx != -1) {
+    indices.push(idx);
+    idx = (idx > 0 ? array.lastIndexOf(element, idx - 1) : -1);
+  }
+  console.log(indices);
+  // [4, 2, 0]
+
+
+  // toString
+  console.log([1, 2, 'a', '1a'].toString());	// expected output: "1,2,a,1a"
+
+
+
+
+
+}
 
 function exceptionaaaaaaa() {
 
