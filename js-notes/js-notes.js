@@ -1,5 +1,22 @@
 'use strict';
 
+// fix links
+ 
+// https://ultimatecourses.com/blog/es6-arrow-functions-syntaxes-and-lexical-scoping
+
+/*
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+ http://www.ecma-international.org/ecma-262/7.0/index.html
+ https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_search3
+ https://www.w3schools.com/jsref/jsref_try_catch.asp
+ https://www.w3schools.com/jsref/jsref_search.asp
+ https://www.jstips.co/en/javascript/rounding-the-fast-way/
+ http://kangax.github.io/compat-table/es5/
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else#Syntax
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes#Browser_compatibility
+
+ */
+
 
 // ********************************************
 // ********************************************
@@ -46,19 +63,6 @@ process.stdin.on('end', _ => {
 
 
 
-
-/*
- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
- http://www.ecma-international.org/ecma-262/7.0/index.html
- https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_search3
- https://www.w3schools.com/jsref/jsref_try_catch.asp
- https://www.w3schools.com/jsref/jsref_search.asp
- https://www.jstips.co/en/javascript/rounding-the-fast-way/
- http://kangax.github.io/compat-table/es5/
- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else#Syntax
- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes#Browser_compatibility
-
- */
 
 /*
  The lexical structure of a programming language is the set of elementary rules that tells you how to write programs in that language. It's essentially the lowest-level syntax of a language and specifies such things as what variable names look like, the delimiter characters for comments, and how one program statement is separated from the next.
@@ -122,7 +126,241 @@ function greeting(parameterVariable) {
   console.log('Hello, World!');
   // We use the console.log method to write data to standard output in JavaScript.
 
+
+
+
+
+
+
+
+
+
+// Destructuring assignment - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+//    to unpack values from
+//        arrays, or
+//        properties from objects
+//            into distinct variables.
+
+// arrays
+var a, b, rest;
+[a, b] = [10, 20];
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+// a = 10
+// b = 20
+// rest = [30,40,50]
+
+
+var a, b;
+[a=5, b=7] = [1];
+console.log(a); // 1
+console.log(b); // 7
+
+var a = 1;
+var b = 3;
+
+[a, b] = [b, a];
+console.log(a); // 3
+console.log(b); // 1
+
+function f() {
+  return [1, 2, 3];
+}
+
+var [a, , b] = f();
+console.log(a); // 1
+console.log(b); // 3
+
+
+
+
+
+// NOTE: the () for whole expression
+({ a, b } = { a: 10, b: 20 });
+({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});
+console.log(a); // 10
+console.log(b); // 20
+console.log(rest); // {c: 30, d: 40}
+
+var o = {p: 42, q: true};
+var {p: foo, q: bar} = o;
+console.log(foo); // 42 
+console.log(bar); // true
+
+var {a = 10, b = 5} = {a: 3};
+console.log(a); // 3
+console.log(b); // 5
+
+var {a: aa = 10, b: bb = 5} = {a: 3};
+console.log(aa); // 3
+console.log(bb); // 5
+
+
+
+// Nested object and array destructuring
+
+const metadata = {
+  title: 'Scratchpad',
+  // ..
+  translations: [
+    {
+      // ..
+      title: 'JavaScript-Umgebung'
+    }
+  ]
+  // ..
+};
+
+let {
+  title: englishTitle, // rename
+  translations: [
+    {
+       title: localeTitle, // rename
+    },
+  ],
+} = metadata;
+
+console.log(englishTitle); // "Scratchpad"
+console.log(localeTitle);  // "JavaScript-Umgebung"
+
+
+var people = [
+  {
+    name: 'Mike Smith',
+    family: {
+      mother: 'Jane Smith',
+      father: 'Harry Smith',
+      sister: 'Samantha Smith'
+    },
+    age: 35
+  },
+  {
+    name: 'Tom Jones',
+    family: {
+      mother: 'Norah Jones',
+      father: 'Richard Jones',
+      brother: 'Howard Jones'
+    },
+    age: 25
+  }
+];
+
+for (var {name: n, family: {father: f}} of people) {
+  console.log('Name: ' + n + ', Father: ' + f);
+}
+
+// "Name: Mike Smith, Father: Harry Smith"
+// "Name: Tom Jones, Father: Richard Jones"
+
+
+Unpacking fields from objects passed as function parameterSection
+function userId({id}) {
+  return id;
+}
+
+function whois({displayName, fullName: {firstName: name}}) {
+  console.log(displayName + ' is ' + name);
+}
+
+var user = { 
+  id: 42, 
+  displayName: 'jdoe',
+  fullName: { 
+      firstName: 'John',
+      lastName: 'Doe'
+  }
+};
+
+console.log('userId: ' + userId(user)); // "userId: 42"
+whois(user); // "jdoe is John"
+
+
+
+// Combined Array and Object Destructuring
+const props = [
+  { id: 1, name: 'Fizz'},
+  { id: 2, name: 'Buzz'},
+  { id: 3, name: 'FizzBuzz'}
+];
+
+const [,, { name }] = props;
+
+console.log(name); // "FizzBuzz"
+
+
+
+
+
+
   // ??????????????
+//  Template Literals / template 
+// Multi-line Strings
+// Print a Multi-Line String Using Normal Strings
+console.log("first line\n" + "second line");
+// Print a Multi-Line String Using Normal Strings
+console.log(`first line
+second line`);
+
+// Expression Interpolation
+// Print a Line Using Normal Strings
+const a = 2;
+const b = 3;
+console.log(
+    'The sum of a and b is ' + (a + b) + '.\n' 
+    + 'The product of a and b is ' + (a * b) + '.'
+);
+
+// Print a Line Using Template Literals
+const a = 2;
+const b = 3;
+console.log(`The sum of a and b is ${a + b}. 
+The product of a and b is ${a * b}.`);
+
+  console.log(`${firstString} says hello.`);
+
+
+// Tagged Template Literals
+var a = 5;
+var b = 10;
+
+// Tagged Template Literals
+//    array of string literals (n+1), values of the substitution expressions (cooked expressions) (n)
+function foo(strings, ...values) {
+    console.log("." + strings[0] + ".");
+    console.log("." + strings[1] + ".");
+    console.log("." + strings[2] + ".");
+    console.log("." + strings[3] + ".");
+    console.log(values[0]);
+    console.log(values[1]);
+    console.log(values[2]);
+
+    a = values[0];
+    b = values[1];
+
+    return `Sum ${a + b}
+Product ${a * b} 
+Division ${b / a}`;
+}
+
+// template literal
+foo`Sum ${a + b}
+Product ${a * b}
+Division ${b / a}`;
+
+console.log(foo`Num1 ${a + 10}
+Num2 ${b * 2} 
+Num3 ${b / a}`);
+
+
+
+
+
+
+
+
+
+
+
+
   // console.log(Hello, World!\n${parameterVariable});
   // process.stdout.write(parameterVariable);
 
@@ -226,6 +464,8 @@ function greeting(parameterVariable) {
   console.log(secondString);
   console.log(thirdString);
   console.log(fourthString);
+  
+
 
 //      Hello, There.
 //      How're you?
@@ -1493,7 +1733,7 @@ function arrayaaaaaaaaaaaa() {
   var b = [9, 2, 13, 7, 1, 12, 123];
 
 // Sort in ascending lexicographical order using a built-in
-  a.sort();
+  a.sort();   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
   b.sort();
 
   console.log('a:', a);
@@ -1552,24 +1792,6 @@ function arrayaaaaaaaaaaaa() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// max & second max
-//    const max = nums.reduce((max, actual) => Math.max(max, actual));
-//    return nums.filter(_ => _ != biggest).reduce((max, actual) => Math.max(max, actual));
 
 function getSecondLargest(nums) {
   const max = Math.max(...nums)
@@ -1752,8 +1974,130 @@ function vowelsAndConsonants(s) {
 }
 
 //     v.push(...c);
-//    vowels.map(v => console.log(v));
 
+function arrow_functions_aaaaaaaaaaaaaaaaa(nums) {
+
+    // Arrow Functions in JavaScript
+    //      These expressions lexically bind the 'this' value
+    //      while using
+    //            less syntax than
+    //            a typical function expression.
+    //        Arrow functions are always anonymous.
+    
+    
+    /*
+    parameter   =>
+    (parameter) =>
+    (param1, param2, ..., paramN)       =>  expression
+                                        => {return expression}
+                                        => {statements}   
+    */
+
+
+const pp   =  arg  => console.log(arg);
+const pp2  = (arg) => console.log(arg);
+const ppr  =  arg  => { console.log(arg); return 1};
+const ppr2 = (arg) => { console.log(arg); return 1};
+
+const square  =  n  => n*n;
+const square2 = (n) => n*n;
+const cube    =  n  => { return n*n*n };
+const cube2   = (n) => { return n*n*n };
+
+// const sum  =  a, b  => a + b; // error
+const sum  = (a, b) => a + b;
+const prod = (a, b) => { return a * b };
+
+pp("\nhello");
+pp2("\nhello");
+console.log(ppr("\nhello"));
+console.log(ppr2("\nhello")); pp("\n");
+
+pp(square(5));
+pp(square2(5));
+pp(cube(5));
+pp(cube2(5)); pp("\n");
+
+pp(sum(2, 3));
+pp(prod(2, 3)); pp("\n");
+
+const makeArray = (...values) => { return values };
+console.log('Array:', makeArray(1, 2, 3, 4));
+
+}
+
+
+function map_aaaaaaaa() {
+  
+  // [ 1, 1.4142135623730951, 1.7320508075688772, 2 ]
+  // [ 1, 1.4142135623730951, 1.7320508075688772, 2 ]
+  // [ 1, 1.4142135623730951, 1.7320508075688772, 2 ]
+  const arr0 = [1,2,3,4].map(Math.sqrt); // works since sqrt takes single argument
+  const arr1 = [1,2,3,4].map(val => Math.sqrt(val));
+  const arr2 = [1,2,3,4].map((val, index, arr) => Math.sqrt(val), this); // full syntax
+  // [ 5, 6, 5, 6, 5 ]
+  const accLenArr2 = ['first', 'second', 'third', 'fourth', 'fifth'].map(s => s.length);
+  let accEvenTwiceOddThriceArr = nums.map(x => ((x % 2 === 0) ? 2 * x : 3 * x) );
+
+  const pp   =  arg  => console.log(arg);
+  pp(arr0);
+  pp(arr1);
+  pp(arr2); pp("\n");
+  pp(accEvenTwiceOddThriceArr);
+}
+
+function reduce_aaaaaaaaaa() {
+  // reduce
+
+  // 6
+  // 6
+  // 6
+  // 106
+  let acc1 = [1, 2, 3].reduce((accumulator, currentValue) => accumulator + currentValue);
+  let acc2 = [1, 2, 3].reduce((accumulator, currentValue, currentIndex, array) => accumulator + currentValue);
+  let acc3 = [1, 2, 3].reduce((accumulator, currentValue, currentIndex, array) =>  accumulator + currentValue, 0); // initial value 0
+  let acc4 = [1, 2, 3].reduce((accumulator, currentValue, currentIndex, array) =>  accumulator + currentValue, 100); // initial value 100
+  // 6
+  var acc5 = [{x: 1}, {x: 2}, {x: 3}].reduce((accumulator, currentValue) => accumulator + currentValue.x,0);
+  // [ 0, 1, 2, 3, 4, 5 ]
+  var acc6Arr1 = [[0, 1, 2, 3], [4, 5]].reduce(  ( accumulator, currentValue ) => accumulator.concat(currentValue),  []);
+  // { Ali: 2, Bob: 1, Tif: 1, Bru: 1 }
+  var acc7Obj1 = ['Ali', 'Bob', 'Tif', 'Bru', 'Ali'].reduce(function (obj1, name) { (obj1[name] === undefined)? obj1[name] = 1: obj1[name]++;  return obj1;}, {});
+  // [ 'a', 'b' ]
+  var acc6UniqArr1 = ['a', 'b', 'a', 'b'].reduce((accumulator, currentValue) => { if (accumulator.indexOf(currentValue) === -1) { accumulator.push(currentValue); }  return accumulator; }, [])
+  // 3
+  let acc7Max1 = [1, 2, 3].reduce((accumulator, currentValue) => Math.max(accumulator, currentValue), Number.MIN_SAFE_INTEGER); //  (-(2^53 - 1))
+
+  const pp   =  arg  => console.log(arg);
+  pp(acc1); pp("\n");
+  pp(acc2); pp("\n");
+  pp(acc3); pp("\n");
+  pp(acc4); pp("\n");
+  pp(acc5); pp("\n");
+  pp(acc6Arr1); pp("\n");
+  pp(acc7Obj1); pp("\n");
+  pp(acc6UniqArr1); pp("\n");
+  pp(acc6UniqArr1); pp("\n");
+  pp(acc7Max1); pp("\n");
+}
+
+function filter_aaaaaaaaa() {
+// [ 3, 4 ]
+// [ 2, 4 ]
+// [ 'abc', 'efg', 'hijk' ]
+const arr1 = [1,2,3,4].filter((val) => val>2);
+const arr2 = [1,2,3,4].filter((val, index, arr) => val%2==0, this); // full syntax
+const arr3 = ['ab', 'abc', 'de', 'efg', 'hijk'].filter(word => word.length > 2);
+
+const pp   =  arg  => console.log(arg);
+pp(arr1);
+pp(arr2);
+pp(arr3)
+
+// max & second max
+//    const max = nums.reduce((max, actual) => Math.max(max, actual));
+//    return nums.filter(_ => _ != biggest).reduce((max, actual) => Math.max(max, actual));
+}
 
 
 function exceptionaaaaaaa() {
@@ -2012,7 +2356,7 @@ function objectaaaaaaaa () {
 
   class Square extends Polygon {           // <-------------- extends here
     constructor(height1, width1) {
-      super(height1, width1);                 // <-------------- super     accesses parent's constructor
+      super(height1, width1);                 // <-------------- super     accesses parent's constructor  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super
     }
     getArea() {
       return super.getArea();              // <-------------- super     to access parent's method
