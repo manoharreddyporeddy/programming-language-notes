@@ -2082,21 +2082,33 @@ function reduce_aaaaaaaaaa() {
 }
 
 function filter_aaaaaaaaa() {
-// [ 3, 4 ]
-// [ 2, 4 ]
-// [ 'abc', 'efg', 'hijk' ]
-const arr1 = [1,2,3,4].filter((val) => val>2);
-const arr2 = [1,2,3,4].filter((val, index, arr) => val%2==0, this); // full syntax
-const arr3 = ['ab', 'abc', 'de', 'efg', 'hijk'].filter(word => word.length > 2);
+  // [ 3, 4 ]
+  // [ 2, 4 ]
+  // [ 'abc', 'efg', 'hijk' ]
+  const arr0 = [1,2,3,4].filter(_ => _>2);
+  const arr1 = [1,2,3,4].filter(val => val>2);
+  const arr2 = [1,2,3,4].filter((val, index, arr) => val%2==0, this); // full syntax
+  const arr3 = ['ab', 'abc', 'de', 'efg', 'hijk'].filter(word => word.length > 2);
 
-const pp   =  arg  => console.log(arg);
-pp(arr1);
-pp(arr2);
-pp(arr3)
+  const pp   =  arg  => console.log(arg);
+  pp(arr0);
+  pp(arr1);
+  pp(arr2);
+  pp(arr3)
 
-// max & second max
-//    const max = nums.reduce((max, actual) => Math.max(max, actual));
-//    return nums.filter(_ => _ != biggest).reduce((max, actual) => Math.max(max, actual));
+  function isNumber(obj) {  return obj !== undefined && typeof(obj) === 'number' && !isNaN(obj); }
+  var arrToFilter1 = [{ id: 15 }, { id: -1 }, { id: 0 }, { id: 3 }, { id: 12.2 }, {}, { id: null }, { id: NaN }, { id: 'undefined' }];
+  const arrFiltered1 = arrToFilter1.filter(obj => isNumber(obj.id) && (obj.id > 0));
+  pp(arrFiltered1);
+
+  // [ 'apple', 'grapes' ]
+  // [ 'banana', 'mango', 'orange' ]
+  var fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+  let filterMatches = (arr1, squery) => {  squery = squery.toLowerCase();  let arrRes = arr1.filter((str1) => str1.indexOf(squery) != -1);  return arrRes;  }
+  pp(filterMatches(fruits, "ap"));
+  pp(filterMatches(fruits, "an"));
+
+
 }
 
 
