@@ -1,4 +1,52 @@
 'use strict';
+
+
+// ********************************************
+// ********************************************
+//       IGNORE THIS PART - BEGIN
+// ********************************************
+// ********************************************
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+function readLine() {
+  return inputString[currentLine++];
+}
+
+function main() {
+  const parameterVariable = readLine();
+  greeting(parameterVariable);
+}
+
+process.stdin.on('data', inputStdin => {
+  inputString += inputStdin;
+});
+
+process.stdin.on('end', _ => {
+  inputString = inputString.trim().split('\n').map(string => {
+    return string.trim();
+  });
+
+  main();
+});
+// ********************************************
+// ********************************************
+//       IGNORE THIS PART - END
+// ********************************************
+// ********************************************
+
+
+
+
+
+
+
+
+
+
 /*
  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
  http://www.ecma-international.org/ecma-262/7.0/index.html
@@ -1557,82 +1605,120 @@ let max = Math.max(...nums);
  for-in
  for-of
 
- for (initialization; condition; finalExpression) {
- statement(s);
- }
+  // ------------------------------------------------------------
+  // for
+  // ------------------------------------------------------------
 
- for (var i = 1; i <= input; i++) {
- process.stdout.write(i + " ");
- }
+  for (initialization; condition; finalExpression) {
+    statement(s);
+  }
+*/
+  const arr = ['a', 'b', 'c', 'd'];
+  for (let i = 0; i < arr.length; i++) {
+      console.log('arr[' + i + ']: ' + arr[i]);
+  }
 
+/*
+  // ------------------------------------------------------------
+  // while   &   do-while
+  // ------------------------------------------------------------
+  while (condition) {
+    statement(s);
+  }
 
- while (condition) {
- statement(s);
- }
-
- do {
- statement(s);
- } while (condition);
-
- var i = 1;
- do {
- process.stdout.write(i + " ");
- i++;
- } while (i <= input);
-
-
- // for-in
- // This loop iterates (in an arbitrary order) over the name of each enumerable property in an object, allowing statements to be executed for each distinct property.
-
-
- for (var variable in object) {
- // insert code that uses variable here
- }
-
- var actress = {
- firstName: "Julia",
- lastName: "Roberts",
- dateOfBirth: "October 28, 1967",
- nationality: "American",
- firstMovie: "Satisfaction"
- };
-
- for (var property in actress) {
- console.log("actress." + property + " = " + actress[property]);
- }
+  do {
+    statement(s);
+  } while (condition);
+*/
+  var i = 1;
+  do {
+    process.stdout.write(i + " ");
+    i++;
+  } while (i <= input);
 
 
+/*
+  // ------------------------------------------------------------
+  // for-in
+  // ------------------------------------------------------------
+  // This loop iterates (in an arbitrary order) over the name of each enumerable property in an object, allowing statements to be executed for each distinct property.
+  for (let key1 in obj1) {
+    console.log(key1 + ' ' + obj1[key1]);
+  }
+  for (let index1 in arr1) {
+    console.log(index1 + ' ' + arr1[index1]);
+  }
+*/
 
- // for-in
- //      loop iterates over iterable objects such as an Array, Map, Set, String, TypedArray, arguments object, etc.
- for (let variable of iterable) {
- statement(s);
- }
- for (let value of array) {
- console.log(value);
- }
+  var actress = {
+    firstName: "Julia",
+    lastName: "Roberts",
+    dateOfBirth: "October 28, 1967",
+    nationality: "American",
+    firstMovie: "Satisfaction"
+  };
+  for (var property in actress) {
+    console.log("actress." + property + " = " + actress[property]);
+  }
 
- let actress = new Map([
- ["firstName", "Julia"],
- ["lastName", "Roberts"],
- ["dateOfBirth", "October 28, 1967"],
- ["nationality", "American"],
- ["firstMovie", "Satisfaction"]
- ]);
+  const arr1 = ['first', 'second', false];
+  for (let index1 in arr1) {
+    console.log(index1 + ' ' + arr1[index1]);
+  }
 
- // Print each Key-Value pair in the map
- for (let info of actress) {
- console.log(info);
- }
+/*
+  // ------------------------------------------------------------
+  // for-of
+  // ------------------------------------------------------------
+  //      loop iterates over iterable objects such as an Array, Map, Set, String, TypedArray, arguments object, etc.
+  for (let variable of iterable) {
+    statement(s);
+  }
+*/
+  for (let value of array) {
+    console.log(value);
+  }
 
- // Print each Key and Value as "Key: Value"
- console.log();
- for (let info of actress) {
- console.log(info[0] + ": " + info[1]);
- }
+  let actress = new Map([
+    ["firstName", "Julia"],
+    ["lastName", "Roberts"],
+    ["dateOfBirth", "October 28, 1967"],
+    ["nationality", "American"],
+    ["firstMovie", "Satisfaction"]
+  ]);
+
+  // Print each Key-Value pair in the map
+  for (let info of actress) {
+    console.log(info);
+  }
+
+  // Print each Key and Value as "Key: Value"
+  console.log();
+  for (let info of actress) {
+    console.log(info[0] + ": " + info[1]);
+  }
 
 
- */
+  // ------------------------------------------------------------
+  // forEach
+  // ------------------------------------------------------------
+  const arr = ['a', 'b', 'c', 'd'];
+
+  arr.forEach((value) => {
+      console.log('value:', value);
+  });
+
+  arr.forEach((value, index) => {
+      console.log('index', index, 'has a value of', value);
+  });
+
+  arr.forEach((value, index, array) => {
+      console.log('index', index, 'has a value of', value,
+      'which correlates to array[' + index + ']:', array[index]);
+  });
+
+  // ------------------------------------------------------------
+
 
 
 
@@ -1730,16 +1816,359 @@ function exceptionaaaaaaa() {
   }
 }
 
-// --------------- objects
+
+function objectaaaaaaaa () { 
+  /*
+  // --------------- objects
+  Object: A collection of properties.
+
+  Property:
+    An association between a 
+      name/key and
+        a value
+
+    property is a method
+      if value associated with a key is a function
+
+    A property name can be any valid string, or anything that can be converted into a string (including the empty string).
 
 
-function Rectangle(a, b) {
-  return {
-    length: a,
-    width: b,
-    perimeter: 2 * (a + b),
-    area: a * b
+  objectName: {
+    propertyName: valueName
   }
+
+  dot notation            objectName.propertyName
+  bracket notation        objectName['propertyName']        good for runtime keys, keys with space, hyphen, start with number, etc.
+
+  */
+
+
+  // ============================= Creating Objects =============================================
+  // ============================= Creating Objects =============================================
+  // ============================= Creating Objects =============================================
+
+  // ===============  1. Using Object Initializers ===============
+  // ===============  1. Using Object Literals ===============
+
+  var prop1 = "val1";
+  var keyVar1 = "key1111";
+  function getKey1() {
+    return 100;
+  }
+
+  // Create an object with two properties, 'Name' and 'Age'
+  var actor2 = { };
+  var actor3 = new Object();
+  var actor4 = new Object( { a: 4} );
+  var actor5 = Object.create({ a: 4});
+  var actor = {
+      Name: 'Julia Roberts', 
+      Age: 36,
+      a: 3, 
+      b: 'Rome', 
+      c: false,
+      [ keyVar1 + getKey1()]: 101,  // ---------------------- Computed  property names (ES2015/ ES6)     in ES5, it is      done after object creation
+      prop1,                      // --------------------------------------- Shorthand property names (ES2015/ ES6)      in ES5, it is     prop1: prop1
+      foo: function() {
+          return this.a * this.a;
+      }
+      foo2 () {                   // --------------------------------------- Shorthand method names (ES2015/ ES6)        in ES5, it is       foo2: function () {
+      }
+      length: 3,
+      width: 4,
+      perimeter: 2 * (3 + 4),
+      area: 3 * 4
+  };
+  actor.d = 4;
+
+  console.log(actor.Name);      // Access object's property
+  console.log(actor["Age"]);    // Access object's property
+  console.log(actor.prop1);      // Access object's property
+  actor.EyeColor = 'Brown';     // Add a new property called 'EyeColor'
+  console.log(actor.EyeColor);
+  console.log(o44.foo());      // Access object's property
+  console.log(actor)            // Access object
+
+  // ===============  2. Using a Constructor Function ===============
+  // ===============  2. Using a Functional Classes ===============
+  // use  uppper camel case  name
+  // Use the new operator to create an instance of the object.
+
+  function g_getFullName() {
+      return this.firstName + ' and ' + this.lastName + '.';
+  }
+  // Constructor Function
+  function Cls1(firstName, lastName, Age) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.Age = Age;
+      this.getFullName1 = g_getFullName;
+      this.getFullName_internal_bad = function() {
+          // NO - creates this function every time we create a new Fruit object
+          return this.firstName + ' and ' + this.lastName + '.';
+      }
+  }
+
+  // NOTE: object prototype is class
+
+  // prototype property (empty by default) - instance level
+  Cls1.prototype.getFullName3 = function() {
+      return this.firstName + ' and ' + this.lastName + '.';
+  }
+
+  function Derived (firstName) {
+    Cls1.call(this, firstName, 'ln1', 5); // inherit constructor - call the constructor with 'this' (Derived) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+  }
+  // inheritance - start
+  Derived.prototype = Object.create(Cls1.prototype);
+  Derived.prototype.constructor = Derived;      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
+  Derived.parent = Cls1.prototype; //  ??????????????????????????? // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
+  // inheritance - end
+
+  var a1 = new Cls1('Julia', 'Roberts', 48);
+  var a2 = new Cls1('Kate', 'Winslet', 40);
+  console.log('Object \'a1\':', a1);
+  console.log('Object \'a2\':', a2);
+  console.log(lime.getFullName1());
+  console.log(lime.getFullName_internal_bad());
+  console.log(lime.getFullName3());
+
+
+  // singleton
+  //  new on anonymous constructor function
+  let singletonObj = new Function (firstName, lastName, Age) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.Age = Age;
+      this.getFullName = function() {
+        return this.firstName + ' and ' + this.lastName + '.';
+      };
+  }
+  console.log(singletonObj.getFullName());
+
+  function Rectangle(a, b) {
+    // Set the object's properties
+    this.length = a;
+    this.width = b;
+    this.perimeter = 2 * a + 2 * b;
+    this.area = a * b;
+    
+    // This isn't necessary, but it prevents new properties from being added
+    // It also prevents the properties we've already set from being modified
+    Object.freeze(this);
+  }
+
+
+/*
+  hoisting
+    can be referenced before they're declared
+
+  An important difference between
+    function declarations and
+    class declarations
+    is that
+      function declarations are hoisted
+      but class declarations are not.
+      
+        This means we must first declare our class before attempting to access (or reference) it; if we fail to do so, our code throws a ReferenceError.
+*/
+
+  // ES6
+  // ===============  3. Using a Class Declarations ===============
+  
+  /*
+  JavaScript classes, introduced in ECMAScript 6, are
+    essentially syntactic sugar
+    over JavaScript's
+      existing prototype-based inheritance
+      that don't actually introduce a new object-oriented inheritance model
+      This syntax is
+        a means of
+          more simply and
+          clearly
+            creating objects and
+            deal with inheritance.
+  */
+  
+  class Polygon {
+      constructor(height1, width1) {      // The Constructor Method - super is to call parent class in inheritance // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
+          this._height = height1;
+          this._width = width1;
+      }
+      set height(height1) {
+        this._height = height1;
+      }     
+      get width() {
+        return this._width;
+      }
+      getArea() { // Prototype Method
+        return height() * width();
+        // return this.height * this.width;
+      }
+      static staticMethod1() {   // call with class name only, not object name......... Polygon.staticMethod1(..)
+        return 100;
+      }
+  }
+
+  class Square extends Polygon {           // <-------------- extends here
+    constructor(height1, width1) {
+      super(height1, width1);                 // <-------------- super     accesses parent's constructor
+    }
+    getArea() {
+      return super.getArea();              // <-------------- super     to access parent's method
+    }
+    staticMethod12() {
+      super.staticMethod1();                     // <-------------- super     to access parent's static method
+    }
+  }
+  
+  
+  // extend functional class
+  function Animal(name) {
+      this.name = name;
+  }
+  class Dog extends Animal {           // <-------------- extends here on functional class
+  }
+
+  // ===============  4. Using a Class Expressions ===============
+
+  // Named Class Expression
+  let Polygon = class Polygon {
+    // ...
+  };
+
+  // Unnamed Class Expression
+  let Polygon = class {
+    // ...
+  };
+
+  let square = new Polygon(4, 4);
+  console.log('Polygon:', Polygon);
+  console.log('Polygon square:', square);
+  console.log('Polygon square:', square.height);
+  console.log('Polygon square:', square.width);
+  
+  
+  
+  
+  
+
+  // ===============  check below===============
+  class Rectangle {
+    constructor(a, b) {
+      this.length = a;
+      this.width = b;
+      this.area = a * b;
+      this.perimeter = 2 * (a + b);
+    }
+  }
+
+  class Polygon {
+    constructor(arrLens1) {
+        this.lengthsArray = arrLens1;
+    }
+    perimeter() {
+        let sum = 0;
+        for (let l of this.lengthsArray) {
+           sum += l;
+        }
+        return sum;
+    }
+  }
+  
+  function Rectangle(a, b) {
+      return {
+          get length() { return a; },
+          get width() { return b; },
+          get perimeter() { return 2 * (a + b); },
+          get area() { return a * b; }
+      }
+  }
+
+  function Rectangle(a, b) {
+      Object.defineProperty(this, 'length',
+        {
+          get: () => {              return a;          }
+        }
+      );
+      
+      Object.defineProperty(this, 'width',
+        {
+          get: () => {              return b;          }
+        }
+      );
+      
+      Object.defineProperty(this, 'perimeter',
+        {
+          get: () => {              return 2 * (a + b);          }
+        }
+      );
+      
+      Object.defineProperty(this, 'area',
+        {
+          get: () => {              return a * b;          }
+        }
+      );
+  }
+  
+  // const rec = new Rectangle(a, b);
+
+
+}
+
+
+function getCount(objects) {
+    return objects.filter( function(o) { return o.x === o.y; } ).length;
+        
+    return objects.reduce( (count, o) => count + (o.x === o.y), 0);
+
+  {
+    let count = 0;
+    objects.forEach(o => { o.x == o.y ? count++:null; });
+    return count;
+  }
+    
+  {
+      var count = 0;
+      for (let key of objects) key.x == key.y ? count++ : null;
+      return count;
+  }
+  
+  {
+      let count = 0;
+      objects.map(obj => obj.x === obj.y ? count++ : null);
+      return count;
+  }
+  
+  {
+    let count = 0;
+    for (let item of objects) {
+        if (item.x == item.y)
+            count++;
+    }
+    return count;  
+  }
+  
+  {
+    let count = 0;
+    for (let o1 of arrObjs) {
+      if (o1.key === o1.key) {
+        count++;
+      }
+    }
+    return count;
+  }
+  
+  {
+    let count = 0;
+    for (let i in objects) {
+      if (objects[i].x == objects[i].y) {
+        count += 1;
+      }
+    }
+    return count;
+  }
+
 }
 
 
@@ -1791,45 +2220,3 @@ function Rectangle(a, b) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ------------------------------------------
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-function readLine() {
-  return inputString[currentLine++];
-}
-
-function main() {
-  const parameterVariable = readLine();
-  greeting(parameterVariable);
-}
-
-process.stdin.on('data', inputStdin => {
-  inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-  inputString = inputString.trim().split('\n').map(string => {
-    return string.trim();
-  });
-
-  main();
-});
