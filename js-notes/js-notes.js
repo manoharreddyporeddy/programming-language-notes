@@ -2082,6 +2082,8 @@ function reduce_aaaaaaaaaa() {
 }
 
 function filter_aaaaaaaaa() {
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
   // [ 3, 4 ]
   // [ 2, 4 ]
   // [ 'abc', 'efg', 'hijk' ]
