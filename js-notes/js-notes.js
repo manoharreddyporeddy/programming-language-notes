@@ -3039,25 +3039,73 @@ function regex() {
        a pattern used to
         match character combinations
         in a string
-        
+
+    /pattern/flags
+    new RegExp(pattern[, flags])
+    
     A regular expression consists of a 
       pattern string (Regular Expression Patterns)
           constructed using the 
             basic characters we wish to match (e.g., abc), or a 
             combination of basic and special characters (e.g., ab\*c or (\d+)\.\d\*).
-                  We construct regular expressions by using 
-                    regular expression literals or 
-                          A regular expression literal is a RegEx pattern encosed within forward slashes:
-                            const re = /ab+c/;          // matche a, followed by 1+ b, followed by c
-                    RegExp class objects.
-                        RegExp Objects
-                          We can write a regular expression string and pass it as an argument to the RegExp constructor:
-                          const re = new RegExp('ab+c');
+        We construct regular expressions by using 2 ways:
+          REGULAR EXPRESSION LITERAL
+            //         /pattern/flags
+            const re = /ab+c/;          // matche a, followed by 1+ b, followed by c
+                is a RegEx pattern encosed within forward slashes:
+          or
+          REGEXP CLASS OBJECTS/ REGEXP OBJECTS
+            //         new RegExp(pattern[, flags])
+            const re = new RegExp('ab+c');
+                      We can write a regular expression string and pass it as an argument to the RegExp constructor:
       and, potentially
       a flag
+            //         /pattern/flags
+            //         new RegExp(pattern[, flags])
           specifying further detail on
             how the pattern should be matched.
-      
+
+          If specified, flags can have any combination of the following values:
+            g: global match.
+            i: ignore case.
+            m: multiline. Treats beginning (^) and end ($) characters as working over multiple lines.
+            u: unicode. Treat pattern as a sequence of unicode code points.
+            y: sticky. Matches only from the index indicated by the lastIndex property of this regular expression in the target string.
+
+      Special Characters in Regular Expressions
+        Character Sets
+            Enclosed within square brackets
+              [a-f] will match any lowercase a through f character.
+              [abcd] or [a-d]     match any one character from the set {a, b, c, d}
+              [^abcd] or [^a-d]   match anything other than the enclosed characters
+              a|b matches either a or b
+              Boundaries
+                  Character	  Matches
+                  ^	          Matches beginning of input. If the multiline flag is set to true, also matches immediately after a line break character.
+                  $	          Matches end of input. If the multiline flag is set to true, also matches immediately before a line break character.
+                  \b	        A zero-width word boundary, such as between a letter and a space.
+                  \B	        Matches a zero-width non-word boundary, such as between two letters or between two spaces.
+
+        Character Classes
+            Character Sets
+            Predefined
+              Character	Matches
+              .	The period matches any single character, except line terminators (e.g., a newline).
+              \d	A single digit character (i.e., [0-9]).
+              \D	A single non-digit character (i.e., [^0-9]).
+              \w	A single alphanumeric word character, including the underscore (i.e., [A-Za-z0-9_]).
+              \W	A single non-word character (i.e., [^A-Za-z0-9_]).
+              \s	A single whitespace character. This includes space (), tab (\t), form feed, line feed, and other Unicode spaces.
+              \S	A single non-whitespace character (i.e., [^\w]).
+        Alteration
+        Boundaries
+        Grouping and back references
+        Quantifiers
+        Assertions
+
+
+  TODO:
+  from here:  https://www.hackerrank.com/challenges/js10-regexp-1/topics
 
 
 
