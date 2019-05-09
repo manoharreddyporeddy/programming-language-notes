@@ -1,4 +1,7 @@
 
+# https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-18-04-quickstart
+
+
 # Installing Apache
 
 sudo apt update
@@ -89,7 +92,8 @@ cd /etc/apache2/sites-available/ && pwd && ll ; cd /etc/apache2/sites-enabled &&
 # sudo a2disconf example2.com.conf
 
 sudo vi /etc/hosts
-  127.0.1.1       myhhieillw
+  127.0.0.1       myhhieillw.com  orange-computer  localhost
+
 
 
 # sudo vi /etc/apache2/apache2.conf
