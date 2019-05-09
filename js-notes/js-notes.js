@@ -127,11 +127,17 @@ function greeting(parameterVariable) {
   // We use the console.log method to write data to standard output in JavaScript.
 
 
-
-
-
-
-
+    /*
+    // console.table
+    values = [];
+    for (var x = 0; x < 10; x++){
+     values.push([
+      2 ** x,
+      2 * x ** 2
+     ])
+    };
+    console.table(values)
+    */
 
 
 
@@ -252,7 +258,7 @@ for (var {name: n, family: {father: f}} of people) {
 // "Name: Tom Jones, Father: Richard Jones"
 
 
-Unpacking fields from objects passed as function parameterSection
+Unpacking fields from objects passed as function parameter
 function userId({id}) {
   return id;
 }
@@ -1652,6 +1658,17 @@ function getSecondLargest(a) {
 
 function arrayaaaaaaaaaaaa() {
 // arrays
+
+
+
+
+
+  Array.isArray([1, 2, 3]);  // true
+  Array.isArray({foo: 123}); // false
+  Array.isArray('foobar');   // false
+  Array.isArray(undefined);  // false
+
+
   var a = ['first', 'second'];
 
   console.log('a\'s contents:', a);
@@ -2048,6 +2065,8 @@ function map_aaaaaaaa() {
 
 function reduce_aaaaaaaaaa() {
   // reduce
+  // arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
+
 
   // 6
   // 6
@@ -2079,6 +2098,48 @@ function reduce_aaaaaaaaaa() {
   pp(acc6UniqArr1); pp("\n");
   pp(acc6UniqArr1); pp("\n");
   pp(acc7Max1); pp("\n");
+  
+  
+  
+  // reduceRight
+  // arr.reduceRight(callback(accumulator, currentValue[, index[, array]])[, initialValue])
+  // arr.reduceRight(callback                                             [, initialValue])
+
+
+  console.log( ['1', '2', '3', '4', '5'].reduce(function(prev, cur)      { return prev + cur; })   );  // "12345"
+  console.log( ['1', '2', '3', '4', '5'].reduceRight(function(prev, cur) { return prev + cur; })   );  // "54321"
+
+  // right to left, but  same as left-to-right  as reduce    - for this scenario
+  console.log([1, 2, 3, 4].reduceRight(function(accumulator, currentValue, index, array) {  return accumulator + currentValue; })  );
+  console.log([1, 2, 3, 4].reduceRight(function(accumulator, currentValue, index, array) {  return accumulator + currentValue; }, 10)  );
+
+  // Flatten an array of arrays - not same as reduce
+  const array1 = [[0, 1], [2, 3], [4, 5]].reduceRight( (accumulator, currentValue) => accumulator.concat (currentValue), [] ); // expected output: Array [4, 5, 2, 3, 0, 1]
+  console.log(array1);
+  /*
+    Function Composition is way in which result of one function can be passed to another and so on.
+      h(x) = f(g(x))    // Function execution happens right to left
+  */
+  
+  const compose = (...args) => (value) => args.reduceRight((accumulator, currentValue) => currentValue(accumulator), value)
+  const inc  = (n) => n + 1; // increment n by 1
+  const dbl  = (n) => n * 2; // double n
+  console.log( compose(dbl, inc)(2)) // 6
+  console.log( compose(inc, dbl)(2)) // 5
+  // https://developer.mozilla.org/en-US/profiles/pgmreddy
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }
 
 function filter_aaaaaaaaa() {
@@ -2181,8 +2242,73 @@ function array____more() {
   //  Array.of(element0[, element1[, ...[, elementN]]])
   //          [element0, element1, ..., elementN]
   Array(1, 2, 3);    //  [1, 2, 3]
-  Array.of(1, 2, 3); //  [1, 2, 3]
+  Array.of(1, 2, 3); //  [1, 2, 3]      // The Array.of() method creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments.
   [1,2,3]
+
+
+  // Array.from(arrayLike[, mapFn[, thisArg]])
+  //    creates a new, shallow-copied Array instance from an array-like or iterable object.
+  console.log(Array.from('foo'));	// expected output: Array ["f", "o", "o"]
+  console.log(Array.from([1, 2, 3], x => x + x));	// expected output: Array [2, 4, 6]
+
+  //  Array from an Array-like object (arguments)
+  function f() {  return Array.from(arguments); }
+  f(1, 2, 3); // [ 1, 2, 3 ]
+
+  Array.from([1, 2, 3], x => x + x);        // [2, 4, 6]
+
+
+
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin
+  [1, 2, 3, 4, 5].copyWithin(-2);   // [1, 2, 3, 1, 2]
+  [1, 2, 3, 4, 5].copyWithin(0, 3);  // [4, 5, 3, 4, 5]
+  [1, 2, 3, 4, 5].copyWithin(0, 3, 4);  // [4, 2, 3, 4, 5]
+  [1, 2, 3, 4, 5].copyWithin(-2, -3, -1);  // [1, 2, 3, 3, 4]
+  [].copyWithin.call({length: 5, 3: 1}, 0, 3);  // {0: 1, 3: 1, length: 5}
+  // ES2015 Typed Arrays are subclasses of Array
+  var i32a = new Int32Array([1, 2, 3, 4, 5]);
+  i32a.copyWithin(0, 2);  // Int32Array [3, 4, 5, 4, 5]
+  // On platforms that are not yet ES2015 compliant: 
+  [].copyWithin.call(new Int32Array([1, 2, 3, 4, 5]), 0, 3, 4);  // Int32Array [4, 2, 3, 4, 5]
+
+
+
+
+
+    // Array from a String
+    Array.from('foo');  // [ "f", "o", "o" ]
+
+    // Array from a Set
+    const set = new Set(['foo', 'bar', 'baz', 'foo']);
+    Array.from(set);  // [ "foo", "bar", "baz" ]
+
+
+    // Array from a Map
+    const map = new Map([[1, 2], [2, 4], [4, 8]]);
+    Array.from(map);      // [[1, 2], [2, 4], [4, 8]]
+
+    const mapper = new Map([['1', 'a'], ['2', 'b']]);
+    Array.from(mapper.values());      // ['a', 'b'];
+    Array.from(mapper.keys());      // ['1', '2'];
+
+
+
+
+
+
+
+
+
+
+
+  // Array.isArray(value)
+  Array.isArray([1, 2, 3]);  // true
+  Array.isArray({foo: 123}); // false
+  Array.isArray('foobar');   // false
+  Array.isArray(undefined);  // false
+
+  // better than
+  //  arr1 instanceof Array;      // because doesn't work through iframes
 
 
   var fruits = ['Apple', 'Banana'];
@@ -2211,8 +2337,11 @@ function array____more() {
   
   
   
-  ???????????????????
-  // join
+
+
+
+
+
   
   // ["Apple", "Banana"]
   fruits[5] = 'Mango';
@@ -2239,6 +2368,44 @@ function array____more() {
   // Objects by reference.
   var arr = Array(3).fill({}) // [{}, {}, {}];
   arr[0].hi = "hi"; // [{ hi: "hi" }, { hi: "hi" }, { hi: "hi" }]
+
+
+  // sort
+  // arr.sort([compareFunction])
+
+  console.log(['March', 'Jan', 'Feb', 'Dec'].sort()); // expected output: Array ["Dec", "Feb", "Jan", "March"]
+  console.log([1, 30, 4, 21, 100000].sort()); // expected output: Array [1, 100000, 21, 30, 4]
+  console.log([1, 30, 4, 21, 100000].sort((a, b) => a - b)); // expected output: [1, 4, 21, 30, 100000 ]
+  var items = [
+    { name: 'Edward', value: 21 },
+    { name: 'The', value: -12 },
+    { name: 'Magnetic', value: 13 }
+  ];
+  /*
+  [ { name: 'The', value: -12 },
+    { name: 'Magnetic', value: 13 },
+    { name: 'Edward', value: 21 }
+  ]
+  */
+  // sort by value
+  console.log (items.sort(function (a, b) {  return a.value - b.value; }));
+  /*
+  [ { name: 'Edward', value: 21 },
+    { name: 'Magnetic', value: 13 },
+    { name: 'The', value: -12 }
+  ]
+  */
+  // sort by name
+  items.sort(function(a, b) {
+    var nameA = a.name.toLowerCase();
+    var nameB = b.name.toLowerCase();
+    if (nameA < nameB) {    return -1;  }
+    if (nameA > nameB) {    return 1;  }
+    return 0;  // names must be equal
+  });
+
+  var items2 = ['réservé', 'premier', 'cliché', 'communiqué', 'café', 'adieu'];
+  items2.sort(function (a, b) {  return a.localeCompare(b); }); // items2 is ['adieu', 'café', 'cliché', 'communiqué', 'premier', 'réservé']
 
 
   // reverse
@@ -2292,6 +2459,7 @@ function array____more() {
   console.log(['Fire', 'Air', 'Water'].join(''));	// expected output: "FireAirWater"
   console.log(['Fire', 'Air', 'Water'].join(', '));	// expected output: "Fire, Air, Water"
   console.log(['Fire', 'Air', 'Water'].join('-'));	// expected output: "Fire-Air-Water"
+  console.log([ ['Fire1', 'Air1', 'Water1'], ['Fire2', 'Air2', 'Water2'] ].join('\n') + '\n\n');
 
   // indexOf
   // arr.indexOf(searchElement[, fromIndex])
@@ -2307,7 +2475,7 @@ function array____more() {
   array.indexOf(2, -1); // -1
   array.indexOf(2, -3); // 0
   
-  // Finding all the occurrences of an elementSection
+  // Finding all the occurrences of an element
   var indices = [];
   var array = ['a', 'b', 'a', 'c', 'a', 'd'];
   var element = 'a';
@@ -2350,8 +2518,102 @@ function array____more() {
   console.log([1, 2, 'a', '1a'].toString());	// expected output: "1,2,a,1a"
 
 
+  // toSource()
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSource
+
+  // toLocaleString
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString
 
 
+
+  // findIndex
+  // arr.findIndex(callback(element[, index[, array]])[, thisArg])
+  let isGreaterThan10 = element => (element > 10);
+  console.log([5, 12, 8, 130, 44].findIndex(isGreaterThan10));	// expected output: 1
+
+  let is12 = element => (element === 12);
+  console.log([5, 12, 8, 130, 44].findIndex(is12));	// expected output: 1
+
+  let isEven = (element, index, array)  => (element%2 == 0)
+  console.log([3, 5, 7, 1].findIndex(isEven)); // -1, not found
+  console.log([1, 4, 6, 8].findIndex(isEven)); // 1       (since array[1] is 4)
+
+
+
+  // Iterator object = array.entries()
+  var iterator1 = ['a', 'b', 'c'].entries();
+  console.log(iterator1.next().value);  // expected output: Array [0, "a"]
+  console.log(iterator1.next().value);  // expected output: Array [1, "b"]
+
+  for (const [index, element] of ['a', 'b', 'c'].entries()) {
+    console.log(index, element);
+  }
+  // [0, 'a']
+  // [1, 'b']
+  // [2, 'c']
+  
+  var iterator = ['a', 'b', 'c'].entries();
+  for (let e of iterator) {
+    console.log(e);
+  }
+  // [0, 'a']
+  // [1, 'b']
+  // [2, 'c']
+
+
+  // keys
+  // arr.keys()
+  //    Key iterator doesn't ignore holesSection
+  var array1 = ['a', 'b', 'c'];
+  var iterator = array1.keys();   
+  for (let key of iterator) {
+    console.log(key); // expected output: 0 1 2
+  }
+
+  var arr = ['a', , 'c'];
+  var sparseKeys = Object.keys(arr);
+  console.log(sparseKeys); // ['0', '2']
+  var denseKeys = [...arr.keys()];
+  console.log(denseKeys);  // [0, 1, 2]
+
+
+  // values
+  // arr.values()
+  const array1 = ['a', 'b', 'c'];
+
+  {
+    const iterator = array1.values();
+    for (const value of iterator) {
+      console.log(value); // expected output: "a" "b" "c"
+    }
+  }
+  {
+    var iterator = array1.values();
+    console.log(iterator.next().value); // a
+    console.log(iterator.next().value); // b
+    console.log(iterator.next().value); // c
+  }
+
+  // Array.prototype[@@iterator]()
+  {
+    var arr = ['a', 'b', 'c', 'd', 'e'];
+    var eArr = arr[Symbol.iterator]();
+    // your browser must support for..of loop
+    // and let-scoped variables in for loops
+    // const and var could also be used
+    for (let letter of eArr) {
+      console.log(letter);
+    }
+  }
+  {
+    var arr = ['a', 'b', 'c', 'd', 'e'];
+    var eArr = arr[Symbol.iterator]();
+    console.log(eArr.next().value); // a
+    console.log(eArr.next().value); // b
+    console.log(eArr.next().value); // c
+    console.log(eArr.next().value); // d
+    console.log(eArr.next().value); // e
+  }
 
 }
 
@@ -2767,6 +3029,59 @@ function getCount(objects) {
     }
     return count;
   }
+
+}
+
+function regex() {
+  // English vowels are a, e, i, o, and u.
+  /*
+    A Regular Expression, or RegEx, is 
+       a pattern used to
+        match character combinations
+        in a string
+        
+    A regular expression consists of a 
+      pattern string (Regular Expression Patterns)
+          constructed using the 
+            basic characters we wish to match (e.g., abc), or a 
+            combination of basic and special characters (e.g., ab\*c or (\d+)\.\d\*).
+                  We construct regular expressions by using 
+                    regular expression literals or 
+                          A regular expression literal is a RegEx pattern encosed within forward slashes:
+                            const re = /ab+c/;          // matche a, followed by 1+ b, followed by c
+                    RegExp class objects.
+                        RegExp Objects
+                          We can write a regular expression string and pass it as an argument to the RegExp constructor:
+                          const re = new RegExp('ab+c');
+      and, potentially
+      a flag
+          specifying further detail on
+            how the pattern should be matched.
+      
+
+
+
+
+  */
+  
+  // RegExp object that matches any string s that begins and ends with the same vowel
+  
+  let re = /^([aeiou]).*\1$/;
+
+}
+
+function others1() {
+  
+  // Bitwise Operators
+  let and_value = 2 & 3;
+  
+  
+  /*
+  // TODO
+  
+  https://www.hackerrank.com/challenges/js10-date/problem
+  https://www.hackerrank.com/challenges/js10-bitwise/topics
+  */
 
 }
 
