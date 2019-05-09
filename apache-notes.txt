@@ -1,0 +1,115 @@
+
+# Installing Apache
+
+sudo apt update
+sudo apt-get update && sudo apt-get upgrade && sudo apt autoremove
+
+sudo apt install apache2
+
+
+# UFW - Uncomplicated Firewall
+# Gufw is a GUI that is available as a frontend.
+
+sudo apt install gufw
+
+# sudo ufw allow 'Apache'      # -------------------------- check - is this required to access from another computer on network/internet?
+
+# sudo ufw status
+#   Output
+#   Status: active
+#   
+#   To                         Action      From
+#   --                         ------      ----
+#   OpenSSH                    ALLOW       Anywhere                  
+#   Apache                     ALLOW       Anywhere                  
+#   OpenSSH (v6)               ALLOW       Anywhere (v6)             
+#   Apache (v6)                ALLOW       Anywhere (v6)
+
+sudo systemctl status apache2
+
+ip address show
+  # something like 192.168.1.2/24
+
+
+# browse to
+  http://192.168.1.2/
+  http://localhost/
+
+
+====================================================================
+
+sudo mkdir -p /var/www/myhhieillw.com/html
+
+sudo chown -R $USER:$USER /var/www/myhhieillw.com/html
+sudo chmod -R 755 /var/www/myhhieillw.com
+nano /var/www/myhhieillw.com/html/index.html
+<html>
+    <head>
+        <title>Welcome to myhhieillw.com!</title>
+    </head>
+    <body>
+        <h1>Success!  The myhhieillw.com server block is working!</h1>
+    </body>
+</html>
+
+
+
+cd /etc/apache2/sites-available/ && pwd && ll ; cd /etc/apache2/sites-enabled && pwd && ll 
+
+
+sudo nano /etc/apache2/sites-available/myhhieillw.com.conf
+<VirtualHost *:80>
+    ServerAdmin admin@myhhieillw.com
+    ServerName myhhieillw.com
+    ServerAlias www.myhhieillw.com
+    DocumentRoot /var/www/myhhieillw.com/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+cd /etc/apache2/sites-available/ && pwd && ll ; cd /etc/apache2/sites-enabled && pwd && ll 
+
+
+cd /etc/apache2/sites-enabled
+sudo a2dissite 000-default.conf
+# sudo a2dissite example.com.conf
+# sudo a2dissite myhhieillw.com.conf
+sudo a2ensite myhhieillw.com.conf
+
+
+cd /etc/apache2/sites-available/ && pwd && ll ; cd /etc/apache2/sites-enabled && pwd && ll 
+
+
+
+
+
+
+# sudo a2enconf example2.com.conf
+# sudo a2disconf example2.com.conf
+
+sudo vi /etc/hosts
+  127.0.1.1       myhhieillw
+
+
+# sudo vi /etc/apache2/apache2.conf
+#     ServerName myhhieillw
+########### sudo echo "ServerName myhhieillw.com" | sudo tee /etc/apache2/conf-available/myhhieillw.com.conf
+
+
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+
+http://myhhieillw.com
+
+
+====================================================================
+
+
+
+
+
+
+
+
+
