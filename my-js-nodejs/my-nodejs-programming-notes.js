@@ -248,7 +248,7 @@ Verify nodejs installation
 ---------------
 
 To read this page better
-click this: https://raw.githubusercontent.com/manoharreddyporeddy/my-nodejs-notes/master/README.md
+click this: https://raw.githubusercontent.com/manoharreddyporeddy/programming-language-notes/master/my-js-nodejs/my-nodejs-programming-notes.js
 
 <pre>
 ............
