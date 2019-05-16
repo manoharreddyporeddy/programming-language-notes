@@ -1,0 +1,6 @@
+[
+    { "APP":"GOLF", "SERVER": "AdminServer","STATE": "RUNNING","HEALTH": "HEALTH_OK" },
+    { "APP":"GOLF", "SERVER": "track61800-01","STATE": "RUNNING","HEALTH": "HEALTH_OK" },
+    { "APP":"GOLF", "SERVER": "track61800-02","STATE": "RUNNING","HEALTH": "HEALTH_OK" },
+    { "APP":"GOLF", "SERVER": "track61800-03","STATE": "RUNNING","HEALTH": "HEALTH_OK" }
+]
