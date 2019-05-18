@@ -3,7 +3,7 @@
   background-color: khaki;
 }
 
-  /* AppComponent's private CSS styles */
+/* AppComponent's private CSS styles */
 h1 {
   font-size: 1.2em;
   color: #999;
@@ -22,7 +22,8 @@ nav a {
   background-color: #eee;
   border-radius: 4px;
 }
-nav a:visited, a:link {
+nav a:visited,
+a:link {
   color: #607d8b;
 }
 nav a:hover {
