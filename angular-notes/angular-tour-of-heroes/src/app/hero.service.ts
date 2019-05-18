@@ -54,7 +54,7 @@ export class HeroService {
 
   // GET heroes from the server
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
+    return this.http.get<Hero[] >(this.heroesUrl)
   }*/
 
   /**
@@ -79,7 +79,7 @@ export class HeroService {
 
   /*
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
+    return this.http.get<Hero[] >(this.heroesUrl)
       .pipe(
         catchError(this.handleError<Hero[]>('getHeroes', []))
       );
@@ -137,6 +137,19 @@ export class HeroService {
       .pipe(
         tap(_ => this.log(`deleted hero id=${id}`)),
         catchError(this.handleError<Hero>('deleteHero'))
+      );
+  }
+
+  /* GET heroes whose name contains search term */
+  searchHeroes(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`)
+      .pipe(
+        tap(_ => this.log(`found heroes matching "${term}"`)),
+        catchError(this.handleError<Hero[]>('searchHeroes', []))
       );
   }
 
