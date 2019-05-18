@@ -1,10 +1,5 @@
 /* MessagesComponent's private CSS styles */
 
-:host {
-  display: block;
-  background-color: salmon;
-}
-
 h2 {
   color: red;
   font-family: Arial, Helvetica, sans-serif;

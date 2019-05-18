@@ -1,8 +1,3 @@
-:host {
-  display: block;
-  background-color: magenta;
-}
-
 /* DashboardComponent's private CSS styles */
 [class*="col-"] {
   float: left;
