@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-tour-of-heroes": {
+    "angular.io-example": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-tour-of-heroes",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,8 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -58,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-tour-of-heroes:build"
+            "browserTarget": "angular.io-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-tour-of-heroes:build:production"
+              "browserTarget": "angular.io-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-tour-of-heroes:build"
+            "browserTarget": "angular.io-example:build"
           }
         },
         "test": {
@@ -103,7 +102,7 @@
         }
       }
     },
-    "angular-tour-of-heroes-e2e": {
+    "angular.io-example-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-tour-of-heroes:serve"
+            "devServerTarget": "angular.io-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-tour-of-heroes:serve:production"
+              "devServerTarget": "angular.io-example:serve:production"
             }
           }
         },
@@ -132,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "angular-tour-of-heroes"
+  "defaultProject": "angular.io-example"
 }
