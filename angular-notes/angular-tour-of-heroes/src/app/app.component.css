@@ -1,4 +1,8 @@
   /* Application-wide Styles */
+  :host {
+    display: block;
+    background-color: khaki;
+  }
   h1 {
     color: #369;
     font-family: Arial, Helvetica, sans-serif;
