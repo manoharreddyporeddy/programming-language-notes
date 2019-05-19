@@ -1,6 +1,6 @@
 #ifndef BUILDER_H_INCLUDED
 #define BUILDER_H_INCLUDED
-#include "common.h"
+#include "../common.h"
 
 // Builder pattern builds
 //       a complex object

@@ -1,7 +1,7 @@
 #ifndef FACTORY_METHOD_H
 #define FACTORY_METHOD_H
 
-#include "common.h"
+#include "../common.h"
 
 namespace FacMethod1 {
 

@@ -1,7 +1,7 @@
 #ifndef COMMAND_H_INCLUDED
 #define COMMAND_H_INCLUDED
 
-#include "common.h"
+#include "../common.h"
 
 namespace COMMAND {   // provides truly decoupled architecture
 

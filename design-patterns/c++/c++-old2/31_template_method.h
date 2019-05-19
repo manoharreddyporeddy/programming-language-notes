@@ -1,7 +1,7 @@
 #ifndef TEMPLATE_METHOD_H_INCLUDED
 #define TEMPLATE_METHOD_H_INCLUDED
 
-#include "common.h"
+#include "../common.h"
 
 namespace TEMPLATE_METHOD {
 

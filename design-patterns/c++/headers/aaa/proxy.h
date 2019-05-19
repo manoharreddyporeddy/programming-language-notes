@@ -1,6 +1,6 @@
 #ifndef PROXY_H_INCLUDED
 #define PROXY_H_INCLUDED
-#include "common.h"
+#include "../common.h"
 
 // distribution and location transparency
 namespace PROXY {

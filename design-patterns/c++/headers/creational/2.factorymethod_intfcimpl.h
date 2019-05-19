@@ -1,6 +1,6 @@
 #ifndef FACTORY_METHOD_H_INCLUDED
 #define FACTORY_METHOD_H_INCLUDED
-#include "common.h"
+#include "../common.h"
 
 // In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
 

@@ -1,6 +1,6 @@
 #ifndef STRATEGY_H_INCLUDED
 #define STRATEGY_H_INCLUDED
-#include "common.h"
+#include "../common.h"
 
 // Enables an algorithm's behavior to be selected at runtime
 namespace STRATEGY {

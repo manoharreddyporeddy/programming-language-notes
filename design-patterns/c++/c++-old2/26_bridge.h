@@ -1,7 +1,7 @@
 #ifndef BRIDGE_H_INCLUDED
 #define BRIDGE_H_INCLUDED
 
-#include "common.h"
+#include "../common.h"
 
 namespace BRIDGE { // Helps in providing truly decoupled architecture
 

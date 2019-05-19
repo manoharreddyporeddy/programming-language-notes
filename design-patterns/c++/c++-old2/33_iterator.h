@@ -1,7 +1,7 @@
 #ifndef ITERATOR_H_INCLUDED
 #define ITERATOR_H_INCLUDED
 
-#include "common.h"
+#include "../common.h"
 
 namespace ITERATOR { // an iterator is used to traverse a container & access the container's elements
 

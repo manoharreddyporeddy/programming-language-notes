@@ -1,6 +1,6 @@
 #ifndef DECORATOR_H_INCLUDED
 #define DECORATOR_H_INCLUDED
-#include "common.h"
+#include "../common.h"
 
 namespace DECORATOR {
 class IComponent // Coffee (in thought)

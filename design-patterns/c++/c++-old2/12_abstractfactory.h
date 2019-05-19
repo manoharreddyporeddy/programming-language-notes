@@ -1,7 +1,7 @@
 #ifndef ABSTRACT_FACTORY_H_INCLUDED
 #define ABSTRACT_FACTORY_H_INCLUDED
 
-#include "common.h"
+#include "../common.h"
 
 namespace ABSTRACT_FACTORY {
 

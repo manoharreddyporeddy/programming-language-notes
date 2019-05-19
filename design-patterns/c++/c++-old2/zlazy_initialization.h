@@ -1,7 +1,7 @@
 #ifndef LAZY_INITIALIZATION_H_INCLUDED
 #define LAZY_INITIALIZATION_H_INCLUDED
 
-#include "common.h"
+#include "../common.h"
 
 namespace LAZY_INITIALIZATION {
 

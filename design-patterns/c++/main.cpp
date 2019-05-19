@@ -1,12 +1,18 @@
 // designpatterns.cpp : Defines the entry point for the console application.
 
+// creational patterns
+// creational patterns
+// creational patterns
+// creational patterns
+// creational patterns
+
 /*
  *******************************************************************************************************************
  * SINGLETON
  *******************************************************************************************************************
  */
 
-#include "headers/1.singleton.h"
+#include "headers/creational/1.singleton.h"
 void test_Singleton() {
   using namespace SINGLETON;
 
@@ -38,7 +44,7 @@ void test_Singleton() {
  * FACTORY METHOD
  *******************************************************************************************************************
  */
-#include "headers/2.factorymethod_intfcimpl.h"
+#include "headers/creational/2.factorymethod_intfcimpl.h"
 void test_FactoryMethod_UsingInterfaceImpl() {
   cout << " -- test_FactoryMethod_UsingInterfaceImpl -- \n";
 
@@ -54,7 +60,7 @@ void test_FactoryMethod_UsingInterfaceImpl() {
   cout << "\n";
 }
 
-#include "headers/2.factorymethod_subclassing.h"
+#include "headers/creational/2.factorymethod_subclassing.h"
 void test_FactoryMethod_Subclassing() {
   cout << " -- test_FactoryMethod_Subclassing -- \n";
 
@@ -70,7 +76,7 @@ void test_FactoryMethod_Subclassing() {
  * ABSTRACT FACTORY
  *******************************************************************************************************************
  */
-#include "headers/3.abstractfactory.h"
+#include "headers/creational/3.abstractfactory.h"
 void test_AbstractFactory() {
   cout << " -- test_AbstractFactory -- \n";
 
@@ -85,7 +91,7 @@ void test_AbstractFactory() {
 * BUILDER
 *******************************************************************************************************************
 */
-#include "headers/4.builder.h"
+#include "headers/creational/4.builder.h"
 void test_Builder() {
   cout << " -- test_Builder -- \n";
 
@@ -107,7 +113,7 @@ void test_Builder() {
   cout << "\n";
 }
 
-#include "headers/5.prototype.h"
+#include "headers/creational/5.prototype.h"
 void test_Prototype() {
   cout << " -- test_Prototype -- \n";
 
@@ -127,13 +133,42 @@ void test_Prototype() {
   cout << "\n";
 }
 
+// structural patterns
+// structural patterns
+// structural patterns
+// structural patterns
+// structural patterns
+
+#include "headers/structural/1.composite.h"
+void test_Composite() {
+  cout << " -- test_Composite -- \n";
+
+  using namespace COMPOSITE;
+
+  Leaf *pleaf1 = new Leaf();
+  Leaf *pleaf2 = new Leaf();
+  Leaf *pleaf3 = new Leaf();
+
+  Composite *pcomposite1 = new Composite();
+  pcomposite1->addChild(pleaf1);
+  pcomposite1->addChild(pleaf2);
+
+  Composite *pRoot_composite1 = new Composite();
+  pRoot_composite1->addChild(pcomposite1);
+  pRoot_composite1->addChild(pleaf3);
+
+  pRoot_composite1->someOperation();
+
+  cout << "\n";
+}
+
 /*
 *******************************************************************************************************************
 * LAZY INITIALIZATION
 *******************************************************************************************************************
 */
 
-#include "headers/lazy_initialization.h"
+#include "headers/aaa/lazy_initialization.h"
 void test_LazyInitialization() {
   cout << " -- test_LazyInitialization -- \n";
   using namespace LAZY_INITIALIZATION;
@@ -156,7 +191,7 @@ void test_LazyInitialization() {
   cout << "\n";
 }
 
-#include "headers/proxy.h"
+#include "headers/aaa/proxy.h"
 void test_Proxy() {
   cout << " -- test_Proxy -- \n";
 
@@ -168,30 +203,7 @@ void test_Proxy() {
   cout << "\n";
 }
 
-#include "headers/composite.h"
-void test_Composite() {
-  cout << " -- test_Composite -- \n";
-  using namespace COMPOSITE;
-
-  Leaf *pleaf1 = new Leaf();
-  Leaf *pleaf2 = new Leaf();
-
-  Composite *pCompst = new Composite();
-  pCompst->addChild(pleaf1);
-  pCompst->addChild(pleaf2);
-
-  Leaf *pleaf3 = new Leaf();
-
-  Composite *pCompstRoot = new Composite();
-  pCompstRoot->addChild(pCompst);
-  pCompstRoot->addChild(pleaf3);
-
-  pCompstRoot->someOperation();
-
-  cout << "\n";
-}
-
-#include "headers/facade.h"
+#include "headers/aaa/facade.h"
 void test_Facade() {
   cout << " -- test_Facade -- \n";
 
@@ -203,7 +215,7 @@ void test_Facade() {
   cout << "\n";
 }
 
-#include "headers/template_method.h"
+#include "headers/aaa/template_method.h"
 void test_Template_Method() {
   cout << " -- test_Template_Method -- \n";
 
@@ -216,7 +228,7 @@ void test_Template_Method() {
   cout << "\n";
 }
 
-#include "headers/strategy.h"
+#include "headers/aaa/strategy.h"
 void test_Strategy() {
   cout << " -- test_Strategy -- \n";
 
@@ -228,7 +240,7 @@ void test_Strategy() {
   cout << "\n";
 }
 
-#include "headers/decorator.h"
+#include "headers/aaa/decorator.h"
 void test_Decorator() {
   cout << " -- test_Decorator -- \n";
 
@@ -250,19 +262,19 @@ void test_Decorator() {
 }
 
 int main(int argc, char *argv[]) {
-  // Creational patterns
-
+  // creational patterns
   // test_Singleton();
   // test_FactoryMethod_UsingInterfaceImpl();
   // test_FactoryMethod_Subclassing();
   // test_AbstractFactory();
   // test_Builder();
+  // test_Prototype();
 
-  test_Prototype();
+  // structural patterns
+  test_Composite();
+
   // test_LazyInitialization();
-
   // test_Proxy();
-  // test_Composite();
   // test_Facade();
   // test_Decorator();
   // test_Template_Method();

@@ -1,6 +1,6 @@
 #ifndef COMPOSITE_H_INCLUDED
 #define COMPOSITE_H_INCLUDEDx
-#include "common.h"
+#include "../common.h"
 
 namespace COMPOSITE {
 

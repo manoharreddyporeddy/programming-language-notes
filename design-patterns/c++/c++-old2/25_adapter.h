@@ -1,6 +1,6 @@
 #ifndef ADAPTER_H_INCLUDED
 #define ADAPTER_H_INCLUDED
-#include "common.h"
+#include "../common.h"
 
 /*
 VERIFY: https://en.wikipedia.org/wiki/Adapter_pattern

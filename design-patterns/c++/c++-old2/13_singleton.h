@@ -1,7 +1,7 @@
 #ifndef SINGLETON_H_INCLUDED
 #define SINGLETON_H_INCLUDED
 
-#include "common.h"
+#include "../common.h"
 
 namespace SINGLETON {
   class Singleton {
