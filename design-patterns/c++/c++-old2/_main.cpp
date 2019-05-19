@@ -7,7 +7,7 @@
 #include "11_factorymethod.h"
 
 void test_FactoryMethod() {
-  cout << " -- test_FactoryMethod -- " << endl;
+  cout << " -- test_FactoryMethod -- \n";
 
   { using namespace FacMethod1;
   Factory::FactoryMethod(1);
@@ -21,7 +21,7 @@ void test_FactoryMethod() {
 #include "12_abstractfactory.h"
 
 void test_AbstractFactory() {
-  cout << " -- test_AbstractFactory -- " << endl;
+  cout << " -- test_AbstractFactory -- \n";
 
   { using namespace ABSTRACT_FACTORY;
 
@@ -38,7 +38,7 @@ void test_AbstractFactory() {
 #include "13_singleton.h"
 
 void test_Singleton() {
-  cout << " -- test_Singleton -- " << endl;
+  cout << " -- test_Singleton -- \n";
 
   using namespace SINGLETON;
 
@@ -61,7 +61,7 @@ void test_Singleton() {
 #include "14_builder.h"
 
 void test_Builder() {
-  cout << " -- test_Builder -- " << endl;
+  cout << " -- test_Builder -- \n";
 
   using namespace BUILDER;
   (new Director())->getCar();
@@ -72,7 +72,7 @@ void test_Builder() {
 #include "15_prototype.h"
 
 void test_Prototype() {
-  cout << " -- test_Prototype -- " << endl;
+  cout << " -- test_Prototype -- \n";
 
   using namespace PROTOTYPE;
 
@@ -86,7 +86,7 @@ void test_Prototype() {
 #include "21_proxy.h"
 
 void test_Proxy() {
-  cout << " -- test_Proxy -- " << endl;
+  cout << " -- test_Proxy -- \n";
 
   using namespace PROXY;
 
@@ -100,7 +100,7 @@ void test_Proxy() {
 #include "22_facade.h"
 
 void test_Facade() {
-  cout << " -- test_Facade -- " << endl;
+  cout << " -- test_Facade -- \n";
 
   using namespace FACADE;
 
@@ -111,7 +111,7 @@ void test_Facade() {
 #include "23_composite.h"
 
 void test_Composite() {
-  cout << " -- test_Composite -- " << endl;
+  cout << " -- test_Composite -- \n";
 
   using namespace COMPOSITE;
 
@@ -130,7 +130,7 @@ void test_Composite() {
 
 #include "24_decorator.h"
 void test_Decorator() {
-  cout << " -- test_Decorator -- " << endl;
+  cout << " -- test_Decorator -- \n";
 
   using namespace DECORATOR;
 
@@ -142,7 +142,7 @@ void test_Decorator() {
 #include "25_adapter.h"
 
 void test_Adapter() {
-  cout << " -- test_Adapter -- " << endl;
+  cout << " -- test_Adapter -- \n";
 
   using namespace ADAPTER;
 
@@ -154,7 +154,7 @@ void test_Adapter() {
 #include "26_bridge.h"
 
 void test_Bride() {
-  cout << " -- test_Bride -- " << endl;
+  cout << " -- test_Bride -- \n";
 
   using namespace BRIDGE;
 
@@ -167,7 +167,7 @@ void test_Bride() {
 #include "31_template_method.h"
 
 void test_Template_Method() {
-  cout << " -- test_Template_Method -- " << endl;
+  cout << " -- test_Template_Method -- \n";
 
   using namespace TEMPLATE_METHOD;
 
@@ -180,7 +180,7 @@ void test_Template_Method() {
 #include "32_strategy.h"
 
 void test_Strategy() {
-  cout << " -- test_Strategy -- " << endl;
+  cout << " -- test_Strategy -- \n";
 
   using namespace STRATEGY;
 
@@ -229,7 +229,7 @@ void test_Command() {
 #include "zlazy_initialization.h"
 
 void test_LazyInitialization() {
-  cout << " -- test_LazyInitialization -- " << endl;
+  cout << " -- test_LazyInitialization -- \n";
 
   using namespace LAZY_INITIALIZATION;
 
@@ -240,7 +240,7 @@ void test_LazyInitialization() {
 #include "35_memento.h"
 
 void test_memento() {
-  cout << " -- test_memento -- " << endl;
+  cout << " -- test_memento -- \n";
 
   using namespace MEMEMTO;
 

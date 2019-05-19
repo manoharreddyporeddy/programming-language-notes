@@ -1,23 +1,18 @@
+/*
 #include "abstractfactory_example.h"
 
-/*****************************
- * Example
- *****************************/
-Button* WinFactory::createButton()
-{
-	return new WinButton();
+Button *WinFactory::createButton() {
+  return new WinButton();
 }
 
-Button* OSXFactory::createButton()
-{
-	return new OSXButton();
+Button *OSXFactory::createButton() {
+  return new OSXButton();
 }
 
-void WinButton::use()
-{
-	cout << "WinButton consumed" << endl;
+void WinButton::use() {
+  cout << "WinButton consumed\n";
 }
-void OSXButton::use()
-{
-	cout << "OSXButton consumed" << endl;
+void OSXButton::use() {
+  cout << "OSXButton consumed\n";
 }
+*/
