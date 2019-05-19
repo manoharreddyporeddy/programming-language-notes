@@ -133,6 +133,30 @@ void test_Prototype() {
   cout << "\n";
 }
 
+#include "headers/creational/6.lazy_initialization.h"
+void test_LazyInitialization() {
+  cout << " -- test_LazyInitialization -- \n\n";
+
+  using namespace LAZY_INITIALIZATION;
+
+  cout << "Number of objects: " << LazyInitialization::getCount() << endl;
+
+  Object *p1 = LazyInitialization::createObjectInstance();
+  cout << " address: " << p1 << endl;
+  cout << "Number of objects: " << LazyInitialization::getCount() << endl;
+
+  Object *p2 = LazyInitialization::createObjectInstance();
+  cout << " address: " << p2 << endl;
+  cout << "Number of objects: " << LazyInitialization::getCount() << endl;
+
+  LazyInitialization::disposeObjectInstance(&p1);
+  LazyInitialization::disposeObjectInstance(&p2);
+  LazyInitialization::disposeObjectInstance(&p1); // shud be safe
+  LazyInitialization::disposeObjectInstance(&p2); // shud be safe
+
+  cout << "\n";
+}
+
 // structural patterns
 // structural patterns
 // structural patterns
@@ -206,57 +230,37 @@ void test_Proxy() {
   cout << "\n";
 }
 
-/*
-*******************************************************************************************************************
-* LAZY INITIALIZATION
-*******************************************************************************************************************
-*/
+// behavior patterns
+// behavior patterns
+// behavior patterns
+// behavior patterns
+// behavior patterns
 
-#include "headers/aaa/lazy_initialization.h"
-void test_LazyInitialization() {
-  cout << " -- test_LazyInitialization -- \n\n";
+#include "headers/behavior/2.strategy.h"
+void test_Strategy() {
+  cout << " -- test_Strategy -- \n\n";
 
-  using namespace LAZY_INITIALIZATION;
+  using namespace STRATEGY;
 
-  cout << "Number of objects: " << LazyInitialization::getCount() << endl;
+  Context *pC = NULL;
 
-  Object *p1 = LazyInitialization::createObjectInstance();
-  cout << " address: " << p1 << endl;
-  cout << "Number of objects: " << LazyInitialization::getCount() << endl;
+  pC = new Context(new ConcreteStrategy1());
+  pC->executeAlgorithm();
 
-  Object *p2 = LazyInitialization::createObjectInstance();
-  cout << " address: " << p2 << endl;
-  cout << "Number of objects: " << LazyInitialization::getCount() << endl;
-
-  LazyInitialization::disposeObjectInstance(&p1);
-  LazyInitialization::disposeObjectInstance(&p2);
-  LazyInitialization::disposeObjectInstance(&p1); // shud be safe
-  LazyInitialization::disposeObjectInstance(&p2); // shud be safe
+  pC = new Context(new ConcreteStrategy2());
+  pC->executeAlgorithm();
 
   cout << "\n";
 }
 
-#include "headers/aaa/template_method.h"
+#include "headers/behavior/3.template_method.h"
 void test_Template_Method() {
   cout << " -- test_Template_Method -- \n\n";
 
   using namespace TEMPLATE_METHOD;
 
   ConcreteClass *pTM = new ConcreteClass();
-  // pTM->primitiveMethod();  // Ok, not so imporatant for now
   pTM->templateMethod();
-
-  cout << "\n";
-}
-
-#include "headers/aaa/strategy.h"
-void test_Strategy() {
-  cout << " -- test_Strategy -- \n\n";
-
-  using namespace STRATEGY;
-
-  Context *pC = new Context(new ConcreteStrategy1());
-  pC->executeAlgorithm();
 
   cout << "\n";
 }
@@ -269,16 +273,17 @@ int main(int argc, char *argv[]) {
   // test_AbstractFactory();
   // test_Builder();
   // test_Prototype();
+  test_LazyInitialization();
 
   // structural patterns
   // test_Composite();
   // test_Decorator();
   // test_Facade();
-  test_Proxy();
+  // test_Proxy();
 
-  // test_LazyInitialization();
-  // test_Template_Method();
+  // behavior patterns
   // test_Strategy();
+  // test_Template_Method();
 
   return 0;
 }

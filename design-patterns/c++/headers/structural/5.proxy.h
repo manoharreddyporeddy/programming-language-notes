@@ -28,7 +28,7 @@ class RealSubject : public Subject {
 };
 
 // proxy of Subject
-class Proxy : public Subject {
+class Proxy : public Subject { // ProxyImage is a a proxy class to reduce memory footprint of RealImage object file loading
   // Proxy Bank Account
   public:
   // calls actual Subject's someOperation
