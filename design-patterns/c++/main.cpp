@@ -85,7 +85,7 @@ void test_AbstractFactory() {
 * BUILDER
 *******************************************************************************************************************
 */
-#include "headers/builder.h"
+#include "headers/4.builder.h"
 void test_Builder() {
   cout << " -- test_Builder -- \n";
 
@@ -96,7 +96,6 @@ void test_Builder() {
   Builder concreteBuilder;
 
   Director director(concreteBuilder);
-
   director.Construct(Product::PART1, "Part 1");
   director.Construct(Product::PART2, "Part 2");
   // director.Construct(Product::PART3, "Part 3");
@@ -108,24 +107,22 @@ void test_Builder() {
   cout << "\n";
 }
 
-#include "headers/prototype.h"
+#include "headers/5.prototype.h"
 void test_Prototype() {
   cout << " -- test_Prototype -- \n";
+
   using namespace PROTOTYPE;
 
-  ConcretePrototype1 *p1 = new ConcretePrototype1();
-  cout << "p1 values after new object:  state1: " << p1->getState1() << ", state2: " << p1->getState2() << endl;
-
-  p1->calcAndStoreState1();
-  p1->setState2(10.0);
-  cout << "p1 values after cal & set:   state1: " << p1->getState1() << ", state2: " << p1->getState2() << endl;
+  ConcretePrototype *p1 = new ConcretePrototype();
+  cout << "p1 values after new object:  state1: " << p1->getCalculatedState() << endl;
+  p1->calculateState();
+  cout << "p1 values after cal & set:   state1: " << p1->getCalculatedState() << endl;
 
   cout << "creating clone of p1 as p2..\n";
-
   // Client creates a new object by asking a 'Prototype' to clone itself
-  ConcretePrototype1 *p2 = (ConcretePrototype1 *)p1->clone();
-  cout << "p2 values after new object:  state1: " << p2->getState1() << ", state2: " << p2->getState2() << endl;
-  // p2 doesnt require to do same calcAndStoreState(), since same operation state is received from original object p1
+  ConcretePrototype *p2 = (ConcretePrototype *)p1->clone();
+  cout << "p2 values after new object:  state1: " << p2->getCalculatedState() << endl;
+  // p2 doesnt require to do same calculateState(), since same operation state is received from original object p1
 
   cout << "\n";
 }
@@ -258,12 +255,11 @@ int main(int argc, char *argv[]) {
   // test_Singleton();
   // test_FactoryMethod_UsingInterfaceImpl();
   // test_FactoryMethod_Subclassing();
-  test_AbstractFactory();
-
-  // test_Prototype();
-  // test_LazyInitialization();
-
+  // test_AbstractFactory();
   // test_Builder();
+
+  test_Prototype();
+  // test_LazyInitialization();
 
   // test_Proxy();
   // test_Composite();
