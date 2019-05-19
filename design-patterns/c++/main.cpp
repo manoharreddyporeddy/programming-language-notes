@@ -46,7 +46,7 @@ void test_Singleton() {
  */
 #include "headers/creational/2.factorymethod_intfcimpl.h"
 void test_FactoryMethod_UsingInterfaceImpl() {
-  cout << " -- test_FactoryMethod_UsingInterfaceImpl -- \n";
+  cout << " -- test_FactoryMethod_UsingInterfaceImpl -- \n\n";
 
   using namespace FACTORY_METHOD__USING_INTERFACE_IMPL;
   // User knows abstract factory, concrete factory, & abstract product,  but not concrete product
@@ -62,7 +62,7 @@ void test_FactoryMethod_UsingInterfaceImpl() {
 
 #include "headers/creational/2.factorymethod_subclassing.h"
 void test_FactoryMethod_Subclassing() {
-  cout << " -- test_FactoryMethod_Subclassing -- \n";
+  cout << " -- test_FactoryMethod_Subclassing -- \n\n";
 
   using namespace FACTORY_METHOD__USING_SUBCLASSING;
   Container *p1 = new Container();
@@ -78,7 +78,7 @@ void test_FactoryMethod_Subclassing() {
  */
 #include "headers/creational/3.abstractfactory.h"
 void test_AbstractFactory() {
-  cout << " -- test_AbstractFactory -- \n";
+  cout << " -- test_AbstractFactory -- \n\n";
 
   using namespace ABSTRACT_FACTORY;
   (new Application())->createProduct()->use();
@@ -93,7 +93,7 @@ void test_AbstractFactory() {
 */
 #include "headers/creational/4.builder.h"
 void test_Builder() {
-  cout << " -- test_Builder -- \n";
+  cout << " -- test_Builder -- \n\n";
 
   using namespace BUILDER;
 
@@ -115,7 +115,7 @@ void test_Builder() {
 
 #include "headers/creational/5.prototype.h"
 void test_Prototype() {
-  cout << " -- test_Prototype -- \n";
+  cout << " -- test_Prototype -- \n\n";
 
   using namespace PROTOTYPE;
 
@@ -141,7 +141,7 @@ void test_Prototype() {
 
 #include "headers/structural/2.composite.h"
 void test_Composite() {
-  cout << " -- test_Composite -- \n";
+  cout << " -- test_Composite -- \n\n";
 
   using namespace COMPOSITE;
 
@@ -164,7 +164,7 @@ void test_Composite() {
 
 #include "headers/structural/3.decorator.h"
 void test_Decorator() {
-  cout << " -- test_Decorator -- \n";
+  cout << " -- test_Decorator -- \n\n";
 
   using namespace DECORATOR;
 
@@ -184,7 +184,7 @@ void test_Decorator() {
 
 #include "headers/structural/4.facade.h"
 void test_Facade() {
-  cout << " -- test_Facade -- \n";
+  cout << " -- test_Facade -- \n\n";
 
   using namespace FACADE;
 
@@ -196,7 +196,7 @@ void test_Facade() {
 
 #include "headers/structural/5.proxy.h"
 void test_Proxy() {
-  cout << " -- test_Proxy -- \n";
+  cout << " -- test_Proxy -- \n\n";
 
   using namespace PROXY;
 
@@ -214,7 +214,8 @@ void test_Proxy() {
 
 #include "headers/aaa/lazy_initialization.h"
 void test_LazyInitialization() {
-  cout << " -- test_LazyInitialization -- \n";
+  cout << " -- test_LazyInitialization -- \n\n";
+
   using namespace LAZY_INITIALIZATION;
 
   cout << "Number of objects: " << LazyInitialization::getCount() << endl;
@@ -237,7 +238,7 @@ void test_LazyInitialization() {
 
 #include "headers/aaa/template_method.h"
 void test_Template_Method() {
-  cout << " -- test_Template_Method -- \n";
+  cout << " -- test_Template_Method -- \n\n";
 
   using namespace TEMPLATE_METHOD;
 
@@ -250,7 +251,7 @@ void test_Template_Method() {
 
 #include "headers/aaa/strategy.h"
 void test_Strategy() {
-  cout << " -- test_Strategy -- \n";
+  cout << " -- test_Strategy -- \n\n";
 
   using namespace STRATEGY;
 
@@ -272,8 +273,8 @@ int main(int argc, char *argv[]) {
   // structural patterns
   // test_Composite();
   // test_Decorator();
-  test_Facade();
-  // test_Proxy();
+  // test_Facade();
+  test_Proxy();
 
   // test_LazyInitialization();
   // test_Template_Method();

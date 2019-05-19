@@ -2,36 +2,41 @@
 #define PROXY_H_INCLUDED
 #include "../common.h"
 
-// distribution and location transparency
+//      structural pattern.
+
+// In proxy pattern,
+//      a class represents functionality of another class.
+//
+//      we create object having original object to interface its functionality to outer world.
+
+// ?? distribution and location transparency ??
 namespace PROXY {
-class Subject // Bank Account
-{
-public:
-    virtual void someOperation() = 0; //      deposit()
+
+class Subject {
+  // Bank Account
+  public:
+  virtual void someOperation() = 0; //      deposit()
 };
 
-// the actual Subject
-class RealSubject : public Subject // Actual Bank Account
-{
-public:
-    // actual Subject's someOperation               //      actual deposit()
-    void someOperation() {
-        // actual some operation takes place here
-        cout << "in RealSubject::someOperation()\n";
-    }
+class RealSubject : public Subject {
+  // Actual Bank Account
+  public:
+  // actual Subject's someOperation               //      actual deposit()
+  void someOperation() { // actual some operation takes place here
+    cout << "in RealSubject::someOperation()\n";
+  }
 };
 
 // proxy of Subject
-class Proxy : public Subject // Proxy Bank Account
-{
-public:
-    // calls actual Subject's someOperation
-    void someOperation() //      proxy deposit()
-    {
-        cout << "in Proxy::someOperation()\n";
-        RealSubject *prs = new RealSubject();
-        prs->someOperation();
-    }
+class Proxy : public Subject {
+  // Proxy Bank Account
+  public:
+  // calls actual Subject's someOperation
+  void someOperation() { //      proxy deposit()
+    cout << "in Proxy::someOperation()\n";
+    RealSubject *prs = new RealSubject();
+    prs->someOperation();
+  }
 };
 
 };     // namespace PROXY
