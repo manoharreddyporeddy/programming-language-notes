@@ -2,30 +2,29 @@
 #define FACTORY_METHOD_H_INCLUDED
 #include "common.h"
 
+// In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
+
 namespace FACTORY_METHOD__USING_INTERFACE_IMPL {
 
 // Inheritance is involved
 // --------------------------------------------------
 
-class AbstractProduct // Example: Car,			IDocument
-{
+class AbstractProduct { // Example: Car,			IDocument
   public:
   virtual ~AbstractProduct() {}
   virtual void use() = 0; // Example: getCarType,		open, save, close
 };
 
-class Product : public AbstractProduct // Example: Sedan,			Document
-{
+class Product : public AbstractProduct { // Example: Sedan,			Document
   public:
-  virtual void use() // Example: getCarType,		open, save, close
-  {
+  virtual void use() {
+    // Example: getCarType,		open, save, close
     cout << "Product consumed\n";
   }
 };
 
 // Define an interface for creating an object
-class AbstractFactory // Example: CarFactory,		AppFramework
-{
+class AbstractFactory { // Example: CarFactory,		AppFramework
   public:
   virtual AbstractProduct *factoryMethod() = 0;
   /* Example:

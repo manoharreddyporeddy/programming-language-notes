@@ -40,7 +40,6 @@ void test_Builder() {
  *******************************************************************************************************************
  */
 #include "headers/factorymethod_intfcimpl.h"
-#include "headers/factorymethod_subclassing.h"
 void test_FactoryMethod_UsingInterfaceImpl() {
   cout << " -- test_FactoryMethod_UsingInterfaceImpl -- \n";
 
@@ -56,6 +55,7 @@ void test_FactoryMethod_UsingInterfaceImpl() {
   cout << endl;
 }
 
+#include "headers/factorymethod_subclassing.h"
 void test_FactoryMethod_Subclassing() {
   cout << " -- test_FactoryMethod_Subclassing -- \n";
 
@@ -310,14 +310,14 @@ void test_Decorator() {
 
 int main(int argc, char *argv[]) {
   // Creational patterns
-  test_Singleton();
+  // test_Singleton();
+  // test_FactoryMethod_UsingInterfaceImpl();
+  test_FactoryMethod_Subclassing();
   // test_Prototype();
   // test_LazyInitialization();
 
   // test_AbstractFactory();
   // test_AbstractFactoryEx();
-  // test_FactoryMethod_UsingInterfaceImpl();
-  // test_FactoryMethod_Subclassing();
   // test_Builder();
 
   // test_Proxy();
