@@ -1,4 +1,5 @@
 .vs
+design-patterns/.vscode/ipch
 node_modules/
 Debug/
 obj/
