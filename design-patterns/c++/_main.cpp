@@ -6,7 +6,6 @@
 *******************************************************************************************************************
 */
 
-
 /*
 *******************************************************************************************************************
 * BUILDER
@@ -36,7 +35,6 @@ void test_Builder()
     cout << endl;
 }
 
-
 /*
  *******************************************************************************************************************
  * FACTORY METHOD
@@ -51,9 +49,9 @@ void test_FactoryMethod_UsingInterfaceImpl()
     using namespace FACTORY_METHOD__USING_INTERFACE_IMPL;
     // User knows abstract factory, concrete factory, & abstract product,  but not concrete product
     //		gets abstract product from concrete factory
-    Factory *pF = new Factory();				// Example: SedanFactory
-    AbstractProduct *pAP = pF->factoryMethod();	// Example: Car
-    pAP->use(); // User uses  concrete product without knowning it		// Example: getCarType gives Sedan
+    Factory *pF = new Factory();                // Example: SedanFactory
+    AbstractProduct *pAP = pF->factoryMethod(); // Example: Car
+    pAP->use();                                 // User uses  concrete product without knowning it		// Example: getCarType gives Sedan
     delete pAP;
     delete pF;
 
@@ -148,19 +146,190 @@ void test_AbstractFactory()
  */
 
 #include "singleton.h"
-extern void test_Singleton();
+using namespace SINGLETON;
+
+void test_Singleton_createAndCheckSame()
+{
+    cout << "creating 1st instance of singleton class.. ";
+    Singleton *p1 = Singleton::getInstance();
+    cout << "instance address: " << p1 << endl;
+
+    cout << "creating 2nd instance of singleton class.. ";
+    Singleton *p2 = Singleton::getInstance();
+    cout << "instance address: " << p2 << endl;
+
+    cout << "creating 3rd instance of singleton class.. ";
+    Singleton *p3 = Singleton::getInstance();
+    cout << "instance address: " << p3 << endl;
+
+    assert(p1 == p2); // This assertion should pass
+    assert(p2 == p3); // This assertion should pass
+
+    cout << "all instances of singleton class are same!" << endl;
+}
+void test_Singleton()
+{
+    cout << " -- test_Singleton -- " << endl;
+
+    // cant create a direct object
+    // Singleton s1;
+
+    test_Singleton_createAndCheckSame();
+    Singleton::disposeInstance();
+    test_Singleton_createAndCheckSame();
+    Singleton::disposeInstance();
+    Singleton::disposeInstance(); // should not be a problem
+    cout << endl;
+}
 
 #include "prototype.h"
-extern void test_Prototype();
+void test_Prototype()
+{
+    cout << " -- test_Prototype -- " << endl;
+    using namespace PROTOTYPE;
+
+    ConcretePrototype1 *p1 = new ConcretePrototype1();
+    cout << "p1 values after new object:  state1: " << p1->getState1() << ", state2: " << p1->getState2() << endl;
+
+    p1->calcAndStoreState1();
+    p1->setState2(10.0);
+    cout << "p1 values after cal & set:   state1: " << p1->getState1() << ", state2: " << p1->getState2() << endl;
+
+    cout << "creating clone of p1 as p2.." << endl;
+
+    // Client creates a new object by asking a 'Prototype' to clone itself
+    ConcretePrototype1 *p2 = (ConcretePrototype1 *)p1->clone();
+    cout << "p2 values after new object:  state1: " << p2->getState1() << ", state2: " << p2->getState2() << endl;
+    // p2 doesnt require to do same calcAndStoreState(), since same operation state is received from original object p1
+
+    cout << endl;
+}
 
 #include "lazy_initialization.h"
-extern void test_LazyInitialization();
-extern void test_Proxy();
-extern void test_Composite();
-extern void test_Facade();
-extern void test_Decorator();
-extern void test_Template_Method();
-extern void test_Strategy();
+using namespace LAZY_INITIALIZATION;
+
+void test_LazyInitialization()
+{
+    cout << " -- test_LazyInitialization -- " << endl;
+    using namespace LAZY_INITIALIZATION;
+
+    cout << "Number of objects: " << LazyInitialization::getCount() << endl;
+
+    Object *p1 = LazyInitialization::createObjectInstance();
+    cout << " address: " << p1 << endl;
+    cout << "Number of objects: " << LazyInitialization::getCount() << endl;
+
+    Object *p2 = LazyInitialization::createObjectInstance();
+    cout << " address: " << p2 << endl;
+    cout << "Number of objects: " << LazyInitialization::getCount() << endl;
+
+    LazyInitialization::disposeObjectInstance(&p1);
+    LazyInitialization::disposeObjectInstance(&p2);
+    LazyInitialization::disposeObjectInstance(&p1); // shud be safe
+    LazyInitialization::disposeObjectInstance(&p2); // shud be safe
+
+    cout << endl;
+}
+
+#include "proxy.h"
+
+void test_Proxy()
+{
+    cout << " -- test_Proxy -- " << endl;
+    using namespace PROXY;
+
+    Subject *ps = new Proxy();
+    ps->someOperation();
+
+    cout << endl;
+}
+
+#include "composite.h"
+
+void test_Composite()
+{
+    cout << " -- test_Composite -- " << endl;
+    using namespace COMPOSITE;
+
+    Leaf *pleaf1 = new Leaf();
+    Leaf *pleaf2 = new Leaf();
+
+    Composite *pCompst = new Composite();
+    pCompst->addChild(pleaf1);
+    pCompst->addChild(pleaf2);
+
+    Leaf *pleaf3 = new Leaf();
+
+    Composite *pCompstRoot = new Composite();
+    pCompstRoot->addChild(pCompst);
+    pCompstRoot->addChild(pleaf3);
+
+    pCompstRoot->someOperation();
+
+    cout << endl;
+}
+
+#include "facade.h"
+
+void test_Facade()
+{
+    cout << " -- test_Facade -- " << endl;
+    using namespace FACADE;
+
+    Facade *pf = new Facade();
+    pf->subSystemOperation();
+
+    cout << endl;
+}
+
+#include "template_method.h"
+
+void test_Template_Method()
+{
+    cout << " -- test_Template_Method -- " << endl;
+    using namespace TEMPLATE_METHOD;
+
+    ConcreteClass *pTM = new ConcreteClass();
+    // pTM->primitiveMethod();  // Ok, not so imporatant for now
+    pTM->templateMethod();
+
+    cout << endl;
+}
+
+#include "strategy.h"
+
+void test_Strategy()
+{
+    cout << " -- test_Strategy -- " << endl;
+    using namespace STRATEGY;
+
+    Context *pC = new Context(new ConcreteStrategy1());
+    pC->executeAlgorithm();
+
+    cout << endl;
+}
+
+#include "decorator.h"
+
+void test_Decorator()
+{
+    cout << " -- test_Decorator -- " << endl;
+    using namespace DECORATOR;
+
+    // IComponent *pC = new IComponent();   // error C2259 : 'DECORATOR::IComponent' : cannot instantiate abstract class
+    Component *pC = new Component();
+    // pC->someOperation(); // OK, if simple coffee is required
+    // cout << endl;
+
+    // DecoratorBase *pf = new DecoratorBase();      //  error C2259 : 'DECORATOR::DecoratorBase' : cannot instantiate abstract class
+    Decorator1 *pD1 = new Decorator1((IComponent *)pC);
+    pD1->someOperation();
+    cout << endl;
+
+    Decorator2 *pD2 = new Decorator2((IComponent *)pC);
+    pD2->someOperation();
+    cout << endl;
+}
 
 int main(int argc, int *argv[])
 {

@@ -5,57 +5,65 @@
 
 namespace ABSTRACT_FACTORY_EXAMPLE
 {
-    // an abstract product
-    class Button
+// an abstract product
+class Button
+{
+public:
+    virtual ~Button() {}
+    virtual void use() = 0;
+};
+
+class WinButton : public Button
+{
+public:
+    virtual void use()
     {
-    public:
-        virtual ~Button() { }
-        virtual void use() = 0;
-    };
+        cout << "WinButton consumed" << endl;
+    }
+};
 
-    class WinButton : public Button
+class OSXButton : public Button
+{
+public:
+    virtual void use()
     {
-    public:
-        virtual void use();
-    };
+        cout << "OSXButton consumed" << endl;
+    }
+};
 
-    class OSXButton : public Button
+// an abstract factory
+class GUIFactory
+{
+public:
+    virtual Button *createButton() = 0;
+};
+
+class WinFactory : public GUIFactory
+{
+public:
+    virtual Button *createButton() // returns 'Product1' as 'AbstractProduct'
     {
-    public:
-        virtual void use();
-    };
+        return new WinButton(); // dynamic_cast <AbstractProduct*> ()
+    }
+};
 
-
-
-    // an abstract factory
-    class GUIFactory
+class OSXFactory : public GUIFactory
+{
+public:
+    virtual Button *createButton() // returns 'Product2' as 'AbstractProduct'
     {
-    public:
-        virtual Button* createButton() = 0;
-    };
-
-    class WinFactory : public GUIFactory
-    {
-    public:
-        virtual Button* createButton(); // returns 'Product1' as 'AbstractProduct'
-    };
-
-    class OSXFactory : public GUIFactory
-    {
-    public:
-        virtual Button* createButton(); // returns 'Product2' as 'AbstractProduct'
-    };
-
-
+        return new OSXButton(); // dynamic_cast <AbstractProduct*> ()
+    }
+};
 
 #define USE_FACTORY_DEPENDING_ON_USECASE 1
 #ifdef USE_FACTORY_DEPENDING_ON_USECASE
-    class GUIApplication : public WinFactory
+class GUIApplication : public WinFactory
 #else
-    class GUIApplication : public OSXFactory
+class GUIApplication : public OSXFactory
 #endif
-    {
-    };
+{
+};
 
-}
+} // namespace ABSTRACT_FACTORY_EXAMPLE
 #endif // ABSTRACT_FACTORY_EXAMPLE_H_INCLUDED

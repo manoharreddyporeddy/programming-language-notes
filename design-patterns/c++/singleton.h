@@ -4,17 +4,44 @@
 
 namespace SINGLETON
 {
-	class Singleton												// Example: Room
+class Singleton // Example: Room
+{
+public:
+	static Singleton *getInstance()
 	{
-	public:
-		static Singleton* getInstance();
-		static void disposeInstance();
-	private:
-		Singleton();
-		Singleton(const Singleton&);				// looks no need of copy cons implementation
-		Singleton& operator= (const Singleton&);	// looks no need of asssignment operator implementation
+		if (_pInstance == NULL)
+		{
+			_pInstance = new Singleton();
+			cout << ".. instance created .. ";
+		}
+		return _pInstance;
 
-		static Singleton *_pInstance;
-	};
-}
+		// Below local 'static' object, for single-threaded env's?
+		//	static Singleton s1;
+		//	return &s1;
+	}
+	static void disposeInstance()
+	{
+		// implement call through atexit() for automatic delete?
+
+		if (_pInstance != NULL)
+		{
+			delete _pInstance;
+			_pInstance = NULL;
+			cout << ".. instance deleted .. " << endl
+				 << endl;
+		}
+	}
+
+private:
+	Singleton() {}
+	Singleton(const Singleton &);			 // looks no need of copy cons implementation
+	Singleton &operator=(const Singleton &); // looks no need of asssignment operator implementation
+
+	static Singleton *_pInstance;
+};
+
+Singleton *Singleton::_pInstance = NULL;
+
+} // namespace SINGLETON
 #endif // SINGLETON_H_INCLUDED

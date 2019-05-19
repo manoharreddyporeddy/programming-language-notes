@@ -5,36 +5,60 @@
 // Enables an algorithm's behavior to be selected at runtime
 namespace STRATEGY
 {
-    class IStrategy                                 // AnOperation
-    {
-    public:
-        virtual void algorithm() = 0;               //      execute(int a, int b)
-    };
-
-    class ConcreteStrategy1 : public IStrategy      // Add : AnOperation
-    {
-    public:
-        void algorithm();                           //      execute(int a, int b) { return a+b; }
-    };
-    class ConcreteStrategy2 : public IStrategy      // Subtract : AnOperation
-    {
-    public:
-        void algorithm();                           //      execute(int a, int b) { return a-b; }
-    };
-    class ConcreteStrategy3 : public IStrategy      // Multiply : AnOperation
-    {
-    public:
-        void algorithm();                           //      execute(int a, int b) { return a*b; }
-    };
-
-    class Context                                   // Shape
-    {
-    public:
-        Context(IStrategy *pStrategy);
-        void executeAlgorithm();                          //      Move (Point to)     {  Draw (black); current=to; Draw (white);  }
-    private:
-        IStrategy *_pStrategy;
-    };
-
+class IStrategy // AnOperation
+{
+public:
+    virtual void algorithm() = 0; //      execute(int a, int b)
+    // void IStrategy::algorithm()
+    // {
+    //     cout << "in void IStrategy::algorithm()" << endl;
+    // }
 };
+
+class ConcreteStrategy1 : public IStrategy // Add : AnOperation
+{
+public:
+    void algorithm()
+    {
+        //      execute(int a, int b) { return a+b; }
+        cout << "in void ConcreteStrategy1::algorithm()" << endl;
+    }
+};
+class ConcreteStrategy2 : public IStrategy // Subtract : AnOperation
+{
+public:
+    void algorithm()
+    {
+        //      execute(int a, int b) { return a-b; }
+        cout << "in void ConcreteStrategy2::algorithm()" << endl;
+    }
+};
+class ConcreteStrategy3 : public IStrategy // Multiply : AnOperation
+{
+public:
+    void algorithm()
+    {
+        //      execute(int a, int b) { return a*b; }
+        cout << "in void ConcreteStrategy3::algorithm()" << endl;
+    }
+};
+
+class Context // Shape
+{
+public:
+    Context(IStrategy *pStrategy1)
+    {
+        _pStrategy = pStrategy1;
+    }
+    void executeAlgorithm()
+    {
+        //      Move (Point to)     {  Draw (black); current=to; Draw (white);  }
+        _pStrategy->algorithm();
+    }
+
+private:
+    IStrategy *_pStrategy;
+};
+
+};     // namespace STRATEGY
 #endif // STRATEGY_H_INCLUDED

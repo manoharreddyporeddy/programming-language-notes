@@ -2,29 +2,69 @@
 #define LAZY_INITIALIZATION_H_INCLUDED
 #include "common.h"
 
-namespace LAZY_INITIALIZATION
-{
+/* In computer programming,
+    lazy initialization is the
+    tactic of delaying
+    the creation of an object,
+    the calculation of a value, or
+    some other expensive process
+    UNTIL the first time it is needed.
+
     // In computer programming, lazy initialization is the tactic of delaying 
     //		the creation of an object, 
     //		the calculation of a value, or 
     //		some other expensive process 
     //			until the first time it is needed.
 
-    class Object
-    {
-        // 100 fields
-    };
+    */
+namespace LAZY_INITIALIZATION
+{
 
-    // NOTE
-    //		Looks like it doesnt mean Singleton, it sounds more like dynamic variable instead of atuomatic variable (C/C++)
+class Object
+{
+    // 100 fields
+};
 
-    class LazyInitialization
+// NOTE
+//		Looks like it doesnt mean Singleton, it sounds more like dynamic variable instead of atuomatic variable (C/C++)
+
+class LazyInitialization
+{
+    static int _count;
+
+public:
+    static int getCount()
     {
-        static int _count;
-    public:
-        static int getCount();
-        static Object* createObjectInstance();
-        static void disposeObjectInstance(Object** pObjectInstance);
-    };
-}
+        cout << endl
+             << " .. LazyInitialization class is in use .. ";
+
+        return _count;
+    }
+    static Object *createObjectInstance()
+    {
+        Object *p = new Object();
+
+        cout << endl
+             << " .. Now, LazyInitialization class, is used to create New object .. ";
+        _count++;
+
+        return p;
+    }
+    // implement call through atexit() for automatic delete?
+    static void disposeObjectInstance(Object **pObjectInstance)
+    {
+        if (*pObjectInstance != NULL)
+        {
+            /// cout << endl << " .. object at address .. " << *pObjectInstance;
+
+            delete *pObjectInstance;
+            *pObjectInstance = NULL;
+
+            // cout << " is deleted";
+        }
+    }
+};
+int LazyInitialization::_count = 0;
+
+} // namespace LAZY_INITIALIZATION
 #endif // LAZY_INITIALIZATION_H_INCLUDED

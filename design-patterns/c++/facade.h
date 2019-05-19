@@ -4,31 +4,55 @@
 
 namespace FACADE
 {
-    class Facade                        // Car
+class Facade // Car
+{
+public:
+    void subSystemOperation()
+    {
+        //      constructCar from engine, body, accessories
+        cout << "in Facade::subSystemOperation()" << endl;
+
+        pss1 = new SubSystem1();
+        pss2 = new SubSystem2();
+        pss3 = new SubSystem3();
+
+        pss1->subSystem1Operation();
+        pss2->subSystem2Operation();
+        pss3->subSystem3Operation();
+    }
+
+private:
+    class SubSystem1 // Engine
     {
     public:
-        void subSystemOperation();      //      constructCar from engine, body, accessories
-
-    private:
-        class SubSystem1                // Engine
+        void subSystem1Operation()
         {
-        public:
-            void subSystem1Operation(); //      setEngine
-        };
-        class SubSystem2                // Body
-        {
-        public:
-            void subSystem2Operation(); //      setBody
-        };
-        class SubSystem3                // Accessories
-        {
-        public:
-            void subSystem3Operation(); //      setAccessories
-        };
-
-        SubSystem1 *pss1;
-        SubSystem2 *pss2;
-        SubSystem3 *pss3;
+            //      setEngine
+            cout << "in SubSystem1::subSystem1Operation()" << endl;
+        }
     };
+    class SubSystem2 // Body
+    {
+    public:
+        void subSystem2Operation()
+        {
+            //      setBody
+            cout << "in SubSystem2::subSystem2Operation()" << endl;
+        }
+    };
+    class SubSystem3 // Accessories
+    {
+    public:
+        void subSystem3Operation()
+        {
+            //      setAccessories
+            cout << "in SubSystem3::subSystem3Operation()" << endl;
+        }
+    };
+
+    SubSystem1 *pss1;
+    SubSystem2 *pss2;
+    SubSystem3 *pss3;
 };
+};     // namespace FACADE
 #endif // FACADE_H_INCLUDED
