@@ -139,7 +139,7 @@ void test_Prototype() {
 // structural patterns
 // structural patterns
 
-#include "headers/structural/1.composite.h"
+#include "headers/structural/2.composite.h"
 void test_Composite() {
   cout << " -- test_Composite -- \n";
 
@@ -160,6 +160,26 @@ void test_Composite() {
   pRoot_composite1->someOperation();
 
   cout << "\n";
+}
+
+#include "headers/structural/3.decorator.h"
+void test_Decorator() {
+  cout << " -- test_Decorator -- \n";
+
+  using namespace DECORATOR;
+
+  // IComponent *pC = new IComponent();   // error C2259 : 'DECORATOR::IComponent' : cannot instantiate abstract class
+
+  IComponent *pC = new Component();
+  // pC->someOperation(); // OK, if simple coffee is required
+
+  // DecoratorBase *pf = new DecoratorBase();      //  error C2259 : 'DECORATOR::DecoratorBase' : cannot instantiate abstract class
+
+  Decorator1 *pD1 = new Decorator1(pC);
+  pD1->someOperation();
+
+  Decorator2 *pD2 = new Decorator2(pC);
+  pD2->someOperation();
 }
 
 /*
@@ -240,27 +260,6 @@ void test_Strategy() {
   cout << "\n";
 }
 
-#include "headers/aaa/decorator.h"
-void test_Decorator() {
-  cout << " -- test_Decorator -- \n";
-
-  using namespace DECORATOR;
-
-  // IComponent *pC = new IComponent();   // error C2259 : 'DECORATOR::IComponent' : cannot instantiate abstract class
-  Component *pC = new Component();
-  // pC->someOperation(); // OK, if simple coffee is required
-  // cout << "\n";
-
-  // DecoratorBase *pf = new DecoratorBase();      //  error C2259 : 'DECORATOR::DecoratorBase' : cannot instantiate abstract class
-  Decorator1 *pD1 = new Decorator1((IComponent *)pC);
-  pD1->someOperation();
-  cout << "\n";
-
-  Decorator2 *pD2 = new Decorator2((IComponent *)pC);
-  pD2->someOperation();
-  cout << "\n";
-}
-
 int main(int argc, char *argv[]) {
   // creational patterns
   // test_Singleton();
@@ -271,12 +270,12 @@ int main(int argc, char *argv[]) {
   // test_Prototype();
 
   // structural patterns
-  test_Composite();
+  // test_Composite();
+  test_Decorator();
 
   // test_LazyInitialization();
   // test_Proxy();
   // test_Facade();
-  // test_Decorator();
   // test_Template_Method();
   // test_Strategy();
 
