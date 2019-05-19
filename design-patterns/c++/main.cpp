@@ -182,6 +182,30 @@ void test_Decorator() {
   pD2->someOperation();
 }
 
+#include "headers/structural/4.facade.h"
+void test_Facade() {
+  cout << " -- test_Facade -- \n";
+
+  using namespace FACADE;
+
+  Facade *pf = new Facade();
+  pf->doSubsystemOperations();
+
+  cout << "\n";
+}
+
+#include "headers/structural/5.proxy.h"
+void test_Proxy() {
+  cout << " -- test_Proxy -- \n";
+
+  using namespace PROXY;
+
+  Subject *ps = new Proxy();
+  ps->someOperation();
+
+  cout << "\n";
+}
+
 /*
 *******************************************************************************************************************
 * LAZY INITIALIZATION
@@ -207,30 +231,6 @@ void test_LazyInitialization() {
   LazyInitialization::disposeObjectInstance(&p2);
   LazyInitialization::disposeObjectInstance(&p1); // shud be safe
   LazyInitialization::disposeObjectInstance(&p2); // shud be safe
-
-  cout << "\n";
-}
-
-#include "headers/aaa/proxy.h"
-void test_Proxy() {
-  cout << " -- test_Proxy -- \n";
-
-  using namespace PROXY;
-
-  Subject *ps = new Proxy();
-  ps->someOperation();
-
-  cout << "\n";
-}
-
-#include "headers/aaa/facade.h"
-void test_Facade() {
-  cout << " -- test_Facade -- \n";
-
-  using namespace FACADE;
-
-  Facade *pf = new Facade();
-  pf->subSystemOperation();
 
   cout << "\n";
 }
@@ -271,11 +271,11 @@ int main(int argc, char *argv[]) {
 
   // structural patterns
   // test_Composite();
-  test_Decorator();
+  // test_Decorator();
+  test_Facade();
+  // test_Proxy();
 
   // test_LazyInitialization();
-  // test_Proxy();
-  // test_Facade();
   // test_Template_Method();
   // test_Strategy();
 
