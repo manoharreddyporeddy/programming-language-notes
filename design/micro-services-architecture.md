@@ -1,5 +1,6 @@
 # Micro services architecture
 
+<pre>
 independent dev - in different programming languages
     increase autonomy of individual development teams - as ideas can be implemented / without having to coordinate with a wider it delivery
 code is organized around business capabilities
@@ -21,3 +22,4 @@ independent re/deployment
     easy integration/ continous automatic deployment
     enables continuous delivery
 security problem isolation
+</pre>
