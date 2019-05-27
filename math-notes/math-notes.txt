@@ -28,7 +28,11 @@ linear regression
 ---
 
 The linear regression functions are designed to fit regression lines while minimizing error.
+In order to make prediction using the regression line, you need the slope and the y-intercept.
 
 
+---
+?
+---
 
 </pre>
