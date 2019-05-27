@@ -1,1 +1,13 @@
 
+<pre>
+Percentile
+
+Half of the values in a column are greater than the 50th percentile and half are less than the 50th percentile.
+
+Descrete percentile is a value in the ordered list
+
+Continuous percentile interpolates values of the boundary between percentiles, if needed.
+Continuous percentiles are useful when you want to know what is the value at the boundary between two percentile buckets.
+What description specifically applies to continuous percentiles? they interpolate the boundary value between percentiles
+
+</pre>
