@@ -23,4 +23,12 @@ Correlation is a measure of how the values of two variables change with respect 
 ROW_NUMBER assigns a value to a position of a row in a sorted list of values.
 MODE - What is the function that returns the most frequently occurring value in a group of rows?
 
+---
+linear regression
+---
+
+The linear regression functions are designed to fit regression lines while minimizing error.
+
+
+
 </pre>
