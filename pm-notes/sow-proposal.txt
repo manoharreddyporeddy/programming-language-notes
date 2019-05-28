@@ -36,6 +36,7 @@ Proposal
 			explains how they might accomplish it
 
 ---------------------------------
+
 SOW is a statement of work
 	which can be part of
 		a Request for Proposal (RFP) or
@@ -69,7 +70,7 @@ Proposal has much more then just
 			(light) engineering and
 			(light) description of the best organization and people to do the work
 
-
+---------------------------------
 
 Proposal is an
 	non-binding
@@ -82,6 +83,16 @@ Proposal is an
 				experience and
 				expertise, etc.
 
-
+SOW is a
+	legal document
+	which gets
+		signed
+		once a bid has been awarded to a particular bidder
+	It is the final document
+		which gets
+			signed by the winning party and
+			the client and
+				this forms the basis of
+					further project ongoings.
 
 </pre>
