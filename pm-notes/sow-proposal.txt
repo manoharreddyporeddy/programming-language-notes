@@ -110,10 +110,30 @@ Invitation to negotiate (ITN)
 				after
 					proposals were already made and
 					a competitive range established.
-
-
-
 ---------------------------------
+Request for proposals are
+	most often
+		qualitative in their focus
+			in other words, they 
+				focus on the
+					types of services or
+					the qualities of a product
+						that is being delivered.
+			Price is a factor but usually not the only factor.
+
+With a bid request,
+	price is usually
+		the primary factor being considered
+	This may be because
+		the product or service
+			involved in the procurement
+			is fairly standard,
+		or has been properly established in its dimensions
+			through a prior request for information.
+	With price being the primary focus of the bid request,
+		the character of the deliverable
+			for the potential client changes
+				dramatically from a proposal.
 ---------------------------------
 ---------------------------------
 ---------------------------------
