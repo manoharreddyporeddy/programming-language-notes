@@ -148,6 +148,10 @@ What is the most important dot" to connect?"
 	each dot is an equally important part of producing a quality proposal
 	Each step/dot of the report writing process needs to be followed and completed.
 ---------------------------------
+Which of these answers is a thorough answer (rather than a general answer)?
+
+	Demographics of the 200 survey respondents included income, gender, and age.
+	Specifics include number of responders and which demographics were analyzed.
 ---------------------------------
 ---------------------------------
 
