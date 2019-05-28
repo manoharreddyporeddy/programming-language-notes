@@ -153,6 +153,12 @@ Which of these answers is a thorough answer (rather than a general answer)?
 	Demographics of the 200 survey respondents included income, gender, and age.
 	Specifics include number of responders and which demographics were analyzed.
 ---------------------------------
+Find the example of redundant wording that should be avoided.
+
+	each and every one
+	the best and most acceptable approach possible
+	due to the fact that
+		Each answer contains redundancy.
 ---------------------------------
 
 
