@@ -1,1 +1,19 @@
+<pre>
 
+SOW
+Scope of Work
+
+		A Scope of Work (SOW) provides
+			detailed information on a project,
+			often from the client side, and
+				may include things like
+					project size,
+					budget,
+					schedule,
+					background,
+					involved parties/authorities having jurisdiction,
+					review processes,
+					and any other information the client deems pertinent to provide.
+
+
+</pre>
