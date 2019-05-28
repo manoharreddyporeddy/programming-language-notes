@@ -29,5 +29,10 @@ Proposal
 				to the requirements
 					given in the SOW.
 
+		A proposal may include
+			a section on understanding the project,
+			in which
+				the proposer reiterates their interpretation of the SOW and
+				explains how they might accomplish it
 
 </pre>
