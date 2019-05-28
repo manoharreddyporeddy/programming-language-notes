@@ -135,6 +135,12 @@ With a bid request,
 			for the potential client changes
 				dramatically from a proposal.
 ---------------------------------
+Which proposal situations is more likely to use the direct approach?
+
+	when you're creating an executive summary for a solicited proposal
+
+	The executive summary will provide a clear overview.
+	if the proposal is requested, then the reader knows the situation so the writer can be direct.
 ---------------------------------
 ---------------------------------
 ---------------------------------
