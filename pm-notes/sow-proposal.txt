@@ -3,36 +3,36 @@
 SOW
 Scope of Work
 
-		A Scope of Work (SOW) provides
-			detailed information on a project,
-			often from the client side, and
-				may include things like
-					project size,
-					budget,
-					schedule,
-					background,
-					involved parties/authorities having jurisdiction,
-					review processes,
-					and any other information the client deems pertinent to provide.
+	A Scope of Work (SOW) provides
+		detailed information on a project,
+		often from the client side, and
+			may include things like
+				project size,
+				budget,
+				schedule,
+				background,
+				involved parties/authorities having jurisdiction,
+				review processes,
+				and any other information the client deems pertinent to provide.
 
-			Providing a SOW allows
-				a client to receive
-					more detailed and
-					tailored proposals
-						for the projects
-						they’re requesting
+	Providing a SOW allows
+		a client to receive
+			more detailed and
+			tailored proposals
+				for the projects
+				they’re requesting
 
 Proposal
 
-		A proposal is a marketing tool
-			that responds
-				to the requirements
-					given in the SOW.
+	A proposal is a marketing tool
+		that responds
+			to the requirements
+				given in the SOW.
 
-		A proposal may include
-			a section on understanding the project,
-			in which
-				the proposer reiterates their interpretation of the SOW and
-				explains how they might accomplish it
+	A proposal may include
+		a section on understanding the project,
+		in which
+			the proposer reiterates their interpretation of the SOW and
+			explains how they might accomplish it
 
 </pre>
