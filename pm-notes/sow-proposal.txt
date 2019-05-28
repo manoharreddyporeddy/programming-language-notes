@@ -35,4 +35,39 @@ Proposal
 			the proposer reiterates their interpretation of the SOW and
 			explains how they might accomplish it
 
+---------------------------------
+SOW is a statement of work
+	which can be part of
+		a Request for Proposal (RFP) or
+		even part of the proposal.
+
+Proposal has much more then just
+	a statement of work or
+	even the technical approach.
+
+	A proposal consists of several sections, including but not limited to:
+		technical volume
+		management volume
+		cost volume
+		representations and warranties
+		exceptions
+		resumes
+		and past experience.
+
+		A proposal also tends to have
+			one or more win-themes and
+			one or more themes
+			which differentiate the offerer (the team, company, or individual submitting the proposal)
+				from its competition.
+		The proposal sells the potential customer on the idea that
+			the offerer is the best choice and
+			that the price is the best price
+				(not always the lowest although that is the horrible trend in US Government contracting).
+		The proposal is the
+			ultimate sales and
+			marketing and
+			(light) engineering and
+			(light) description of the best organization and people to do the work
+
+
 </pre>
