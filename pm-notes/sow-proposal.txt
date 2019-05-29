@@ -180,6 +180,14 @@ Find the example of redundant wording that should be avoided.
 	due to the fact that
 		Each answer contains redundancy.
 ---------------------------------
+When is the best time to use a chart for your proposal?
+	Charts can be beneficial before, during, and after writing the proposal draft.
+	Charts can be useful in planning, in reviewing progress, and in analyzing at the conclusion of the project.
+---------------------------------
+
+---------------------------------
+---------------------------------
+---------------------------------
 ---------------------------------
 ---------------------------------
 
