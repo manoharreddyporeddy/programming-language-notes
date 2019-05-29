@@ -94,7 +94,27 @@ SOW is a
 			the client and
 				this forms the basis of
 					further project ongoings.
-
+---------------------------------
+Proposals will have
+	delivery methodology
+	communication plan
+	team composition
+	team structure
+	rasci chart
+	deliverable artefacts
+	case studies
+	references
+	SW/HW requirements
+	project team details
+	practice write ups
+	SLA info etc.
+		in extra away from the above artefacts
+---------------------------------
+SOW that would specify
+	steps/actions/deliverables each party would be contributing
+A proposal would contain perhaps
+	a technical description
+	legal terms and conditions
 ---------------------------------
 Proposal
 	would want to know
@@ -184,6 +204,10 @@ What should be included in the appendices of your proposal?
 After your proposal is submitted, how long should you wait before following up?
 	the writer should follow up within 3-5 days, depending on the situation
 	This is solicited but external.
+---------------------------------
+---------------------------------
+project type
+		T&M/FPC(Milestone based))
 ---------------------------------
 ---------------------------------
 
