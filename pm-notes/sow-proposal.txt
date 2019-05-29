@@ -210,6 +210,13 @@ What's the best way to determine how much time to schedule for preparing a propo
 	make a chart
 		Charting a timeline, familiarity, and staff available are all factors to help determine the time factor.
 ---------------------------------
+What is an example of an external solicited proposal?
+	a government agency that issues an open RFP
+	Government is outside the company (external) and an rfp is a request ( solicited).
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
 ---------------------------------
 ---------------------------------
 
