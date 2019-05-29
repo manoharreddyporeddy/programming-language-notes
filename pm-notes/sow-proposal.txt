@@ -160,7 +160,17 @@ Find the example of redundant wording that should be avoided.
 	due to the fact that
 		Each answer contains redundancy.
 ---------------------------------
+PROPOSAL
 
+	What determines which parts your proposal will need?
+	whether the proposal is solicited/unsolicited and formal/informal
+	Both whether the proposal is requested or unsolicited and the formality will determine which proposal parts to include.
+
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
 
 
 </pre>
