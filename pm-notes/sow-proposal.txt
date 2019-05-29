@@ -177,6 +177,9 @@ How many subsections should a proposal body include?
 	there is no exact number
 	Although standards do exist, the number of subsections will vary proposal by proposal.
 ---------------------------------
+What should be included in the appendices of your proposal?
+	items that are supplemental and/or provide more specific detail
+	Charts, timelines, diagrams--items that will give the reader more specifics/depth.
 ---------------------------------
 ---------------------------------
 ---------------------------------
