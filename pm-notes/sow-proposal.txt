@@ -196,6 +196,11 @@ What is the main reason to read carefully the RFP?
 	The proposal may be labeled non responsive if all the RFP requirements aren't met.
 	A proposal may be rejected (be labeled non-responsive) if it doesn't meet the requirements.
 ---------------------------------
+What's the best way to determine how much time to schedule for preparing a proposal?
+	determine if writing the proposal is a collaborative effort
+	consider how familiar the writer is with proposals
+	make a chart
+		Charting a timeline, familiarity, and staff available are all factors to help determine the time factor.
 ---------------------------------
 ---------------------------------
 ---------------------------------
