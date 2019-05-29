@@ -214,6 +214,9 @@ What is an example of an external solicited proposal?
 	a government agency that issues an open RFP
 	Government is outside the company (external) and an rfp is a request ( solicited).
 ---------------------------------
+What is an example of a solicited internal proposal?
+	an email from the company owner asking a company team for a new marketing campaign
+	Someone inside the company asked for the campaign.
 ---------------------------------
 ---------------------------------
 ---------------------------------
