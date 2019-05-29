@@ -180,6 +180,35 @@ Find the example of redundant wording that should be avoided.
 	due to the fact that
 		Each answer contains redundancy.
 ---------------------------------
+---------------------------------
+---------------------------------
+
+
+
+
+
+---------------------------------
+What is the one commonality that all proposals have?
+	Each proposal has unique characteristics.
+	No one exact standard exists for proposals.
+---------------------------------
+What is the main reason to read carefully the RFP?
+	The proposal may be labeled non responsive if all the RFP requirements aren't met.
+	A proposal may be rejected (be labeled non-responsive) if it doesn't meet the requirements.
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+
+
+
+
+
+---------------------------------
+---------------------------------
+---------------------------------
+
+
 PROPOSAL
 
 	What determines which parts your proposal will need?
