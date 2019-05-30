@@ -1,7 +1,7 @@
 
 <pre>
 iaas - rent/buy infra(devices) in cloud/remote & control remotely
-paas - infra managed by provided
+paas - infra managed by provider (AWS AZURE, GOOGLE CLOUD)
      - simplified app devpmt (services: dev tools, ide, intell services, app analytics, dbs)
      - complete web app life cycle - create app, source control, testing, automated deployment tools
 saas
