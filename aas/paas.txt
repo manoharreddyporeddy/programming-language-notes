@@ -1,1 +1,7 @@
 
+<pre>
+iaas - rent/buy infra(devices) & control remotely
+paas - infra managed by provided
+     - simplified app devpmt (services: dev tools, ide, intell services, app analytics, dbs)
+     - complete web app life cycle - create app, source control, testing, automated deployment tools
+</pre>
