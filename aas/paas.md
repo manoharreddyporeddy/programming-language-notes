@@ -7,7 +7,9 @@ paas - infra managed by provided
 saas
      - centrally hosted apps as a service (on demand software)
      - provider/vendor provide data, hardware, acces to app security, availability & performance 
-     - access via browser (or native client) - onedrive     
+     - access via any internete enabled device (browser, mobile), or native client - onedrive
+     - subscribe to software to access, licenses managed online, pay only if use
+     - Gmail, Github, Salesforce, MS office online, etc.
 
 lift and shift approch is common migration option
   in house apps
