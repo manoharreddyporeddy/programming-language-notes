@@ -2,6 +2,13 @@
 
 my all programming languages notes
 
+
+git config user.email "a@a.com"
+git config user.name "aa"
+
+git config credential.helper store
+git push
+
 <pre>
 Open sources
 
@@ -18,4 +25,5 @@ KDiff3
     KDiff3 is a free,
         open source and cross-platform tool designed to analyze text difference and merge files or directories.
     http://kdiff3.sourceforge.net/
+
 </pre>
