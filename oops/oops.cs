@@ -1,4 +1,3 @@
-
 using System;
 
 /*
@@ -107,6 +106,24 @@ class IPhone : MobilePhone {
 
 }
 
+class Printer {
+  // function
+  public void print (string s1) {
+    Console.WriteLine(s1);
+  }
+  // function overload
+  public void print (string s1, string s2) {
+    Console.WriteLine(s1);
+    Console.WriteLine(s2);
+  }
+  // function overload
+  public void print (int n1, bool b1, string s1) {
+    Console.WriteLine(n1);
+    Console.WriteLine(b1);
+    Console.WriteLine(s1);
+  }
+}
+
 class MyMainClass1 {
   public static void Main (string[] args) {
     Console.WriteLine ("Hello World ........");
@@ -137,5 +154,10 @@ class MyMainClass1 {
     MobilePhone parent1 = new IPhone();
     parent1.unlock();
 
+
+    Printer p = new Printer();
+    p.print("ok1");
+    p.print("ok1", "ok2");
+    p.print(1, true, "ok1");
   }
 }
