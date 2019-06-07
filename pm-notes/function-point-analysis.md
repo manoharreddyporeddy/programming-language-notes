@@ -4,6 +4,6 @@ understanding functionality
 - identify personas
 - identify curd operations
 
-- sort by view (r) - find each complexity
+- sort by view (r in curd) - find each complexity
 
 </pre>
