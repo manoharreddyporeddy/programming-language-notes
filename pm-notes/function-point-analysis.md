@@ -1,12 +1,13 @@
 <pre>
 
-understanding functionality
+Understanding functionality
 - identify personas
 - identify curd operations
 
 - sort by view (r in curd) - find each complexity
 
-
-complexity is no. of ui components (controls like button, text etc.)
+Complexity is
+- Number of UI components (Controls like button, text, etc)
+- Number of conditions you write
 
 </pre>
