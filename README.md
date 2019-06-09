@@ -51,6 +51,12 @@ Database Server
 		○ Neo4j
 		
 
+Clould
+	- AWS
+	- Azure
+	- GCP Google cloud platform
+	- All the servers can be in cloud, some times client can be in cloud too.
+
 -----------------
 
 
