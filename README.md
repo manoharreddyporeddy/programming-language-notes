@@ -24,6 +24,20 @@ UI/
 			§ VB.NET
 
 
+Application Server program or application/
+/ mostly Remote machine
+
+	- Store in Database server
+	- Calculates/ processes
+	- Gives response to client's query
+	- Examples
+		○ Java       60+% jobs
+		○ C#          20+% jobs
+		○ Node.js  5%
+		○ Python   5% (in combination with one of above)
+		○ Other (PHP)
+
+
 -----------------
 
 
