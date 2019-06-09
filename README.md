@@ -38,6 +38,19 @@ Application Server program or application/
 		○ Other (PHP)
 
 
+Database Server
+- Store data (access is slow because file access)
+- Examples
+	- Relational (RDBMS) (Tables)
+		○ Oracle
+		○ MS Sql server
+	- No Sql (JSONs)
+		○ MongoDb
+		○ CouchDB
+	- Graph Db
+		○ Neo4j
+		
+
 -----------------
 
 
