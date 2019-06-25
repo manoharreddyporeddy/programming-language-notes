@@ -5,5 +5,6 @@ Every interview = 30 mins
 - If fail, provide more feedback
 -- risky?
 --- some act childish for senior positions, so there will doubt if they can perform at a senior roles
+--- some have offers (TA wont tell interviewer) so they can rude
 
 </pre>
