@@ -1,2 +1,3 @@
 
-- Weekly meetings is a must - to track any issues early
+- Weekly Team Meetings are a must - to track any issues early
+-- Address the issues, dont delay too long
