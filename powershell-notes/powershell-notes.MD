@@ -57,4 +57,22 @@ Get-Help Add-AppxPackage
 
 
 
+Windows Management Framework
+
+    https://docs.microsoft.com/en-us/powershell/wmf/overview
+
+
+
+
+PowerShell ISE
+	The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows PowerShell. In Windows PowerShell ISE, you can run commands and write, test, and debug scripts in a single Windows-based graphic user interface with multiline editing, tab completion, syntax coloring, selective execution, context-sensitive help, and support for right-to-left languages.
+
+	You can use menu items and keyboard shortcuts to perform many of the same tasks that you would perform in the Windows PowerShell console. For example, when you debug a script in the Windows PowerShell ISE, to set a line breakpoint in a script, right-click the line of code, and then click Toggle Breakpoint.
+
+	To open it you just go to Start - Search and then Type - PowerShell as shown in the following screenshot.
+
+
+
+
+
 </pre>
