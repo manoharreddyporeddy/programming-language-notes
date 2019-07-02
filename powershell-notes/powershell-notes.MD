@@ -76,10 +76,16 @@ PowerShell ISE
 
 Windows PowerShell ISE
 
+	The PowerShell Console - left
+	Scripting File - middle
+	Command Module where you can find the module - right
 
 
 
+To get the list of Updates −
 
+	Get-HotFix and to install a hot fix as follows
+	Get-HotFix -id kb2741530
 
 
 
