@@ -74,5 +74,13 @@ PowerShell ISE
 
 
 
+Windows PowerShell ISE
+
+
+
+
+
+
+
 
 </pre>
