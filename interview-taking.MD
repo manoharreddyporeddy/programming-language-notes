@@ -17,6 +17,8 @@ Candidate expects too much salary for his experience
   ask him/her to verify expectations on glassdoor
 
 Spend enough time for F2F interviews
-
+  coz of the time spent towards you
+  if you sense the interview result is a fail, end soon, and spend 5 to 10 mins talking on where you felt what
+  yes, risky, but most will appreciate.
 
 </pre>
