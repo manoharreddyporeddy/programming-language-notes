@@ -16,4 +16,7 @@ If interview result is fail
 Candidate expects too much salary for his experience
   ask him/her to verify expectations on glassdoor
 
+Spend enough time for F2F interviews
+
+
 </pre>
