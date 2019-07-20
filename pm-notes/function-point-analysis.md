@@ -13,6 +13,7 @@ Planning
 - dev work
 - unit test work
 - integration work
+- automation testing
 
 
 </pre>
