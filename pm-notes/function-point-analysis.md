@@ -8,6 +8,7 @@ Understanding functionality
 
 Complexity is
 - Number of UI components (Controls like button, text, etc)
-- Number of conditions you write
+- Number of business validations you write
+
 
 </pre>
