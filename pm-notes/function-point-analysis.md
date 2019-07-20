@@ -11,9 +11,10 @@ Complexity is
 
 Planning
 - dev work
-- unit test work
-- integration work
+- unit tests
+- api tests
+- dev integration sanity test
 - automation testing
-
+- perf testing
 
 </pre>
