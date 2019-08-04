@@ -1,5 +1,8 @@
 bootstrap 4 notes
 
+
+<pre>
+
 important files
 
 js:
@@ -15,3 +18,7 @@ bootstrap.css
 use min versions for production
 non-min vesions for development
 
+
+*-map files are used for development
+
+</pre>
