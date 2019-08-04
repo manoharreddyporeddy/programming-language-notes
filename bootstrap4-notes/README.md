@@ -6,12 +6,12 @@ bootstrap 4 notes
 important files
 
 js:
-popper.js
-jquery.js
-bootstrap.js
+- popper.js
+- jquery.js
+- bootstrap.js - uses above two
 
 css
-bootstrap.css
+- bootstrap.css
 
 
 
