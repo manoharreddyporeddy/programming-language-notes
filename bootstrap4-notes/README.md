@@ -10,3 +10,8 @@ bootstrap.js
 css
 bootstrap.css
 
+
+
+use min versions for production
+non-min vesions for development
+
