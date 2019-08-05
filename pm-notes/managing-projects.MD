@@ -12,14 +12,15 @@
 
 
 Meeting
+
   Project kickoff
   - to start the project officially
   - when the new resources are joining, when they can start?
   - training plan for new resources?
   - cross-skilling for existing resources - must when same resources need to do more work that is coming soon in next months
+
   Project resource update
   - did the resources join?
   - are the resources trained as per the training plan?
-  
 
 </pre>
