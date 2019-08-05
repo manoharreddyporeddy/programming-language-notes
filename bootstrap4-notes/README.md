@@ -21,4 +21,6 @@ non-min vesions for development
 
 *-map files are used for development
 
+reset - to remove default styles of browser
+
 </pre>
