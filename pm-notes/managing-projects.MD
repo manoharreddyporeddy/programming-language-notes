@@ -10,4 +10,10 @@
 - Code reviews
 -- Be a code reviewer
 
+
+Meeting
+  Project kickoff
+  - to start the project officially
+  - when the new resources are joining, when they can start?
+ 
 </pre>
