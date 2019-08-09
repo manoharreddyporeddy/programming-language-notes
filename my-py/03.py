@@ -75,6 +75,10 @@ x = 69
 if (x >= 60 and x < 70):
 	print ("1st class")
 
+
+
+
+
 fruitlist = [ "apple", 'banana', 'three', 'four', 'five' ]
 
 print (0)
@@ -104,3 +108,11 @@ for i in indexlist:
 	if i == 2:
 		break
 	print (fruitlist[i])
+
+
+
+def aaa:
+	pass
+
+aaa()
+
