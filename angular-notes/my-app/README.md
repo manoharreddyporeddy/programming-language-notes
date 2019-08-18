@@ -8,13 +8,26 @@ The Angular Directive can be classified into two types:
 - structural
 - attribute directives.
 
+Structural directives
 - Structural directives alter layout by adding, removing, and replacing elements in DOM.
-
-built-in structural directives:
+- built-in structural directives:
   < li *ngFor="let movie of movies"></li> 
     *ngFor is a looping variable that tells Angular to take one < li> per movie from the movies list.
   < movie-detail *ngIf="selectedMovie"></movie-detail>
     *ngIf will include the MovieDetail component only if a movie is selected otherwise it will remove it from the DOM.
+
+Attribute directive
+- Attribute directive alter the appearance or behavior of an existing element.
+    When you include attribute directives in templates, they look like regular HTML attributes.
+- ngModel directive, which implements two-way data binding, is an example of an attribute directive.
+    ngModel modifies the behavior of an existing element by setting its display property and responding to the changing events.
+    < input [(ngModel)]="movie.name">
+- Angular has a few more directives that either
+  alter the layout structure (for example, ngSwitch) or
+  modify aspects of DOM elements and components (for example, ngStyle and ngClass)
+
+Custom Angular Directive
+   write your own directives
 
 
 </pre>
