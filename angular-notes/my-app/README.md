@@ -1,3 +1,20 @@
+
+
+# NOTES
+
+The Angular Directive can be classified into two types:
+structural
+attribute directives.
+
+- Structural directives alter layout by adding, removing, and replacing elements in DOM.
+
+
+
+
+
+
+
+
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
