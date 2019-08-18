@@ -2,14 +2,22 @@
 
 # NOTES
 
+<pre>
+
 The Angular Directive can be classified into two types:
-structural
-attribute directives.
+- structural
+- attribute directives.
 
 - Structural directives alter layout by adding, removing, and replacing elements in DOM.
 
+built-in structural directives:
+<li *ngFor="let movie of movies"></li> 
+    *ngFor is a looping variable that tells Angular to take one <li> per movie from the movies list.
+<movie-detail *ngIf="selectedMovie"></movie-detail>
+    *ngIf will include the MovieDetail component only if a movie is selected otherwise it will remove it from the DOM.
 
 
+</pre>
 
 
 
