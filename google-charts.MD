@@ -25,7 +25,9 @@ under g there can be text, rect, etc. elements
 specifying options is most easy
 its not easy to know what is the best option to use though
 
-
+Advanced Usage can help
 </pre>
+https://developers.google.com/chart/interactive/docs/customizing_charts
+
 
 <pre> </pre>
