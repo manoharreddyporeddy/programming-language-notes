@@ -21,6 +21,11 @@ https://en.wikipedia.org/wiki/Scalable_Vector_Graphics
 its all about svg parent element
 then grapics "g" element
 under g there can be text, rect, etc. elements
+
+specifying options is most easy
+its not easy to know what is the best option to use though
+
+
 </pre>
 
 <pre> </pre>
