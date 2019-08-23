@@ -29,5 +29,11 @@ Advanced Usage can help
 </pre>
 https://developers.google.com/chart/interactive/docs/customizing_charts
 
+<pre>
+or, the main chart page can help
+for example, pie chart main page is at
+</pre>
+https://developers.google.com/chart/interactive/docs/gallery/piechart
+
 
 <pre> </pre>
