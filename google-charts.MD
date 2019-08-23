@@ -35,5 +35,10 @@ for example, pie chart main page is at
 </pre>
 https://developers.google.com/chart/interactive/docs/gallery/piechart
 
+<pre>
+its possible to use css to change the elements display style
+
+or even use the javascript to find elements change the style/ display properties, or the elements themselves under the svg
+</pre>
 
 <pre> </pre>
