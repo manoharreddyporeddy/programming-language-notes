@@ -8,4 +8,5 @@ Mainly pie chart & stacked column chart
 
 pie chart is here:
 </pre>
+https://developers.google.com/chart/interactive/docs/gallery/piechart
 
