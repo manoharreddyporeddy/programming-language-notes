@@ -39,6 +39,13 @@ https://developers.google.com/chart/interactive/docs/gallery/piechart
 its possible to use css to change the elements display style
 
 or even use the javascript to find elements change the style/ display properties, or the elements themselves under the svg
-</pre>
 
-<pre> </pre>
+we can create svg elements too.
+however slight change in DOM functions
+createElement becomes createElementNS when creating an svg element
+
+it's easy if we can find the options for it
+or, we can do css & javascript
+
+this is definitely not simple 3 hours of work for complex charts, however its possible to do anywhere from 3 to 7 days of time if you are new to google charts
+</pre>
