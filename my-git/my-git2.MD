@@ -5,4 +5,9 @@ Revert to a commit # (5c4875f):
   git pull                                    // get new changes
   git log --oneline --decorate --graph        // see commit numbers
 
+  git reset --hard 5c4875f                    // go back to commit 5c4875f
+  git clean -f -d                             // what is this?
+  git log --oneline --decorate --graph        // see commit numbers
+
+
 </pre>
