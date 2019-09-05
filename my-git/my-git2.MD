@@ -12,4 +12,7 @@ Revert to a commit # (5c4875f):
   git status                                  // will show - pending # commits
   git fetch --all                             // what is this? - get others changes?
 
+  git status                                  // will show - pending # commits
+  git push -u origin +branch111               // push to remote branch branch111
+
 </pre>
