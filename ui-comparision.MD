@@ -20,6 +20,8 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>(HTML, CSS,<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>JavaScript)<o:p></o:p></span></b></p>
@@ -33,6 +35,8 @@
   normal'><b><span style='font-size:7.0pt'>Front-end<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>UI developer<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -52,6 +56,8 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>(HTML, CSS,<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>material.io)<o:p></o:p></span></b></p>
@@ -65,6 +71,8 @@
   normal'><b><span style='font-size:7.0pt'>Front-end<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>UI developer<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -340,3 +348,5 @@
 <p class=MsoNormal><span style='font-size:10.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
 
 </div>
+
+
