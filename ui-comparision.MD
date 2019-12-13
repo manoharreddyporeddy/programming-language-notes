@@ -64,7 +64,7 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:8.0pt'>(HTML, CSS,<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:8.0pt'>React material-<span class=SpellE>ui</span>)<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:8.0pt'>React material-ui)<o:p></o:p></span></b></p>
   </td>
   <td width="14%" valign=top style='width:14.28%;border:solid windowtext 1.0pt;
   border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
@@ -74,12 +74,9 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:8.0pt'>Application developer<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:8.0pt'><o:p>&nbsp;</o:p></span></b></p>
-  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:8.0pt'>(HTML, CSS,<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><span class=SpellE><b><span style='font-size:8.0pt'>Reactjs</span></b></span><b><span
-  style='font-size:8.0pt'>)<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:8.0pt'>Reactjs)<o:p></o:p></span></b></p>
   </td>
   <td width="14%" valign=top style='width:14.24%;border:solid windowtext 1.0pt;
   border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
@@ -89,14 +86,11 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:8.0pt'>Application developer<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:8.0pt'><o:p>&nbsp;</o:p></span></b></p>
-  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:8.0pt'>(HTML, CSS,<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:8.0pt'>React material-<span class=SpellE>ui</span>,<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:8.0pt'>React material-ui,<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><span class=SpellE><b><span style='font-size:8.0pt'>Reactjs</span></b></span><b><span
-  style='font-size:8.0pt'>)<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:8.0pt'>Reactjs)<o:p></o:p></span></b></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:1'>
@@ -326,5 +320,7 @@
   </td>
  </tr>
 </table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
 </div>
