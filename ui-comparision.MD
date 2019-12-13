@@ -16,9 +16,9 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>Front-end<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'>UI developer<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>UI<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>developer<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -34,9 +34,9 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>Front-end<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'>UI developer<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>UI<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>developer<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -52,9 +52,9 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>Front-end<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'>UI developer<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>UI<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>developer<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -70,9 +70,9 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>Front-end<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'>UI developer<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>UI<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>developer<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -88,14 +88,18 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>Front-end<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'>Application developer<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>Application<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:7.0pt'>developer<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>(HTML, CSS,<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><span class=SpellE><b><span style='font-size:7.0pt'>Reactjs</span></b></span><b><span
-  style='font-size:7.0pt'>)<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;tab-stops:right 88.3pt'><span class=SpellE><b><span style='font-size:
+  7.0pt'>Reactjs</span></b></span><b><span style='font-size:7.0pt'>)<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   </td>
@@ -105,7 +109,9 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'>Front-end<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><b><span style='font-size:7.0pt'>Application developer<o:p></o:p></span></b></p>
+  normal'><b><span style='font-size:7.0pt'>Application<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:7.0pt'>developer<o:p></o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -115,6 +121,8 @@
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><span class=SpellE><b><span style='font-size:7.0pt'>Reactjs</span></b></span><b><span
   style='font-size:7.0pt'>)<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:7.0pt'><o:p>&nbsp;</o:p></span></b></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:1'>
@@ -348,5 +356,4 @@
 <p class=MsoNormal><span style='font-size:10.0pt;line-height:107%'><o:p>&nbsp;</o:p></span></p>
 
 </div>
-
 
