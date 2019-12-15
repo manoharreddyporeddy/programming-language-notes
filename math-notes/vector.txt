@@ -1,0 +1,2 @@
+vector v = (a,b)
+unit vector i = (a / sqrt(a^2 + b^2), b / sqrt(a^2 + b^2))
