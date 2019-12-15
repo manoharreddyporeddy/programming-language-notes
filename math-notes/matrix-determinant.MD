@@ -1,7 +1,7 @@
 
 <b>STATISTICS</b>
 
-<b>Percentile</b>
+<b>percentile</b>
 <pre>
 Half of the values in a column are greater than the 50th percentile and half are less than the 50th percentile.
 
