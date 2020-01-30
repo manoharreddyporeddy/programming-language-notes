@@ -9,38 +9,38 @@ namespace fields_and_properties
     class Properties1
     {
 
-        // field
+        // a. field
         // property (needs field (automatic/custom))
+
+        /*
+          b. property
+
+          declarations for
+               a get and
+               a set accessor
+                   that
+                        retrieves and
+                        assigns
+                            the value of that property
+        */
 
 
         // 1. automatic storage defined for field (if field not defined)
 
-        /*
-          property
-
-          declarations for
-               a get and set accessor
-               that
-                    retrieves and
-                    assigns
-                        the value of that property
-        */
-
-
         // property - initialized to default value (null)
-        public string SomeProp { get; set; }
+        public string Prop1 { get; set; } // automatic field // null
 
         // initialized to custom value (empty string)
         public string Prop2 { get; set; } = string.Empty;
 
         // read-only property
-        public string Prop3 { get; private set; }
+        public string Prop3 { get; private set; } // private set
 
         public ICollection<string> points { get; } = new List<string>();
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FullName { get { return FirstName + LastName; } }
+        public string FirstName { get; set; } // automatic
+        public string LastName { get; set; }  // automatic
+        public string FullName { get { return FirstName + LastName; } } // custom
 
 
 
@@ -89,6 +89,7 @@ namespace fields_and_properties
             set
             {
                 firstName = value;
+                lastName = null;
                 fullName = null;
             }
         }
@@ -125,9 +126,11 @@ namespace fields_and_properties
         {
             Person p = new Person();
 
-            p.FirstName = "hello";
-            p.LastName = " world";
+            p.FirstName = "f1";
+            p.LastName = " l1";
+            Console.WriteLine(p.FullName);
 
+            p.FirstName = "f2";
             Console.WriteLine(p.FullName);
         }
     }
