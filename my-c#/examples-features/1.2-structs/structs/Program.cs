@@ -7,7 +7,7 @@ namespace Structs
     {
 
         // feilds
-        public int x;
+        public int x; //
         public int y;
 
         // static field
