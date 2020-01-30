@@ -61,10 +61,9 @@ namespace Ns1
             Console.WriteLine("2  {0}", object2.ToString());
             Console.WriteLine("3  {0}", object3.ToString());
 
-
             // Call the constructor that has no parameters.
             Person p1 = new Person();        Console.WriteLine(p1.Name);
-            var p2 = new Person();          Console.WriteLine(p2.Name);
+            var    p2 = new Person();        Console.WriteLine(p2.Name);
 
             // Call the constructor that has one parameter.
             var person3 = new Person("Sarah Jones");
