@@ -1,19 +1,24 @@
 ﻿using System;
 
-namespace structs
+namespace Structs
 {
     // value type
-    public struct StPoint
+    public struct Point
     {
+
+        // feilds
         public int x;
         public int y;
 
+        // static field
         public static int count = 0;
 
-        // public StPoint() { }        // Error CS0568  Structs cannot contain explicit parameterless constructors
+        // default constructor
+        // Error CS0568  Structs cannot contain explicit parameterless constructors
+        // public Point() { }
 
         // argument constructor
-        public StPoint(int x1, int y1)
+        public Point(int x1, int y1)
         {
             x = x1;
             y = y1;
@@ -24,9 +29,11 @@ namespace structs
     {
         static void Main(string[] args)
         {
-            StPoint p0;
-            StPoint p1 = new StPoint();
-            StPoint p2 = new StPoint(10, 10);
+
+            Point p0;
+
+            Point p1 = new Point();
+            Point p2 = new Point(10, 20);
 
             // Console.WriteLine($"p0.x is {p0.x}  p0.y is {p0.y}");
             Console.WriteLine($"p1.x is {p1.x}  p1.y is {p1.y}");
