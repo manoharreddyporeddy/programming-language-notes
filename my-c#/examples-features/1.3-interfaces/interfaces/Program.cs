@@ -3,34 +3,40 @@
 namespace interfaces
 {
     // interface
-    //      is important since C# does not have multiple inheritance
-    interface ICar
+    //      is important since C#   does not   have multiple inheritance
+    interface IA
     {
         void Print();
     }
 
-    interface ICar2
+    interface IB
     {
         void Print2();
     }
 
     // class implements interface
-    public class Car : ICar
+    public class C : IA, IB
     {
         string Name = "my car 1";
 
         public void Print()
         {
-            Console.WriteLine(Name);
+            Console.WriteLine("Print  " + Name);
         }
+        public void Print2()
+        {
+            Console.WriteLine("Print2 " + Name);
+        }
+
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            Car c1 = new Car();
+            C c1 = new C();
             c1.Print();
+            c1.Print2();
         }
     }
 }

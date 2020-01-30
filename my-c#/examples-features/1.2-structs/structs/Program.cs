@@ -29,10 +29,9 @@ namespace Structs
     {
         static void Main(string[] args)
         {
+            Point p0; // is this working?
+            Point p1 = new Point(); // is this working?
 
-            Point p0;
-
-            Point p1 = new Point();
             Point p2 = new Point(10, 20);
 
             // Console.WriteLine($"p0.x is {p0.x}  p0.y is {p0.y}");
