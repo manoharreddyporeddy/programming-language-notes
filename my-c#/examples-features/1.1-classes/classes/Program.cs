@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace classes
+namespace Ns1
 {
     // class
     public class Employee
@@ -18,35 +18,36 @@ namespace classes
     // inheritance
     public class Manager : Employee
     {
-        // Employee (fields, properties, methods and events) are inherited
-        //      New Manager (fields, properties, methods and events) go here...
+        // Employee    (fields, properties, methods and events) are inherited
+        // New Manager (fields, properties, methods and events) go here...
     }
-
-
 
     public class Person
     {
         // (fields, properties, methods and events)
 
-        public Person()                 // Constructor that takes no arguments:
+        // Constructor
+        //      function
+        //      same name as class
+        //      no return type (not even void) 
+        public Person()                 // Constructor that takes no arguments: Default
         {
             Name = "unknown";
         }
-        public Person(string name1)      // Constructor that takes one argument:
+        public Person(string name1)      // Constructor that takes one argument: Parameterized
         {
             Name = name1;
         }
         
-        // Auto-implemented readonly property
-        public string Name { get; }
-
         // Method that overrides the base class (System.Object) implementation.
         public override string ToString()
         {
-            return "Name is " + Name.ToString();
+            return "Name is " + Name; // n1.ToString();
         }
+        
+        // Auto-implemented readonly (no set) property
+        public string Name { get; }
     }
-
 
     class Program
     {
