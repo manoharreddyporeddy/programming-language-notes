@@ -161,21 +161,19 @@ namespace statements
             //      yield return
             //      yield break
 
-
             // memory related - should not move
             //      fixed
-
         }
     }
 
     class Account
     {
         decimal balance;
-        private Object thisLock = new Object();
+        private Object lockObj1 = new Object();
 
         public void Withdraw(decimal amount)
         {
-            lock (thisLock)
+            lock (lockObj1)
             {
                 if (amount > balance)
                 {

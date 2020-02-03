@@ -13,43 +13,47 @@ using System.Threading.Tasks;
         can subscribe to the event,
         and be notified when an event is raised.
 
-    Events are, like delegates, a late binding mechanism. In fact, events are built on the language support for delegates.
+    Events are, like delegates, a late binding mechanism.
+        In fact, events are built on the language support for delegates.
  */
 
 namespace events
 {
     // declare  delegate type
-    public delegate string MyDel(string str);
+    public delegate void WelcomeUserD(ref string str);
 
     class Program
     {
         // declare  event type
-        event MyDel MyEvent;
+        public event WelcomeUserD WelcomeUserE;
+        // WelcomeUserD welcomeuserD1;
 
         public Program()
         {
-            this.MyEvent += new MyDel(this.WelcomeUser);
-            // this.MyEvent += new MyDel(this.WelcomeUser2);
+            // this.welcomeuserD1 = new WelcomeUserD(this.WelcomeUser1);
+            // this.WelcomeUserE += new WelcomeUserD(this.WelcomeUser1);
+            // this.WelcomeUserE += new WelcomeUserD(this.WelcomeUser2);
 
-            //this.MyEvent += this.WelcomeUser;
-            //this.MyEvent += this.WelcomeUser2;
+            this.WelcomeUserE += this.WelcomeUser1;
+            this.WelcomeUserE += this.WelcomeUser2;
         }
 
-        public string WelcomeUser(string username)
+        public void WelcomeUser1(ref string username)
         {
-            // Console.WriteLine("1");
-            return "hello, " + username;
+            username += " ok1 ";
         }
-        public string WelcomeUser2(string username)
+        public void WelcomeUser2(ref string username)
         {
-            // Console.WriteLine("2");
-            return "hello 2, " + username;
+            username += " ok2 ";
         }
+
         static void Main(string[] args)
         {
             Program obj1 = new Program();
-            string result = obj1.MyEvent("the one");
-            Console.WriteLine(result);
+            // string result = obj1.welcomeuserD1("user1");
+            string u1 = "user1";
+            obj1.WelcomeUserE(ref u1);
+            Console.WriteLine(u1);
         }
     }
 }

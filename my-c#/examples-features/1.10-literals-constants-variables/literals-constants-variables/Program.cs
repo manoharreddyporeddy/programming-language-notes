@@ -8,15 +8,13 @@ namespace literals_constants_variables
 {
     class Program
     {
-        // constants
-        //  const <data_type> <constant_name> = value;
-        const double pi = 3.14159;
-
-
         // variable
         //        <data_type> <constant_name> = value;
         double something = 0;
 
+        // constants
+        //  const <data_type> <constant_name> = value;
+        const double pi = 3.14159;
 
 
         // literals
@@ -25,10 +23,10 @@ namespace literals_constants_variables
 
         decimal d = 85;     /* decimal */
 
+        int i = 30;         /* int */
+
         // prefix specifies the base or radix
         int ih = 0x4b;      /* hexadecimal */
-
-        int i = 30;         /* int */
 
         // suffix - combination of U and L, for unsigned and long
         uint ui = 30u;      /* unsigned int */
@@ -64,18 +62,18 @@ namespace literals_constants_variables
 
         /*
 Escape sequence	    Meaning
-\\	                \ character
-\'	                ' character
-\"	                " character
-\?	                ? character
-\a	                Alert or bell
-\b	                Backspace
-\f	                Form feed
 \n	                Newline
 \r	                Carriage return
 \t	                Horizontal tab
 \v	                Vertical tab
-\xhh . . .	        Hexadecimal number of one or more digits
+\b	                Backspace
+\f	                Form feed
+\\	                \ character         '\\'
+\'	                ' character         '\''
+\"	                " character         "\""
+\?	                ? character
+\a	                Alert or bell
+\xhh . . .	        Hexadecimal number of one or more digits        0x4b    \x4b
 */
 
 

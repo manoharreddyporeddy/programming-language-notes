@@ -12,13 +12,13 @@ namespace expressions
         {
             int x = 1;
             bool b = false;
-            
+
             // arithmatic expression
-            b= ((x < 10) && (x > 5)) || ((x > 20) && (x < 25));
+            b = ((x < 10) && (x > 5)) || ((x > 20) && (x < 25));
             System.Convert.ToInt32("35");
 
-            int i = 5;
-            string s = "Hello World";
+            // int i = 5;
+            // string s = "Hello World";
 
             int num = 5;
             System.Console.WriteLine(num); // Output: 5
@@ -32,7 +32,7 @@ namespace expressions
 
         private static void DoWork()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void a()

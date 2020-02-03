@@ -6,30 +6,32 @@ namespace delegate_types
     {
         // actual functions
         //                 <return type> <function-name> <parameter list>
-        static int GetTwice(ref int x) { Console.Write("called GetTwice of " + x + ": "); x = 2 * x; return x; }
-        static int GetThrice(ref int x) { Console.Write("called GetThrice of " + x + ": "); x = 3 * x; return x; }
+        static void Double(ref int x) { x = 2 * x; }
+        static void Triple(ref int x) { x = 3 * x; }
 
         // Declaring Delegates
         //      delegate   <return type> <delegate-name> <parameter list>
-        delegate int DelGetTimesX(ref int n);
+        delegate void TimesX(ref int x);
 
         static void Main(string[] args)
         {
             // Instantiating Delegates
-            DelGetTimesX twice = new DelGetTimesX(GetTwice);
-            DelGetTimesX thrice = new DelGetTimesX(GetThrice);
+            TimesX double1 = new TimesX(Double);
+            TimesX triple1 = new TimesX(Triple);
 
             int x;
-            x = 1; Console.WriteLine(twice(ref x));    // called GetTwice: 4
-            x = 1; Console.WriteLine(thrice(ref x));   // called GetThrice: 6
+            x = 2; double1(ref x); Console.WriteLine(x);   // called Double 
+            x = 6; triple1(ref x); Console.WriteLine(x);   // called Triple
 
             // Multicasting of a Delegate
-            x = 1;
-            DelGetTimesX twiceAndThrice = new DelGetTimesX(GetTwice);
-            twiceAndThrice += GetThrice;
-            Console.WriteLine(twiceAndThrice(ref x));    // called GetTwice: called GetThrice: 6
+            x = 2;
+            TimesX sixTimes1 = new TimesX(Double);
+            sixTimes1 += Triple;
+            sixTimes1(ref x); Console.WriteLine(x);    // called Double: called Triple
 
-            // twiceAndThrice can be something like sendemail, and sendsms
+            // sixTimes1 can be something like
+            //  sendEmail, and
+            //  sendSms
         }
     }
 }
