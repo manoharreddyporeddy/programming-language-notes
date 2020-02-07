@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace covariance_contravariance
+namespace ns1
 {
     class Program
     {

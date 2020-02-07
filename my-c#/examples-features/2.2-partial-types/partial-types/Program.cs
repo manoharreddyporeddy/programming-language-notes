@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace partial_types
+namespace ns1
 {
     // Partial Class
-    public partial class MyCls1
+    public partial class Cls1
     {
         public void Func1()
         {
@@ -15,7 +15,7 @@ namespace partial_types
     }
 
     // Partial Class
-    public partial class MyCls1
+    public partial class Cls1
     {
         public void Func2()
         {
@@ -27,7 +27,7 @@ namespace partial_types
         static void Main(string[] args)
         {
             // Partial Class usage
-            MyCls1 o1 = new MyCls1();
+            Cls1 o1 = new Cls1();
             o1.Func1();
             o1.Func2();
 

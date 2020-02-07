@@ -1,16 +1,20 @@
 ﻿using System;
 
-namespace nullable_types
+namespace ns1
 {
     class Program
     {
         static void Main(string[] args)
         {
+            // int type -- cannot take null
+            int m;
+
             // nullable type
-            int? n = null;
+            int? n; // ----------- datatype? --- useful in db select for nulls?
 
             try
             {
+                n = null;
                 // accessing  n.Value  throws an InvalidOperationException, if n is null
                 int n2 = n.Value;
             }
@@ -24,7 +28,7 @@ namespace nullable_types
             n = 1;
             if (n.HasValue == true)
             {
-                Console.WriteLine(n);
+                Console.WriteLine(n); // ------ 1 is printed
             }
             else
             {
@@ -39,22 +43,22 @@ namespace nullable_types
             }
             else
             {
+                // ------ this is printed
                 Console.WriteLine("n value does not exist");
             }
-
-
 
 
             // GetValueOrDefault => value, if value exists,   else   default value like 0
             int n3;
 
-            n = null;
-            n3 = n.GetValueOrDefault();
-            Console.WriteLine("n3 = {0}", n3);
-
             n = 10;
             n3 = n.GetValueOrDefault();
-            Console.WriteLine("n3 = {0}", n3);
+            Console.WriteLine("n3 = {0}", n3); // ------------ 10
+
+            n = null;
+            n3 = n.GetValueOrDefault();
+            Console.WriteLine("n3 = {0}", n3); // ------------ 0 (int default value)
+
         }
     }
 }

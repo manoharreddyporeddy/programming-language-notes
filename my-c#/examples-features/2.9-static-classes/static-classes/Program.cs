@@ -1,32 +1,46 @@
 ﻿using System;
 
-namespace static_classes
+namespace ns1
 {
     // static class
-    static class SCls1
+    static class Cls1
     {
         // can contain only static members
-        public static bool Func1(string str1)
+
+        static int i = 0;
+
+        static Cls1()
         {
-            Console.WriteLine(str1);
-            return true;
+        }
+
+        public static void Func1()
+        {
         }
 
         // Cannot contain Instance Constructors.
-        //      SCls1() { }
+
+        //  int n2;
+
+        //  Cls1() {
+        //  }
+
+        //  public void Func2()
+        //  {
+        //  }
+
     }
 
-    // Is sealed, below derivated class is not possible
-    //          class Derived : SCls1  {     }
+    // static class is sealed, so below derivated class is not possible
+    //   class Derived : Cls1  { }
 
     class Program
     {
         static void Main(string[] args)
         {
-            SCls1.Func1("hello");
+            Cls1.Func1();
 
             // Cannot be instantiated.
-            //      SCls1 p = new SCls1();
+            // Cls1 p = new Cls1();
         }
     }
 }

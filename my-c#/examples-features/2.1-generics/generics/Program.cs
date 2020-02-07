@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using aa;
+using ns1;
 
-namespace aa
+namespace ns1
 {
-    // Declare the  class.
-    public class MyList
+    public class List1
     {
-        public void Add(int input) {
+        public void Add(int input)
+        {
         }
     }
-}
 
-namespace bb
-{
-    // Declare the generic class.
-    public class MyList<T>
+    public class List2<T>   // generic class
     {
         public void Add(T input) { }
     }
@@ -26,32 +22,35 @@ namespace bb
 
 namespace generics
 {
+    public class Cls1 { }
+
     class Program
     {
         static void Main(string[] args)
         {
             {
-                // Declare a list of type int
-                aa.MyList list1 = new aa.MyList();
-                list1.Add(1);
+                ns1.List1 list11 = new ns1.List1();
+                list11.Add(1); // only int allowed
 
-                // Declare a list of type string
-                //      aa.MyList list2 = new aa.MyList();
-                //      list2.Add("abc"); // Error CS1503  Argument 1: cannot convert from 'string' to 'int'   generics C:\repo\my - programming - language - notes\my - c#\examples-features\2.1-generics\generics\Program.cs	40	Active
+                ns1.List1 list12 = new ns1.List1();
+                // Error CS1503  Argument 1: cannot convert from 'string' to 'int'
+                //list12.Add("abc");
             }
 
             {
                 // Declare a list of type int
-                bb.MyList<int> list1 = new bb.MyList<int>(); list1.Add(1);
+                var list21 = new ns1.List2<int>();
+                list21.Add(1);
 
                 // Declare a list of type string
-                bb.MyList<string> list2 = new bb.MyList<string>(); list2.Add("abc");
+                var list22 = new ns1.List2<string>();
+                list22.Add("abc");
 
-                // Declare a list of type SomeCls1
-                bb.MyList<SomeCls1> list3 = new bb.MyList<SomeCls1>(); list3.Add(new SomeCls1());
+                // Declare a list of type Cls1
+                var list23 = new ns1.List2<Cls1>();
+                list23.Add(new Cls1());
             }
         }
 
-        public class SomeCls1 { }
     }
 }

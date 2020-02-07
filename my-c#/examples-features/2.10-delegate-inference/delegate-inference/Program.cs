@@ -4,27 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace delegate_inference
+namespace ns1
 {
-    delegate void MyDel1(string msg);
+    delegate void Del1();
 
     class Program
     {
-        public static void Func1(string str1)
+        public void Func1()
         {
-            Console.WriteLine(str1);
         }
 
         static void Main(string[] args)
         {
             {
-                MyDel1 del = new MyDel1(Func1);
-                del("Hello1");
+                var p1 = new Program();
+                Del1 del1 = new Del1(p1.Func1);
+                del1();
             }
 
             {
-                MyDel1 del = Func1;  // delegate inference (pass the method name, the delegate type would be inferred)
-                del("Hello2");
+                var p1 = new Program();
+                Del1 del = p1.Func1;
+                //      new Del1 is not required - it will infer by itself
+                //      delegate inference (pass the method name, the delegate type would be inferred)
+                del();
+
+                // var del2 = p1.Func1; 
+                // Del1 is not mentioned on left side, no inference
             }
         }
     }

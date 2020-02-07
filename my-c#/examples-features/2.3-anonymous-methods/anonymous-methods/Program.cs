@@ -4,23 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace anonymous_methods
+namespace ns1
 {
     class Program
     {
+        void Func1() { Console.Write("called Func1: "); }
+
         delegate void MyDel1();
 
         static void Main(string[] args)
         {
-            MyDel1 twice = delegate () { Console.WriteLine("called MyFunc1: "); };
+            {
+                Program p = new Program();
+                MyDel1 del1 = new MyDel1(p.Func1);
+                del1();
+            }
 
-            //
-            //      instead of
-            //
-            //  static void MyFunc1() { Console.Write("called MyFunc1: "); }
-            //  MyDel1 twice = new MyDel1(MyFunc1);
+            {
+                MyDel1 del1 = delegate () { Console.Write("called Func1: "); };
+                del1();
+            }
 
-            twice();
+            {
+                //(() { Console.Write("called Func1: "); })  ();
+            }
+
         }
     }
 }
