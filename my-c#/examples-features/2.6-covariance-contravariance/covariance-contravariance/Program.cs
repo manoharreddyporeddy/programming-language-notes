@@ -23,7 +23,7 @@ namespace ns1
                 //
                 //  Covariance
                 //      preserves assignment compatibility and
-                //      contravariance reverses it.
+                //          Contravariance reverses it.
 
 
                 // Assignment compatibility.   
@@ -42,7 +42,7 @@ namespace ns1
                 Action<object> actObject = MySetObject;
                 // An object that is instantiated with a less derived type argument is assigned
                 //      to an object instantiated with a more derived type argument.   
-                //          Assignment compatibility is REVERSED.   
+                //          Assignment compatibility is (P?)REVERSED.   
                 Action<string> actString = actObject;
             }
 
@@ -52,18 +52,19 @@ namespace ns1
                 // interfaces are variant
                 //      interface object - because IEnumerable is an interface
                 IEnumerable<String> strings = new List<String>();
-                IEnumerable<Object> listObjects = strings;
+                IEnumerable<Object> objects = strings;
                 //      since 2.0 this is not a compiler error
 
                 IEnumerable<int> integers = new List<int>();
-                // IEnumerable<Object> listObjects2 = integers;
-                //      compiler errror - because int is a value type.  
-                //          Error CS0266  Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.IEnumerable<object>'.An explicit conversion exists (are you missing a cast?)   covariance-contravariance C:\repo\my-programming-language-notes\my-c#\my-csharp-examples\covariance-contravariance\covariance-contravariance\Program.cs	25	Active
+                //IEnumerable<Object> listObjects2 = integers;
+                //      compiler error - because int is a value type.  
+                //          Error CS0266  Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.IEnumerable<object>'.An explicit conversion exists (are you missing a cast?)
 
                 // classes are invariant
-                // List<Object> list = new List<String>();
+                IEnumerable<Object> list = new List<String>(); // OK
+                //List<Object> list = new List<String>(); // NOT OK
                 //      compiler error - because List is a class
-                //          Error CS0029  Cannot implicitly convert type 'System.Collections.Generic.List<string>' to 'System.Collections.Generic.List<object>'   covariance - contravariance   C:\repo\my - programming - language - notes\my - c#\my-csharp-examples\covariance-contravariance\covariance-contravariance\Program.cs	14	Active
+                //          Error CS0029  Cannot implicitly convert type 'System.Collections.Generic.List<string>' to 'System.Collections.Generic.List<object>'
             }
         }
     }
