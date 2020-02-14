@@ -1,10 +1,10 @@
 ﻿using System;
 
 // use the namespace
-using MyExtensionNs1;
+using ns1;
 
 // normal namespace
-namespace MyExtensionNs1
+namespace ns1
 {
     // static class
     public static class MyExtensionCls1
@@ -19,7 +19,7 @@ namespace MyExtensionNs1
         //  like extending with one more method for string datatype
         public static int MyLength(this string str)
         {
-            return str.Length;
+            return str.Length - 1;
         }
     }
 }

@@ -21,9 +21,9 @@ namespace index_initializers
         public static Dictionary<int, string> dict =
             new Dictionary<int, string>
             {
-                {1,"One"},
-                {2, "Two"},
-                {3,"Three"}
+                {404, "Page not Found"},
+                {302, "Page moved, but left a forwarding address."},
+                {500, "The web server can't come out to play today."}
             };
 
         // Index Initializers
@@ -52,6 +52,20 @@ namespace index_initializers
             Console.WriteLine();
 
 
+            /*
+               Key: 1, Value: One
+               Key: 2, Value: Two
+               Key: 3, Value: Three
+           */
+            foreach (KeyValuePair<int, string> err in dict)
+            {
+                Console.WriteLine("Key: {0}, Value: {1}", err.Key, err.Value);
+            }
+            foreach (var err in dict)
+            {
+                Console.WriteLine("Key: {0}, Value: {1}", err.Key, err.Value);
+            }
+
 
             // Index Initializers
             /*
@@ -65,8 +79,6 @@ namespace index_initializers
             }
             Console.WriteLine();
 
-
-
             // collection initializers 
             /*
                 404     Page not Found
@@ -75,21 +87,12 @@ namespace index_initializers
              */
             foreach (var err in webErrors)
             {
-                Console.WriteLine("{0}\t{1}", err.Key.ToString(), err.Value.ToString());
+                Console.WriteLine("{0}\t{1}", err.Key, err.Value);
             }
             Console.WriteLine();
 
 
-            /*
-                Key: 1, Value: One
-                Key: 2, Value: Two
-                Key: 3, Value: Three
-            */
 
-            foreach (KeyValuePair<int, string> item in dict)
-            {
-                Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);
-            }
         }
     }
 }

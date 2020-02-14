@@ -4,27 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dynamic_type
+namespace ns1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            object obj = 1;
-            dynamic dyn = 1;
+            object o1 = 1;
+            var v1 = 1; // compile time?
+            dynamic dyn1 = 1; // runtime
+
+            // Rest the mouse pointer over dyn1 and o1 to see their types at compile time.
+            System.Console.WriteLine(o1.GetType());    // System.Int32
+            System.Console.WriteLine(dyn1.GetType());    // System.Int32
 
 
-            // Rest the mouse pointer over dyn and obj to see their types at compile time.
-            System.Console.WriteLine(obj.GetType());    // System.Int32
-            System.Console.WriteLine(dyn.GetType());    // System.Int32
+            //o1 = o1 + 3;       // Error CS0019  Operator '+' cannot be applied to operands of type 'object' and 'int'
+            o1 = (int)o1 + 1;  // OK
+            v1 = v1 + 1;
+            dyn1 = dyn1 + 1;          // OK
 
-
-            // obj = obj + 3;       // Error CS0019  Operator '+' cannot be applied to operands of type 'object' and 'int'
-            // obj = (int)obj + 3;  // OK
-            dyn = dyn + 3;          // OK
-
-            System.Console.WriteLine(obj );     // 1
-            System.Console.WriteLine(dyn);      // 4
+            System.Console.WriteLine(o1);   // 2
+            System.Console.WriteLine(dyn1); // 2
         }
     }
 }

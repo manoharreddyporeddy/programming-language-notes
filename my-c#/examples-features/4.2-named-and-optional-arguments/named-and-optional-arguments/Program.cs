@@ -9,22 +9,22 @@ namespace named_and_optional_arguments
     class Program
     {
         // named arguments
-        static int Func1(string sellerName, int orderNum, string productName)
+        static int Func1(string p1, int p2, string p3)
         {
-            if (string.IsNullOrWhiteSpace(sellerName))
+            if (string.IsNullOrWhiteSpace(p1))
             {
-                throw new ArgumentException(message: "Seller name cannot be null or empty.", paramName: nameof(sellerName));
+                throw new ArgumentException(message: "Seller name cannot be null or empty.", paramName: nameof(p1));
             }
 
-            Console.WriteLine($"Seller: {sellerName}, Order #: {orderNum}, Product: {productName}");
+            Console.WriteLine($"Seller: {p1}, Order #: {p2}, Product: {p3}");
 
             return 0;
         }
 
         // optional arguments
-        static int Func2(int required, string optionalstr = "default string", int optionalint = 10)
+        static int Func2(int pReq, string pOptStr = "default string", int pOptInt = 10)
         {
-            Console.WriteLine("{0}, {1}, and {2}.", required, optionalstr, optionalint);
+            Console.WriteLine("{0}, {1}, and {2}.", pReq, pOptStr, pOptInt);
 
             return 0;
         }
@@ -37,19 +37,21 @@ namespace named_and_optional_arguments
             Func1("Gift Shop", 31, "Red Mug");
 
             // Named arguments can be supplied for the parameters in any order.
-            Func1(orderNum: 31, productName: "Red Mug", sellerName: "Gift Shop");
-            Func1(productName: "Red Mug", sellerName: "Gift Shop", orderNum: 31);
+            Func1(p2: 31, p3: "Red Mug", p1: "Gift Shop");
+
+
 
             // Named arguments mixed with positional arguments are valid    as long as they are used in their correct position.
-            Func1("Gift Shop", 31, productName: "Red Mug");
-            // Func1(sellerName: "Gift Shop", 31, productName: "Red Mug");    // C# 7.2 onwards
-            // Func1("Gift Shop", orderNum: 31, "Red Mug");                   // C# 7.2 onwards
+            Func1("Gift Shop", p3: "Red Mug", p2: 31);
+
+            Func1(p1: "Gift Shop", 31, p3: "Red Mug");    // C# 7.2 onwards
+            Func1("Gift Shop", p2: 31, "Red Mug");   // C# 7.2 onwards
 
             // However, mixed arguments are invalid if used out-of-order.
             // The following statements will cause a compiler error.
-            // Func1(productName: "Red Mug", 31, "Gift Shop");
-            // Func1(31, sellerName: "Gift Shop", "Red Mug");
-            // Func1(31, "Red Mug", sellerName: "Gift Shop");
+            // Func1(p3: "Red Mug", 31, "Gift Shop");
+            // Func1(31, p1: "Gift Shop", "Red Mug");
+            // Func1(31, "Red Mug", p1: "Gift Shop");
 
 
 

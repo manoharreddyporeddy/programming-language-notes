@@ -24,23 +24,16 @@ namespace property_initializers
     public class PepperoniPizzaOld
     {
         // propery declaration
-        public decimal ExtraPrice1 { get; set; }
-        public decimal ExtraPrice2 { get; set; }
-        public decimal ExtraPrice3 { get; set; }
-
+        public decimal P1 { get; set; }
         public PepperoniPizzaOld()         // constructor - at default constructor is must to initialize the properties
         {
             // properties are intialized
-            ExtraPrice1 = 0.5m;
-            ExtraPrice2 = 0.15m;
-            ExtraPrice3 = 0.25m;
+            P1 = 0.5m;
         }
         public PepperoniPizzaOld(string s) // constructor overload
         {
             // properties are intialized - again here - if you have constructor overload
-            ExtraPrice1 = 0.5m;
-            ExtraPrice2 = 0.15m;
-            ExtraPrice3 = 0.25m;
+            P1 = 0.5m;
         }
     }
 
@@ -48,24 +41,20 @@ namespace property_initializers
     public class PepperoniPizzaNew1
     {
         // propery initializer - declaration & initialization
-        public decimal ExtraPrice1 { get; set; } = 0.5m;
-        public decimal ExtraPrice2 { get; set; } = 0.15m;
-        public decimal ExtraPrice3 { get; set; } = 0.25m;
+        public decimal P1 { get; set; } = 0.5m;
     }
 
     public class PepperoniPizzaNew2
     {
         // propery initializer - declaration & initialization
-        public decimal ExtraPrice1 { get; set; } = 0.5m;
-        public decimal ExtraPrice2 { get; set; } = 0.15m;
-        public decimal ExtraPrice3 { get; set; } = 0.25m;
+        public decimal P1 { get; set; } = 0.5m;
         // more
         public decimal Price2 { get; set; } = 1m + 2m;
         public double Price3 { get; set; } = Math.PI;
         public string Name { get; protected set; } = "Cheeze";
         public List<string> Ingredients { get; } = new List<string> { "dough", "sauce", "cheese" };
         // compiler errors
-        //public string Name2 { get; set; } = Name;
+        //public string P2 { get; set; } = P1; // non static field
         //public decimal Price4 { get; set; } = InitMe(); //        A field initializer cannot reference the non-static field, method, or property 'PizzaBase.InitMe()'
         decimal InitMe() { return 5m; }
     }

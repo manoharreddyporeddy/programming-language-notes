@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace auto_implemented_properties
+namespace ns1
 {
     class Program
     {
         //  compiler creates a
-        //          private,
-        //          anonymous backing field that    can only be accessed through the property's get and set accessors.
+        //          private, anonymous backing   field
+        //              that can only be accessed through the property's get and set accessors.
 
         // auto-implemented property
         public string FirstName { get; set; }
@@ -15,7 +15,7 @@ namespace auto_implemented_properties
         public string FirstName2 { get; set; } = "Jane";
 
         // auto-implemented property - read-only properties.
-        public string Name { get; }
+        public string Name { get; } // set in the constructor below - read only
         public string Address { get; private set; }
 
         // public constructor.   
@@ -31,7 +31,9 @@ namespace auto_implemented_properties
             Console.WriteLine($"{p.FirstName}");
             Console.WriteLine($"{p.FirstName2}");
             Console.WriteLine($"{p.Name}");
+            //p.Name = "Abc"; // ERROR - it is read only
             Console.WriteLine($"{p.Address}");
+            p.Address = "Abc"; // HOW IS THIS WORKING?
         }
     }
 }

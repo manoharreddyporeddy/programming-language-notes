@@ -63,9 +63,9 @@ namespace anonymous_types
             {
                 var products = new List<Product>()
                 {
-                    new Product("red", 1, "ok"),
-                    new Product("red", 1, "ok"),
-                    new Product("red", 1, "ok"),
+                    new Product("red", 1, "ok1"),
+                    new Product("green", 2, "ok2"),
+                    new Product("blue", 3, "ok3"),
                 };
                 var productQuery =
                     from prod in products
@@ -96,7 +96,4 @@ namespace anonymous_types
         public int Price { get => price; set => price = value; }
         public string OtherAttributes { get => otherAttributes; set => otherAttributes = value; }
     }
-
-
-
 }

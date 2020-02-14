@@ -1,47 +1,17 @@
-﻿using System;                // using                        System         namespace
+﻿// using static
+using static System.Math;    // using static class System.Math members
+using static System.Console; // using static class System.Console members
 
-// using static
-using static System.Math;    // using static members of this System.Math    class
-using static System.Console; // using static members of this System.Console class
-
-public class Circle
-{
-    public Circle(double radius)
-    {
-        Radius = radius;
-    }
-
-    public double Radius { get; set; }
-
-    public double Diameter
-    {
-        get { return 2 * Radius; }
-    }
-
-    public double Circumference
-    {
-        get { return 2 * Radius * PI; }     // Math.PI;             *********************
-    }
-
-    public double Area
-    {
-        get { return PI * Pow(Radius, 2); } // Math.PI;  Math.Pow             *********************
-    }
-
-    public void PrintRadius()
-    {
-        WriteLine(Radius);                  // Console.WriteLine             *********************
-    }
-}
-
-namespace using_static
+namespace ns1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Circle o = new Circle(5);
-            o.PrintRadius();
+            var pi = PI; // instead of Math.PI, since we have 'using static System.Math'
+            var tenPower2 = Pow(10, 2); // instead of Math.Pow
+            WriteLine(pi); // instead of Console.WriteLine
+            WriteLine(tenPower2);
         }
     }
 }

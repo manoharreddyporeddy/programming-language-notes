@@ -4,12 +4,14 @@ namespace string_interpolation
 {
     class Program
     {
-        static long MySquare(long x) => x* x;
+        static long MySquare(long x) => x * x;
 
         static void Main(string[] args)
         {
             string name = "Mark";
             string world = " World";
+
+
 
             // composite formatting - position based
             Console.WriteLine("Hello, {0}!", name);                 // Hello, Mark!
@@ -22,12 +24,16 @@ namespace string_interpolation
             // composite formatting - position based
             Console.WriteLine("Hello, {0} {1}!", name, world);      // Hello, Mark  world!
 
-            // string interpolation
+
+
+            // string interpolation (starts with $ and has {} around variable/expression/etc)
             Console.WriteLine($"Hello, {name} {world}!");           // Hello, Mark  world!
+            // NOT string interpolation, just a string
+            Console.WriteLine("Hello, {name} {world}!");           // Hello, Mark  world!
 
             int i = 3;
             // string interpolation
-            Console.WriteLine($"Hello, {i} {i*i}!");                // Hello, 3 9!
+            Console.WriteLine($"Hello, {i} {i * i}!");                // Hello, 3 9!
             Console.WriteLine($"Hello, {i} {MySquare(i)}!");        // Hello, 3 9!
 
         }

@@ -14,11 +14,10 @@ namespace expression_tree
             // raw executable "code"
 
             // delegate type   'Func'   is from   System namespace:           public delegate TResult Func<T1, T2, TResult>(T1 arg1, T2 arg2);
-            Func<int, int, long> function1 =
-                (a, b) => a + b;       // sum function   as a   lambda expression
-            // function1 points at raw executable code
+            Func<int, int, long> sum1 = (a, b) => a + b; // sum function   as a   lambda expression
+            // sum1 points at raw executable code
 
-            long res = function1(3, 5);           // call it
+            long res = sum1(3, 5);           // call it
             Console.WriteLine($"res is {res}");
 
 
@@ -45,9 +44,9 @@ namespace expression_tree
                 " The Body.NodeType:                     {1}{4}" +
                 " The Body.Right part:                   {2}{4}" +
                 " The Body.Type:                         {3}{4}",
-              bodyLeft.Name, 
-              body.NodeType, 
-              bodyRight.Name, 
+              bodyLeft.Name,
+              body.NodeType,
+              bodyRight.Name,
               body.Type,
               Environment.NewLine);
 

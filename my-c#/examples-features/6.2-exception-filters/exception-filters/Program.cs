@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace exception_filters
 {
-    // ----------------
-    // ----------------
     class MyException : Exception
     {
         public int Code = 0;
@@ -20,8 +18,7 @@ namespace exception_filters
     {
         public static void Func1()
         {
-            var ex = new MyException(42);
-            throw ex;
+            throw new MyException(42);
         }
     }
     // ----------------
@@ -38,11 +35,12 @@ namespace exception_filters
             catch (MyException ex)
             {
                 if (ex.Code == 42)
-                    Console.WriteLine("Error 42 occurred - without exception filter (don't unwind the stack)");
+                    Console.WriteLine("ENTERED CATCH - Error 42 occurred - without exception filter (unwound the stack)");
                 else
                     throw;
             }
         }
+
         public static void MyExceptionFilter()
         {
             try
@@ -51,7 +49,7 @@ namespace exception_filters
             }
             catch (MyException ex) when (ex.Code == 42)
             {
-                Console.WriteLine("Error 42 occurred - with exception filter (don't unwind the stack)");
+                Console.WriteLine("ENTERED CATCH - Error 42 occurred - with exception filter (unwound the stack)");
             }
         }
     }
@@ -62,8 +60,8 @@ namespace exception_filters
     {
         static bool Log(Exception ex, string message, params object[] args)
         {
-            Console.WriteLine("Log: {0} {1} {2}", ex.Message, message, args); // debug information
-            return false;
+            Console.WriteLine("WON'T ENTER CATCH - Error 42 occurred - with exception filter (NO unwound the stack) -- Log: {0} {1} {2}", ex.Message, message, args); // debug information
+            return false;  /// return true so that   catch block is never entered
         }
         public static void MyExceptionFilter2()
         {
@@ -71,7 +69,8 @@ namespace exception_filters
             {
                 App.Func1();
             }
-            catch (Exception ex) when (Log(ex, "An error occurred.")) // logging exceptions on the fly without actually catching them, hence without unwinding the stack
+            catch (Exception ex) when (Log(ex, "An error occurred."))
+            // logging exceptions on the fly without actually catching them, hence without unwinding the stack
             {
                 // this catch block will never be reached
                 //          so, no unwind happens
@@ -95,13 +94,21 @@ namespace exception_filters
             //          This implies that all information about current execution state in those stack frames is lost,
             //              making it harder to identify the root cause of the exception.
 
+            //
+            //f1 (entered catch -- call stack will contain f3,f2,f1 - root cause details lost like line number in f5)
+            //    f2
+            //        f3 (entered catch -- call stack will contain  f5,f4,f3 - root cause details exist)   --- throw again here
+            //            f4
+            //                f5 (exception occurred - root cause in f5)
+            //
+
             try
             {
                 MyScenario2.MyExceptionFilter2();
             }
             catch (Exception e)
             {
-                Console.WriteLine("Finally caught exception in main(): ", e);
+                Console.WriteLine("MAIN CATCH - Finally caught exception in main(): ", e);
             }
         }
     }

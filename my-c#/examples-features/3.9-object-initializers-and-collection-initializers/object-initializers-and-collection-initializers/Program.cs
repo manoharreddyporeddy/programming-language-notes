@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace object_initializers_and_collection_initializers
+namespace ns1
 {
     class Cat
     {
         public int Age { get; set; }        // Auto-implemented properties.
         public string Name { get; set; }
+        // no constructor
     }
 
     class Product
@@ -18,6 +19,7 @@ namespace object_initializers_and_collection_initializers
         public int UnitPrice;
         public int Other;
 
+        // constructor
         public Product(string ProductName1, int UnitPrice1, int Other1)
         {
             ProductName = ProductName1;
@@ -30,16 +32,23 @@ namespace object_initializers_and_collection_initializers
     {
         static void use()
         {
-
+            // ?
             Cat cat1 = new Cat() { Age = 10, Name = "Fluffy" };
+            // new Cat is an object
+            Console.WriteLine(cat1.Age);
 
             // object initializers
             Cat cat2 = new Cat { Age = 10, Name = "Fluffy" };
+            Console.WriteLine(cat2.Age);
 
             // Object Initializers with anonymous types
-            var pet = new { Age = 10, Name = "Fluffy" };
+            var dog1 = new { Age2 = 10, Name = "Fluffy" };
+            Console.WriteLine(dog1.Age2);
+
+
 
             // collection initializer
+            // new List<Product> is a collection object
             var productsList = new List<Product>()
             {
                 new Product("prod1", 101, 0 ),
@@ -77,10 +86,6 @@ namespace object_initializers_and_collection_initializers
                 [9] = "nine",
                 [13] = "thirteen"
             };
-
-
-
-
 
             var productInfos =
                 from p in productsList

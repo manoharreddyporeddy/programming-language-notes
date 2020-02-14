@@ -8,30 +8,31 @@ namespace lambda_expressions
 
     class Program
     {
-        /*
+
         // simple function
-        long sum(int a, int b)
+        long Sum(int a, int b)
         {
             return a + b;
-        }*/
+        }
 
         static void Main(string[] args)
         {
 
-            // simple example
 
+            // simple example
             Console.WriteLine("simple example");
+            long res1 = (new Program()).Sum(3, 5);           // call it
 
 
             // delegate type   'Func'   is from   System namespace:           public delegate TResult Func<T1, T2, TResult>(T1 arg1, T2 arg2);
-            Func<int, int, long> function1 =
-                (a, b) => a + b;       // sum function   as a   lambda expression
-            // function1 points at raw executable code
+            // sum function   as a   lambda expression
+            Func<int, int, long> Sum2 = (a, b) => a + b;
+            // Sum2 points at raw executable code
 
-            long res = function1(3, 5);           // call it
-            Console.WriteLine($"res is {res}");
+            long res2 = Sum2(3, 5);           // call it
+            Console.WriteLine($"res is {res2}");
             Console.WriteLine();
-            Console.WriteLine();
+
 
 
 
@@ -39,8 +40,8 @@ namespace lambda_expressions
             // elaboarte example
 
             Console.WriteLine("elaboarte example");
-
             List<int> myList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
 
             // NO lambda function
             Console.WriteLine("NO lambda function");
@@ -95,7 +96,7 @@ namespace lambda_expressions
                 var myList = new List<int>();
                 foreach (int myValue in list)
                 {
-                    if (myValue != target)
+                    if (myValue != target) // not target values
                     {
                         myList.Add(myValue);
                     }

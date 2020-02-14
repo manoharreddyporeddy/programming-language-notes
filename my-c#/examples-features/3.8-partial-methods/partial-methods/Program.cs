@@ -9,9 +9,11 @@ namespace partial_methods
         //
         //      This part can be in a separate file.
         //      Comment out this method and the program will still compile.
-        static partial void OnSomethingHappened(String s)
+        //
+
+        static partial void Method1(String s)
         {
-            Console.WriteLine($"Something happened: {s}");
+            Console.WriteLine(s);
         }
     }
 
@@ -19,11 +21,13 @@ namespace partial_methods
     {
         // partial method
         //      always returns void
-        static partial void OnSomethingHappened(string s);
+        static partial void Method1(string s);
 
         static void Main(string[] args)
         {
-            Program.OnSomethingHappened("error");
+            Console.WriteLine("before");
+            Program.Method1("ok");
+            Console.WriteLine("after");
         }
     }
 }

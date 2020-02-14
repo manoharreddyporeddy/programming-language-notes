@@ -26,7 +26,7 @@ namespace null_propagator
         {
             priceBreaks = priceBreaks1;
         }
-        public IList<PriceBreak> PriceBreaksList { get; } = priceBreaks;
+        public IList<PriceBreak> L1 { get; } = priceBreaks;
     }
     class Program
     {
@@ -44,7 +44,7 @@ namespace null_propagator
 
             {
                 // bad
-                var minPrice = p.PriceBreaksList[0].Price;
+                var minPrice = p.L1[0].Price;
             }
 
             // OR
@@ -53,22 +53,22 @@ namespace null_propagator
                 // good
                 double minPrice = 0;
                 if (p != null
-                    && p.PriceBreaksList != null
-                    && p.PriceBreaksList[0] != null)
+                    && p.L1 != null
+                    && p.L1[0] != null)
                 {
-                    minPrice = p.PriceBreaksList[0].Price;
+                    minPrice = p.L1[0].Price; // value or 0
                 }
             }
 
             // OR
 
             // better - new - null propagation operator(?) - double or null
-            var minPrice3 = p?.PriceBreaksList?[0]?.Price;
+            var minPrice3 = p?.L1?[0]?.Price; // value or null
 
             // OR
 
             // best - new - null propagation operator(?) & null coalescing operator (??) - double or 0
-            var minPrice4 = p?.PriceBreaksList?[0]?.Price ?? 0;
+            var minPrice4 = p?.L1?[0]?.Price ?? 0;
 
 
 

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace nameof_operator
+namespace ns1
 {
-    public class MyClass
+    public class MyClass1
     {
-        public string MyProperty { get; set; }
+        public string MyProperty1 { get; set; }
         public void MyFunc1() { }
     }
 
@@ -17,12 +17,12 @@ namespace nameof_operator
         static void Main(string[] args)
         {
             //
-            Console.WriteLine(nameof(nameof_operator));         // nameof_operator
+            Console.WriteLine(nameof(ns1));                      // ns1
             //
-            Console.WriteLine(nameof(MyClass));                 // MyClass
+            Console.WriteLine(nameof(MyClass1));                 // MyClass1
             //
-            Console.WriteLine(nameof(MyClass.MyProperty));      // MyProperty
-            Console.WriteLine(nameof(MyClass.MyFunc1));         // MyFunc1
+            Console.WriteLine(nameof(MyClass1.MyProperty1));     // MyProperty1
+            Console.WriteLine(nameof(MyClass1.MyFunc1));         // MyFunc1
         }
     }
 }
