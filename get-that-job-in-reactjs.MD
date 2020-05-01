@@ -1,5 +1,6 @@
 
 Editor
+----------
 
 use VS Code to write program
 
@@ -7,8 +8,11 @@ https://code.visualstudio.com/
 
 
 Learn
+----------
+
 
 1. html/css
+----------
 
 	https://www.khanacademy.org/computing/computer-programming/html-css
 
@@ -21,6 +25,7 @@ Learn
 	https://www.w3schools.com/html/
 
 2. javascript
+----------
 
 	best tutorial is
 
@@ -28,6 +33,7 @@ https://javascript.info/first-steps
 
 
 3. reactjs
+----------
 
 	https://www.guru99.com/reactjs-tutorial.html
 
@@ -51,6 +57,7 @@ https://javascript.info/first-steps
 
 
 4. reactjs materialui
+----------
 
 	https://www.youtube.com/watch?v=xm4LX5fJKZ8&list=PLcCp4mjO-z98WAu4sd0eVha1g-NMfzHZk
 
@@ -79,6 +86,7 @@ https://javascript.info/first-steps
 	https://blog.bam.tech/developer-news/get-the-best-of-your-react-app-design-by-using-material-ui-theme
 
 5. reactjs redux
+----------
 
 	https://react-redux.js.org/introduction/quick-start
 
