@@ -24,7 +24,8 @@ Learn
 
 	best tutorial is
 
-		https://javascript.info/first-steps
+https://javascript.info/first-steps
+
 
 3. reactjs
 
@@ -42,11 +43,11 @@ Learn
 
 	https://reactjs.org/docs/hello-world.html
 
-		MORE
+  MORE
 
-			https://github.com/enaqx/awesome-react
+  https://github.com/enaqx/awesome-react
 
-			https://github.com/markerikson/react-redux-links
+  https://github.com/markerikson/react-redux-links
 
 
 4. reactjs materialui
