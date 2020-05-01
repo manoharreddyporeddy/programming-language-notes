@@ -6,6 +6,7 @@ Learn
 
 1. html/css
 	https://www.khanacademy.org/computing/computer-programming/html-css
+	
 	OR
 	https://www.youtube.com/watch?list=PLgGbWId6zgaWZkPFI4Sc9QXDmmOWa1v5F&time_continue=2&v=yTHTo28hwTQ&feature=emb_title
 	OR
