@@ -1,6 +1,7 @@
 
 Editor
-	use VS Code to write program
+
+use VS Code to write program
 
 https://code.visualstudio.com/
 
