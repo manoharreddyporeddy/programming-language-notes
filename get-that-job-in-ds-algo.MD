@@ -27,6 +27,14 @@ c		https://www.hackerrank.com/domains/c
 2. then do below in same programming language
 -----------
 
+NOTE - ALWAYS - don't copy paste answers from others
+
+NOTE - ALWAYS see Wikipedia for algorithm - Dont reinvent
+
+NOTE - ALWAYS see Solutions after solving the question
+
+NOTE - ALWAYS see Other people answers after solving the question
+
 easy data structures - https://www.hackerrank.com/domains/data-structures?filters%5Bdifficulty%5D%5B%5D=easy
 
 	AND
