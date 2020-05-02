@@ -57,6 +57,9 @@ medium algo - https://leetcode.com/problemset/all/?listId=wpwgkgt&difficulty=Med
 HELP
 ------------------------
 
+focus & persistence is the key
+------------------------
+
 https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
 https://github.com/manoharreddyporeddy/HackerRank-Topics
