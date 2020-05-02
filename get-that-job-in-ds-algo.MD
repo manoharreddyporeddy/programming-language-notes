@@ -2,6 +2,9 @@
 Learn & do
 -----------
 
+warm up #1
+-----------
+
 1. do one of the below - by choosing 1 programming language:
 -----------
 
@@ -35,6 +38,9 @@ NOTE - ALWAYS see Solutions after solving the question
 
 NOTE - ALWAYS see Other people answers after solving the question
 
+warm up #2
+-----------
+
 easy data structures - https://www.hackerrank.com/domains/data-structures?filters%5Bdifficulty%5D%5B%5D=easy
 
 	AND
@@ -42,6 +48,10 @@ easy data structures - https://www.hackerrank.com/domains/data-structures?filter
 easy algo - https://www.hackerrank.com/domains/algorithms?filters%5Bdifficulty%5D%5B%5D=easy
 
 
+
+
+now real one
+-----------
 
 3. then do easy here
 -----------
