@@ -51,3 +51,15 @@ easy algo - https://leetcode.com/problemset/all/?listId=wpwgkgt&difficulty=Easy
 	AND
 
 medium algo - https://leetcode.com/problemset/all/?listId=wpwgkgt&difficulty=Medium
+
+
+
+HELP
+------------------------
+
+https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+
+https://github.com/manoharreddyporeddy/HackerRank-Topics
+
+https://www.hackerearth.com/practice/codemonk/
+
