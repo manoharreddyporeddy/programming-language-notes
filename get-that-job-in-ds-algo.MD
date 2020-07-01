@@ -1,4 +1,8 @@
 
+-----------
+Read this story & come back here? :) - https://www.quora.com/Could-anyone-suggest-me-a-few-Google-style-interview-problems-from-LeetCode-or-HackerRank-or-even-better-categories-of-problems/answer/Manohar-Reddy-Poreddy
+
+-----------
 Learn & do
 -----------
 
