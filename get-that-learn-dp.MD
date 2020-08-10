@@ -14,11 +14,11 @@ https://practice.geeksforgeeks.org/problems/dynamic-programming-2
 
 https://practice.geeksforgeeks.org/problems/dynamic-programming-principles
 
-	More, if needed:
+More, if needed:
 
-		https://en.wikipedia.org/wiki/Optimal_substructure
+	https://en.wikipedia.org/wiki/Optimal_substructure
 
-		https://en.wikipedia.org/wiki/Overlapping_subproblems
+	https://en.wikipedia.org/wiki/Overlapping_subproblems
 
 		
 
@@ -107,8 +107,6 @@ https://www.geeksforgeeks.org/dynamic-programming-vs-divide-and-conquer/
 						SO TABULATION technique
 
 							(filling the cache in bottom-up direction) is being applied here.
-
-
 
 
 
@@ -314,75 +312,75 @@ dynamic-programming
 
 
 
-	Main index
+Main index
 
-		https://www.geeksforgeeks.org/fundamentals-of-algorithms/#DynamicProgramming
-
-
-
-	Pages:
-
-		https://www.geeksforgeeks.org/dynamic-programming/
-
-		https://www.geeksforgeeks.org/algorithms-dynamic-programming-question-2/
-
-		https://www.geeksforgeeks.org/category/dynamic-programming/page/2/
-
-		https://www.geeksforgeeks.org/category/algorithm/dynamic-programming/page/2/
-
-		https://www.geeksforgeeks.org/tag/algorithms-dynamic-programming/page/2/
+	https://www.geeksforgeeks.org/fundamentals-of-algorithms/#DynamicProgramming
 
 
 
-	Searches:
+Pages:
 
-		https://www.geeksforgeeks.org/basic/dynamic-programming/2/
+	https://www.geeksforgeeks.org/dynamic-programming/
 
-		https://www.geeksforgeeks.org/easy/dynamic-programming/2/
+	https://www.geeksforgeeks.org/algorithms-dynamic-programming-question-2/
 
-		https://www.geeksforgeeks.org/medium/dynamic-programming/2/
+	https://www.geeksforgeeks.org/category/dynamic-programming/page/2/
 
-		https://www.geeksforgeeks.org/hard/dynamic-programming/2/
+	https://www.geeksforgeeks.org/category/algorithm/dynamic-programming/page/2/
 
-		https://www.geeksforgeeks.org/expert/dynamic-programming/2/
-
-
-
-		https://www.geeksforgeeks.org/basic/algorithms-dynamic-programming/
-
-		https://www.geeksforgeeks.org/easy/algorithms-dynamic-programming/
-
-		https://www.geeksforgeeks.org/medium/algorithms-dynamic-programming/
-
-		https://www.geeksforgeeks.org/hard/algorithms-dynamic-programming/
-
-		https://www.geeksforgeeks.org/expert/algorithms-dynamic-programming/
+	https://www.geeksforgeeks.org/tag/algorithms-dynamic-programming/page/2/
 
 
 
-	Practice
+Searches:
 
-		https://practice.geeksforgeeks.org/explore/?category%5B%5D=Dynamic%20Programming&page=1
+	https://www.geeksforgeeks.org/basic/dynamic-programming/2/
 
+	https://www.geeksforgeeks.org/easy/dynamic-programming/2/
 
+	https://www.geeksforgeeks.org/medium/dynamic-programming/2/
 
-	Top 20 interview questions
+	https://www.geeksforgeeks.org/hard/dynamic-programming/2/
 
-		https://www.geeksforgeeks.org/top-20-dynamic-programming-interview-questions/
-
-
-
-	Quiz
-
-		https://www.geeksforgeeks.org/algorithms-gq/dynamic-programming-gq/
-
-		https://www.geeksforgeeks.org/algorithms-quiz-dynamic-programming-question-8/
+	https://www.geeksforgeeks.org/expert/dynamic-programming/2/
 
 
 
-	c/c++
+	https://www.geeksforgeeks.org/basic/algorithms-dynamic-programming/
 
-		https://www.geeksforgeeks.org/c-programs-gq/cc-dynamic-programming-programs-gq/
+	https://www.geeksforgeeks.org/easy/algorithms-dynamic-programming/
+
+	https://www.geeksforgeeks.org/medium/algorithms-dynamic-programming/
+
+	https://www.geeksforgeeks.org/hard/algorithms-dynamic-programming/
+
+	https://www.geeksforgeeks.org/expert/algorithms-dynamic-programming/
+
+
+
+Practice
+
+	https://practice.geeksforgeeks.org/explore/?category%5B%5D=Dynamic%20Programming&page=1
+
+
+
+Top 20 interview questions
+
+	https://www.geeksforgeeks.org/top-20-dynamic-programming-interview-questions/
+
+
+
+Quiz
+
+	https://www.geeksforgeeks.org/algorithms-gq/dynamic-programming-gq/
+
+	https://www.geeksforgeeks.org/algorithms-quiz-dynamic-programming-question-8/
+
+
+
+c/c++
+
+	https://www.geeksforgeeks.org/c-programs-gq/cc-dynamic-programming-programs-gq/
 
 --------------------------------------------------------
 
@@ -403,8 +401,6 @@ NOT DP
 gate
 
 	inurl:gate site:https://www.geeksforgeeks.org
-
-
 
 
 
