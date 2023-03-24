@@ -9,8 +9,8 @@
                 "-std=c++14",
                 "-g",
                 "-o",
-                "myfile.exe",
-                "myfile.cpp"
+                "${fileBasenameNoExtension}.exe",
+                "${fileBasename}"
             ],
             "group": {
                 "kind": "build",
